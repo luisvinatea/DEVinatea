@@ -1,0 +1,301 @@
+/* 
+ * CSS Template for Academic Papers
+ * Following APA guidelines and Aquacultural Engineering journal requirements
+ */
+
+/* GENERAL PAGE LAYOUT */
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+  line-height: 2; /* Double-spaced */
+  color: #000000;
+  margin: 2.54cm; /* 1-inch margins */
+  background-color: white;
+  max-width: 21cm; /* Approximate A4 width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* HEADINGS */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: bold;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+h1 {
+  /* Article Title */
+  font-size: 16pt;
+  text-align: center;
+  line-height: 1.2;
+  margin-bottom: 1em;
+}
+
+h2 {
+  /* Section Headings (1.) */
+  font-size: 14pt;
+  margin-top: 2em;
+}
+
+h3 {
+  /* Subsections (1.1.) */
+  font-size: 13pt;
+}
+
+h4 {
+  /* Further subsections (1.1.1.) */
+  font-size: 12pt;
+  font-style: italic;
+}
+
+/* PARAGRAPHS */
+p {
+  text-indent: 1.27cm; /* 0.5 inch indent for paragraphs */
+  margin-top: 0;
+  margin-bottom: 0;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* TITLE PAGE */
+.title-page {
+  page-break-after: always;
+  text-align: center;
+  line-height: 1.5;
+  margin-top: 4em;
+}
+
+.title-page h1 {
+  margin-bottom: 2em;
+}
+
+.author-info {
+  margin-bottom: 1.5em;
+}
+
+.affiliation {
+  font-style: italic;
+  margin-bottom: 1em;
+}
+
+.corresponding-author {
+  margin-top: 2em;
+  font-size: 11pt;
+}
+
+/* ABSTRACT */
+.abstract {
+  margin-top: 2em;
+  margin-bottom: 2em;
+  max-width: 16.5cm;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.abstract h2 {
+  text-align: center;
+  font-size: 14pt;
+  margin-bottom: 0.5em;
+}
+
+.abstract p {
+  text-indent: 0;
+}
+
+/* KEYWORDS */
+.keywords {
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.keywords-title {
+  font-weight: bold;
+  display: inline;
+}
+
+/* HIGHLIGHTS */
+.highlights {
+  margin: 2em 0;
+  padding: 1em;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+}
+
+.highlights h2 {
+  font-size: 12pt;
+  margin-top: 0;
+  margin-bottom: 0.5em;
+}
+
+.highlights ul {
+  margin: 0;
+  padding-left: 1.5em;
+}
+
+/* TABLES */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2em 0;
+  font-size: 11pt;
+  line-height: 1.4;
+}
+
+table,
+th,
+td {
+  border: 1px solid #000;
+}
+
+th,
+td {
+  padding: 0.5em;
+  text-align: left;
+  vertical-align: top;
+}
+
+th {
+  font-weight: bold;
+  background-color: #f2f2f2;
+}
+
+caption {
+  font-weight: bold;
+  text-align: left;
+  caption-side: top;
+  margin-bottom: 0.5em;
+}
+
+/* FIGURES */
+figure {
+  margin: 2em 0;
+  text-align: center;
+}
+
+figcaption {
+  font-size: 11pt;
+  line-height: 1.4;
+  margin-top: 0.5em;
+  text-align: left;
+}
+
+/* REFERENCES */
+.references {
+  margin-top: 2em;
+  page-break-before: always;
+}
+
+.references h2 {
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+.references ul {
+  padding-left: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+.references li {
+  text-indent: -2em;
+  padding-left: 2em;
+  margin-bottom: 1em;
+}
+
+/* FOOTNOTES */
+.footnote {
+  font-size: 10pt;
+  line-height: 1.5;
+  margin-top: 2em;
+  border-top: 1px solid #000;
+  padding-top: 0.5em;
+}
+
+/* APPENDICES */
+.appendix {
+  margin-top: 2em;
+  page-break-before: always;
+}
+
+.appendix h2 {
+  text-align: center;
+}
+
+/* EQUATIONS */
+.equation {
+  margin: 1em 0;
+  text-align: center;
+}
+
+.equation-number {
+  float: right;
+}
+
+/* SUPPLEMENTARY MATERIAL */
+.supplementary {
+  margin-top: 2em;
+  border-top: 1px solid #ccc;
+  padding-top: 1em;
+}
+
+/* DECLARATION SECTIONS */
+.declaration {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.declaration h3 {
+  font-style: normal;
+  font-size: 12pt;
+  margin-bottom: 0.25em;
+}
+
+.declaration p {
+  text-indent: 0;
+}
+
+/* CREDIT AUTHOR STATEMENT */
+.credit-roles {
+  margin-bottom: 1.5em;
+}
+
+.credit-roles h3 {
+  font-style: normal;
+  font-size: 12pt;
+  margin-bottom: 0.25em;
+}
+
+/* RESPONSIVE ADJUSTMENTS FOR SCREEN VIEWING */
+@media screen {
+  body {
+    max-width: 850px;
+    line-height: 1.6;
+  }
+
+  p {
+    margin-bottom: 0.8em;
+  }
+}
+
+/* PRINT SETTINGS */
+@media print {
+  body {
+    font-size: 12pt;
+    line-height: 2;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  @page {
+    size: A4;
+    margin: 2.54cm;
+  }
+}
