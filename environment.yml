@@ -1,0 +1,26 @@
+name: devinatea
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - pandas
+  - numpy
+  - matplotlib
+  - seaborn
+  - jupyterlab
+  - scipy
+  - scikit-learn
+  - statsmodels
+  - plotly
+  - nbconvert
+  - openpyxl
+  - xlrd
+  - xlsxwriter
+  - pip
+  - pip:
+    - jupyter-black
+    - watermark
+    - pandas-profiling
+    - missingno
+    - ipywidgets
