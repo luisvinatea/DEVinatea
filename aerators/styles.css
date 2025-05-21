@@ -270,6 +270,149 @@ figcaption {
   margin-bottom: 0.25em;
 }
 
+/* SECTIONS AND SUBSECTIONS */
+.section {
+  margin-top: 2.5em;
+  margin-bottom: 1.5em;
+}
+
+.section h2 {
+  font-size: 14pt;
+  font-weight: bold;
+  margin-bottom: 1em;
+}
+
+.subsection {
+  margin-top: 1.5em;
+  margin-bottom: 1em;
+}
+
+.subsection h3,
+.subsection h4,
+.subsection h5 {
+  margin-bottom: 0.5em;
+}
+
+/* EQUATION FORMATTING */
+.equation-block {
+  margin: 1.5em 0;
+}
+
+.equation-block h5 {
+  margin-bottom: 0.8em;
+}
+
+/* Support for both standard LaTeX and Markdown math notation */
+.equation-block .katex-display,
+.equation-block .MathJax {
+  margin: 1em 0 !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+/* For inline math */
+.katex,
+.MathJax {
+  font-size: 1.1em !important;
+}
+
+/* For display math */
+.katex-display,
+.MathJax_Display {
+  padding: 0.5em 0;
+}
+
+/* Enhanced Markdown math support */
+.math-block {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+  overflow-x: auto;
+}
+
+.math-inline {
+  display: inline-block;
+  margin: 0 0.2em;
+}
+
+/* Jupyter specific styles */
+.jupyter-notebook .jp-MarkdownCell .jp-InputArea-editor {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+  line-height: 2;
+}
+
+.jp-OutputArea-output pre {
+  font-family: monospace;
+  font-size: 11pt;
+  background-color: #f9f9f9;
+  padding: 1em;
+  border: 1px solid #ddd;
+  overflow-x: auto;
+}
+
+.jp-RenderedHTMLCommon table {
+  border-collapse: collapse;
+  margin: 1em 0;
+}
+
+/* GLOSSARY STYLING */
+.glossary-section {
+  margin: 2em 0;
+}
+
+.glossary-section h2 {
+  margin-bottom: 1em;
+}
+
+.glossary-section dl {
+  margin-left: 1em;
+}
+
+.glossary-section dt {
+  font-weight: bold;
+  margin-top: 0.7em;
+}
+
+.glossary-section dd {
+  margin-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+/* AUTHOR VITAE */
+.vitae-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  margin-top: 1em;
+  margin-bottom: 2em;
+}
+
+.vitae-photo {
+  flex: 0 0 150px;
+}
+
+.vitae-photo img {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.vitae-bio {
+  flex: 1;
+}
+
+.vitae-bio p {
+  text-indent: 0;
+}
+
+/* ACKNOWLEDGEMENTS AND DATA SECTIONS */
+.acknowledgements p,
+.data-availability p,
+.supplementary-material p {
+  text-indent: 0;
+}
+
 /* RESPONSIVE ADJUSTMENTS FOR SCREEN VIEWING */
 @media screen {
   body {
