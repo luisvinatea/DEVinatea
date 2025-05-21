@@ -19,8 +19,8 @@ dependencies:
   - xlsxwriter
   - pip
   - pip:
-    - jupyter-black
-    - watermark
-    - pandas-profiling
-    - missingno
-    - ipywidgets
+      - jupyter-black
+      - watermark
+      - pandas-profiling
+      - missingno
+      - ipywidgets

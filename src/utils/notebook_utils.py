@@ -7,10 +7,12 @@ import json
 from datetime import datetime
 
 
-def create_notebook_template(output_path: str, title: str, author: str = "Luis Paulo Vinatea Barberena") -> None:
+def create_notebook_template(
+    output_path: str, title: str, author: str = "Luis Paulo Vinatea Barberena"
+) -> None:
     """
     Create a template Jupyter notebook for data analysis.
-    
+
     Parameters
     ----------
     output_path : str
@@ -19,7 +21,7 @@ def create_notebook_template(output_path: str, title: str, author: str = "Luis P
         Title of the analysis
     author : str, default "Luis Paulo Vinatea Barberena"
         Author name
-        
+
     Returns
     -------
     None
@@ -27,7 +29,7 @@ def create_notebook_template(output_path: str, title: str, author: str = "Luis P
     """
     # Get current date
     today = datetime.now().strftime("%Y-%m-%d")
-    
+
     # Create cells
     cells = [
         # Title and overview
@@ -42,17 +44,14 @@ def create_notebook_template(output_path: str, title: str, author: str = "Luis P
                 f"\n",
                 f"## Overview\n",
                 f"\n",
-                f"[Brief description of the analysis, objectives, and research questions]"
-            ]
+                f"[Brief description of the analysis, objectives, and research questions]",
+            ],
         },
-        
         # Setup cell
         {
             "cell_type": "markdown",
             "metadata": {},
-            "source": [
-                "## 1. Setup and Environment"
-            ]
+            "source": ["## 1. Setup and Environment"],
         },
         {
             "cell_type": "code",
@@ -79,17 +78,14 @@ def create_notebook_template(output_path: str, title: str, author: str = "Luis P
                 "pd.set_option('display.max_columns', None)\n",
                 "\n",
                 "# For reproducibility\n",
-                "np.random.seed(42)"
-            ]
+                "np.random.seed(42)",
+            ],
         },
-        
         # Data loading
         {
             "cell_type": "markdown",
             "metadata": {},
-            "source": [
-                "## 2. Data Loading and Inspection"
-            ]
+            "source": ["## 2. Data Loading and Inspection"],
         },
         {
             "cell_type": "code",
@@ -103,13 +99,13 @@ def create_notebook_template(output_path: str, title: str, author: str = "Luis P
                 "# Load data\n",
                 "try:\n",
                 "    df = pd.read_csv(RAW_DATA_PATH)\n",
-                "    print(f\"Data loaded successfully with {df.shape[0]} rows and {df.shape[1]} columns.\")\n",
+                '    print(f"Data loaded successfully with {df.shape[0]} rows and {df.shape[1]} columns.")\n',
                 "except Exception as e:\n",
-                "    print(f\"Error loading data: {e}\")"
-            ]
-        }
+                '    print(f"Error loading data: {e}")',
+            ],
+        },
     ]
-    
+
     # Create notebook JSON
     notebook = {
         "cells": cells,
@@ -117,35 +113,29 @@ def create_notebook_template(output_path: str, title: str, author: str = "Luis P
             "kernelspec": {
                 "display_name": "Python 3",
                 "language": "python",
-                "name": "python3"
+                "name": "python3",
             },
             "language_info": {
-                "codemirror_mode": {
-                    "name": "ipython",
-                    "version": 3
-                },
+                "codemirror_mode": {"name": "ipython", "version": 3},
                 "file_extension": ".py",
                 "mimetype": "text/x-python",
                 "name": "python",
                 "nbconvert_exporter": "python",
                 "pygments_lexer": "ipython3",
-                "version": "3.10.0"
-            }
+                "version": "3.10.0",
+            },
         },
         "nbformat": 4,
-        "nbformat_minor": 4
+        "nbformat_minor": 4,
     }
-    
+
     # Write to file
-    with open(output_path, 'w', encoding='utf-8') as f:
+    with open(output_path, "w", encoding="utf-8") as f:
         json.dump(notebook, f, indent=1)
-    
+
     print(f"Notebook template created successfully at {output_path}")
 
 
 if __name__ == "__main__":
     # Example usage
-    create_notebook_template(
-        "new_analysis.ipynb",
-        "Customer Churn Analysis"
-    )
+    create_notebook_template("new_analysis.ipynb", "Customer Churn Analysis")
