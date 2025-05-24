@@ -3,6 +3,7 @@
 from IPython.display import display, HTML
 from visualizations import FinancialVisualizer
 from config import DEFAULT_AERATOR_DATA
+from aerator_comparer import compare_aerators
 
 
 def create_all_visualizations(aerator_data=None, show_figures=True):
@@ -59,7 +60,164 @@ def _display_financial_insights():
     display(HTML(html_content))
 
 
-# Convenience function for quick analysis
-def quick_analysis(aerator_data=None):
-    """Run quick financial analysis with default parameters."""
-    return create_all_visualizations(aerator_data)
+def run_aerator_comparison(
+    farm_data=None, financial_data=None, aerators_data=None
+):
+    """
+    Run comprehensive aerator comparison analysis.
+
+    Args:
+        farm_data: Dictionary with farm parameters
+        financial_data: Dictionary with financial parameters
+        aerators_data: List of aerator specifications
+
+    Returns:
+        Complete comparison results and visualizations
+    """
+    # Use default data if not provided
+    if not farm_data:
+        farm_data = {
+            "tod": 5.47,
+            "farm_area_ha": 1000,
+            "shrimp_price": 5.0,
+            "culture_days": 120,
+            "shrimp_density_kg_m3": 0.3333333,
+            "pond_depth_m": 1.0,
+        }
+
+    if not financial_data:
+        financial_data = {
+            "energy_cost": 0.05,
+            "hours_per_night": 8,
+            "discount_rate": 0.1,
+            "inflation_rate": 0.025,
+            "horizon": 10,
+            "safety_margin": 0,
+            "temperature": 31.5,
+        }
+
+    if not aerators_data:
+        aerators_data = [
+            {
+                "name": "Aerator 1",
+                "sotr": 1.9,
+                "power_hp": 3,
+                "cost": 700,
+                "durability": 2.0,
+                "maintenance": 65,
+            },
+            {
+                "name": "Aerator 2",
+                "sotr": 3.5,
+                "power_hp": 3,
+                "cost": 900,
+                "durability": 5.0,
+                "maintenance": 50,
+            },
+            {
+                "name": "Aerator 3",
+                "sotr": 2.8,
+                "power_hp": 2.5,
+                "cost": 800,
+                "durability": 3.0,
+                "maintenance": 55,
+            },
+        ]
+
+    # Run comparison
+    comparison_data = {
+        "farm": farm_data,
+        "financial": financial_data,
+        "aerators": aerators_data,
+    }
+
+    results = compare_aerators(comparison_data)
+
+    if "error" in results:
+        print(f"Error in comparison: {results['error']}")
+        return results
+
+    # Create visualizations
+    visualizer = FinancialVisualizer()
+    aerator_results = results["aeratorResults"]
+
+    print("=== AERATOR COMPARISON ANALYSIS ===\n")
+    print(f"Total Oxygen Demand: {results['tod']:.2f} kg O₂/hour")
+    print(f"Annual Revenue: ${results['annual_revenue']:,.2f}")
+    print(f"Winner: {results['winnerLabel']}\n")
+
+    # Display key metrics table
+    print("Key Financial Metrics:")
+    print("-" * 80)
+    print(
+        f"{'Aerator':<15} {'Total Cost':<12} {'NPV Savings':<12} {'ROI (%)':<8} {'IRR (%)':<8} {'Payback':<10}"
+    )
+    print("-" * 80)
+
+    for result in aerator_results:
+        payback = result["payback_years"]
+        payback_str = f"{payback:.1f}" if payback != float("inf") else "∞"
+        print(
+            f"{result['name']:<15} ${result['total_annual_cost']:<11,.0f} "
+            f"${result['npv_savings']:<11,.0f} {result['roi_percent']:<7.1f} "
+            f"{result['irr']:<7.1f} {payback_str:<10}"
+        )
+
+    print("-" * 80)
+
+    # Create and display visualizations
+    figures = []
+
+    # 1. Comprehensive comparison chart
+    fig1 = visualizer.create_aerator_comparison_chart(aerator_results)
+    figures.append(("Aerator Comparison Overview", fig1))
+
+    # 2. Cost breakdown
+    fig2 = visualizer.create_cost_breakdown_chart(aerator_results)
+    figures.append(("Annual Cost Breakdown", fig2))
+
+    # 3. Efficiency analysis
+    fig3 = visualizer.create_efficiency_scatter(aerator_results)
+    figures.append(("Efficiency Analysis", fig3))
+
+    # 4. Financial summary table
+    fig4 = visualizer.create_financial_summary_table(aerator_results)
+    figures.append(("Financial Summary", fig4))
+
+    # Display all figures
+    for title, fig in figures:
+        print(f"\n--- {title} ---")
+        display(fig)
+
+    return {
+        "results": results,
+        "figures": figures,
+        "summary": {
+            "winner": results["winnerLabel"],
+            "total_aerators": len(aerator_results),
+            "annual_revenue": results["annual_revenue"],
+            "equilibrium_prices": results.get("equilibriumPrices", {}),
+        },
+    }
+
+
+def create_sample_sensitivity_analysis():
+    """Create sample sensitivity analysis for demonstration."""
+    # Sample data for sensitivity analysis
+    base_results = [
+        {"name": "Aerator 1", "npv_savings": 50000, "irr": 15.5},
+        {"name": "Aerator 2", "npv_savings": 75000, "irr": 22.3},
+    ]
+
+    # Energy cost sensitivity
+    energy_costs = [0.03, 0.04, 0.05, 0.06, 0.07, 0.08]
+
+    visualizer = FinancialVisualizer()
+    fig = visualizer.create_sensitivity_analysis(
+        base_results, "Energy Cost ($/kWh)", energy_costs
+    )
+
+    print("\n--- Energy Cost Sensitivity Analysis ---")
+    display(fig)
+
+    return fig

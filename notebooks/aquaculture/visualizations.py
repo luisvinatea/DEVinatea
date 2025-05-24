@@ -133,6 +133,327 @@ class FinancialVisualizer:
         )
         return fig
 
+    def create_aerator_comparison_chart(
+        self, aerator_results, figsize=(14, 10)
+    ):
+        """Create comprehensive aerator comparison chart."""
+        fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=figsize)
+
+        # Extract data for plotting
+        names = [result["name"] for result in aerator_results]
+        total_costs = [
+            result["total_annual_cost"] for result in aerator_results
+        ]
+        initial_costs = [
+            result["total_initial_cost"] for result in aerator_results
+        ]
+        sae_values = [result["sae"] for result in aerator_results]
+        roi_values = [result["roi_percent"] for result in aerator_results]
+
+        # 1. Total Annual Cost Comparison
+        bars1 = ax1.bar(names, total_costs, color=self.colors_primary)
+        ax1.set_title("Total Annual Cost Comparison", fontweight="bold")
+        ax1.set_ylabel("Annual Cost ($)")
+        ax1.tick_params(axis="x", rotation=45)
+
+        # Add value labels on bars
+        for bar, cost in zip(bars1, total_costs):
+            height = bar.get_height()
+            ax1.text(
+                bar.get_x() + bar.get_width() / 2.0,
+                height,
+                f"${cost:,.0f}",
+                ha="center",
+                va="bottom",
+            )
+
+        # 2. Initial Investment vs SAE
+        ax2.scatter(
+            sae_values,
+            initial_costs,
+            s=100,
+            c=range(len(names)),
+            cmap="viridis",
+            alpha=0.7,
+        )
+        ax2.set_xlabel("Standard Aeration Efficiency (SAE)")
+        ax2.set_ylabel("Initial Investment ($)")
+        ax2.set_title("Efficiency vs Investment", fontweight="bold")
+
+        # Add labels for each point
+        for i, name in enumerate(names):
+            ax2.annotate(
+                name,
+                (sae_values[i], initial_costs[i]),
+                xytext=(5, 5),
+                textcoords="offset points",
+            )
+
+        # 3. ROI Comparison
+        bars3 = ax3.bar(names, roi_values, color=self.colors_primary)
+        ax3.set_title("Return on Investment (ROI)", fontweight="bold")
+        ax3.set_ylabel("ROI (%)")
+        ax3.tick_params(axis="x", rotation=45)
+        ax3.axhline(y=0, color="red", linestyle="--", alpha=0.5)
+
+        # Add value labels on bars
+        for bar, roi in zip(bars3, roi_values):
+            height = bar.get_height()
+            ax3.text(
+                bar.get_x() + bar.get_width() / 2.0,
+                height,
+                f"{roi:.1f}%",
+                ha="center",
+                va="bottom" if roi >= 0 else "top",
+            )
+
+        # 4. Payback Period
+        payback_values = [
+            result["payback_years"] for result in aerator_results
+        ]
+        # Handle infinite payback periods
+        payback_display = [
+            min(p, 20) if p != float("inf") else 20 for p in payback_values
+        ]
+
+        bars4 = ax4.bar(names, payback_display, color=self.colors_primary)
+        ax4.set_title("Payback Period", fontweight="bold")
+        ax4.set_ylabel("Years")
+        ax4.tick_params(axis="x", rotation=45)
+
+        # Add value labels on bars
+        for bar, payback in zip(bars4, payback_values):
+            height = bar.get_height()
+            label = f"{payback:.1f}" if payback != float("inf") else "∞"
+            ax4.text(
+                bar.get_x() + bar.get_width() / 2.0,
+                height,
+                label,
+                ha="center",
+                va="bottom",
+            )
+
+        plt.tight_layout()
+        return fig
+
+    def create_cost_breakdown_chart(self, aerator_results, figsize=(12, 8)):
+        """Create stacked bar chart showing cost breakdown."""
+        fig, ax = plt.subplots(figsize=figsize)
+
+        names = [result["name"] for result in aerator_results]
+        energy_costs = [
+            result["annual_energy_cost"] for result in aerator_results
+        ]
+        maintenance_costs = [
+            result["annual_maintenance_cost"] for result in aerator_results
+        ]
+        replacement_costs = [
+            result["annual_replacement_cost"] for result in aerator_results
+        ]
+
+        # Create stacked bar chart
+        width = 0.6
+        x = np.arange(len(names))
+
+        ax.bar(x, energy_costs, width, label="Energy Cost", color="#FF6B6B")
+        ax.bar(
+            x,
+            maintenance_costs,
+            width,
+            bottom=energy_costs,
+            label="Maintenance Cost",
+            color="#4ECDC4",
+        )
+        ax.bar(
+            x,
+            replacement_costs,
+            width,
+            bottom=np.array(energy_costs) + np.array(maintenance_costs),
+            label="Replacement Cost",
+            color="#45B7D1",
+        )
+
+        ax.set_title("Annual Cost Breakdown by Aerator", fontweight="bold")
+        ax.set_ylabel("Annual Cost ($)")
+        ax.set_xticks(x)
+        ax.set_xticklabels(names, rotation=45)
+        ax.legend()
+
+        plt.tight_layout()
+        return fig
+
+    def create_efficiency_scatter(self, aerator_results, figsize=(10, 8)):
+        """Create scatter plot of efficiency metrics."""
+        fig, ax = plt.subplots(figsize=figsize)
+
+        sae_values = [result["sae"] for result in aerator_results]
+        cost_per_kg_o2 = [
+            result["cost_per_kg_o2"] for result in aerator_results
+        ]
+        total_costs = [
+            result["total_annual_cost"] for result in aerator_results
+        ]
+        names = [result["name"] for result in aerator_results]
+
+        # Create scatter plot with bubble size based on total cost
+        # Normalize bubble sizes
+        max_cost = max(total_costs)
+        min_cost = min(total_costs)
+        bubble_sizes = [
+            100 + 400 * (cost - min_cost) / (max_cost - min_cost)
+            for cost in total_costs
+        ]
+
+        ax.scatter(
+            sae_values,
+            cost_per_kg_o2,
+            s=bubble_sizes,
+            alpha=0.6,
+            c=range(len(names)),
+            cmap="viridis",
+        )
+
+        ax.set_xlabel("Standard Aeration Efficiency (SAE)")
+        ax.set_ylabel("Cost per kg O₂ ($/kg)")
+        ax.set_title(
+            "Aeration Efficiency vs Operating Cost", fontweight="bold"
+        )
+
+        # Add labels for each point
+        for i, name in enumerate(names):
+            ax.annotate(
+                name,
+                (sae_values[i], cost_per_kg_o2[i]),
+                xytext=(5, 5),
+                textcoords="offset points",
+            )
+
+        # Add size legend
+        ax.text(
+            0.02,
+            0.98,
+            "Bubble size = Total Annual Cost",
+            transform=ax.transAxes,
+            verticalalignment="top",
+            bbox=dict(boxstyle="round", facecolor="white", alpha=0.8),
+        )
+
+        return fig
+
+    def create_sensitivity_analysis(
+        self, base_results, parameter_name, parameter_range, figsize=(12, 8)
+    ):
+        """Create sensitivity analysis chart for a given parameter."""
+        fig, (ax1, ax2) = plt.subplots(1, 2, figsize=figsize)
+
+        # This is a simplified version - in practice, you'd recalculate
+        # results for each parameter value
+        base_npv = [result["npv_savings"] for result in base_results]
+        base_irr = [result["irr"] for result in base_results]
+        names = [result["name"] for result in base_results]
+
+        # Simulate sensitivity (this would be replaced with actual recalculation)
+        for i, name in enumerate(names):
+            npv_sensitivity = [
+                base_npv[i]
+                * (
+                    1
+                    + 0.1
+                    * (p - parameter_range[len(parameter_range) // 2])
+                    / parameter_range[len(parameter_range) // 2]
+                )
+                for p in parameter_range
+            ]
+            irr_sensitivity = [
+                base_irr[i]
+                * (
+                    1
+                    + 0.05
+                    * (p - parameter_range[len(parameter_range) // 2])
+                    / parameter_range[len(parameter_range) // 2]
+                )
+                for p in parameter_range
+            ]
+
+            ax1.plot(parameter_range, npv_sensitivity, label=name, marker="o")
+            ax2.plot(parameter_range, irr_sensitivity, label=name, marker="s")
+
+        ax1.set_xlabel(f"{parameter_name}")
+        ax1.set_ylabel("NPV Savings ($)")
+        ax1.set_title(f"NPV Sensitivity to {parameter_name}")
+        ax1.legend()
+        ax1.grid(True, alpha=0.3)
+
+        ax2.set_xlabel(f"{parameter_name}")
+        ax2.set_ylabel("IRR (%)")
+        ax2.set_title(f"IRR Sensitivity to {parameter_name}")
+        ax2.legend()
+        ax2.grid(True, alpha=0.3)
+
+        plt.tight_layout()
+        return fig
+
+    def create_financial_summary_table(self, aerator_results, figsize=(14, 8)):
+        """Create a comprehensive financial summary table."""
+        fig, ax = plt.subplots(figsize=figsize)
+        ax.axis("tight")
+        ax.axis("off")
+
+        # Prepare data for table
+        headers = [
+            "Aerator",
+            "Total Cost\n($)",
+            "NPV Savings\n($)",
+            "ROI\n(%)",
+            "IRR\n(%)",
+            "Payback\n(years)",
+            "SAE",
+        ]
+
+        table_data = []
+        for result in aerator_results:
+            payback = result["payback_years"]
+            payback_str = f"{payback:.1f}" if payback != float("inf") else "∞"
+
+            row = [
+                result["name"],
+                f"${result['total_annual_cost']:,.0f}",
+                f"${result['npv_savings']:,.0f}",
+                f"{result['roi_percent']:.1f}%",
+                f"{result['irr']:.1f}%",
+                payback_str,
+                f"{result['sae']:.2f}",
+            ]
+            table_data.append(row)
+
+        # Create table
+        table = ax.table(
+            cellText=table_data,
+            colLabels=headers,
+            cellLoc="center",
+            loc="center",
+        )
+
+        # Style the table
+        table.auto_set_font_size(False)
+        table.set_fontsize(10)
+        table.scale(1.2, 1.5)
+
+        # Color header row
+        for i in range(len(headers)):
+            table[(0, i)].set_facecolor("#4ECDC4")
+            table[(0, i)].set_text_props(weight="bold", color="white")
+
+        # Color rows alternately
+        for i in range(1, len(table_data) + 1):
+            for j in range(len(headers)):
+                if i % 2 == 0:
+                    table[(i, j)].set_facecolor("#F0F0F0")
+
+        ax.set_title("Financial Analysis Summary", fontweight="bold", pad=20)
+
+        return fig
+
     def _create_npv_time_plot(self, ax):
         """Create NPV vs time horizon subplot."""
         years_range = np.arange(1, 21)

@@ -4,7 +4,7 @@
 THETA = 1.024
 HP_TO_KW = 0.745699872
 
-# Default aerator specifications
+# Default aerator specifications (enhanced with comprehensive data)
 DEFAULT_AERATOR_DATA = {
     "SOTR = 1.0": {
         "name": "Baseline Aerator",
@@ -26,6 +26,42 @@ DEFAULT_AERATOR_DATA = {
     },
 }
 
+# Sample aerator specifications for comparison
+SAMPLE_AERATORS = [
+    {
+        "name": "Standard Paddle Wheel",
+        "sotr": 1.9,
+        "power_hp": 3.0,
+        "cost": 700,
+        "durability": 2.0,
+        "maintenance": 65,
+    },
+    {
+        "name": "High-Efficiency Aerator",
+        "sotr": 3.5,
+        "power_hp": 3.0,
+        "cost": 900,
+        "durability": 5.0,
+        "maintenance": 50,
+    },
+    {
+        "name": "Mid-Range Aerator",
+        "sotr": 2.8,
+        "power_hp": 2.5,
+        "cost": 800,
+        "durability": 3.0,
+        "maintenance": 55,
+    },
+    {
+        "name": "Economy Aerator",
+        "sotr": 1.5,
+        "power_hp": 2.8,
+        "cost": 600,
+        "durability": 1.5,
+        "maintenance": 70,
+    },
+]
+
 # Financial analysis parameters
 FINANCIAL_PARAMS = {
     "inflation_rate": 0.025,
@@ -37,12 +73,44 @@ FINANCIAL_PARAMS = {
     "fixed_power_kw": 2.238,
 }
 
-# Farm parameters
+# Farm parameters (enhanced with comprehensive aquaculture data)
 FARM_PARAMS = {
     "tod": 5443.76,  # Total Oxygen Demand (kg O₂/hour)
     "farm_size_ha": 1000,
     "temp": 31.5,
     "aeration_hours_per_day": 8,
+    "shrimp_price": 5.0,  # $/kg
+    "culture_days": 120,
+    "shrimp_density_kg_m3": 0.333,
+    "pond_depth_m": 1.0,
+}
+
+# Sample farm configurations for testing
+SAMPLE_FARMS = {
+    "small_intensive": {
+        "tod": 2.73,
+        "farm_area_ha": 50,
+        "shrimp_price": 6.0,
+        "culture_days": 110,
+        "shrimp_density_kg_m3": 0.5,
+        "pond_depth_m": 1.2,
+    },
+    "large_extensive": {
+        "tod": 1.82,
+        "farm_area_ha": 2000,
+        "shrimp_price": 4.5,
+        "culture_days": 130,
+        "shrimp_density_kg_m3": 0.2,
+        "pond_depth_m": 0.8,
+    },
+    "medium_semi_intensive": {
+        "tod": 5.47,
+        "farm_area_ha": 500,
+        "shrimp_price": 5.5,
+        "culture_days": 120,
+        "shrimp_density_kg_m3": 0.35,
+        "pond_depth_m": 1.0,
+    },
 }
 
 # Visualization parameters
