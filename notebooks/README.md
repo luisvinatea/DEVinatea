@@ -22,4 +22,4 @@ Each notebook should:
 
 ## Current Notebooks
 
-1. **[Aerators Efficiency Analysis](aerators_relative-efficiency-profitability_financials.ipynb)**: Analysis of aerators for shrimp farming with cost optimization and financial modeling.
+1. **[Aerators Efficiency Analysis](aquaculture/aerators_relative-efficiency-profitability_financials.ipynb)**: Analysis of aerators for shrimp farming with cost optimization and financial modeling.
