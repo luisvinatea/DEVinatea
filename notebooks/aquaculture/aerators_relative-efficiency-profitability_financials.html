@@ -5,6 +5,27 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>aerators_relative-efficiency-profitability_financials</title>
     <link rel="stylesheet" href="../../assets/templates/journal/styles.css" />
+    <script
+      id="MathJax-script"
+      async
+      src="https://polyfill.io/v3/polyfill.min.js?features=es6"
+    ></script>
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [
+            ["$", "$"],
+            ["\\(", "\\)"],
+          ],
+          displayMath: [
+            ["$$", "$$"],
+            ["\\[", "\\]"],
+          ],
+        },
+      };
+    </script>
+  </head>
+  <body>
     <div class="title-page">
       <div class="paper-title">
         <h1>
@@ -351,785 +372,1097 @@
         <tr>
           <td>Aerator 6</td>
           <td>6.0</td>
-          <td>1500</td>
+          <p>$$OTR_T = (\text{SOTR} \times 0.5) \times \theta^{(T-20)}$$</p>
           <td>30</td>
           <td>4.0</td>
+          <p>
+            $$\text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} \quad
+            \text{(kg O}_2\text{/kWh)}$$
+          </p>
+          The baseline oxygen transfer capacity under standard conditions
+          (20°C, 0 DO, 1 atm), measured in kg O₂/hr (Kumar et al., 2020).
+          <h5>2.3.1.2 Temperature-Adjusted Oxygen Transfer Rate (OTRT)</h5>
+          <p>$$ OTR_T = (\text{SOTR} \times 0.5) \times \theta^{(T-20)} $$</p>
+          <p>
+            Where $\theta = 1.024$ (temperature correction factor) (Boyd,
+            2015).
+          </p>
+          <h5>2.3.1.3 Standard Aeration Efficiency (SAE)</h5>
+          <p>
+            $$ \text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} \quad ( kg \
+            O_2 / \text{kWh}) $$
+          </p>
+          <p>
+            Where $\text{Power (kW)} = \text{Power (HP)} \times 0.746$ (Kumar
+            et al., 2020).
+          </p>
+          <figure>
+            <img
+              alt="Aerator Performance Metrics"
+              src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_8_0.png"
+            />
+            <figcaption class="figure-title">
+              Figure 3: Aerator Performance Metrics
+            </figcaption>
+          </figure>
+          <div class="equation-block">
+            <h5>2.3.1.3 Standard Aeration Efficiency (SAE)</h5>
+            <p></p>
+            <p>
+              $$\text{Number of Aerators} = \left\lceil
+              \frac{\text{TOD}}{\text{OTR}_T} \right\rceil$$
+            </p>
+            Where $\text{Power (kW)} = \text{Power (HP)} \times 0.746$ (Kumar
+            et al., 2020).
+          </div>
+          <div class="equation-block">
+            <h5>2.3.1.4 Aerator Quantity Calculation</h5>
+            <p>
+              $$ \text{Number of Aerators} = \left\lceil \frac{TOD}{OTR_T}
+              \right\rceil $$
+            </p>
+          </div>
+          <figure>
+            <img
+              alt="Aerator Quantity Calculation"
+              src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_10_0.png"
+            />
+            <figcaption class="figure-title">
+              Figure 4: Aerator Quantity Calculation
+            </figcaption>
+          </figure>
+          <h5>2.3.2 Annual Revenue</h5>
+          <p></p>
+          <p>
+            $$\text{Total Initial Cost} = \text{Number of Aerators} \times
+            \text{Cost per Aerator}$$
+          </p>
+          Production depends on density, depth, area, and culture cycles
+          (Engle, 2010).
+          <h5>2.3.3 Initial Investment</h5>
+          <p>
+            $$ \text{Total Initial Cost} = \text{Number of Aerators} \times
+            \text{Cost per Aerator} $$
+          </p>
+          <h5>2.3.4 Annual Operating Costs</h5>
+          <ol>
+            <li>
+              <strong>Energy Cost:</strong> $\text{Power (kW)} \times
+              \text{Energy Cost (\$/kWh)} \times \text{Operating Hours per
+              Year} \times \text{Number of Aerators}$
+            </li>
+            <li>
+              <strong>Maintenance Cost:</strong> $\text{Maintenance Cost per
+              Unit per Year} \times \text{Number of Aerators}$
+            </li>
+            <li>
+              <strong>Replacement Cost (Annualized):</strong>
+              $(\text{Number of Aerators} \times \text{Cost per Aerator}) /
+              \text{Durability (years)}$
+            </li>
+          </ol>
+          <figure>
+            <img
+              alt="Aerator Performance Metrics"
+              src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_8_0.png"
+              style="width: 100%; height: auto"
+            />
+            <figcaption class="figure-title">
+              Figure 5: Aerator Performance Metrics
+            </figcaption>
+          </figure>
+          <h5>2.3.6 Net Present Value (NPV) of Savings</h5>
+          <p>
+            $$ \text{NPV}_{\text{Savings}} = \sum_{i=1}^{n} \frac{\text{Annual
+            Saving}_{\text{Year 1}} \times (1 + r_{\text{inflation}})^{i-1}}{(1
+            + r_{real})^i} $$
+          </p>
+          <p>
+            Where $r_{real} = \frac{1 + r_{nominal}}{1 + r_{inflation}} - 1$
+            (Intelligon, 2022; Susilowati et al., 2021).
+          </p>
+          <h5>2.3.7 Adapted Financial Metrics</h5>
+          <p></p>
+          <p>
+            $$0 = -\Delta I + \sum_{i=1}^{n} \frac{S_{\text{yr1}} \times (1 +
+            r_{\text{inflation}})^{i-1}}{(1 + \text{IRR})^i}$$
+          </p>
+          <h5>2.3.7.1 Internal Rate of Return (IRR)</h5>
+          <p>
+            $$ 0 = - \Delta I + \sum_{i=1}^{n} \frac{S_{yr1} \times (1 +
+            r_{\text{inflation}})^{i-1}}{(1 + \text{IRR})^i} $$
+          </p>
+          <p>
+            If $\Delta I \leq 0$, standard IRR is undefined; adapted IRR
+            anchors against baseline cost, scaled by SOTR ratio, capped at 100%
+            (Kumar et al., 2020).
+          </p>
+          <figure>
+            <img
+              alt="Aerator Performance Metrics"
+              src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_10_0.png"
+              style="width: 100%; height: auto"
+              class="img-fluid"
+            />
+            <figcaption class="figure-title">
+              <p>
+                $$\text{Payback Period} = \begin{cases}
+                \frac{0.01}{R_{\text{SOTR}}} & \text{if } \Delta I < 0 \text{
+                and } S_{\text{yr1}} > 0 \\ \frac{\Delta I}{S_{\text{yr1}}} &
+                \text{if } \Delta I \geq 0 \text{ and } S_{\text{yr1}} > 0 \\
+                \infty & \text{if } S_{\text{yr1}} \leq 0 \end{cases}$$
+              </p>
+              \text{if } \Delta I &lt; 0 \text{ and } S_{yr1} &gt; 0 \\
+              \frac{\Delta I}{S_{yr1}} &amp; \text{if } \Delta I \geq 0 \text{
+              and } S_{yr1} &gt; 0 \\ \infty &amp; \text{if } S_{yr1} \leq 0
+              \end{cases} $$
+              <p>
+                $$\text{ROI}_{\text{relative}} = \begin{cases} \min\left(
+                \left( \frac{S_{\text{yr1}}}{C_{\text{base}}} \times
+                R_{\text{SOTR}} \times (1 + F_{\text{cost\_sav}}) \right)
+                \times 100, R_{\text{SOTR}} \times 100 \right) & \text{if }
+                \Delta I < 0 \text{ and } S_{\text{yr1}} > 0 \\ \min\left(
+                \left( \frac{S_{\text{yr1}}}{C_{\text{base}}} \times
+                R_{\text{SOTR}} \right) \times 100, R_{\text{SOTR}} \times 100
+                \right) & \text{if } \Delta I = 0 \text{ and } S_{\text{yr1}} >
+                0 \\ \min\left( \left( \frac{S_{\text{yr1}}}{\Delta I} \right)
+                \times 100, R_{\text{SOTR}} \times 100 \right) & \text{if }
+                \Delta I > 0 \text{ and } S_{\text{yr1}} > 0 \\ 0 & \text{if }
+                S_{\text{yr1}} \leq 0 \text{ or } C_{\text{base}} \leq 0
+                \end{cases}$$
+              </p>
+              &gt; 0 \\ \min\left( \left( \frac{S_{yr1}}{\Delta I} \right)
+              \times 100, R_{SOTR} \times 100 \right) &amp; \text{if } \Delta I
+              &gt; 0 \text{ and } S_{yr1} &gt; 0 \\ 0 &amp; \text{if } S_{yr1}
+              \leq 0 \text{ or } C_{base} \leq 0 \end{cases} $$
+              <p>
+                Where $F_{cost\_sav} = \frac{|\Delta I|}{C_{base}}$. If $\Delta
+                I \leq 0$, relative ROI is based on savings relative to
+                baseline cost, scaled by SOTR ratio (Intelligon, 2022).
+              </p>
+              <p>
+                $$k_{\text{relative}} = \begin{cases} k_{\text{base}} \times (1
+                + F_{\text{cost\_sav}}) & \text{if } \Delta I < 0 \\
+                k_{\text{base}} & \text{if } \Delta I = 0 \\ k_{\text{base}}
+                \times F_{\text{cost}} & \text{if } \Delta I > 0 \\ 0 &
+                \text{if } \text{NPV}_{\text{sav}} \leq 0 \text{ or }
+                C_{\text{base}} \leq 0 \end{cases}$$
+              </p>
+              <p>
+                Where $k_{base} = \frac{NPV_{sav}}{C_{base}} \times R_{SOTR}$,
+                $F_{cost, eq} = \frac{|\Delta I|}{C_{base}}$, $F_{cost} =
+                \frac{C_{base}}{C_{base} + \Delta I}$ (Engle, 2010).
+              </p>
+              <figure>
+                <img
+                  alt="Aerator Performance Metrics"
+                  src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_12_0.png"
+                  style="width: 100%; height: auto"
+                  class="img-fluid"
+                />
+                <figcaption class="figure-title">
+                  Figure 7: Profitability Index (k) Calculation
+                </figcaption>
+                <p>
+                  $$P_{\text{eq}} = \begin{cases} \max\left(0, P_{\text{base}}
+                  \times R_{\text{SOTR}} \times \left(\frac{1}{1 +
+                  F_{\text{cost, eq}}}\right)\right) & \text{if }
+                  C_{\text{base}} > 0 \text{ and } P_{\text{base}} > 0 \\
+                  \max\left(0, P_{\text{base}} \times R_{\text{SOTR}}\right) &
+                  \text{if } C_{\text{base}} \leq 0 \text{ or } P_{\text{base}}
+                  \leq 0 \\ 0 & \text{if calculation prerequisites fail}
+                  \end{cases}$$
+                </p>
+                \leq 0 \\ 0 &amp; \text{if calculation prerequisites fail}
+                \end{cases} $$
+                <p>
+                  Where $P_{base} = \frac{(C_{\text{annual, non-winner}} -
+                  (C_{E, \text{winner}} + C_{M, \text{winner}})) \times
+                  D_{\text{winner}}}{N_{\text{winner}}}$, $F_{cost, eq} =
+                  \frac{P_{base}}{C_{base}}$ (Asche et al., 2021).
+                </p>
+                <figure>
+                  <img
+                    alt="Aerator Performance Metrics"
+                    src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_14_0.png"
+                    style="width: 100%; height: auto"
+                    class="img-fluid"
+                  />
+                  <figcaption class="figure-title">
+                    Figure 8: Equilibrium Price Calculation
+                  </figcaption>
+                  <p>
+                    $$\text{Opportunity Cost}_{\text{baseline}} =
+                    \text{NPV}_{\text{Savings (winner vs. baseline)}}$$
+                  </p>
+                  (winner vs. baseline)}} $$
+                  <p>
+                    Quantifies economic loss from less efficient equipment
+                    (Boyd &amp; Hanson, 2021; Susilowati et al., 2021).
+                  </p>
+
+                  <h2>AERATOR PERFORMANCE SUMMARY</h2>
+                  <table
+                    border="1"
+                    style="
+                      border-collapse: collapse;
+                      width: 100%;
+                      margin: 20px 0;
+                    "
+                  >
+                    <thead>
+                      <tr style="background-color: transparent">
+                        <th style="padding: 12px; text-align: left">
+                          Aerator
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          SOTR (kg O₂/hr)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Price ($)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Annual Production (kg O₂/year)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Cost Efficiency ($/kg O₂)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Cost per SOTR ($/SOTR)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          SOTR per Dollar
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 0
+                        </td>
+                        <td style="padding: 12px; text-align: center">1.2</td>
+                        <td style="padding: 12px; text-align: center">$500</td>
+                        <td style="padding: 12px; text-align: center">
+                          2,301
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $0.142
+                        </td>
+                        <td style="padding: 12px; text-align: center">$417</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0024
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 1
+                        </td>
+                        <td style="padding: 12px; text-align: center">1.0</td>
+                        <td style="padding: 12px; text-align: center">$600</td>
+                        <td style="padding: 12px; text-align: center">
+                          1,918
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $0.170
+                        </td>
+                        <td style="padding: 12px; text-align: center">$600</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0017
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 2
+                        </td>
+                        <td style="padding: 12px; text-align: center">1.5</td>
+                        <td style="padding: 12px; text-align: center">$700</td>
+                        <td style="padding: 12px; text-align: center">
+                          2,877
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $0.114
+                        </td>
+                        <td style="padding: 12px; text-align: center">$467</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0021
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 3
+                        </td>
+                        <td style="padding: 12px; text-align: center">2.0</td>
+                        <td style="padding: 12px; text-align: center">$800</td>
+                        <td style="padding: 12px; text-align: center">
+                          3,836
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $0.085
+                        </td>
+                        <td style="padding: 12px; text-align: center">$400</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0025
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 4
+                        </td>
+                        <td style="padding: 12px; text-align: center">3.0</td>
+                        <td style="padding: 12px; text-align: center">$900</td>
+                        <td style="padding: 12px; text-align: center">
+                          5,753
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $0.057
+                        </td>
+                        <td style="padding: 12px; text-align: center">$300</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0033
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 5
+                        </td>
+                        <td style="padding: 12px; text-align: center">4.5</td>
+                        <td style="padding: 12px; text-align: center">
+                          $1,200
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          8,630
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $0.038
+                        </td>
+                        <td style="padding: 12px; text-align: center">$267</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0037
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 6
+                        </td>
+                        <td style="padding: 12px; text-align: center">6.0</td>
+                        <td style="padding: 12px; text-align: center">
+                          $1,500
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          11,507
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $0.028
+                        </td>
+                        <td style="padding: 12px; text-align: center">$250</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0040
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h2>FARM-SCALE FINANCIAL ANALYSIS</h2>
+                  <p>
+                    <strong>Farm Parameters:</strong> 1,000 hectares, TOD:
+                    5,470 kg O₂/hr, Annual Revenue: $16.6M, Analysis Period: 10
+                    years
+                  </p>
+                  <table
+                    border="1"
+                    style="
+                      border-collapse: collapse;
+                      width: 100%;
+                      margin: 20px 0;
+                      table-layout: fixed;
+                    "
+                  >
+                    <thead>
+                      <tr style="background-color: transparent">
+                        <th style="padding: 8px; text-align: left; width: 12%">
+                          Aerator
+                        </th>
+                        <th
+                          style="padding: 8px; text-align: center; width: 10%"
+                        >
+                          Quantity Required
+                        </th>
+                        <th
+                          style="padding: 8px; text-align: center; width: 9%"
+                        >
+                          Units/Hectare
+                        </th>
+                        <th
+                          style="padding: 8px; text-align: center; width: 11%"
+                        >
+                          Initial Investment ($M)
+                        </th>
+                        <th
+                          style="padding: 8px; text-align: center; width: 11%"
+                        >
+                          Annual Energy Cost ($M)
+                        </th>
+                        <th
+                          style="padding: 8px; text-align: center; width: 11%"
+                        >
+                          Annual Maintenance ($M)
+                        </th>
+                        <th
+                          style="padding: 8px; text-align: center; width: 11%"
+                        >
+                          Annual Replacement ($M)
+                        </th>
+                        <th
+                          style="padding: 8px; text-align: center; width: 11%"
+                        >
+                          Total Annual Cost ($M)
+                        </th>
+                        <th
+                          style="padding: 8px; text-align: center; width: 10%"
+                        >
+                          Cost as % Revenue
+                        </th>
+                        <th
+                          style="padding: 8px; text-align: center; width: 14%"
+                        >
+                          NPV Opportunity Cost ($M)
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="padding: 8px; font-weight: bold">
+                          Aerator 0
+                        </td>
+                        <td style="padding: 8px; text-align: center">6,941</td>
+                        <td style="padding: 8px; text-align: center">6.94</td>
+                        <td style="padding: 8px; text-align: center">$3.47</td>
+                        <td style="padding: 8px; text-align: center">$2.27</td>
+                        <td style="padding: 8px; text-align: center">$0.59</td>
+                        <td style="padding: 8px; text-align: center">$1.74</td>
+                        <td style="padding: 8px; text-align: center">$4.59</td>
+                        <td style="padding: 8px; text-align: center">27.7%</td>
+                        <td style="padding: 8px; text-align: center">$28.6</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 8px; font-weight: bold">
+                          Aerator 1
+                        </td>
+                        <td style="padding: 8px; text-align: center">8,329</td>
+                        <td style="padding: 8px; text-align: center">8.33</td>
+                        <td style="padding: 8px; text-align: center">$5.00</td>
+                        <td style="padding: 8px; text-align: center">$2.72</td>
+                        <td style="padding: 8px; text-align: center">$0.58</td>
+                        <td style="padding: 8px; text-align: center">$2.00</td>
+                        <td style="padding: 8px; text-align: center">$5.30</td>
+                        <td style="padding: 8px; text-align: center">32.0%</td>
+                        <td style="padding: 8px; text-align: center">$34.3</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 8px; font-weight: bold">
+                          Aerator 2
+                        </td>
+                        <td style="padding: 8px; text-align: center">5,553</td>
+                        <td style="padding: 8px; text-align: center">5.55</td>
+                        <td style="padding: 8px; text-align: center">$3.89</td>
+                        <td style="padding: 8px; text-align: center">$1.81</td>
+                        <td style="padding: 8px; text-align: center">$0.50</td>
+                        <td style="padding: 8px; text-align: center">$1.94</td>
+                        <td style="padding: 8px; text-align: center">$4.26</td>
+                        <td style="padding: 8px; text-align: center">25.7%</td>
+                        <td style="padding: 8px; text-align: center">$25.9</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 8px; font-weight: bold">
+                          Aerator 3
+                        </td>
+                        <td style="padding: 8px; text-align: center">4,165</td>
+                        <td style="padding: 8px; text-align: center">4.17</td>
+                        <td style="padding: 8px; text-align: center">$3.33</td>
+                        <td style="padding: 8px; text-align: center">$1.36</td>
+                        <td style="padding: 8px; text-align: center">$0.17</td>
+                        <td style="padding: 8px; text-align: center">$1.11</td>
+                        <td style="padding: 8px; text-align: center">$2.64</td>
+                        <td style="padding: 8px; text-align: center">15.9%</td>
+                        <td style="padding: 8px; text-align: center">$13.0</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 8px; font-weight: bold">
+                          Aerator 4
+                        </td>
+                        <td style="padding: 8px; text-align: center">2,777</td>
+                        <td style="padding: 8px; text-align: center">2.78</td>
+                        <td style="padding: 8px; text-align: center">$2.50</td>
+                        <td style="padding: 8px; text-align: center">$0.91</td>
+                        <td style="padding: 8px; text-align: center">$0.14</td>
+                        <td style="padding: 8px; text-align: center">$0.42</td>
+                        <td style="padding: 8px; text-align: center">$1.46</td>
+                        <td style="padding: 8px; text-align: center">8.8%</td>
+                        <td style="padding: 8px; text-align: center">$3.6</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 8px; font-weight: bold">
+                          Aerator 5
+                        </td>
+                        <td style="padding: 8px; text-align: center">1,851</td>
+                        <td style="padding: 8px; text-align: center">1.85</td>
+                        <td style="padding: 8px; text-align: center">$2.22</td>
+                        <td style="padding: 8px; text-align: center">$0.60</td>
+                        <td style="padding: 8px; text-align: center">$0.04</td>
+                        <td style="padding: 8px; text-align: center">$0.63</td>
+                        <td style="padding: 8px; text-align: center">$1.28</td>
+                        <td style="padding: 8px; text-align: center">7.7%</td>
+                        <td style="padding: 8px; text-align: center">$2.1</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 8px; font-weight: bold">
+                          Aerator 6
+                        </td>
+                        <td style="padding: 8px; text-align: center">1,389</td>
+                        <td style="padding: 8px; text-align: center">1.39</td>
+                        <td style="padding: 8px; text-align: center">$2.08</td>
+                        <td style="padding: 8px; text-align: center">$0.45</td>
+                        <td style="padding: 8px; text-align: center">$0.04</td>
+                        <td style="padding: 8px; text-align: center">$0.52</td>
+                        <td style="padding: 8px; text-align: center">$1.02</td>
+                        <td style="padding: 8px; text-align: center">6.1%</td>
+                        <td style="padding: 8px; text-align: center">$0.0</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h2>FINANCIAL METRICS ANALYSIS</h2>
+                  <p>
+                    <strong>Advanced Financial Indicators:</strong> IRR, ROI,
+                    Payback Period, Profitability Index, and Equilibrium Price
+                  </p>
+                  <table
+                    border="1"
+                    style="
+                      border-collapse: collapse;
+                      width: 100%;
+                      margin: 20px 0;
+                    "
+                  >
+                    <thead>
+                      <tr style="background-color: transparent">
+                        <th style="padding: 12px; text-align: left">
+                          Aerator
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Internal Rate of Return (%)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Return on Investment (%)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Payback Period (Years)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Profitability Index (k)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Standard Aeration Efficiency (kg O₂/kWh)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Temperature-Adjusted OTR (kg O₂/hr)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Total Power Required (HP)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          HP per Hectare
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 0
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          51.58%
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          20.00%
+                        </td>
+                        <td style="padding: 12px; text-align: center">1.94</td>
+                        <td style="padding: 12px; text-align: center">2.38</td>
+                        <td style="padding: 12px; text-align: center">0.72</td>
+                        <td style="padding: 12px; text-align: center">0.79</td>
+                        <td style="padding: 12px; text-align: center">
+                          20,823
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          20.82
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 1
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          24.52%
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          16.67%
+                        </td>
+                        <td style="padding: 12px; text-align: center">4.08</td>
+                        <td style="padding: 12px; text-align: center">1.45</td>
+                        <td style="padding: 12px; text-align: center">0.60</td>
+                        <td style="padding: 12px; text-align: center">0.66</td>
+                        <td style="padding: 12px; text-align: center">
+                          24,987
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          24.99
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 2
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          44.93%
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          25.00%
+                        </td>
+                        <td style="padding: 12px; text-align: center">2.23</td>
+                        <td style="padding: 12px; text-align: center">2.30</td>
+                        <td style="padding: 12px; text-align: center">0.90</td>
+                        <td style="padding: 12px; text-align: center">0.99</td>
+                        <td style="padding: 12px; text-align: center">
+                          16,659
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          16.66
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 3
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          43.29%
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          33.33%
+                        </td>
+                        <td style="padding: 12px; text-align: center">2.31</td>
+                        <td style="padding: 12px; text-align: center">1.91</td>
+                        <td style="padding: 12px; text-align: center">1.20</td>
+                        <td style="padding: 12px; text-align: center">1.31</td>
+                        <td style="padding: 12px; text-align: center">
+                          12,495
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          12.49
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 4
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          53.64%
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          21.96%
+                        </td>
+                        <td style="padding: 12px; text-align: center">1.86</td>
+                        <td style="padding: 12px; text-align: center">1.25</td>
+                        <td style="padding: 12px; text-align: center">1.80</td>
+                        <td style="padding: 12px; text-align: center">1.97</td>
+                        <td style="padding: 12px; text-align: center">
+                          8,331
+                        </td>
+                        <td style="padding: 12px; text-align: center">8.33</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 5
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          141.64%
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          19.19%
+                        </td>
+                        <td style="padding: 12px; text-align: center">0.71</td>
+                        <td style="padding: 12px; text-align: center">1.35</td>
+                        <td style="padding: 12px; text-align: center">2.70</td>
+                        <td style="padding: 12px; text-align: center">2.96</td>
+                        <td style="padding: 12px; text-align: center">
+                          5,553
+                        </td>
+                        <td style="padding: 12px; text-align: center">5.55</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 6
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          205.76%
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          100.00%
+                        </td>
+                        <td style="padding: 12px; text-align: center">0.49</td>
+                        <td style="padding: 12px; text-align: center">8.23</td>
+                        <td style="padding: 12px; text-align: center">3.59</td>
+                        <td style="padding: 12px; text-align: center">3.94</td>
+                        <td style="padding: 12px; text-align: center">
+                          4,167
+                        </td>
+                        <td style="padding: 12px; text-align: center">4.17</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h2>EQUILIBRIUM PRICE ANALYSIS</h2>
+                  <p>
+                    <strong>Market Equilibrium:</strong> Theoretical prices
+                    based on Walras's General Equilibrium Theory (relative to
+                    Aerator 6 as winner)
+                  </p>
+                  <table
+                    border="1"
+                    style="
+                      border-collapse: collapse;
+                      width: 100%;
+                      margin: 20px 0;
+                    "
+                  >
+                    <thead>
+                      <tr style="background-color: transparent">
+                        <th style="padding: 12px; text-align: left">
+                          Aerator
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Actual Price ($)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Equilibrium Price ($)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Price Difference ($)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Market Status
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Durability (Years)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Annual Maintenance ($/unit)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Cost-Effectiveness Rating
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 0
+                        </td>
+                        <td style="padding: 12px; text-align: center">$500</td>
+                        <td style="padding: 12px; text-align: center">
+                          $2346.78
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $1846.78
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          Underpriced
+                        </td>
+                        <td style="padding: 12px; text-align: center">2.0</td>
+                        <td style="padding: 12px; text-align: center">$85</td>
+                        <td style="padding: 12px; text-align: center">Fair</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 1
+                        </td>
+                        <td style="padding: 12px; text-align: center">$600</td>
+                        <td style="padding: 12px; text-align: center">
+                          $2292.40
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $1692.40
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          Underpriced
+                        </td>
+                        <td style="padding: 12px; text-align: center">2.5</td>
+                        <td style="padding: 12px; text-align: center">$70</td>
+                        <td style="padding: 12px; text-align: center">Poor</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 2
+                        </td>
+                        <td style="padding: 12px; text-align: center">$700</td>
+                        <td style="padding: 12px; text-align: center">
+                          $2694.58
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $1994.58
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          Underpriced
+                        </td>
+                        <td style="padding: 12px; text-align: center">2.0</td>
+                        <td style="padding: 12px; text-align: center">$90</td>
+                        <td style="padding: 12px; text-align: center">Fair</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 3
+                        </td>
+                        <td style="padding: 12px; text-align: center">$800</td>
+                        <td style="padding: 12px; text-align: center">
+                          $2050.71
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $1250.71
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          Underpriced
+                        </td>
+                        <td style="padding: 12px; text-align: center">3.0</td>
+                        <td style="padding: 12px; text-align: center">$40</td>
+                        <td style="padding: 12px; text-align: center">Good</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 4
+                        </td>
+                        <td style="padding: 12px; text-align: center">$900</td>
+                        <td style="padding: 12px; text-align: center">
+                          $1390.88
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $490.88
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          Underpriced
+                        </td>
+                        <td style="padding: 12px; text-align: center">6.0</td>
+                        <td style="padding: 12px; text-align: center">$50</td>
+                        <td style="padding: 12px; text-align: center">
+                          Excellent
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 5
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $1,200
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $1684.87
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $484.87
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          Underpriced
+                        </td>
+                        <td style="padding: 12px; text-align: center">3.5</td>
+                        <td style="padding: 12px; text-align: center">$20</td>
+                        <td style="padding: 12px; text-align: center">
+                          Excellent
+                        </td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 6
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $1,500
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $1500.00
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          $0.00
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          Winner (Reference)
+                        </td>
+                        <td style="padding: 12px; text-align: center">4.0</td>
+                        <td style="padding: 12px; text-align: center">$30</td>
+                        <td style="padding: 12px; text-align: center">
+                          Excellent
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                  <h2>MARGINAL ANALYSIS</h2>
+                  <table
+                    border="1"
+                    style="
+                      border-collapse: collapse;
+                      width: 100%;
+                      margin: 20px 0;
+                    "
+                  >
+                    <thead>
+                      <tr style="background-color: transparent">
+                        <th style="padding: 12px; text-align: left">
+                          Upgrade Path
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Additional Investment ($)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          SOTR Gain (kg O₂/hr)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Production Gain (kg O₂/year)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Aerator Count Change
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          SOTR per Dollar
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Production per Dollar (kg O₂/year/$)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Derivative (Slope)
+                        </th>
+                        <th style="padding: 12px; text-align: center">
+                          Cumulative Gain (kg O₂)
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 0 → to → Aerator 1
+                        </td>
+                        <td style="padding: 12px; text-align: center">$100</td>
+                        <td style="padding: 12px; text-align: center">-0.2</td>
+                        <td style="padding: 12px; text-align: center">-384</td>
+                        <td style="padding: 12px; text-align: center">
+                          1,388
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          -0.0020
+                        </td>
+                        <td style="padding: 12px; text-align: center">-3.8</td>
+                        <td style="padding: 12px; text-align: center">
+                          -0.0020
+                        </td>
+                        <td style="padding: 12px; text-align: center">-10</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 1 → to → Aerator 2
+                        </td>
+                        <td style="padding: 12px; text-align: center">$100</td>
+                        <td style="padding: 12px; text-align: center">0.5</td>
+                        <td style="padding: 12px; text-align: center">959</td>
+                        <td style="padding: 12px; text-align: center">
+                          -2,776
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0050
+                        </td>
+                        <td style="padding: 12px; text-align: center">9.6</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0050
+                        </td>
+                        <td style="padding: 12px; text-align: center">-5</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 2 → to → Aerator 3
+                        </td>
+                        <td style="padding: 12px; text-align: center">$100</td>
+                        <td style="padding: 12px; text-align: center">0.5</td>
+                        <td style="padding: 12px; text-align: center">959</td>
+                        <td style="padding: 12px; text-align: center">
+                          -1,388
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0050
+                        </td>
+                        <td style="padding: 12px; text-align: center">9.6</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0050
+                        </td>
+                        <td style="padding: 12px; text-align: center">50</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 3 → to → Aerator 4
+                        </td>
+                        <td style="padding: 12px; text-align: center">$100</td>
+                        <td style="padding: 12px; text-align: center">1.0</td>
+                        <td style="padding: 12px; text-align: center">
+                          1,918
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          -1,388
+                        </td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0100
+                        </td>
+                        <td style="padding: 12px; text-align: center">19.2</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0100
+                        </td>
+                        <td style="padding: 12px; text-align: center">180</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 4 → to → Aerator 5
+                        </td>
+                        <td style="padding: 12px; text-align: center">$300</td>
+                        <td style="padding: 12px; text-align: center">1.5</td>
+                        <td style="padding: 12px; text-align: center">
+                          2,877
+                        </td>
+                        <td style="padding: 12px; text-align: center">-926</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0050
+                        </td>
+                        <td style="padding: 12px; text-align: center">9.6</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0050
+                        </td>
+                        <td style="padding: 12px; text-align: center">945</td>
+                      </tr>
+                      <tr>
+                        <td style="padding: 12px; font-weight: bold">
+                          Aerator 5 → to → Aerator 6
+                        </td>
+                        <td style="padding: 12px; text-align: center">$300</td>
+                        <td style="padding: 12px; text-align: center">1.5</td>
+                        <td style="padding: 12px; text-align: center">
+                          2,877
+                        </td>
+                        <td style="padding: 12px; text-align: center">-462</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0050
+                        </td>
+                        <td style="padding: 12px; text-align: center">9.6</td>
+                        <td style="padding: 12px; text-align: center">
+                          0.0050
+                        </td>
+                        <td style="padding: 12px; text-align: center">2160</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </figure>
+              </figure>
+            </figcaption>
+          </figure>
         </tr>
       </table>
-      <h5>2.3.1.1 Standard Oxygen Transfer Rate (SOTR)</h5>
-      <p>
-        The baseline oxygen transfer capacity under standard conditions (20°C,
-        0 DO, 1 atm), measured in kg O₂/hr (Kumar et al., 2020).
-      </p>
     </div>
-    <h5>2.3.1.2 Temperature-Adjusted Oxygen Transfer Rate (OTRT)</h5>
-    <p>$$ OTR_T = (\text{SOTR} \times 0.5) \times \theta^{(T-20)} $$</p>
-    <p>Where $\theta = 1.024$ (temperature correction factor) (Boyd, 2015).</p>
-    <h5>2.3.1.3 Standard Aeration Efficiency (SAE)</h5>
-    <p>
-      $$ \text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} \quad ( kg \ O_2 /
-      \text{kWh}) $$
-    </p>
-    <p>
-      Where $\text{Power (kW)} = \text{Power (HP)} \times 0.746$ (Kumar et al.,
-      2020).
-    </p>
-    <figure>
-      <img
-        alt="Aerator Performance Metrics"
-        src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_4_0.png"
-        style="width: 100%; height: auto"
-        class="img-fluid"
-      />
-      <figcaption class="figure-title">
-        Figure 3: Aerator Performance Metrics
-      </figcaption>
-    </figure>
-    <div class="equation-block">
-      <h5>2.3.1.3 Standard Aeration Efficiency (SAE)</h5>
-      <p>
-        $$ \text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} \quad ( kg \ O_2
-        / \text{kWh}) $$
-      </p>
-      <p>
-        Where $\text{Power (kW)} = \text{Power (HP)} \times 0.746$ (Kumar et
-        al., 2020).
-      </p>
-    </div>
-    <div class="equation-block">
-      <h5>2.3.1.4 Aerator Quantity Calculation</h5>
-      <p>
-        $$ \text{Number of Aerators} = \left\lceil \frac{TOD}{OTR_T}
-        \right\rceil $$
-      </p>
-    </div>
-    <figure>
-      <img
-        alt="Aerator Quantity Calculation"
-        src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_6_0.png"
-        style="width: 100%; height: auto"
-        class="img-fluid"
-      />
-      <figcaption class="figure-title">
-        Figure 4: Aerator Quantity Calculation
-      </figcaption>
-    </figure>
-    <h5>2.3.2 Annual Revenue</h5>
-    <p>
-      $$ \text{Annual Revenue} = \text{Total Annual Production (kg)} \times
-      \text{Shrimp Price (\$/kg)} $$
-    </p>
-    <p>
-      Production depends on density, depth, area, and culture cycles (Engle,
-      2010).
-    </p>
-    <h5>2.3.3 Initial Investment</h5>
-    <p>
-      $$ \text{Total Initial Cost} = \text{Number of Aerators} \times
-      \text{Cost per Aerator} $$
-    </p>
-    <h5>2.3.4 Annual Operating Costs</h5>
-    <ol>
-      <li>
-        <strong>Energy Cost:</strong> $\text{Power (kW)} \times \text{Energy
-        Cost (\$/kWh)} \times \text{Operating Hours per Year} \times
-        \text{Number of Aerators}$
-      </li>
-      <li>
-        <strong>Maintenance Cost:</strong> $\text{Maintenance Cost per Unit per
-        Year} \times \text{Number of Aerators}$
-      </li>
-      <li>
-        <strong>Replacement Cost (Annualized):</strong>
-        $(\text{Number of Aerators} \times \text{Cost per Aerator}) /
-        \text{Durability (years)}$
-      </li>
-    </ol>
-    <figure>
-      <img
-        alt="Aerator Performance Metrics"
-        src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_8_0.png"
-        style="width: 100%; height: auto"
-        class="img-fluid"
-      />
-      <figcaption class="figure-title">
-        Figure 5: Annual Operating Costs Calculation
-      </figcaption>
-    </figure>
-    <h5>2.3.6 Net Present Value (NPV) of Savings</h5>
-    <p>
-      $$ \text{NPV}_{\text{Savings}} = \sum_{i=1}^{n} \frac{\text{Annual
-      Saving}_{\text{Year 1}} \times (1 + r_{\text{inflation}})^{i-1}}{(1 +
-      r_{real})^i} $$
-    </p>
-    <p>
-      Where $r_{real} = \frac{1 + r_{nominal}}{1 + r_{inflation}} - 1$
-      (Intelligon, 2022; Susilowati et al., 2021).
-    </p>
-    <h5>2.3.7 Adapted Financial Metrics</h5>
-    <p>
-      Standard metrics (IRR, Payback, ROI, k) were adapted due to violations of
-      positive incremental investment assumptions in aquaculture equipment
-      comparison (Engle, 2010; Kumar et al., 2020).
-    </p>
-    <h5>2.3.7.1 Internal Rate of Return (IRR)</h5>
-    <p>
-      $$ 0 = - \Delta I + \sum_{i=1}^{n} \frac{S_{yr1} \times (1 +
-      r_{\text{inflation}})^{i-1}}{(1 + \text{IRR})^i} $$
-    </p>
-    <p>
-      If $\Delta I \leq 0$, standard IRR is undefined; adapted IRR anchors
-      against baseline cost, scaled by SOTR ratio, capped at 100% (Kumar et
-      al., 2020).
-    </p>
-    <figure>
-      <img
-        alt="Aerator Performance Metrics"
-        src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_10_0.png"
-        style="width: 100%; height: auto"
-        class="img-fluid"
-      />
-      <figcaption class="figure-title">
-        Figure 6: Internal Rate of Return (IRR) Calculation
-      </figcaption>
-    </figure>
-    <h5>2.3.7.2 Payback Period</h5>
-    <p>
-      $$ \text{Payback Period} = \begin{cases} \frac{0.01}{R_{SOTR}} &amp;
-      \text{if } \Delta I &lt; 0 \text{ and } S_{yr1} &gt; 0 \\ \frac{\Delta
-      I}{S_{yr1}} &amp; \text{if } \Delta I \geq 0 \text{ and } S_{yr1} &gt; 0
-      \\ \infty &amp; \text{if } S_{yr1} \leq 0 \end{cases} $$
-    </p>
-    <p>
-      If $\Delta I \leq 0$, a small value divided by SOTR ratio indicates
-      immediate benefit (Susilowati et al., 2021).
-    </p>
-    <h5>2.3.7.3 Return on Investment (ROI)</h5>
-    <p>
-      $$ \text{ROI}_{\text{relative}} = \begin{cases} \min\left( \left(
-      \frac{S_{yr1}}{C_{base}} \times R_{SOTR} \times (1 + F_{cost\_sav})
-      \right) \times 100, R_{SOTR} \times 100 \right) &amp; \text{if } \Delta I
-      &lt; 0 \text{ and } S_{yr1} &gt; 0 \\ \min\left( \left(
-      \frac{S_{yr1}}{C_{base}} \times R_{SOTR} \right) \times 100, R_{SOTR}
-      \times 100 \right) &amp; \text{if } \Delta I = 0 \text{ and } S_{yr1}
-      &gt; 0 \\ \min\left( \left( \frac{S_{yr1}}{\Delta I} \right) \times 100,
-      R_{SOTR} \times 100 \right) &amp; \text{if } \Delta I &gt; 0 \text{ and }
-      S_{yr1} &gt; 0 \\ 0 &amp; \text{if } S_{yr1} \leq 0 \text{ or } C_{base}
-      \leq 0 \end{cases} $$
-    </p>
-    <p>
-      Where $F_{cost\_sav} = \frac{|\Delta I|}{C_{base}}$. If $\Delta I \leq
-      0$, relative ROI is based on savings relative to baseline cost, scaled by
-      SOTR ratio (Intelligon, 2022).
-    </p>
-    <h5>2.3.7.4 Profitability Index (k)</h5>
-    <p>
-      $$ k_{\text{relative}} = \begin{cases} k_{base} \times (1 +
-      F_{cost\_sav}) &amp; \text{if } \Delta I &lt; 0 \\ k_{base} &amp;
-      \text{if } \Delta I = 0 \\ k_{base} \times F_{cost} &amp; \text{if }
-      \Delta I &gt; 0 \\ 0 &amp; \text{if } NPV_{sav} \leq 0 \text{ or }
-      C_{base} \leq 0 \end{cases} $$
-    </p>
-    <p>
-      Where $k_{base} = \frac{NPV_{sav}}{C_{base}} \times R_{SOTR}$, $F_{cost,
-      eq} = \frac{|\Delta I|}{C_{base}}$, $F_{cost} = \frac{C_{base}}{C_{base}
-      + \Delta I}$ (Engle, 2010).
-    </p>
-    <figure>
-      <img
-        alt="Aerator Performance Metrics"
-        src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_12_0.png"
-        style="width: 100%; height: auto"
-        class="img-fluid"
-      />
-      <figcaption class="figure-title">
-        Figure 7: Profitability Index (k) Calculation
-      </figcaption>
-    </figure>
-    <h5>2.3.7.6 Equilibrium Price</h5>
-    <p>
-      $$ P_{eq} = \begin{cases} \max\left(0, P_{base} \times R_{SOTR} \times
-      \left(\frac{1}{1 + F_{cost, eq}}\right)\right) &amp; \text{if } C_{base}
-      &gt; 0 \text{ and } P_{base} &gt; 0 \\ \max\left(0, P_{base} \times
-      R_{SOTR}\right) &amp; \text{if } C_{base} \leq 0 \text{ or } P_{base}
-      \leq 0 \\ 0 &amp; \text{if calculation prerequisites fail} \end{cases} $$
-    </p>
-    <p>
-      Where $P_{base} = \frac{(C_{\text{annual, non-winner}} - (C_{E,
-      \text{winner}} + C_{M, \text{winner}})) \times
-      D_{\text{winner}}}{N_{\text{winner}}}$, $F_{cost, eq} =
-      \frac{P_{base}}{C_{base}}$ (Asche et al., 2021).
-    </p>
-    <figure>
-      <img
-        alt="Aerator Performance Metrics"
-        src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_14_0.png"
-        style="width: 100%; height: auto"
-        class="img-fluid"
-      />
-      <figcaption class="figure-title">
-        Figure 8: Equilibrium Price Calculation
-      </figcaption>
-    </figure>
-    <h5>2.3.7.5 Opportunity Cost</h5>
-    <p>
-      $$ \text{Opportunity Cost}_{\text{baseline}} = \text{NPV}_{\text{Savings
-      (winner vs. baseline)}} $$
-    </p>
-    <p>
-      Quantifies economic loss from less efficient equipment (Boyd &amp;
-      Hanson, 2021; Susilowati et al., 2021).
-    </p>
-
-    <h2>AERATOR PERFORMANCE SUMMARY</h2>
-    <table
-      border="1"
-      style="border-collapse: collapse; width: 100%; margin: 20px 0"
-    >
-      <thead>
-        <tr style="background-color: transparent">
-          <th style="padding: 12px; text-align: left">Aerator</th>
-          <th style="padding: 12px; text-align: center">SOTR (kg O₂/hr)</th>
-          <th style="padding: 12px; text-align: center">Price ($)</th>
-          <th style="padding: 12px; text-align: center">
-            Annual Production (kg O₂/year)
-          </th>
-          <th style="padding: 12px; text-align: center">
-            Cost Efficiency ($/kg O₂)
-          </th>
-          <th style="padding: 12px; text-align: center">
-            Cost per SOTR ($/SOTR)
-          </th>
-          <th style="padding: 12px; text-align: center">SOTR per Dollar</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 0</td>
-          <td style="padding: 12px; text-align: center">1.2</td>
-          <td style="padding: 12px; text-align: center">$500</td>
-          <td style="padding: 12px; text-align: center">2,301</td>
-          <td style="padding: 12px; text-align: center">$0.142</td>
-          <td style="padding: 12px; text-align: center">$417</td>
-          <td style="padding: 12px; text-align: center">0.0024</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 1</td>
-          <td style="padding: 12px; text-align: center">1.0</td>
-          <td style="padding: 12px; text-align: center">$600</td>
-          <td style="padding: 12px; text-align: center">1,918</td>
-          <td style="padding: 12px; text-align: center">$0.170</td>
-          <td style="padding: 12px; text-align: center">$600</td>
-          <td style="padding: 12px; text-align: center">0.0017</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 2</td>
-          <td style="padding: 12px; text-align: center">1.5</td>
-          <td style="padding: 12px; text-align: center">$700</td>
-          <td style="padding: 12px; text-align: center">2,877</td>
-          <td style="padding: 12px; text-align: center">$0.114</td>
-          <td style="padding: 12px; text-align: center">$467</td>
-          <td style="padding: 12px; text-align: center">0.0021</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 3</td>
-          <td style="padding: 12px; text-align: center">2.0</td>
-          <td style="padding: 12px; text-align: center">$800</td>
-          <td style="padding: 12px; text-align: center">3,836</td>
-          <td style="padding: 12px; text-align: center">$0.085</td>
-          <td style="padding: 12px; text-align: center">$400</td>
-          <td style="padding: 12px; text-align: center">0.0025</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 4</td>
-          <td style="padding: 12px; text-align: center">3.0</td>
-          <td style="padding: 12px; text-align: center">$900</td>
-          <td style="padding: 12px; text-align: center">5,753</td>
-          <td style="padding: 12px; text-align: center">$0.057</td>
-          <td style="padding: 12px; text-align: center">$300</td>
-          <td style="padding: 12px; text-align: center">0.0033</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 5</td>
-          <td style="padding: 12px; text-align: center">4.5</td>
-          <td style="padding: 12px; text-align: center">$1,200</td>
-          <td style="padding: 12px; text-align: center">8,630</td>
-          <td style="padding: 12px; text-align: center">$0.038</td>
-          <td style="padding: 12px; text-align: center">$267</td>
-          <td style="padding: 12px; text-align: center">0.0037</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 6</td>
-          <td style="padding: 12px; text-align: center">6.0</td>
-          <td style="padding: 12px; text-align: center">$1,500</td>
-          <td style="padding: 12px; text-align: center">11,507</td>
-          <td style="padding: 12px; text-align: center">$0.028</td>
-          <td style="padding: 12px; text-align: center">$250</td>
-          <td style="padding: 12px; text-align: center">0.0040</td>
-        </tr>
-      </tbody>
-    </table>
-    <h2>FARM-SCALE FINANCIAL ANALYSIS</h2>
-    <p>
-      <strong>Farm Parameters:</strong> 1,000 hectares, TOD: 5,470 kg O₂/hr,
-      Annual Revenue: $16.6M, Analysis Period: 10 years
-    </p>
-    <table
-      border="1"
-      style="
-        border-collapse: collapse;
-        width: 100%;
-        margin: 20px 0;
-        table-layout: fixed;
-      "
-    >
-      <thead>
-        <tr style="background-color: transparent">
-          <th style="padding: 8px; text-align: left; width: 12%">Aerator</th>
-          <th style="padding: 8px; text-align: center; width: 10%">
-            Quantity Required
-          </th>
-          <th style="padding: 8px; text-align: center; width: 9%">
-            Units/Hectare
-          </th>
-          <th style="padding: 8px; text-align: center; width: 11%">
-            Initial Investment ($M)
-          </th>
-          <th style="padding: 8px; text-align: center; width: 11%">
-            Annual Energy Cost ($M)
-          </th>
-          <th style="padding: 8px; text-align: center; width: 11%">
-            Annual Maintenance ($M)
-          </th>
-          <th style="padding: 8px; text-align: center; width: 11%">
-            Annual Replacement ($M)
-          </th>
-          <th style="padding: 8px; text-align: center; width: 11%">
-            Total Annual Cost ($M)
-          </th>
-          <th style="padding: 8px; text-align: center; width: 10%">
-            Cost as % Revenue
-          </th>
-          <th style="padding: 8px; text-align: center; width: 14%">
-            NPV Opportunity Cost ($M)
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="padding: 8px; font-weight: bold">Aerator 0</td>
-          <td style="padding: 8px; text-align: center">6,941</td>
-          <td style="padding: 8px; text-align: center">6.94</td>
-          <td style="padding: 8px; text-align: center">$3.47</td>
-          <td style="padding: 8px; text-align: center">$2.27</td>
-          <td style="padding: 8px; text-align: center">$0.59</td>
-          <td style="padding: 8px; text-align: center">$1.74</td>
-          <td style="padding: 8px; text-align: center">$4.59</td>
-          <td style="padding: 8px; text-align: center">27.7%</td>
-          <td style="padding: 8px; text-align: center">$28.6</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; font-weight: bold">Aerator 1</td>
-          <td style="padding: 8px; text-align: center">8,329</td>
-          <td style="padding: 8px; text-align: center">8.33</td>
-          <td style="padding: 8px; text-align: center">$5.00</td>
-          <td style="padding: 8px; text-align: center">$2.72</td>
-          <td style="padding: 8px; text-align: center">$0.58</td>
-          <td style="padding: 8px; text-align: center">$2.00</td>
-          <td style="padding: 8px; text-align: center">$5.30</td>
-          <td style="padding: 8px; text-align: center">32.0%</td>
-          <td style="padding: 8px; text-align: center">$34.3</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; font-weight: bold">Aerator 2</td>
-          <td style="padding: 8px; text-align: center">5,553</td>
-          <td style="padding: 8px; text-align: center">5.55</td>
-          <td style="padding: 8px; text-align: center">$3.89</td>
-          <td style="padding: 8px; text-align: center">$1.81</td>
-          <td style="padding: 8px; text-align: center">$0.50</td>
-          <td style="padding: 8px; text-align: center">$1.94</td>
-          <td style="padding: 8px; text-align: center">$4.26</td>
-          <td style="padding: 8px; text-align: center">25.7%</td>
-          <td style="padding: 8px; text-align: center">$25.9</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; font-weight: bold">Aerator 3</td>
-          <td style="padding: 8px; text-align: center">4,165</td>
-          <td style="padding: 8px; text-align: center">4.17</td>
-          <td style="padding: 8px; text-align: center">$3.33</td>
-          <td style="padding: 8px; text-align: center">$1.36</td>
-          <td style="padding: 8px; text-align: center">$0.17</td>
-          <td style="padding: 8px; text-align: center">$1.11</td>
-          <td style="padding: 8px; text-align: center">$2.64</td>
-          <td style="padding: 8px; text-align: center">15.9%</td>
-          <td style="padding: 8px; text-align: center">$13.0</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; font-weight: bold">Aerator 4</td>
-          <td style="padding: 8px; text-align: center">2,777</td>
-          <td style="padding: 8px; text-align: center">2.78</td>
-          <td style="padding: 8px; text-align: center">$2.50</td>
-          <td style="padding: 8px; text-align: center">$0.91</td>
-          <td style="padding: 8px; text-align: center">$0.14</td>
-          <td style="padding: 8px; text-align: center">$0.42</td>
-          <td style="padding: 8px; text-align: center">$1.46</td>
-          <td style="padding: 8px; text-align: center">8.8%</td>
-          <td style="padding: 8px; text-align: center">$3.6</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; font-weight: bold">Aerator 5</td>
-          <td style="padding: 8px; text-align: center">1,851</td>
-          <td style="padding: 8px; text-align: center">1.85</td>
-          <td style="padding: 8px; text-align: center">$2.22</td>
-          <td style="padding: 8px; text-align: center">$0.60</td>
-          <td style="padding: 8px; text-align: center">$0.04</td>
-          <td style="padding: 8px; text-align: center">$0.63</td>
-          <td style="padding: 8px; text-align: center">$1.28</td>
-          <td style="padding: 8px; text-align: center">7.7%</td>
-          <td style="padding: 8px; text-align: center">$2.1</td>
-        </tr>
-        <tr>
-          <td style="padding: 8px; font-weight: bold">Aerator 6</td>
-          <td style="padding: 8px; text-align: center">1,389</td>
-          <td style="padding: 8px; text-align: center">1.39</td>
-          <td style="padding: 8px; text-align: center">$2.08</td>
-          <td style="padding: 8px; text-align: center">$0.45</td>
-          <td style="padding: 8px; text-align: center">$0.04</td>
-          <td style="padding: 8px; text-align: center">$0.52</td>
-          <td style="padding: 8px; text-align: center">$1.02</td>
-          <td style="padding: 8px; text-align: center">6.1%</td>
-          <td style="padding: 8px; text-align: center">$0.0</td>
-        </tr>
-      </tbody>
-    </table>
-    <h2>FINANCIAL METRICS ANALYSIS</h2>
-    <p>
-      <strong>Advanced Financial Indicators:</strong> IRR, ROI, Payback Period,
-      Profitability Index, and Equilibrium Price
-    </p>
-    <table
-      border="1"
-      style="border-collapse: collapse; width: 100%; margin: 20px 0"
-    >
-      <thead>
-        <tr style="background-color: transparent">
-          <th style="padding: 12px; text-align: left">Aerator</th>
-          <th style="padding: 12px; text-align: center">
-            Internal Rate of Return (%)
-          </th>
-          <th style="padding: 12px; text-align: center">
-            Return on Investment (%)
-          </th>
-          <th style="padding: 12px; text-align: center">
-            Payback Period (Years)
-          </th>
-          <th style="padding: 12px; text-align: center">
-            Profitability Index (k)
-          </th>
-          <th style="padding: 12px; text-align: center">
-            Standard Aeration Efficiency (kg O₂/kWh)
-          </th>
-          <th style="padding: 12px; text-align: center">
-            Temperature-Adjusted OTR (kg O₂/hr)
-          </th>
-          <th style="padding: 12px; text-align: center">
-            Total Power Required (HP)
-          </th>
-          <th style="padding: 12px; text-align: center">HP per Hectare</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 0</td>
-          <td style="padding: 12px; text-align: center">51.58%</td>
-          <td style="padding: 12px; text-align: center">20.00%</td>
-          <td style="padding: 12px; text-align: center">1.94</td>
-          <td style="padding: 12px; text-align: center">2.38</td>
-          <td style="padding: 12px; text-align: center">0.72</td>
-          <td style="padding: 12px; text-align: center">0.79</td>
-          <td style="padding: 12px; text-align: center">20,823</td>
-          <td style="padding: 12px; text-align: center">20.82</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 1</td>
-          <td style="padding: 12px; text-align: center">24.52%</td>
-          <td style="padding: 12px; text-align: center">16.67%</td>
-          <td style="padding: 12px; text-align: center">4.08</td>
-          <td style="padding: 12px; text-align: center">1.45</td>
-          <td style="padding: 12px; text-align: center">0.60</td>
-          <td style="padding: 12px; text-align: center">0.66</td>
-          <td style="padding: 12px; text-align: center">24,987</td>
-          <td style="padding: 12px; text-align: center">24.99</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 2</td>
-          <td style="padding: 12px; text-align: center">44.93%</td>
-          <td style="padding: 12px; text-align: center">25.00%</td>
-          <td style="padding: 12px; text-align: center">2.23</td>
-          <td style="padding: 12px; text-align: center">2.30</td>
-          <td style="padding: 12px; text-align: center">0.90</td>
-          <td style="padding: 12px; text-align: center">0.99</td>
-          <td style="padding: 12px; text-align: center">16,659</td>
-          <td style="padding: 12px; text-align: center">16.66</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 3</td>
-          <td style="padding: 12px; text-align: center">43.29%</td>
-          <td style="padding: 12px; text-align: center">33.33%</td>
-          <td style="padding: 12px; text-align: center">2.31</td>
-          <td style="padding: 12px; text-align: center">1.91</td>
-          <td style="padding: 12px; text-align: center">1.20</td>
-          <td style="padding: 12px; text-align: center">1.31</td>
-          <td style="padding: 12px; text-align: center">12,495</td>
-          <td style="padding: 12px; text-align: center">12.49</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 4</td>
-          <td style="padding: 12px; text-align: center">53.64%</td>
-          <td style="padding: 12px; text-align: center">21.96%</td>
-          <td style="padding: 12px; text-align: center">1.86</td>
-          <td style="padding: 12px; text-align: center">1.25</td>
-          <td style="padding: 12px; text-align: center">1.80</td>
-          <td style="padding: 12px; text-align: center">1.97</td>
-          <td style="padding: 12px; text-align: center">8,331</td>
-          <td style="padding: 12px; text-align: center">8.33</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 5</td>
-          <td style="padding: 12px; text-align: center">141.64%</td>
-          <td style="padding: 12px; text-align: center">19.19%</td>
-          <td style="padding: 12px; text-align: center">0.71</td>
-          <td style="padding: 12px; text-align: center">1.35</td>
-          <td style="padding: 12px; text-align: center">2.70</td>
-          <td style="padding: 12px; text-align: center">2.96</td>
-          <td style="padding: 12px; text-align: center">5,553</td>
-          <td style="padding: 12px; text-align: center">5.55</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 6</td>
-          <td style="padding: 12px; text-align: center">205.76%</td>
-          <td style="padding: 12px; text-align: center">100.00%</td>
-          <td style="padding: 12px; text-align: center">0.49</td>
-          <td style="padding: 12px; text-align: center">8.23</td>
-          <td style="padding: 12px; text-align: center">3.59</td>
-          <td style="padding: 12px; text-align: center">3.94</td>
-          <td style="padding: 12px; text-align: center">4,167</td>
-          <td style="padding: 12px; text-align: center">4.17</td>
-        </tr>
-      </tbody>
-    </table>
-    <h2>EQUILIBRIUM PRICE ANALYSIS</h2>
-    <p>
-      <strong>Market Equilibrium:</strong> Theoretical prices based on Walras's
-      General Equilibrium Theory (relative to Aerator 6 as winner)
-    </p>
-    <table
-      border="1"
-      style="border-collapse: collapse; width: 100%; margin: 20px 0"
-    >
-      <thead>
-        <tr style="background-color: transparent">
-          <th style="padding: 12px; text-align: left">Aerator</th>
-          <th style="padding: 12px; text-align: center">Actual Price ($)</th>
-          <th style="padding: 12px; text-align: center">
-            Equilibrium Price ($)
-          </th>
-          <th style="padding: 12px; text-align: center">
-            Price Difference ($)
-          </th>
-          <th style="padding: 12px; text-align: center">Market Status</th>
-          <th style="padding: 12px; text-align: center">Durability (Years)</th>
-          <th style="padding: 12px; text-align: center">
-            Annual Maintenance ($/unit)
-          </th>
-          <th style="padding: 12px; text-align: center">
-            Cost-Effectiveness Rating
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 0</td>
-          <td style="padding: 12px; text-align: center">$500</td>
-          <td style="padding: 12px; text-align: center">$2346.78</td>
-          <td style="padding: 12px; text-align: center">$1846.78</td>
-          <td style="padding: 12px; text-align: center">Underpriced</td>
-          <td style="padding: 12px; text-align: center">2.0</td>
-          <td style="padding: 12px; text-align: center">$85</td>
-          <td style="padding: 12px; text-align: center">Fair</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 1</td>
-          <td style="padding: 12px; text-align: center">$600</td>
-          <td style="padding: 12px; text-align: center">$2292.40</td>
-          <td style="padding: 12px; text-align: center">$1692.40</td>
-          <td style="padding: 12px; text-align: center">Underpriced</td>
-          <td style="padding: 12px; text-align: center">2.5</td>
-          <td style="padding: 12px; text-align: center">$70</td>
-          <td style="padding: 12px; text-align: center">Poor</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 2</td>
-          <td style="padding: 12px; text-align: center">$700</td>
-          <td style="padding: 12px; text-align: center">$2694.58</td>
-          <td style="padding: 12px; text-align: center">$1994.58</td>
-          <td style="padding: 12px; text-align: center">Underpriced</td>
-          <td style="padding: 12px; text-align: center">2.0</td>
-          <td style="padding: 12px; text-align: center">$90</td>
-          <td style="padding: 12px; text-align: center">Fair</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 3</td>
-          <td style="padding: 12px; text-align: center">$800</td>
-          <td style="padding: 12px; text-align: center">$2050.71</td>
-          <td style="padding: 12px; text-align: center">$1250.71</td>
-          <td style="padding: 12px; text-align: center">Underpriced</td>
-          <td style="padding: 12px; text-align: center">3.0</td>
-          <td style="padding: 12px; text-align: center">$40</td>
-          <td style="padding: 12px; text-align: center">Good</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 4</td>
-          <td style="padding: 12px; text-align: center">$900</td>
-          <td style="padding: 12px; text-align: center">$1390.88</td>
-          <td style="padding: 12px; text-align: center">$490.88</td>
-          <td style="padding: 12px; text-align: center">Underpriced</td>
-          <td style="padding: 12px; text-align: center">6.0</td>
-          <td style="padding: 12px; text-align: center">$50</td>
-          <td style="padding: 12px; text-align: center">Excellent</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 5</td>
-          <td style="padding: 12px; text-align: center">$1,200</td>
-          <td style="padding: 12px; text-align: center">$1684.87</td>
-          <td style="padding: 12px; text-align: center">$484.87</td>
-          <td style="padding: 12px; text-align: center">Underpriced</td>
-          <td style="padding: 12px; text-align: center">3.5</td>
-          <td style="padding: 12px; text-align: center">$20</td>
-          <td style="padding: 12px; text-align: center">Excellent</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">Aerator 6</td>
-          <td style="padding: 12px; text-align: center">$1,500</td>
-          <td style="padding: 12px; text-align: center">$1500.00</td>
-          <td style="padding: 12px; text-align: center">$0.00</td>
-          <td style="padding: 12px; text-align: center">Winner (Reference)</td>
-          <td style="padding: 12px; text-align: center">4.0</td>
-          <td style="padding: 12px; text-align: center">$30</td>
-          <td style="padding: 12px; text-align: center">Excellent</td>
-        </tr>
-      </tbody>
-    </table>
-    <h2>MARGINAL ANALYSIS</h2>
-    <table
-      border="1"
-      style="border-collapse: collapse; width: 100%; margin: 20px 0"
-    >
-      <thead>
-        <tr style="background-color: transparent">
-          <th style="padding: 12px; text-align: left">Upgrade Path</th>
-          <th style="padding: 12px; text-align: center">
-            Additional Investment ($)
-          </th>
-          <th style="padding: 12px; text-align: center">
-            SOTR Gain (kg O₂/hr)
-          </th>
-          <th style="padding: 12px; text-align: center">
-            Production Gain (kg O₂/year)
-          </th>
-          <th style="padding: 12px; text-align: center">
-            Aerator Count Change
-          </th>
-          <th style="padding: 12px; text-align: center">SOTR per Dollar</th>
-          <th style="padding: 12px; text-align: center">
-            Production per Dollar (kg O₂/year/$)
-          </th>
-          <th style="padding: 12px; text-align: center">Derivative (Slope)</th>
-          <th style="padding: 12px; text-align: center">
-            Cumulative Gain (kg O₂)
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">
-            Aerator 0 → to → Aerator 1
-          </td>
-          <td style="padding: 12px; text-align: center">$100</td>
-          <td style="padding: 12px; text-align: center">-0.2</td>
-          <td style="padding: 12px; text-align: center">-384</td>
-          <td style="padding: 12px; text-align: center">1,388</td>
-          <td style="padding: 12px; text-align: center">-0.0020</td>
-          <td style="padding: 12px; text-align: center">-3.8</td>
-          <td style="padding: 12px; text-align: center">-0.0020</td>
-          <td style="padding: 12px; text-align: center">-10</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">
-            Aerator 1 → to → Aerator 2
-          </td>
-          <td style="padding: 12px; text-align: center">$100</td>
-          <td style="padding: 12px; text-align: center">0.5</td>
-          <td style="padding: 12px; text-align: center">959</td>
-          <td style="padding: 12px; text-align: center">-2,776</td>
-          <td style="padding: 12px; text-align: center">0.0050</td>
-          <td style="padding: 12px; text-align: center">9.6</td>
-          <td style="padding: 12px; text-align: center">0.0050</td>
-          <td style="padding: 12px; text-align: center">-5</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">
-            Aerator 2 → to → Aerator 3
-          </td>
-          <td style="padding: 12px; text-align: center">$100</td>
-          <td style="padding: 12px; text-align: center">0.5</td>
-          <td style="padding: 12px; text-align: center">959</td>
-          <td style="padding: 12px; text-align: center">-1,388</td>
-          <td style="padding: 12px; text-align: center">0.0050</td>
-          <td style="padding: 12px; text-align: center">9.6</td>
-          <td style="padding: 12px; text-align: center">0.0050</td>
-          <td style="padding: 12px; text-align: center">50</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">
-            Aerator 3 → to → Aerator 4
-          </td>
-          <td style="padding: 12px; text-align: center">$100</td>
-          <td style="padding: 12px; text-align: center">1.0</td>
-          <td style="padding: 12px; text-align: center">1,918</td>
-          <td style="padding: 12px; text-align: center">-1,388</td>
-          <td style="padding: 12px; text-align: center">0.0100</td>
-          <td style="padding: 12px; text-align: center">19.2</td>
-          <td style="padding: 12px; text-align: center">0.0100</td>
-          <td style="padding: 12px; text-align: center">180</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">
-            Aerator 4 → to → Aerator 5
-          </td>
-          <td style="padding: 12px; text-align: center">$300</td>
-          <td style="padding: 12px; text-align: center">1.5</td>
-          <td style="padding: 12px; text-align: center">2,877</td>
-          <td style="padding: 12px; text-align: center">-926</td>
-          <td style="padding: 12px; text-align: center">0.0050</td>
-          <td style="padding: 12px; text-align: center">9.6</td>
-          <td style="padding: 12px; text-align: center">0.0050</td>
-          <td style="padding: 12px; text-align: center">945</td>
-        </tr>
-        <tr>
-          <td style="padding: 12px; font-weight: bold">
-            Aerator 5 → to → Aerator 6
-          </td>
-          <td style="padding: 12px; text-align: center">$300</td>
-          <td style="padding: 12px; text-align: center">1.5</td>
-          <td style="padding: 12px; text-align: center">2,877</td>
-          <td style="padding: 12px; text-align: center">-462</td>
-          <td style="padding: 12px; text-align: center">0.0050</td>
-          <td style="padding: 12px; text-align: center">9.6</td>
-          <td style="padding: 12px; text-align: center">0.0050</td>
-          <td style="padding: 12px; text-align: center">2160</td>
-        </tr>
-      </tbody>
-    </table>
-  </head>
+  </body>
 </html>
