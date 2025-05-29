@@ -1,0 +1,784 @@
+<style>
+@import url("../../assets/templates/journal/styles.css");
+</style>
+
+<div class="title-page">
+    <div class="paper-title">
+        <h1>Analysis of Aerators for Shrimp Farming: Cost Optimization and the Real Cost of "Cheap"</h1>
+    </div>   
+<div class="author-info">
+    Luis Paulo Vinatea Barberena
+</div>
+
+<div class="affiliation">
+    BarberNode
+</div>
+
+<div class="author-note">
+    <p><strong>Correspondence:</strong> luisvinatea@icloud.com, +55 48 99221-9675</p>
+    <p><strong>Address:</strong> Servidao das Caranhas, 22, Barra da Lagoa, Florianopolis, SC, Brazil, 88061635</p>
+    <p><strong>Date:</strong> 2025-05-02</p>
+</div>
+</div>
+
+<div class="abstract">
+    <h2>Abstract</h2>
+    <p>Aerator selection is a critical economic decision in shrimp farming, often complicated by the trade-off between initial cost and long-term operational efficiency. This paper presents an analysis comparing two aerator options within the context of a specific shrimp farm, integrating Léon Walras's General Equilibrium Theory and Friedrich von Wieser's concept of Opportunity Cost. The study evaluates aerators based on updated technical performance metrics (including Temperature-Adjusted Oxygen Transfer Rate - OTRT and Standard Aeration Efficiency - SAE) derived from the farm's Total Oxygen Demand (TOD) and detailed, adapted financial indicators (Net Present Value - NPV, Internal Rate of Return - IRR, Payback Period, Return on Investment - ROI, Profitability Index - k, Opportunity Cost, and Equilibrium Price) tailored for equipment comparison. Results from the specific case study demonstrate that prioritizing higher efficiency (Aerator 2) over lower initial unitary cost (Aerator 1) leads to substantial long-term savings, a significantly positive NPV, high interpreted ROI and IRR, rapid payback, and a considerable opportunity cost associated with choosing the less efficient option. The analysis underscores the importance of applying robust economic principles and adapted technical-financial assessments for optimizing operational costs and ensuring financial sustainability in shrimp aquaculture (Boyd & Hanson, 2021; The Fish Site, 2021).</p>
+
+<div class="keywords">
+    <span class="keywords-title">Keywords:</span> Shrimp Farming, Aquaculture Economics, Aerator Efficiency, Opportunity Cost, Cost Optimization, Mathematical Modeling, Financial Analysis, Equipment Comparison Metrics
+</div>
+
+</div>
+<br>
+<div class="supplementary-material">
+    <h2>Highlights</h2>
+    <ul>
+        <li>Higher efficiency aerators reduce long-term costs in shrimp farming.</li>
+        <li>Adapted financial metrics reveal flaws in traditional equations.</li>
+        <li>Opportunity cost of low-efficiency aerators exceeds $14M in NPV.</li>
+        <li>In-loco data confirms poor performance of low-durability aerators.</li>
+    </ul>
+</div>
+
+<h2>1. Introduction</h2>
+<p>The economic analysis of optimal aerator choice in shrimp farming benefits from the General Equilibrium Theorem developed by Léon Walras in the 19th century, complemented by Friedrich von Wieser's concept of opportunity cost, introduced in 1914. Walras proposed a framework to understand how interconnected markets reach simultaneous equilibrium, where supply equals demand through relative prices (Walras, 1874). This approach is useful for analyzing complex systems like shrimp farms, where multiple "markets" (oxygen, energy, shrimp, operating costs) interact to maximize profitability (Asche et al., 2021). Opportunity cost measures the value of the best alternative forgone, evaluating aerator options (Boyd & Hanson, 2021).</p>
+
+<h3>1.1 Analogy with the Oxygen Market and Opportunity Cost</h3>
+<p>In shrimp farming, dissolved oxygen is a critical input. An "internal oxygen market" can be conceptualized where demand (Total Oxygen Demand, TOD) is driven by shrimp and microbial needs, and supply depends on aerators' Temperature-Adjusted Oxygen Transfer Rate (OTRT). Aerators interact with energy, maintenance, and replacement markets, connecting to the external shrimp market. Walras's Theorem suggests equilibrium when these markets adjust simultaneously. Choosing a cheaper, less efficient aerator incurs an opportunity cost equal to the net present value of savings forgone by not selecting the more efficient option (Boyd & Hanson, 2021; Susilowati et al., 2021).</p>
+
+<h3>1.2 The Cake Recipe: Why Assuming HP per Pound of Shrimp is Incorrect</h3>
+<p>Assuming a fixed horsepower (HP)-per-production ratio is erroneous. Shrimp production depends on multiple factors (dissolved oxygen, temperature, salinity, density). Aerator HP does not directly equate to oxygen supply; OTR_T is critical. Fixed HP ratios ignore interdependencies, leading to inefficient investments in low-OTR_T aerators and significant opportunity costs (Boyd, 2015; Responsible Seafood Advocate, 2022).</p>
+
+<h3>1.3 Original Equation of Léon Walras's General Equilibrium</h3>
+<p>Walras formalized general equilibrium with supply/demand equations, subject to Walras's Law (excess demands sum to zero). Equilibrium prices are found via "tâtonnement" (Walras, 1874). In shrimp farming, equilibrium involves optimizing aerator costs, meeting TOD, maximizing profits, and accounting for opportunity cost (Asche et al., 2021; Valderrama et al., 2023).</p>
+
+<h3>1.3 Context Overview</h3>
+<p>This paper analyzes several aerators in a specific shrimp farm context, integrating updated technical performance metrics and adapted financial indicators. The study evaluates aerators based on Standard Oxygen Transfer Rate (SOTR), to fulfill a 1000 hectares Shrimp Farm for a given Total Oxygen Demand (TOD), and derives financial indicators tailored for equipment comparison. Results demonstrate that prioritizing higher efficiency leads to substantial long-term savings, a significantly positive NPV, high interpreted ROI and IRR, rapid payback, and a considerable opportunity cost associated with choosing the less efficient option.</p>
+
+<h3>1.4 Aerator Market in Ecuador</h3>
+<p>The Ecuadorian aerator market is characterized by a wide range of options, from low-cost, low-efficiency models to high-performance, high-cost alternatives. The choice of aerator significantly impacts operational costs and shrimp yield. The market is influenced by factors such as energy prices, shrimp prices, and technological advancements in aeration systems. Understanding the trade-offs between initial investment and long-term operational efficiency is crucial for shrimp farmers aiming to optimize their production systems (Boyd & Hanson, 2021; The Fish Site, 2021).</p>
+<p>By analysing aerator imports from Ecuador's customs database, in the period of 2021 to 2024, we can gain insights on market trends, pricing strategies, and the competitive landscape of aerator suppliers in the region.</p>
+<p>After performing data manipulation techniques, we can observe the following patterns:</p>
+
+<figure>
+    <img src="../plots/aerator_imports_2021_2024.png" alt="Aerator Market in Ecuador" class="img-fluid">
+    <figcaption class="figure-title">Figure 1: Aerator Imports in Ecuador (2021-2024)</figcaption>
+</figure>
+
+<p>The dashboard on aerator imports (2021-2024) reveals some insights across multiple dimensions. China dominates as the top country of origin with $15.5M (FOB), followed by Taiwan at $4.1M, while generic brands lead at $17.9M (CIF), far ahead of Wangfa at $3.2M. In terms of importers, Area Andina S.A. handles the highest volume at 647K units, with Crustáceos y Peces de Sudamerica as the second-largest at 137K units. Product descriptions show aerators of 12-16 pallet units leading at 548K kg (net weight), indicating a focus on bulk shipments. Ningbo is the top embarkation city with 398K units (ad valorem), and Agencia Maritima Global moves 708K units (freight value), highlighting their logistical prominence. Consignee directions peak with La Puntilla (Satellite) at 211K units (insured value), and the generic model category tops brokered models at 154K units, reflecting market preferences for cost savings.</p>
+
+<figure>
+    <img src="../plots/aerator_fob_price.png" alt="Aerator Unitary Prices in Ecuador" class="img-fluid">
+    <figcaption class="figure-title">Figure 2: Aerator Unitary Prices in Ecuador (2021-2024)</figcaption>
+</figure>
+
+<p>The aerator prices chart (2021-2024) shows a highly skewed distribution of FOB unit prices, with a mean of $812.96, indicating that most brands have prices below this value, but a long tail extends to $1200+. Acquaeco has the highest average unit price at $1258.27, followed by Walker at $1108.55, suggesting they cater to a premium segment. In contrast, Zuma offers the lowest average at $500.80, followed by WangFa at $546.36, positioning them as budget options. Other brands like Hongteng ($673.33), and Aerex ($802.14) cluster closer to the mean, while Wenling ($961.32) and Annex ($1021.79) sit between the mid-range and high-end, reflecting a diverse pricing landscape in the aerator market.</p>
+
+<h2>2. Case Study: Comparing Different Aerator Options for an Ecuadorian Shrimp Farm</h2>
+
+<h3>2.1 Case Study Overview and Parameters</h3>
+
+<p>This case study examines an intensive shrimp farm in Ecuador with 1,000 hectares of production area. The farm operates at a tropical water temperature of 31.5°C, which significantly affects oxygen transfer efficiency through the established temperature correction factor (θ = 1.024). The farm's Total Oxygen Demand (TOD) is calculated at 5.47 kg O₂/hr/hectare, resulting in a substantial total requirement of 5,470 kg O₂/hr across the entire operation.</p>
+
+<p>For this analysis, we compare seven different paddlewheel aerator models (Aerator 0 through Aerator 6), all operating at the standard power rating of 3 HP (2.238 kW). These aerators exhibit varying performance characteristics:</p>
+
+<table>
+<tr><th>Parameter</th><th>Value</th></tr>
+<tr><td>Production scale</td><td>1,000 hectares</td></tr>
+<tr><td>Operating temperature</td><td>31.5°C</td></tr>
+<tr><td>Energy cost</td><td>$0.05/kWh</td></tr>
+<tr><td>Daily aeration</td><td>8 hours</td></tr>
+<tr><td>Shrimp density</td><td>0.33 kg/m³</td></tr>
+<tr><td>Culture period</td><td>120 days</td></tr>
+<tr><td>Shrimp market price</td><td>$5.00/kg</td></tr>
+<tr><td>Annual discount rate</td><td>10%</td></tr>
+<tr><td>Annual inflation rate</td><td>3%</td></tr>
+<tr><td>Analysis timeframe</td><td>10 years</td></tr>
+</table>
+
+<h3>2.2 Aerator Investment Options</h3>
+
+<p>The aerators under consideration present a classic economic dilemma: less expensive models with lower efficiency versus higher-priced models with superior oxygen transfer rates. While Aerator 0 has the lowest initial cost ($500), it does not offer the lowest operational cost. Aerator 1, despite being more expensive ($600), delivers lower SOTR (1.0 kg O₂/hr vs. 1.2 kg O₂/hr). The most efficient option, Aerator 6, transfers 6.0 kg O₂/hr but costs $1,500 per unit.</p>
+
+<p>The economic challenge is compounded by differences in durability (ranging from 2.0 to 6.0 years) and maintenance costs (from $20 to $90 per unit annually). This creates complex trade-offs between initial investment and long-term operational expenses. The total number of aerators required varies dramatically between options due to their different oxygen transfer capacities, directly impacting both initial investment and ongoing operational costs.</p>
+
+<table>
+<tr><th>Aerator Model</th><th>SOTR (kg O₂/hr)</th><th>Purchase Price ($)</th><th>Maintenance Cost ($/year)</th><th>Durability (years)</th></tr>
+<tr><td>Aerator 0</td><td>1.2</td><td>500</td><td>85</td><td>2.0</td></tr>
+<tr><td>Aerator 1</td><td>1.0</td><td>600</td><td>70</td><td>2.5</td></tr>
+<tr><td>Aerator 2</td><td>1.5</td><td>700</td><td>90</td><td>2.0</td></tr>
+<tr><td>Aerator 3</td><td>2.0</td><td>800</td><td>40</td><td>3.0</td></tr>
+<tr><td>Aerator 4</td><td>3.0</td><td>900</td><td>50</td><td>6.0</td></tr>
+<tr><td>Aerator 5</td><td>4.5</td><td>1200</td><td>20</td><td>3.5</td></tr>
+<tr><td>Aerator 6</td><td>6.0</td><td>1500</td><td>30</td><td>4.0</td></tr>
+</table>
+
+<h5>2.3. Standard Oxygen Transfer Rate (SOTR)</h3>
+<p>The baseline oxygen transfer capacity under standard conditions (20°C, 0 DO, 1 atm), measured in kg O₂/hr (Kumar et al., 2020).</p>
+</div>
+
+<h5>2.3.1.2 Temperature-Adjusted Oxygen Transfer Rate (OTRT)</h5>
+
+$$
+OTR_T = (\text{SOTR} \times 0.5) \times \theta^{(T-20)}
+$$
+
+Where $\theta = 1.024$ (temperature correction factor) (Boyd, 2015).
+
+<h5>2.3.1.3 Standard Aeration Efficiency (SAE)</h5>
+
+$$
+\text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} \quad ( kg \ O_2 / \text{kWh})
+$$
+
+Where $\text{Power (kW)} = \text{Power (HP)} \times 0.746$ (Kumar et al., 2020).
+
+<figure>
+<img src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_4_0.png" alt="Purchase Price vs SOTR" class="img-fluid">
+<figcaption class="figure-title">Figure 3: Purchase Price vs SOTR</figcaption>
+</figure>
+
+</div>
+<div class="equation-block">
+<h5>2.3.1.3 Standard Aeration Efficiency (SAE)</h5>
+
+$$
+\text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} \quad ( kg \ O_2 / \text{kWh})
+$$
+
+Where $\text{Power (kW)} = \text{Power (HP)} \times 0.746$ (Kumar et al., 2020).
+
+</div>
+
+<div class="equation-block">
+<h5>2.3.1.4 Aerator Quantity Calculation</h5>
+
+$$
+\text{Number of Aerators} = \left\lceil \frac{TOD}{OTR_T} \right\rceil
+$$
+
+</div>
+
+<figure>
+<img src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_6_0.png" alt="Aerator Quantity Calculation" class="img-fluid">
+<figcaption class="figure-title">Figure 4: Aerator Quantity Calculation</figcaption>
+</figure>
+
+<h5>2.3.2 Annual Revenue</h5>
+
+$$
+\text{Annual Revenue} = \text{Total Annual Production (kg)} \times \text{Shrimp Price (\$/kg)}
+$$
+
+Production depends on density, depth, area, and culture cycles (Engle, 2010).
+
+<h5>2.3.3 Initial Investment</h5>
+
+$$
+\text{Total Initial Cost} = \text{Number of Aerators} \times \text{Cost per Aerator}
+$$
+
+<h5>2.3.4 Annual Operating Costs</h5>
+
+1. **Energy Cost:** $\text{Power (kW)} \times \text{Energy Cost (\$/kWh)} \times \text{Operating Hours per Year} \times \text{Number of Aerators}$
+2. **Maintenance Cost:** $\text{Maintenance Cost per Unit per Year} \times \text{Number of Aerators}$
+3. **Replacement Cost (Annualized):** $(\text{Number of Aerators} \times \text{Cost per Aerator}) / \text{Durability (years)}$
+
+<figure>
+<img src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_8_0.png" alt="Annual Operating Costs" class="img-fluid">
+<figcaption class="figure-title">Figure 5: Annual Operating Costs</figcaption>
+</figure>
+
+<h5>2.3.6 Net Present Value (NPV) of Savings</h5>
+
+$$
+\text{NPV}_{\text{Savings}} = \sum_{i=1}^{n} \frac{\text{Annual Saving}_{\text{Year 1}} \times (1 + r_{\text{inflation}})^{i-1}}{(1 + r_{real})^i}
+$$
+
+Where $r_{real} = \frac{1 + r_{nominal}}{1 + r_{inflation}} - 1$ (Intelligon, 2022; Susilowati et al., 2021).
+
+<h5>2.3.7 Adapted Financial Metrics</h5>
+
+Standard metrics (IRR, Payback, ROI, k) were adapted due to violations of positive incremental investment assumptions in aquaculture equipment comparison (Engle, 2010; Kumar et al., 2020).
+
+<h5>2.3.7.1 Internal Rate of Return (IRR)</h5>
+
+$$
+0 = - \Delta I + \sum_{i=1}^{n} \frac{S_{yr1} \times (1 + r_{\text{inflation}})^{i-1}}{(1 + \text{IRR})^i}
+$$
+
+If $\Delta I \leq 0$, standard IRR is undefined; adapted IRR anchors against baseline cost, scaled by SOTR ratio, capped at 100% (Kumar et al., 2020).
+
+<figure>
+<img src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_10_0.png" alt="Adapted IRR" class="img-fluid">
+<figcaption class="figure-title">Figure 6: Adapted IRR</figcaption>
+</figure>
+
+<h5>2.3.7.2 Payback Period</h5>
+
+$$
+\text{Payback Period} =
+\begin{cases}
+\frac{0.01}{R_{SOTR}} & \text{if } \Delta I < 0 \text{ and } S_{yr1} > 0 \\
+\frac{\Delta I}{S_{yr1}} & \text{if } \Delta I \geq 0 \text{ and } S_{yr1} > 0 \\
+\infty & \text{if } S_{yr1} \leq 0
+\end{cases}
+$$
+
+If $\Delta I \leq 0$, a small value divided by SOTR ratio indicates immediate benefit (Susilowati et al., 2021).
+
+<h5>2.3.7.3 Return on Investment (ROI)</h5>
+
+$$
+\text{ROI}_{\text{relative}} =
+\begin{cases}
+\min\left( \left( \frac{S_{yr1}}{C_{base}} \times R_{SOTR} \times (1 + F_{cost\_sav}) \right) \times 100, R_{SOTR} \times 100 \right) & \text{if } \Delta I < 0 \text{ and } S_{yr1} > 0 \\
+\min\left( \left( \frac{S_{yr1}}{C_{base}} \times R_{SOTR} \right) \times 100, R_{SOTR} \times 100 \right) & \text{if } \Delta I = 0 \text{ and } S_{yr1} > 0 \\
+\min\left( \left( \frac{S_{yr1}}{\Delta I} \right) \times 100, R_{SOTR} \times 100 \right) & \text{if } \Delta I > 0 \text{ and } S_{yr1} > 0 \\
+0 & \text{if } S_{yr1} \leq 0 \text{ or } C_{base} \leq 0
+\end{cases}
+$$
+
+Where $F_{cost\_sav} = \frac{|\Delta I|}{C_{base}}$. If $\Delta I \leq 0$, relative ROI is based on savings relative to baseline cost, scaled by SOTR ratio (Intelligon, 2022).
+
+<h5>2.3.7.4 Profitability Index (k)</h5>
+
+$$
+k_{\text{relative}} =
+\begin{cases}
+k_{base} \times (1 + F_{cost\_sav}) & \text{if } \Delta I < 0 \\
+k_{base} & \text{if } \Delta I = 0 \\
+k_{base} \times F_{cost} & \text{if } \Delta I > 0 \\
+0 & \text{if } NPV_{sav} \leq 0 \text{ or } C_{base} \leq 0
+\end{cases}
+$$
+
+Where $k_{base} = \frac{NPV_{sav}}{C_{base}} \times R_{SOTR}$, $F_{cost, eq} = \frac{|\Delta I|}{C_{base}}$, $F_{cost} = \frac{C_{base}}{C_{base} + \Delta I}$ (Engle, 2010).
+
+<figure>
+<img src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_12_0.png" alt="Profitability Index" class="img-fluid">
+<figcaption class="figure-title">Figure 7: Profitability Index</figcaption>
+</figure>
+
+<h5>2.3.7.6 Equilibrium Price</h5>
+
+$$
+P_{eq} =
+\begin{cases}
+\max\left(0, P_{base} \times R_{SOTR} \times \left(\frac{1}{1 + F_{cost, eq}}\right)\right) & \text{if } C_{base} > 0 \text{ and } P_{base} > 0 \\
+\max\left(0, P_{base} \times R_{SOTR}\right) & \text{if } C_{base} \leq 0 \text{ or } P_{base} \leq 0 \\
+0 & \text{if calculation prerequisites fail}
+\end{cases}
+$$
+
+Where $P_{base} = \frac{(C_{\text{annual, non-winner}} - (C_{E, \text{winner}} + C_{M, \text{winner}})) \times D_{\text{winner}}}{N_{\text{winner}}}$, $F_{cost, eq} = \frac{P_{base}}{C_{base}}$ (Asche et al., 2021).
+
+<figure>
+<img src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_14_0.png" alt="Equilibrium Price" class="img-fluid">
+<figcaption class="figure-title">Figure 8: Equilibrium Price</figcaption>
+</figure>
+
+<h5>2.3.7.5 Opportunity Cost</h5>
+
+$$
+\text{Opportunity Cost}_{\text{baseline}} = \text{NPV}_{\text{Savings (winner vs. baseline)}}
+$$
+
+Quantifies economic loss from less efficient equipment (Boyd & Hanson, 2021; Susilowati et al., 2021).
+
+<h2>AERATOR PERFORMANCE SUMMARY</h2>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 20px 0;">
+<thead>
+<tr style="background-color: transparent;">
+<th style="padding: 12px; text-align: left;">Aerator</th>
+<th style="padding: 12px; text-align: center;">SOTR (kg O₂/hr)</th>
+<th style="padding: 12px; text-align: center;">Price ($)</th>
+<th style="padding: 12px; text-align: center;">Annual Production (kg O₂/year)</th>
+<th style="padding: 12px; text-align: center;">Cost Efficiency (\$/kg O₂)</th>
+<th style="padding: 12px; text-align: center;">Cost per SOTR (\$/SOTR)</th>
+<th style="padding: 12px; text-align: center;">SOTR per Dollar</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 0</td>
+<td style="padding: 12px; text-align: center;">1.2</td>
+<td style="padding: 12px; text-align: center;">$500</td>
+<td style="padding: 12px; text-align: center;">2,301</td>
+<td style="padding: 12px; text-align: center;">$0.142</td>
+<td style="padding: 12px; text-align: center;">$417</td>
+<td style="padding: 12px; text-align: center;">0.0024</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 1</td>
+<td style="padding: 12px; text-align: center;">1.0</td>
+<td style="padding: 12px; text-align: center;">$600</td>
+<td style="padding: 12px; text-align: center;">1,918</td>
+<td style="padding: 12px; text-align: center;">$0.170</td>
+<td style="padding: 12px; text-align: center;">$600</td>
+<td style="padding: 12px; text-align: center;">0.0017</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 2</td>
+<td style="padding: 12px; text-align: center;">1.5</td>
+<td style="padding: 12px; text-align: center;">$700</td>
+<td style="padding: 12px; text-align: center;">2,877</td>
+<td style="padding: 12px; text-align: center;">$0.114</td>
+<td style="padding: 12px; text-align: center;">$467</td>
+<td style="padding: 12px; text-align: center;">0.0021</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 3</td>
+<td style="padding: 12px; text-align: center;">2.0</td>
+<td style="padding: 12px; text-align: center;">$800</td>
+<td style="padding: 12px; text-align: center;">3,836</td>
+<td style="padding: 12px; text-align: center;">$0.085</td>
+<td style="padding: 12px; text-align: center;">$400</td>
+<td style="padding: 12px; text-align: center;">0.0025</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 4</td>
+<td style="padding: 12px; text-align: center;">3.0</td>
+<td style="padding: 12px; text-align: center;">$900</td>
+<td style="padding: 12px; text-align: center;">5,753</td>
+<td style="padding: 12px; text-align: center;">$0.057</td>
+<td style="padding: 12px; text-align: center;">$300</td>
+<td style="padding: 12px; text-align: center;">0.0033</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 5</td>
+<td style="padding: 12px; text-align: center;">4.5</td>
+<td style="padding: 12px; text-align: center;">$1,200</td>
+<td style="padding: 12px; text-align: center;">8,630</td>
+<td style="padding: 12px; text-align: center;">$0.038</td>
+<td style="padding: 12px; text-align: center;">$267</td>
+<td style="padding: 12px; text-align: center;">0.0037</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 6</td>
+<td style="padding: 12px; text-align: center;">6.0</td>
+<td style="padding: 12px; text-align: center;">$1,500</td>
+<td style="padding: 12px; text-align: center;">11,507</td>
+<td style="padding: 12px; text-align: center;">$0.028</td>
+<td style="padding: 12px; text-align: center;">$250</td>
+<td style="padding: 12px; text-align: center;">0.0040</td>
+</tr>
+
+</tbody>
+</table>
+
+<h2>FARM-SCALE FINANCIAL ANALYSIS</h2>
+<p><strong>Farm Parameters:</strong> 1,000 hectares, TOD: 5,470 kg O₂/hr, 
+Annual Revenue: $16.6M, Analysis Period: 10 years</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 20px 0;">
+<thead>
+<tr style="background-color: transparent;">
+<th style="padding: 12px; text-align: left;">Aerator</th>
+<th style="padding: 12px; text-align: center;">Quantity Required</th>
+<th style="padding: 12px; text-align: center;">Units/Hectare</th>
+<th style="padding: 12px; text-align: center;">Initial Investment (\$M)</th>
+<th style="padding: 12px; text-align: center;">Annual Energy Cost (\$M)</th>
+<th style="padding: 12px; text-align: center;">Annual Maintenance (\$M)</th>
+<th style="padding: 12px; text-align: center;">Annual Replacement (\$M)</th>
+<th style="padding: 12px; text-align: center;">Total Annual Cost (\$M)</th>
+<th style="padding: 12px; text-align: center;">Cost as % Revenue</th>
+<th style="padding: 12px; text-align: center;">NPV Opportunity Cost (\$M)</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 0</td>
+<td style="padding: 12px; text-align: center;">6,941</td>
+<td style="padding: 12px; text-align: center;">6.94</td>
+<td style="padding: 12px; text-align: center;">$3.47</td>
+<td style="padding: 12px; text-align: center;">$2.27</td>
+<td style="padding: 12px; text-align: center;">$0.59</td>
+<td style="padding: 12px; text-align: center;">$1.74</td>
+<td style="padding: 12px; text-align: center;">$4.59</td>
+<td style="padding: 12px; text-align: center;">27.7%</td>
+<td style="padding: 12px; text-align: center;">$28.6</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 1</td>
+<td style="padding: 12px; text-align: center;">8,329</td>
+<td style="padding: 12px; text-align: center;">8.33</td>
+<td style="padding: 12px; text-align: center;">$5.00</td>
+<td style="padding: 12px; text-align: center;">$2.72</td>
+<td style="padding: 12px; text-align: center;">$0.58</td>
+<td style="padding: 12px; text-align: center;">$2.00</td>
+<td style="padding: 12px; text-align: center;">$5.30</td>
+<td style="padding: 12px; text-align: center;">32.0%</td>
+<td style="padding: 12px; text-align: center;">$34.3</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 2</td>
+<td style="padding: 12px; text-align: center;">5,553</td>
+<td style="padding: 12px; text-align: center;">5.55</td>
+<td style="padding: 12px; text-align: center;">$3.89</td>
+<td style="padding: 12px; text-align: center;">$1.81</td>
+<td style="padding: 12px; text-align: center;">$0.50</td>
+<td style="padding: 12px; text-align: center;">$1.94</td>
+<td style="padding: 12px; text-align: center;">$4.26</td>
+<td style="padding: 12px; text-align: center;">25.7%</td>
+<td style="padding: 12px; text-align: center;">$25.9</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 3</td>
+<td style="padding: 12px; text-align: center;">4,165</td>
+<td style="padding: 12px; text-align: center;">4.17</td>
+<td style="padding: 12px; text-align: center;">$3.33</td>
+<td style="padding: 12px; text-align: center;">$1.36</td>
+<td style="padding: 12px; text-align: center;">$0.17</td>
+<td style="padding: 12px; text-align: center;">$1.11</td>
+<td style="padding: 12px; text-align: center;">$2.64</td>
+<td style="padding: 12px; text-align: center;">15.9%</td>
+<td style="padding: 12px; text-align: center;">$13.0</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 4</td>
+<td style="padding: 12px; text-align: center;">2,777</td>
+<td style="padding: 12px; text-align: center;">2.78</td>
+<td style="padding: 12px; text-align: center;">$2.50</td>
+<td style="padding: 12px; text-align: center;">$0.91</td>
+<td style="padding: 12px; text-align: center;">$0.14</td>
+<td style="padding: 12px; text-align: center;">$0.42</td>
+<td style="padding: 12px; text-align: center;">$1.46</td>
+<td style="padding: 12px; text-align: center;">8.8%</td>
+<td style="padding: 12px; text-align: center;">$3.6</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 5</td>
+<td style="padding: 12px; text-align: center;">1,851</td>
+<td style="padding: 12px; text-align: center;">1.85</td>
+<td style="padding: 12px; text-align: center;">$2.22</td>
+<td style="padding: 12px; text-align: center;">$0.60</td>
+<td style="padding: 12px; text-align: center;">$0.04</td>
+<td style="padding: 12px; text-align: center;">$0.63</td>
+<td style="padding: 12px; text-align: center;">$1.28</td>
+<td style="padding: 12px; text-align: center;">7.7%</td>
+<td style="padding: 12px; text-align: center;">$2.1</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 6</td>
+<td style="padding: 12px; text-align: center;">1,389</td>
+<td style="padding: 12px; text-align: center;">1.39</td>
+<td style="padding: 12px; text-align: center;">$2.08</td>
+<td style="padding: 12px; text-align: center;">$0.45</td>
+<td style="padding: 12px; text-align: center;">$0.04</td>
+<td style="padding: 12px; text-align: center;">$0.52</td>
+<td style="padding: 12px; text-align: center;">$1.02</td>
+<td style="padding: 12px; text-align: center;">6.1%</td>
+<td style="padding: 12px; text-align: center;">$0.0</td>
+</tr>
+
+</tbody>
+</table>
+
+<h2>FINANCIAL METRICS ANALYSIS</h2>
+<p><strong>Advanced Financial Indicators:</strong> IRR, ROI, Payback Period, Profitability Index, and Equilibrium Price</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 20px 0;">
+<thead>
+<tr style="background-color: transparent;">
+<th style="padding: 12px; text-align: left;">Aerator</th>
+<th style="padding: 12px; text-align: center;">Internal Rate of Return (%)</th>
+<th style="padding: 12px; text-align: center;">Return on Investment (%)</th>
+<th style="padding: 12px; text-align: center;">Payback Period (Years)</th>
+<th style="padding: 12px; text-align: center;">Profitability Index (k)</th>
+<th style="padding: 12px; text-align: center;">Standard Aeration Efficiency (kg O₂/kWh)</th>
+<th style="padding: 12px; text-align: center;">Temperature-Adjusted OTR (kg O₂/hr)</th>
+<th style="padding: 12px; text-align: center;">Total Power Required (HP)</th>
+<th style="padding: 12px; text-align: center;">HP per Hectare</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 0</td>
+<td style="padding: 12px; text-align: center;">51.58%</td>
+<td style="padding: 12px; text-align: center;">20.00%</td>
+<td style="padding: 12px; text-align: center;">1.94</td>
+<td style="padding: 12px; text-align: center;">2.38</td>
+<td style="padding: 12px; text-align: center;">0.72</td>
+<td style="padding: 12px; text-align: center;">0.79</td>
+<td style="padding: 12px; text-align: center;">20,823</td>
+<td style="padding: 12px; text-align: center;">20.82</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 1</td>
+<td style="padding: 12px; text-align: center;">24.52%</td>
+<td style="padding: 12px; text-align: center;">16.67%</td>
+<td style="padding: 12px; text-align: center;">4.08</td>
+<td style="padding: 12px; text-align: center;">1.45</td>
+<td style="padding: 12px; text-align: center;">0.60</td>
+<td style="padding: 12px; text-align: center;">0.66</td>
+<td style="padding: 12px; text-align: center;">24,987</td>
+<td style="padding: 12px; text-align: center;">24.99</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 2</td>
+<td style="padding: 12px; text-align: center;">44.93%</td>
+<td style="padding: 12px; text-align: center;">25.00%</td>
+<td style="padding: 12px; text-align: center;">2.23</td>
+<td style="padding: 12px; text-align: center;">2.30</td>
+<td style="padding: 12px; text-align: center;">0.90</td>
+<td style="padding: 12px; text-align: center;">0.99</td>
+<td style="padding: 12px; text-align: center;">16,659</td>
+<td style="padding: 12px; text-align: center;">16.66</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 3</td>
+<td style="padding: 12px; text-align: center;">43.29%</td>
+<td style="padding: 12px; text-align: center;">33.33%</td>
+<td style="padding: 12px; text-align: center;">2.31</td>
+<td style="padding: 12px; text-align: center;">1.91</td>
+<td style="padding: 12px; text-align: center;">1.20</td>
+<td style="padding: 12px; text-align: center;">1.31</td>
+<td style="padding: 12px; text-align: center;">12,495</td>
+<td style="padding: 12px; text-align: center;">12.49</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 4</td>
+<td style="padding: 12px; text-align: center;">53.64%</td>
+<td style="padding: 12px; text-align: center;">21.96%</td>
+<td style="padding: 12px; text-align: center;">1.86</td>
+<td style="padding: 12px; text-align: center;">1.25</td>
+<td style="padding: 12px; text-align: center;">1.80</td>
+<td style="padding: 12px; text-align: center;">1.97</td>
+<td style="padding: 12px; text-align: center;">8,331</td>
+<td style="padding: 12px; text-align: center;">8.33</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 5</td>
+<td style="padding: 12px; text-align: center;">141.64%</td>
+<td style="padding: 12px; text-align: center;">19.19%</td>
+<td style="padding: 12px; text-align: center;">0.71</td>
+<td style="padding: 12px; text-align: center;">1.35</td>
+<td style="padding: 12px; text-align: center;">2.70</td>
+<td style="padding: 12px; text-align: center;">2.96</td>
+<td style="padding: 12px; text-align: center;">5,553</td>
+<td style="padding: 12px; text-align: center;">5.55</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 6</td>
+<td style="padding: 12px; text-align: center;">205.76%</td>
+<td style="padding: 12px; text-align: center;">100.00%</td>
+<td style="padding: 12px; text-align: center;">0.49</td>
+<td style="padding: 12px; text-align: center;">8.23</td>
+<td style="padding: 12px; text-align: center;">3.59</td>
+<td style="padding: 12px; text-align: center;">3.94</td>
+<td style="padding: 12px; text-align: center;">4,167</td>
+<td style="padding: 12px; text-align: center;">4.17</td>
+</tr>
+
+</tbody>
+</table>
+
+<h2>EQUILIBRIUM PRICE ANALYSIS</h2>
+<p><strong>Market Equilibrium:</strong> Theoretical prices based on Walras's General Equilibrium Theory (relative to Aerator 6 as winner)</p>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 20px 0;">
+<thead>
+<tr style="background-color: transparent;">
+<th style="padding: 12px; text-align: left;">Aerator</th>
+<th style="padding: 12px; text-align: center;">Actual Price (\$)</th>
+<th style="padding: 12px; text-align: center;">Equilibrium Price (\$)</th>
+<th style="padding: 12px; text-align: center;">Price Difference (\$)</th>
+<th style="padding: 12px; text-align: center;">Market Status</th>
+<th style="padding: 12px; text-align: center;">Durability (Years)</th>
+<th style="padding: 12px; text-align: center;">Annual Maintenance (\$/unit)</th>
+<th style="padding: 12px; text-align: center;">Cost-Effectiveness Rating</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 0</td>
+<td style="padding: 12px; text-align: center;">$500</td>
+<td style="padding: 12px; text-align: center;">$2346.78</td>
+<td style="padding: 12px; text-align: center;">$1846.78</td>
+<td style="padding: 12px; text-align: center;">Underpriced</td>
+<td style="padding: 12px; text-align: center;">2.0</td>
+<td style="padding: 12px; text-align: center;">$85</td>
+<td style="padding: 12px; text-align: center;">Fair</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 1</td>
+<td style="padding: 12px; text-align: center;">$600</td>
+<td style="padding: 12px; text-align: center;">$2292.40</td>
+<td style="padding: 12px; text-align: center;">$1692.40</td>
+<td style="padding: 12px; text-align: center;">Underpriced</td>
+<td style="padding: 12px; text-align: center;">2.5</td>
+<td style="padding: 12px; text-align: center;">$70</td>
+<td style="padding: 12px; text-align: center;">Poor</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 2</td>
+<td style="padding: 12px; text-align: center;">$700</td>
+<td style="padding: 12px; text-align: center;">$2694.58</td>
+<td style="padding: 12px; text-align: center;">$1994.58</td>
+<td style="padding: 12px; text-align: center;">Underpriced</td>
+<td style="padding: 12px; text-align: center;">2.0</td>
+<td style="padding: 12px; text-align: center;">$90</td>
+<td style="padding: 12px; text-align: center;">Fair</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 3</td>
+<td style="padding: 12px; text-align: center;">$800</td>
+<td style="padding: 12px; text-align: center;">$2050.71</td>
+<td style="padding: 12px; text-align: center;">$1250.71</td>
+<td style="padding: 12px; text-align: center;">Underpriced</td>
+<td style="padding: 12px; text-align: center;">3.0</td>
+<td style="padding: 12px; text-align: center;">$40</td>
+<td style="padding: 12px; text-align: center;">Good</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 4</td>
+<td style="padding: 12px; text-align: center;">$900</td>
+<td style="padding: 12px; text-align: center;">$1390.88</td>
+<td style="padding: 12px; text-align: center;">$490.88</td>
+<td style="padding: 12px; text-align: center;">Underpriced</td>
+<td style="padding: 12px; text-align: center;">6.0</td>
+<td style="padding: 12px; text-align: center;">$50</td>
+<td style="padding: 12px; text-align: center;">Excellent</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 5</td>
+<td style="padding: 12px; text-align: center;">$1,200</td>
+<td style="padding: 12px; text-align: center;">$1684.87</td>
+<td style="padding: 12px; text-align: center;">$484.87</td>
+<td style="padding: 12px; text-align: center;">Underpriced</td>
+<td style="padding: 12px; text-align: center;">3.5</td>
+<td style="padding: 12px; text-align: center;">$20</td>
+<td style="padding: 12px; text-align: center;">Excellent</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 6</td>
+<td style="padding: 12px; text-align: center;">$1,500</td>
+<td style="padding: 12px; text-align: center;">$1500.00</td>
+<td style="padding: 12px; text-align: center;">$0.00</td>
+<td style="padding: 12px; text-align: center;">Winner (Reference)</td>
+<td style="padding: 12px; text-align: center;">4.0</td>
+<td style="padding: 12px; text-align: center;">$30</td>
+<td style="padding: 12px; text-align: center;">Excellent</td>
+</tr>
+
+</tbody>
+</table>
+
+<h2>MARGINAL ANALYSIS</h2>
+<table border="1" style="border-collapse: collapse; width: 100%; margin: 20px 0;">
+<thead>
+<tr style="background-color: transparent;">
+<th style="padding: 12px; text-align: left;">Upgrade Path</th>
+<th style="padding: 12px; text-align: center;">Additional Investment (\$)</th>
+<th style="padding: 12px; text-align: center;">SOTR Gain (kg O₂/hr)</th>
+<th style="padding: 12px; text-align: center;">Production Gain (kg O₂/year)</th>
+<th style="padding: 12px; text-align: center;">Aerator Count Change</th>
+<th style="padding: 12px; text-align: center;">SOTR per Dollar</th>
+<th style="padding: 12px; text-align: center;">Production per Dollar (kg O₂/year/\$)</th>
+<th style="padding: 12px; text-align: center;">Derivative (Slope)</th>
+<th style="padding: 12px; text-align: center;">Cumulative Gain (kg O₂)</th>
+</tr>
+</thead>
+<tbody>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 0 → to → Aerator 1</td>
+<td style="padding: 12px; text-align: center;">$100</td>
+<td style="padding: 12px; text-align: center;">-0.2</td>
+<td style="padding: 12px; text-align: center;">-384</td>
+<td style="padding: 12px; text-align: center;">1,388</td>
+<td style="padding: 12px; text-align: center;">-0.0020</td>
+<td style="padding: 12px; text-align: center;">-3.8</td>
+<td style="padding: 12px; text-align: center;">-0.0020</td>
+<td style="padding: 12px; text-align: center;">-10</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 1 → to → Aerator 2</td>
+<td style="padding: 12px; text-align: center;">$100</td>
+<td style="padding: 12px; text-align: center;">0.5</td>
+<td style="padding: 12px; text-align: center;">959</td>
+<td style="padding: 12px; text-align: center;">-2,776</td>
+<td style="padding: 12px; text-align: center;">0.0050</td>
+<td style="padding: 12px; text-align: center;">9.6</td>
+<td style="padding: 12px; text-align: center;">0.0050</td>
+<td style="padding: 12px; text-align: center;">-5</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 2 → to → Aerator 3</td>
+<td style="padding: 12px; text-align: center;">$100</td>
+<td style="padding: 12px; text-align: center;">0.5</td>
+<td style="padding: 12px; text-align: center;">959</td>
+<td style="padding: 12px; text-align: center;">-1,388</td>
+<td style="padding: 12px; text-align: center;">0.0050</td>
+<td style="padding: 12px; text-align: center;">9.6</td>
+<td style="padding: 12px; text-align: center;">0.0050</td>
+<td style="padding: 12px; text-align: center;">50</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 3 → to → Aerator 4</td>
+<td style="padding: 12px; text-align: center;">$100</td>
+<td style="padding: 12px; text-align: center;">1.0</td>
+<td style="padding: 12px; text-align: center;">1,918</td>
+<td style="padding: 12px; text-align: center;">-1,388</td>
+<td style="padding: 12px; text-align: center;">0.0100</td>
+<td style="padding: 12px; text-align: center;">19.2</td>
+<td style="padding: 12px; text-align: center;">0.0100</td>
+<td style="padding: 12px; text-align: center;">180</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 4 → to → Aerator 5</td>
+<td style="padding: 12px; text-align: center;">$300</td>
+<td style="padding: 12px; text-align: center;">1.5</td>
+<td style="padding: 12px; text-align: center;">2,877</td>
+<td style="padding: 12px; text-align: center;">-926</td>
+<td style="padding: 12px; text-align: center;">0.0050</td>
+<td style="padding: 12px; text-align: center;">9.6</td>
+<td style="padding: 12px; text-align: center;">0.0050</td>
+<td style="padding: 12px; text-align: center;">945</td>
+</tr>
+
+<tr>
+<td style="padding: 12px; font-weight: bold;">Aerator 5 → to → Aerator 6</td>
+<td style="padding: 12px; text-align: center;">$300</td>
+<td style="padding: 12px; text-align: center;">1.5</td>
+<td style="padding: 12px; text-align: center;">2,877</td>
+<td style="padding: 12px; text-align: center;">-462</td>
+<td style="padding: 12px; text-align: center;">0.0050</td>
+<td style="padding: 12px; text-align: center;">9.6</td>
+<td style="padding: 12px; text-align: center;">0.0050</td>
+<td style="padding: 12px; text-align: center;">2160</td>
+</tr>
+
+</tbody>
+</table>
