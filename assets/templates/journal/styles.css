@@ -1,110 +1,184 @@
 /* 
  * CSS Template for Academic Papers
- * Following APA guidelines and Aquacultural Engineering journal requirements
+ * Following APA 7th Edition guidelines and academic journal requirements
  */
 
 /* GENERAL PAGE LAYOUT */
 body {
   font-family: "Times New Roman", Times, serif;
   font-size: 12pt;
-  line-height: 2; /* Double-spaced */
+  line-height: 2; /* Double-spaced per APA */
   color: #000000;
-  margin: 2.54cm; /* 1-inch margins */
+  margin: 2.54cm; /* 1-inch margins (APA standard) */
   background-color: white;
-  max-width: 21cm; /* Approximate A4 width */
+  max-width: 21cm; /* A4 width */
   margin-left: auto;
   margin-right: auto;
+  text-align: left;
 }
 
-/* HEADINGS */
+/* HEADINGS - APA 7th Edition Levels */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  font-family: "Times New Roman", Times, serif;
+  color: #000000;
+  margin-top: 0;
+  margin-bottom: 0;
+  line-height: 2;
+}
+
+/* Level 1 Heading - Centered, Bold, Title Case */
+h1 {
+  font-size: 12pt;
   font-weight: bold;
+  text-align: center;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+/* Level 2 Heading - Flush Left, Bold, Title Case */
+h2 {
+  font-size: 12pt;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+/* Level 3 Heading - Flush Left, Bold Italic, Title Case */
+h3 {
+  font-size: 12pt;
+  font-weight: bold;
+  font-style: italic;
+  text-align: left;
   margin-top: 1.5em;
   margin-bottom: 0.5em;
 }
 
-h1 {
-  /* Article Title */
-  font-size: 16pt;
-  text-align: center;
-  line-height: 1.2;
-  margin-bottom: 1em;
-}
-
-h2 {
-  /* Section Headings (1.) */
-  font-size: 14pt;
-  margin-top: 2em;
-}
-
-h3 {
-  /* Subsections (1.1.) */
-  font-size: 13pt;
-}
-
+/* Level 4 Heading - Indented, Bold, Title Case, Ending with Period */
 h4 {
-  /* Further subsections (1.1.1.) */
   font-size: 12pt;
-  font-style: italic;
-}
-
-/* PARAGRAPHS */
-p {
-  text-indent: 1.27cm; /* 0.5 inch indent for paragraphs */
-  margin-top: 0;
+  font-weight: bold;
+  font-style: normal;
+  text-indent: 1.27cm;
+  margin-top: 1em;
   margin-bottom: 0;
-  -webkit-hyphens: auto;
-  hyphens: auto;
+  display: inline;
 }
 
-/* TITLE PAGE */
+h4::after {
+  content: ".";
+}
+
+/* Level 5 Heading - Indented, Bold Italic, Title Case, Ending with Period */
+h5 {
+  font-size: 12pt;
+  font-weight: bold;
+  font-style: italic;
+  text-indent: 1.27cm;
+  margin-top: 1em;
+  margin-bottom: 0;
+  display: inline;
+}
+
+h5::after {
+  content: ".";
+}
+
+/* TITLE PAGE - APA Format */
 .title-page {
   page-break-after: always;
   text-align: center;
-  line-height: 1.5;
-  margin-top: 4em;
+  line-height: 2;
 }
 
-.title-page h1 {
+.title-page .paper-title {
+  font-size: 12pt;
+  font-weight: bold;
+  margin-top: 7.5cm; /* Position title in upper half */
   margin-bottom: 2em;
+  line-height: 2;
 }
 
-.author-info {
-  margin-bottom: 1.5em;
-}
-
-.affiliation {
-  font-style: italic;
+.title-page .author-info {
+  font-size: 12pt;
   margin-bottom: 1em;
+  line-height: 2;
 }
 
-.corresponding-author {
-  margin-top: 2em;
-  font-size: 11pt;
+.title-page .affiliation {
+  font-size: 12pt;
+  font-style: normal;
+  margin-bottom: 1em;
+  line-height: 2;
+}
+
+.title-page .author-note {
+  margin-top: 3em;
+  font-size: 12pt;
+  text-align: left;
+  line-height: 2;
+}
+
+/* RUNNING HEAD */
+.running-head {
+  position: fixed;
+  top: 1.27cm;
+  left: 2.54cm;
+  font-size: 12pt;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.page-number {
+  position: fixed;
+  top: 1.27cm;
+  right: 2.54cm;
+  font-size: 12pt;
+}
+
+/* PARAGRAPHS - APA Format */
+p {
+  text-indent: 1.27cm; /* 0.5 inch first-line indent */
+  margin-top: 0;
+  margin-bottom: 0;
+  text-align: left;
+  -webkit-hyphens: none;
+  hyphens: none; /* APA discourages hyphenation */
+  page-break-inside: avoid; /* Prevent breaking paragraphs across pages */
+}
+
+/* First paragraph after heading should not be indented */
+h1 + p,
+h2 + p,
+h3 + p,
+h4 + p,
+h5 + p,
+h6 + p {
+  text-indent: 0;
 }
 
 /* ABSTRACT */
 .abstract {
   margin-top: 2em;
   margin-bottom: 2em;
-  max-width: 16.5cm;
-  margin-left: auto;
-  margin-right: auto;
+  page-break-before: always;
 }
 
 .abstract h2 {
+  font-size: 12pt;
+  font-weight: bold;
   text-align: center;
-  font-size: 14pt;
-  margin-bottom: 0.5em;
+  margin-bottom: 1em;
 }
 
 .abstract p {
   text-indent: 0;
+  margin-bottom: 1em;
 }
 
 /* KEYWORDS */
@@ -115,300 +189,261 @@ p {
 
 .keywords-title {
   font-weight: bold;
+  font-style: italic;
   display: inline;
 }
 
-/* HIGHLIGHTS */
-.highlights {
-  margin: 2em 0;
-  padding: 1em;
-  border: 1px solid #ccc;
-  background-color: #f9f9f9;
-}
-
-.highlights h2 {
-  font-size: 12pt;
-  margin-top: 0;
-  margin-bottom: 0.5em;
-}
-
-.highlights ul {
-  margin: 0;
-  padding-left: 1.5em;
-}
-
-/* TABLES */
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin: 2em 0;
-  font-size: 11pt;
-  line-height: 1.4;
-}
-
-table,
-th,
-td {
-  border: 1px solid #000;
-}
-
-th,
-td {
-  padding: 0.5em;
-  text-align: left;
-  vertical-align: top;
-}
-
-th {
-  font-weight: bold;
-  background-color: #f2f2f2;
-}
-
-caption {
-  font-weight: bold;
-  text-align: left;
-  caption-side: top;
-  margin-bottom: 0.5em;
-}
-
-/* FIGURES */
-figure {
-  margin: 2em 0;
-  text-align: center;
-}
-
-figcaption {
-  font-size: 11pt;
-  line-height: 1.4;
-  margin-top: 0.5em;
-  text-align: left;
-}
-
-/* REFERENCES */
+/* REFERENCES - APA 7th Edition */
 .references {
-  margin-top: 2em;
   page-break-before: always;
+  margin-top: 2em;
 }
 
 .references h2 {
+  font-size: 12pt;
+  font-weight: bold;
   text-align: center;
-  margin-bottom: 1em;
+  margin-bottom: 2em;
 }
 
-.references ul {
+.references .reference-list {
   padding-left: 0;
   margin: 0;
   list-style-type: none;
 }
 
-.references li {
-  text-indent: -2em;
-  padding-left: 2em;
+.references .reference-list li {
+  text-indent: -1.27cm; /* Hanging indent */
+  padding-left: 1.27cm;
   margin-bottom: 1em;
+  line-height: 2;
 }
 
-/* FOOTNOTES */
+/* TABLES - APA Format */
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2em auto;
+  font-size: 12pt;
+  line-height: 1.5;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+th {
+  border-bottom: 1px solid #000;
+  padding: 0.5em;
+  text-align: left;
+  font-weight: bold;
+  vertical-align: top;
+}
+
+td {
+  padding: 0.5em;
+  text-align: left;
+  vertical-align: top;
+  border: none;
+}
+
+.table-title {
+  font-weight: bold;
+  font-style: italic;
+  text-align: left;
+  margin-bottom: 0.5em;
+  margin-top: 2em;
+}
+
+.table-note {
+  font-size: 10pt;
+  font-style: italic;
+  margin-top: 0.5em;
+  text-align: left;
+}
+
+/* FIGURES - APA Format */
+figure {
+  margin: 2em auto;
+  text-align: center;
+  page-break-inside: avoid;
+}
+
+.figure-title {
+  font-weight: bold;
+  font-style: italic;
+  text-align: left;
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+figcaption {
+  font-size: 12pt;
+  line-height: 1.5;
+  text-align: left;
+  margin-top: 0.5em;
+}
+
+/* BLOCK QUOTES - APA Format */
+blockquote {
+  margin: 1em 0;
+  padding-left: 1.27cm;
+  font-size: 12pt;
+  line-height: 2;
+  border: none;
+  background: none;
+}
+
+blockquote p {
+  text-indent: 0;
+}
+
+/* LISTS - APA Format */
+ul,
+ol {
+  margin: 1em 0;
+  padding-left: 1.27cm;
+  line-height: 2;
+}
+
+li {
+  margin-bottom: 0.5em;
+}
+
+/* IN-TEXT CITATIONS */
+.citation {
+  font-style: normal;
+}
+
+/* FOOTNOTES - APA Format */
 .footnote {
   font-size: 10pt;
   line-height: 1.5;
   margin-top: 2em;
   border-top: 1px solid #000;
-  padding-top: 0.5em;
+  padding-top: 1em;
 }
 
 /* APPENDICES */
 .appendix {
-  margin-top: 2em;
   page-break-before: always;
+  margin-top: 2em;
 }
 
 .appendix h2 {
   text-align: center;
+  margin-bottom: 2em;
 }
 
-/* EQUATIONS */
-.equation {
-  margin: 1em 0;
+/* AUTHOR NOTE SECTIONS */
+.author-note,
+.conflict-of-interest,
+.funding,
+.data-availability {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+.author-note h3,
+.conflict-of-interest h3,
+.funding h3,
+.data-availability h3 {
+  margin-bottom: 0.5em;
+}
+
+.author-note p,
+.conflict-of-interest p,
+.funding p,
+.data-availability p {
+  text-indent: 0;
+}
+
+/* RESPONSIVE DESIGN FOR SCREEN VIEWING */
+@media screen {
+  body {
+    max-width: 850px;
+    margin: 1cm auto;
+    padding: 1cm;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .running-head,
+  .page-number {
+    position: static;
+    display: none;
+  }
+}
+
+/* PRINT SETTINGS - APA Compliance */
+@media print {
+  body {
+    font-size: 12pt;
+    line-height: 2;
+    color: #000;
+  }
+
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+
+  @page {
+    size: 8.5in 11in; /* Letter size per APA */
+    margin: 1in;
+  }
+
+  p {
+    break-inside: avoid; /* Firefox and modern browser support */
+    page-break-inside: avoid; /* Legacy browser support */
+  }
+  .title-page,
+  .abstract,
+  .references,
+  .appendix {
+    page-break-before: always;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    page-break-after: avoid;
+  }
+
+  figure,
+  table {
+    page-break-inside: avoid;
+  }
+}
+
+/* ACCESSIBILITY IMPROVEMENTS */
+:focus {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/* MATH EQUATIONS - Enhanced for Academic Papers */
+.equation-block {
+  margin: 2em 0;
   text-align: center;
+  page-break-inside: avoid;
 }
 
 .equation-number {
   float: right;
+  font-weight: normal;
 }
 
-/* SUPPLEMENTARY MATERIAL */
-.supplementary {
-  margin-top: 2em;
-  border-top: 1px solid #ccc;
-  padding-top: 1em;
-}
-
-/* DECLARATION SECTIONS */
-.declaration {
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
-}
-
-.declaration h3 {
-  font-style: normal;
-  font-size: 12pt;
-  margin-bottom: 0.25em;
-}
-
-.declaration p {
-  text-indent: 0;
-}
-
-/* CREDIT AUTHOR STATEMENT */
-.credit-roles {
-  margin-bottom: 1.5em;
-}
-
-.credit-roles h3 {
-  font-style: normal;
-  font-size: 12pt;
-  margin-bottom: 0.25em;
-}
-
-/* SECTIONS AND SUBSECTIONS */
-.section {
-  margin-top: 2.5em;
-  margin-bottom: 1.5em;
-}
-
-.section h2 {
-  font-size: 14pt;
-  font-weight: bold;
-  margin-bottom: 1em;
-}
-
-.subsection {
-  margin-top: 1.5em;
-  margin-bottom: 1em;
-}
-
-.subsection h3,
-.subsection h4,
-.subsection h5 {
-  margin-bottom: 0.5em;
-}
-
-/* EQUATION FORMATTING */
-.equation-block {
-  margin: 1.5em 0;
-}
-
-.equation-block h5 {
-  margin-bottom: 0.8em;
-}
-
-/* Support for both standard LaTeX and Markdown math notation */
-.equation-block .katex-display,
-.equation-block .MathJax {
-  margin: 1em 0 !important;
-  overflow-x: auto;
-  overflow-y: hidden;
-}
-
-/* For inline math */
-.katex,
-.MathJax {
-  font-size: 1.1em !important;
-}
-
-/* For display math */
 .katex-display,
 .MathJax_Display {
+  margin: 1em 0 !important;
   padding: 0.5em 0;
 }
 
-/* Enhanced Markdown math support */
-.math-block {
-  display: block;
-  text-align: center;
-  margin: 1em 0;
-  overflow-x: auto;
+.katex,
+.MathJax {
+  font-size: 1em !important;
 }
-
-.math-inline {
-  display: inline-block;
-  margin: 0 0.2em;
-}
-
-/* Jupyter specific styles */
-.jupyter-notebook .jp-MarkdownCell .jp-InputArea-editor {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 12pt;
-  line-height: 2;
-}
-
-.jp-OutputArea-output pre {
-  font-family: monospace;
-  font-size: 11pt;
-  background-color: #f9f9f9;
-  padding: 1em;
-  border: 1px solid #ddd;
-  overflow-x: auto;
-}
-
-.jp-RenderedHTMLCommon table {
-  border-collapse: collapse;
-  margin: 1em 0;
-}
-
-/* GLOSSARY STYLING */
-.glossary-section {
-  margin: 2em 0;
-}
-
-.glossary-section h2 {
-  margin-bottom: 1em;
-}
-
-.glossary-section dl {
-  margin-left: 1em;
-}
-
-.glossary-section dt {
-  font-weight: bold;
-  margin-top: 0.7em;
-}
-
-.glossary-section dd {
-  margin-left: 2em;
-  margin-bottom: 0.5em;
-}
-
-/* AUTHOR VITAE */
-.vitae-container {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-  margin-top: 1em;
-  margin-bottom: 2em;
-}
-
-.vitae-photo {
-  flex: 0 0 150px;
-}
-
-.vitae-photo img {
-  width: 100%;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-}
-
-.vitae-bio {
-  flex: 1;
-}
-
-.vitae-bio p {
-  text-indent: 0;
-}
-
-/* ACKNOWLEDGEMENTS AND DATA SECTIONS */
-.acknowledgements p,
-.data-availability p,
 .supplementary-material p {
   text-indent: 0;
 }
