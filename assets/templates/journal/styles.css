@@ -765,7 +765,7 @@ body {
 
 /* MATH EQUATIONS - Enhanced for Academic Papers */
 .equation-block {
-  margin: 2em 0;
+  margin: 1em 0;
   text-align: center;
   page-break-inside: avoid;
   padding: 1em 0;
@@ -932,7 +932,7 @@ em {
 }
 
 .math-block {
-  margin: 1.5em 0;
+  margin: 1.0em 0;
   text-align: center;
   display: block;
 }
