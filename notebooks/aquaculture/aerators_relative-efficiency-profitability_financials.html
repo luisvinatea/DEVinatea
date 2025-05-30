@@ -19,19 +19,94 @@
           processEscapes: true,
           processEnvironments: true,
           tags: "ams",
+          tagSide: "right",
+          tagIndent: "0.8em",
+          packages: {
+            "[+]": ["ams", "newcommand", "configmacros", "action", "require"],
+          },
+          macros: {
+            "\\text": ["\\mathrm{#1}", 1],
+            "\\kg": "\\text{kg}",
+            "\\hr": "\\text{hr}",
+            "\\kW": "\\text{kW}",
+            "\\kWh": "\\text{kWh}",
+            "\\HP": "\\text{HP}",
+            "\\M": "\\text{M}",
+            "\\TOD": "\\text{TOD}",
+            "\\SOTR": "\\text{SOTR}",
+            "\\OTR": "\\text{OTR}",
+            "\\SAE": "\\text{SAE}",
+            "\\NPV": "\\text{NPV}",
+            "\\IRR": "\\text{IRR}",
+            "\\ROI": "\\text{ROI}",
+            "\\PI": "\\text{PI}",
+          },
         },
         svg: {
           fontCache: "global",
+          displayAlign: "center",
+          displayIndent: "0em",
+          scale: 1.0,
+          minScale: 0.5,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+          mathmlSpacing: false,
+          skipAttributes: {},
+          exFactor: 0.5,
+          displayOverflow: "linebreak",
+          linebreaks: {
+            automatic: true,
+            width: "90%",
+          },
+        },
+        chtml: {
+          scale: 1.0,
+          minScale: 0.5,
+          mtextInheritFont: true,
+          merrorInheritFont: true,
+          mathmlSpacing: false,
+          displayAlign: "center",
+          displayIndent: "0em",
         },
         options: {
           ignoreHtmlClass: "no-mathjax",
-          processHtmlClass: "arithmatex",
+          processHtmlClass: "arithmatex|math-block|math-inline",
+          skipHtmlTags: [
+            "script",
+            "noscript",
+            "style",
+            "textarea",
+            "pre",
+            "code",
+          ],
+          includeHtmlTags: {
+            br: "\n",
+            wbr: "",
+            "#comment": "",
+          },
         },
         startup: {
           ready: function () {
             MathJax.startup.defaultReady();
-            console.log("MathJax is loaded and ready.");
+            console.log(
+              "MathJax is loaded and ready for PDF/DOCX conversion."
+            );
+
+            // Ensure equations are properly formatted for print media
+            if (window.matchMedia && window.matchMedia("print").matches) {
+              // Apply print-specific styling
+              document.body.classList.add("print-mode");
+            }
           },
+          pageReady: function () {
+            // Additional setup for conversion tools
+            MathJax.startup.document.clear();
+            MathJax.startup.document.updateDocument();
+            console.log("MathJax page ready for conversion.");
+          },
+        },
+        loader: {
+          load: ["[tex]/ams", "[tex]/newcommand", "[tex]/configmacros"],
         },
       };
     </script>
@@ -39,23 +114,142 @@
       id="MathJax-script"
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
       onerror="console.error('Primary MathJax CDN failed, trying fallback...'); this.onerror=null; this.src='https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js';"
-      onload="console.log('MathJax script loaded successfully');"
+      onload="console.log('MathJax script loaded successfully for conversion');"
     ></script>
-    <!-- Additional fallback script -->
+
+    <!-- Conversion-optimized script -->
     <script>
-      // Ensure MathJax processes the page after DOM is fully loaded
+      // Enhanced MathJax processing for PDF/DOCX conversion
       document.addEventListener("DOMContentLoaded", function () {
-        if (window.MathJax && window.MathJax.typesetPromise) {
-          window.MathJax.typesetPromise()
-            .then(() => {
-              console.log("MathJax typesetting completed");
-            })
-            .catch((err) => {
-              console.error("MathJax typesetting failed:", err);
-            });
+        console.log("DOM loaded, initializing MathJax for conversion...");
+
+        // Wait for MathJax to be available
+        function waitForMathJax() {
+          if (window.MathJax && window.MathJax.typesetPromise) {
+            return Promise.resolve();
+          }
+          return new Promise((resolve) => {
+            setTimeout(() => waitForMathJax().then(resolve), 100);
+          });
         }
+
+        waitForMathJax()
+          .then(() => {
+            // Process all math elements
+            return window.MathJax.typesetPromise();
+          })
+          .then(() => {
+            console.log("MathJax typesetting completed for conversion");
+
+            // Add conversion-ready class to body
+            document.body.classList.add("mathjax-ready");
+
+            // Ensure all equations are properly rendered
+            const mathElements = document.querySelectorAll(
+              ".MathJax, .MathJax_Display, mjx-container"
+            );
+            mathElements.forEach((el) => {
+              el.style.visibility = "visible";
+              el.style.display =
+                el.classList.contains("MathJax_Display") ||
+                el.hasAttribute("display")
+                  ? "block"
+                  : "inline-block";
+            });
+
+            // Signal to conversion tools that content is ready
+            window.mathJaxReady = true;
+            document.dispatchEvent(new Event("mathJaxReady"));
+          })
+          .catch((err) => {
+            console.error("MathJax typesetting failed:", err);
+            // Fallback for conversion tools
+            document.body.classList.add("mathjax-fallback");
+          });
       });
+
+      // Print media query handler for better PDF conversion
+      if (window.matchMedia) {
+        const printMediaQuery = window.matchMedia("print");
+        printMediaQuery.addListener(function (mq) {
+          if (mq.matches) {
+            // Optimize for print/PDF
+            document.body.classList.add("print-conversion");
+
+            // Ensure equations are visible in print
+            const mathElements = document.querySelectorAll(
+              "mjx-container, .MathJax"
+            );
+            mathElements.forEach((el) => {
+              el.style.pageBreakInside = "avoid";
+              el.style.breakInside = "avoid";
+            });
+          }
+        });
+      }
+
+      // Additional helper for conversion tools that may need synchronous access
+      window.ensureMathJaxReady = function () {
+        return new Promise((resolve) => {
+          if (window.mathJaxReady) {
+            resolve();
+          } else {
+            document.addEventListener("mathJaxReady", resolve, { once: true });
+          }
+        });
+      };
     </script>
+
+    <!-- Style optimizations for conversion -->
+    <style>
+      /* Print and conversion optimizations */
+      @media print, (prefers-reduced-motion: reduce) {
+        mjx-container[display="true"] {
+          display: block !important;
+          text-align: center !important;
+          margin: 1em 0 !important;
+          page-break-inside: avoid !important;
+        }
+
+        mjx-container:not([display="true"]) {
+          display: inline !important;
+        }
+
+        .MathJax_Display {
+          display: block !important;
+          text-align: center !important;
+          margin: 1em 0 !important;
+          page-break-inside: avoid !important;
+        }
+
+        .math-block {
+          display: block !important;
+          text-align: center !important;
+          margin: 1.5em 0 !important;
+          page-break-inside: avoid !important;
+        }
+
+        .math-inline {
+          display: inline !important;
+          margin: 0 2px !important;
+        }
+      }
+
+      /* Ensure equations are visible during conversion */
+      .mathjax-ready mjx-container,
+      .mathjax-ready .MathJax {
+        opacity: 1 !important;
+        visibility: visible !important;
+      }
+
+      /* Fallback styles for conversion tools */
+      .mathjax-fallback .arithmatex {
+        font-family: "Courier New", monospace;
+        background-color: #f5f5f5;
+        padding: 2px 4px;
+        border-radius: 3px;
+      }
+    </style>
   </head>
   <body>
     <div class="title-page">
@@ -421,15 +615,17 @@
         0 DO, 1 atm), measured in $\text{kg O}_{2}/hr$ (Kumar et al., 2020).
       </p>
       <h5>2.3.2 Temperature-Adjusted Oxygen Transfer Rate ($OTR_T$)</h5>
-      <p>$$\text{OTR}_T = (\text{SOTR} \times 0.5) \times \theta^{(T-20)}$$</p>
+      <div class="equation-block">
+        $$\text{OTR}_T = (\text{SOTR} \times 0.5) \times \theta^{(T-20)}$$
+      </div>
       <p>
         Where $\theta = 1.024$ (temperature correction factor) (Boyd, 2015).
       </p>
       <h5>2.3.3 Standard Aeration Efficiency ($SAE$)</h5>
-      <p>
+      <div class="equation-block">
         $$\text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} (\text{kg }
         \text{O}_{2}/\text{kWh})$$
-      </p>
+      </div>
       <p>
         Where $\text{Power (kW)} = \text{Power (HP)} \times 0.746$ (Kumar et
         al., 2020).
@@ -446,10 +642,10 @@
       </figure>
 
       <h5>2.3.4 Aerator Quantity Calculation</h5>
-      <p>
+      <div class="equation-block">
         $$\text{Number of Aerators} = \left\lceil
         \frac{\text{TOD}}{\text{OTR}_T} \right\rceil$$
-      </p>
+      </div>
 
       <figure>
         <img
@@ -462,19 +658,19 @@
         </figcaption>
       </figure>
       <h5>2.3.5 Annual Revenue</h5>
-      <p>
+      <div class="equation-block">
         $$\text{Total Initial Cost} = \text{Number of Aerators} \times
         \text{Cost per Aerator}$$
-      </p>
+      </div>
       <p>
         Production depends on density, depth, area, and culture cycles (Engle,
         2010).
       </p>
       <h5>2.3.6 Initial Investment</h5>
-      <p>
+      <div class="equation-block">
         $$ \text{Total Initial Cost} = \text{Number of Aerators} \times
         \text{Cost per Aerator} $$
-      </p>
+      </div>
       <h5>2.3.7 Annual Operating Costs</h5>
       <ol>
         <li>
@@ -504,11 +700,11 @@
       </figure>
       <h3>2.4 Financial Indicators</h3>
       <h5>2.4.1 Net Present Value (NPV) of Savings</h5>
-      <p>
+      <div class="equation-block">
         $$ \text{NPV}_{\text{Savings}} = \sum_{i=1}^{n} \frac{\text{Annual
         Saving}_{\text{Year 1}} \times (1 + r_{\text{inflation}})^{i-1}}{(1 +
         r_{real})^i} $$
-      </p>
+      </div>
       <p>
         Where $r_{real} = \frac{1 + r_{nominal}}{1 + r_{inflation}} - 1$
         (Intelligon, 2022; Susilowati et al., 2021).
@@ -516,10 +712,10 @@
       <h4>2.4.2 Adapted Financial Metrics</h4>
       <br />
       <h5>2.4.2.1 Internal Rate of Return (IRR)</h5>
-      <p>
+      <div class="equation-block">
         $$ 0 = - \Delta I + \sum_{i=1}^{n} \frac{S_{yr1} \times (1 +
         r_{\text{inflation}})^{i-1}}{(1 + \text{IRR})^i} $$
-      </p>
+      </div>
       <p>
         If $\Delta I \leq 0$, standard IRR is undefined; adapted IRR anchors
         against baseline cost, scaled by SOTR ratio, capped at 100% (Kumar et
