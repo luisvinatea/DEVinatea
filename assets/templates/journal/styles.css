@@ -225,7 +225,7 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin: 2em auto;
-  font-size: 12pt;
+  font-size: 10pt;
   line-height: 1.5;
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
@@ -272,7 +272,7 @@ td {
   border-collapse: collapse;
   width: 100%;
   margin: 2em auto;
-  font-size: 12pt;
+  font-size: 10pt;
   line-height: 1.5;
   border-top: 2px solid #000;
   border-bottom: 2px solid #000;
@@ -337,10 +337,10 @@ figcaption {
 /* Extra large dashboard images for maximum impact */
 .img-xlarge {
   max-width: 100%;
-  width: 98%; /* Nearly full width for maximum visibility */
+  width: 99%; /* Nearly full width for maximum visibility */
   height: auto;
   min-height: 700px;
-  max-height: 1100px;
+  max-height: 1200px;
   object-fit: contain; /* Maintains aspect ratio */
   display: block;
   margin: 1.5em auto;
@@ -352,10 +352,10 @@ figcaption {
 /* Large dashboard images for data visualization */
 .img-large {
   max-width: 100%;
-  width: 96%; /* Increased from 95% for better visibility */
+  width: 99%; /* Increased from 95% for better visibility */
   height: auto;
   min-height: 650px;
-  max-height: 950px;
+  max-height: 1000px;
   object-fit: contain; /* Maintains aspect ratio */
   display: block;
   margin: 1.25em auto;
@@ -366,8 +366,8 @@ figcaption {
 
 /* Medium-sized images for charts and graphs */
 .img-medium {
-  max-width: 95%;
-  width: 90%; /* Increased from 85% for better visibility */
+  max-width: 98%;
+  width: 95%; /* Increased from 85% for better visibility */
   height: auto;
   min-height: 450px;
   max-height: 700px;
@@ -381,8 +381,8 @@ figcaption {
 
 /* Standard academic figures */
 .img-standard {
-  max-width: 90%;
-  width: 85%; /* Increased from 80% for better visibility */
+  max-width: 95%;
+  width: 90%; /* Increased from 80% for better visibility */
   height: auto;
   min-height: 350px;
   max-height: 600px;
@@ -397,7 +397,7 @@ figcaption {
 /* Enhanced figure containers */
 .figure-container-xlarge {
   text-align: center;
-  margin: 3em 0;
+  margin: 2em 0;
   page-break-inside: avoid;
   width: 100%;
   overflow: hidden; /* Prevents any overflow issues */
@@ -405,7 +405,7 @@ figcaption {
 
 .figure-container-large {
   text-align: center;
-  margin: 2.5em 0;
+  margin: 2em 0;
   page-break-inside: avoid;
   width: 100%;
   overflow: hidden; /* Prevents any overflow issues */
@@ -461,12 +461,12 @@ body {
 
 /* Improved spacing for better visual hierarchy */
 .figure-container-xlarge {
-  margin: 3em auto;
+  margin: 2em auto;
   padding: 0 1em;
 }
 
 .figure-container-large {
-  margin: 2.5em auto;
+  margin: 2em auto;
   padding: 0 0.8em;
 }
 
@@ -681,7 +681,7 @@ body {
   }
 
   .performance-table {
-    font-size: 11pt;
+    font-size: 10pt;
     border: 1px solid #ddd;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
@@ -696,7 +696,7 @@ body {
   }
 
   .data-table {
-    font-size: 11pt;
+    font-size: 10pt;
     border: 1px solid #000;
   }
 
@@ -830,7 +830,7 @@ body {
   border-collapse: collapse;
   width: 100%;
   margin: 2em 0;
-  font-size: 11pt;
+  font-size: 10pt;
   border: 1px solid #000;
 }
 
@@ -858,14 +858,14 @@ body {
 @media screen and (max-width: 768px) {
   .performance-table,
   .data-table {
-    font-size: 10pt;
+    font-size: 8pt;
   }
 
   .performance-table th,
   .performance-table td,
   .data-table th,
   .data-table td {
-    padding: 6px;
+    padding: 8px;
   }
 
   .img-fluid {
