@@ -260,11 +260,50 @@ td {
   text-align: left;
 }
 
+/* ENHANCED TABLE STYLING */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  margin: 2em 0;
+}
+
+.performance-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2em auto;
+  font-size: 12pt;
+  line-height: 1.5;
+  border-top: 2px solid #000;
+  border-bottom: 2px solid #000;
+}
+
+.performance-table th {
+  border-bottom: 1px solid #000;
+  padding: 12px;
+  text-align: center;
+  font-weight: bold;
+  vertical-align: top;
+  background-color: #f8f8f8;
+}
+
+.performance-table td {
+  padding: 12px;
+  text-align: center;
+  vertical-align: top;
+  border: none;
+}
+
+.performance-table .row-header {
+  font-weight: bold;
+  text-align: left;
+}
+
 /* FIGURES - APA Format */
 figure {
-  margin: 2em auto;
   text-align: center;
   page-break-inside: avoid;
+  margin-bottom: 0;
+  margin-top: 0;
 }
 
 .figure-title {
@@ -276,10 +315,20 @@ figure {
 }
 
 figcaption {
-  font-size: 12pt;
+  font-size: 10pt;
   line-height: 1.5;
   text-align: left;
-  margin-top: 0.5em;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* IMAGES - Responsive and Academic Format */
+.img-fluid {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  page-break-inside: avoid;
 }
 
 /* BLOCK QUOTES - APA Format */
@@ -311,6 +360,7 @@ li {
 /* IN-TEXT CITATIONS */
 .citation {
   font-style: normal;
+  color: #333;
 }
 
 /* FOOTNOTES - APA Format */
@@ -370,6 +420,38 @@ li {
     position: static;
     display: none;
   }
+
+  .performance-table {
+    font-size: 11pt;
+    border: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .performance-table th {
+    background-color: #f5f5f5;
+    border-bottom: 2px solid #ddd;
+  }
+
+  .performance-table td {
+    border-bottom: 1px solid #eee;
+  }
+
+  .data-table {
+    font-size: 11pt;
+    border: 1px solid #000;
+  }
+
+  .data-table th,
+  .data-table td {
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
+  }
 }
 
 /* PRINT SETTINGS - APA Compliance */
@@ -427,53 +509,171 @@ li {
   margin: 2em 0;
   text-align: center;
   page-break-inside: avoid;
+  padding: 1em 0;
 }
 
 .equation-number {
   float: right;
   font-weight: normal;
+  margin-left: 1em;
 }
 
 .katex-display,
 .MathJax_Display {
   margin: 1em 0 !important;
   padding: 0.5em 0;
+  text-align: center;
 }
 
 .katex,
 .MathJax {
   font-size: 1em !important;
+  line-height: inherit;
 }
+
+/* SUPPLEMENTARY MATERIAL */
 .supplementary-material p {
   text-indent: 0;
 }
 
-/* RESPONSIVE ADJUSTMENTS FOR SCREEN VIEWING */
-@media screen {
-  body {
-    max-width: 850px;
-    line-height: 1.6;
+/* CURRENCY AND NUMERICAL DATA */
+.currency {
+  font-weight: 500;
+  color: #2c5234;
+}
+
+.percentage {
+  font-weight: 500;
+  color: #1e3a8a;
+}
+
+.scientific-notation {
+  font-family: "Courier New", monospace;
+  font-size: 0.9em;
+}
+
+/* ENHANCED FIGURE STYLING */
+.figure-container {
+  text-align: center;
+  margin: 2em 0;
+  page-break-inside: avoid;
+}
+
+.figure-container img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* TABLE IMPROVEMENTS FOR COMPLEX DATA */
+.data-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 2em 0;
+  font-size: 11pt;
+  border: 1px solid #000;
+}
+
+.data-table th,
+.data-table td {
+  border: 1px solid #666;
+  padding: 8px;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.data-table th {
+  background-color: #f5f5f5;
+  font-weight: bold;
+  text-align: center;
+}
+
+.data-table .row-label {
+  font-weight: bold;
+  text-align: left;
+  background-color: #fafafa;
+}
+
+/* RESPONSIVE IMPROVEMENTS */
+@media screen and (max-width: 768px) {
+  .performance-table,
+  .data-table {
+    font-size: 10pt;
   }
 
-  p {
-    margin-bottom: 0.8em;
+  .performance-table th,
+  .performance-table td,
+  .data-table th,
+  .data-table td {
+    padding: 6px;
+  }
+
+  .img-fluid {
+    max-width: 100%;
+    height: auto;
   }
 }
 
-/* PRINT SETTINGS */
-@media print {
-  body {
-    font-size: 12pt;
-    line-height: 2;
-  }
+/* FINAL STYLING ENHANCEMENTS FOR ACADEMIC CONTENT */
 
-  a {
-    color: #000;
-    text-decoration: none;
-  }
+/* Ensure proper line spacing for academic text */
+.academic-content {
+  line-height: 2;
+  text-align: justify;
+  hyphens: none;
+}
 
-  @page {
-    size: A4;
-    margin: 2.54cm;
-  }
+/* Better citation formatting */
+.citation {
+  font-style: normal;
+  color: #333;
+}
+
+/* Improved emphasis styling */
+strong {
+  font-weight: bold;
+  color: #000;
+}
+
+em {
+  font-style: italic;
+  color: #333;
+}
+
+/* Better spacing for academic sections */
+.section {
+  margin-bottom: 2em;
+  page-break-inside: avoid;
+}
+
+/* Ensure proper table cell alignment for financial data */
+.financial-data {
+  text-align: right;
+  font-weight: 500;
+}
+
+.percentage-data {
+  text-align: center;
+  font-weight: 500;
+  color: #1e40af;
+}
+
+/* Better handling of long table headers */
+.table-header-wrap {
+  word-wrap: break-word;
+  line-height: 1.4;
+  vertical-align: top;
+}
+
+/* Ensure mathematical expressions are properly formatted */
+.math-inline {
+  font-style: italic;
+  margin: 0 2px;
+}
+
+.math-block {
+  margin: 1.5em 0;
+  text-align: center;
+  display: block;
 }
