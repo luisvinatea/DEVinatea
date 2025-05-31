@@ -70,7 +70,7 @@
         },
         options: {
           ignoreHtmlClass: "no-mathjax",
-          processHtmlClass: "arithmatex|math-block|math-inline",
+          processHtmlClass: "arithmatex|math-block|math-inline|equation-block",
           skipHtmlTags: [
             "script",
             "noscript",
@@ -135,8 +135,13 @@
 
         waitForMathJax()
           .then(() => {
-            // Process all math elements
-            return window.MathJax.typesetPromise();
+            console.log("MathJax available, starting typesetting...");
+            // Force processing of all math elements, including equation-block divs
+            return window.MathJax.typesetPromise(
+              document.querySelectorAll(
+                ".equation-block, .math-block, .arithmatex"
+              )
+            );
           })
           .then(() => {
             console.log("MathJax typesetting completed for conversion");
@@ -148,6 +153,7 @@
             const mathElements = document.querySelectorAll(
               ".MathJax, .MathJax_Display, mjx-container"
             );
+            console.log(`Found ${mathElements.length} rendered math elements`);
             mathElements.forEach((el) => {
               el.style.visibility = "visible";
               el.style.display =
@@ -198,6 +204,36 @@
           }
         });
       };
+
+      // Manual MathJax retrigger function for debugging
+      window.retriggerMathJax = function () {
+        if (window.MathJax && window.MathJax.typesetPromise) {
+          console.log("Manually retriggering MathJax processing...");
+          return window.MathJax.typesetPromise(
+            document.querySelectorAll(".equation-block, .math-block")
+          ).then(() => {
+            console.log("Manual MathJax processing completed");
+            const mathElements = document.querySelectorAll(
+              "mjx-container, .MathJax"
+            );
+            console.log(
+              `After manual processing: ${mathElements.length} math elements found`
+            );
+          });
+        } else {
+          console.error("MathJax not available for manual retriggering");
+        }
+      };
+
+      // Fallback processing after page load
+      window.addEventListener("load", function () {
+        setTimeout(() => {
+          if (!window.mathJaxReady && window.MathJax) {
+            console.log("Fallback: retriggering MathJax after page load...");
+            window.retriggerMathJax();
+          }
+        }, 2000);
+      });
     </script>
 
     <!-- Style optimizations for conversion -->
@@ -248,6 +284,31 @@
         background-color: #f5f5f5;
         padding: 2px 4px;
         border-radius: 3px;
+      }
+
+      /* Ensure equation blocks are always visible */
+      .equation-block,
+      .math-block {
+        display: block !important;
+        text-align: center !important;
+        margin: 1em 0 !important;
+        visibility: visible !important;
+        font-size: 1.1em;
+      }
+
+      /* Force MathJax containers to be visible */
+      mjx-container,
+      .MathJax,
+      .MathJax_Display {
+        visibility: visible !important;
+        opacity: 1 !important;
+        display: block !important;
+      }
+
+      mjx-container[display="true"],
+      .MathJax_Display {
+        text-align: center !important;
+        margin: 1em auto !important;
       }
     </style>
   </head>
@@ -615,14 +676,14 @@
         0 DO, 1 atm), measured in $\text{kg O}_{2}/hr$ (Kumar et al., 2020).
       </p>
       <h5>2.3.2 Temperature-Adjusted Oxygen Transfer Rate ($OTR_T$)</h5>
-      <div class="equation-block">
+      <div class="equation-block math-block">
         $$\text{OTR}_T = (\text{SOTR} \times 0.5) \times \theta^{(T-20)}$$
       </div>
       <p>
         Where $\theta = 1.024$ (temperature correction factor) (Boyd, 2015).
       </p>
       <h5>2.3.3 Standard Aeration Efficiency ($SAE$)</h5>
-      <div class="equation-block">
+      <div class="equation-block math-block">
         $$\text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} (\text{kg }
         \text{O}_{2}/\text{kWh})$$
       </div>
@@ -642,7 +703,7 @@
       </figure>
 
       <h5>2.3.4 Aerator Quantity Calculation</h5>
-      <div class="equation-block">
+      <div class="equation-block math-block">
         $$\text{Number of Aerators} = \left\lceil
         \frac{\text{TOD}}{\text{OTR}_T} \right\rceil$$
       </div>
@@ -658,7 +719,7 @@
         </figcaption>
       </figure>
       <h5>2.3.5 Annual Revenue</h5>
-      <div class="equation-block">
+      <div class="equation-block math-block">
         $$\text{Total Initial Cost} = \text{Number of Aerators} \times
         \text{Cost per Aerator}$$
       </div>
@@ -667,7 +728,7 @@
         2010).
       </p>
       <h5>2.3.6 Initial Investment</h5>
-      <div class="equation-block">
+      <div class="equation-block math-block">
         $$ \text{Total Initial Cost} = \text{Number of Aerators} \times
         \text{Cost per Aerator} $$
       </div>
@@ -700,7 +761,7 @@
       </figure>
       <h3>2.4 Financial Indicators</h3>
       <h5>2.4.1 Net Present Value (NPV) of Savings</h5>
-      <div class="equation-block">
+      <div class="equation-block math-block">
         $$ \text{NPV}_{\text{Savings}} = \sum_{i=1}^{n} \frac{\text{Annual
         Saving}_{\text{Year 1}} \times (1 + r_{\text{inflation}})^{i-1}}{(1 +
         r_{real})^i} $$
@@ -712,7 +773,7 @@
       <h4>2.4.2 Adapted Financial Metrics</h4>
       <br />
       <h5>2.4.2.1 Internal Rate of Return (IRR)</h5>
-      <div class="equation-block">
+      <div class="equation-block math-block">
         $$ 0 = - \Delta I + \sum_{i=1}^{n} \frac{S_{yr1} \times (1 +
         r_{\text{inflation}})^{i-1}}{(1 + \text{IRR})^i} $$
       </div>
