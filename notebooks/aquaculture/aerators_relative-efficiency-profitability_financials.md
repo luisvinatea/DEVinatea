@@ -287,18 +287,29 @@ _Figure 6. Internal Rate of Return (IRR) comparison showing financial attractive
 
 ### 2.4.2.1 Payback Period
 
+Payback period calculation depends on investment difference ($\Delta I$) and annual savings:
+
+**Case 1: When $\Delta I < 0$ and $S_{\text{yr1}} > 0$ (cost savings with positive annual savings)**
+
 $$
-\text{Payback Period} = \begin{cases}
-\frac{0.01}{R_{\text{SOTR}}} & \text{if } \Delta I < 0 \text{ and } S_{\text{yr1}} > 0 \\
-\frac{\Delta I}{S_{\text{yr1}}} & \text{if } \Delta I \geq 0 \text{ and } S_{\text{yr1}} > 0 \\
-\infty & \text{if } S_{\text{yr1}} \leq 0
-\end{cases}
+\text{Payback Period} = \frac{0.01}{R_{\text{SOTR}}}
 $$
 
-Where:
+**Case 2: When $\Delta I \geq 0$ and $S_{\text{yr1}} > 0$ (additional investment with positive annual savings)**
 
-- $R_{SOTR} = \frac{S_{yr1}}{C_{base}} \times R_{SOTR}$
-- $C_{base}$ is the baseline cost (Engle, 2010)
+$$
+\text{Payback Period} = \frac{\Delta I}{S_{\text{yr1}}}
+$$
+
+**Case 3: When $S_{\text{yr1}} \leq 0$ (no annual savings)**
+
+$$
+\text{Payback Period} = \infty
+$$
+
+**Where:**
+• $R_{\text{SOTR}} = \frac{S_{\text{yr1}}}{C_{\text{base}}} \times R_{\text{SOTR}}$ (SOTR ratio factor)
+• $C_{\text{base}}$ is the baseline cost (Engle, 2010)
 
 ### 2.4.2.2 Relative Return on Investment (ROI)
 
@@ -331,26 +342,41 @@ $$
 **Where:**  
 • $F_{\text{cost\_sav}} = \frac{|\Delta I|}{C_{\text{base}}}$ (cost savings factor)  
 • $S_{\text{yr1}} > 0$ and $C_{\text{base}} > 0$ (required conditions)  
-• For $\Delta I \leq 0$: ROI based on savings relative to baseline cost, scaled by SOTR ratio  
+• For $\Delta I \leq 0$: ROI based on savings relative to baseline cost, scaled by SOTR ratio
 
 ### 2.4.2.3 Profitability Index ($k$)
 
+Profitability Index calculation depends on investment difference ($\Delta I$) and NPV of savings:
+
+**Case 1: When $\Delta I < 0$ (cost savings)**
+
 $$
-k_{\text{relative}} = \begin{cases}
-k_{\text{base}} \times (1 + F_{\text{cost\_sav}}) & \text{if } \Delta I < 0 \\
-k_{\text{base}} & \text{if } \Delta I = 0 \\
-k_{\text{base}} \times F_{\text{cost}} & \text{if } \Delta I > 0 \\
-0 & \text{if } \text{NPV}_{\text{sav}} \leq 0
-\end{cases}
+k_{\text{relative}} = k_{\text{base}} \times (1 + F_{\text{cost\_sav}})
 $$
 
-**Note**: Condition is $C_{\text{base}} > 0$
+**Case 2: When $\Delta I = 0$ (equal investment)**
 
-Where:
+$$
+k_{\text{relative}} = k_{\text{base}}
+$$
 
-- $k_{base} = \frac{NPV_{sav}}{C_{base}} \times R_{SOTR}$
-- $F_{cost, eq} = \frac{|\Delta I|}{C_{base}}$
-- $F_{cost} = \frac{C_{base}}{C_{base} + \Delta I}$ (Engle, 2010)
+**Case 3: When $\Delta I > 0$ (additional investment)**
+
+$$
+k_{\text{relative}} = k_{\text{base}} \times F_{\text{cost}}
+$$
+
+**Case 4: When $\text{NPV}_{\text{sav}} \leq 0$ (no positive NPV)**
+
+$$
+k_{\text{relative}} = 0
+$$
+
+**Where:**  
+• $k_{\text{base}} = \frac{\text{NPV}_{\text{sav}}}{C_{\text{base}}} \times R_{\text{SOTR}}$ (base profitability index)  
+• $F_{\text{cost\_sav}} = \frac{|\Delta I|}{C_{\text{base}}}$ (cost savings factor)  
+• $F_{\text{cost}} = \frac{C_{\text{base}}}{C_{\text{base}} + \Delta I}$ (cost adjustment factor)  
+• Condition: $C_{\text{base}} > 0$ (Engle, 2010)
 
 ![Figure 7: Profitability Index Comparison](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_12_0.png)
 
@@ -358,20 +384,30 @@ _Figure 7. Profitability Index (k) showing the relative profitability of differe
 
 ### 2.4.2.4 Equilibrium Price ($P_{eq}$)
 
+Equilibrium price calculation based on market conditions and cost structure:
+
+**Case 1: When $C_{\text{base}} > 0$ (normal baseline cost)**
+
 $$
-P_{\text{eq}} = \begin{cases}
-\max\left(0, P_{\text{base}} \times R_{\text{SOTR}} \times \left(\frac{1}{1 + F_{\text{cost, eq}}}\right)\right) & \text{if } C_{\text{base}} > 0 \\
-\max\left(0, P_{\text{base}} \times R_{\text{SOTR}}\right) & \text{if } C_{\text{base}} \leq 0 \\
-0 & \text{otherwise}
-\end{cases}
+P_{\text{eq}} = \max\left(0, P_{\text{base}} \times R_{\text{SOTR}} \times \left(\frac{1}{1 + F_{\text{cost, eq}}}\right)\right)
 $$
 
-**Note**: Condition is $P_{\text{base}} > 0$
+**Case 2: When $C_{\text{base}} \leq 0$ (zero or negative baseline cost)**
 
-Where:
+$$
+P_{\text{eq}} = \max\left(0, P_{\text{base}} \times R_{\text{SOTR}}\right)
+$$
 
-- $P_{base} = \frac{(C_{\text{annual, non-winner}} - (C_{E, \text{winner}} + C_{M, \text{winner}})) \times D_{\text{winner}}}{N_{\text{winner}}}$
-- $F_{cost, eq} = \frac{P_{base}}{C_{base}}$ (Asche et al., 2021)
+**Case 3: Otherwise (invalid conditions)**
+
+$$
+P_{\text{eq}} = 0
+$$
+
+**Where:**  
+• $P_{\text{base}} = \frac{(C_{\text{annual, non-winner}} - (C_{E, \text{winner}} + C_{M, \text{winner}})) \times D_{\text{winner}}}{N_{\text{winner}}}$ (baseline price)  
+• $F_{\text{cost, eq}} = \frac{P_{\text{base}}}{C_{\text{base}}}$ (cost equilibrium factor)  
+• Condition: $P_{\text{base}} > 0$ (Asche et al., 2021)
 
 ![Figure 8: Equilibrium Price Analysis](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_14_0.png)
 
