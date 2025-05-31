@@ -459,7 +459,7 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 
 <div class="table-responsive">
 <table class="compact-table">
-<caption><strong>Table 5.</strong> Financial performance metrics. IRR and ROI in percentage, Payback in years, SAE in kg O₂/kWh, OTR_T in kg O₂/hr, Total HP in horsepower, HP/Ha as HP per hectare.</caption>
+<caption><strong>Table 5.</strong> Financial performance metrics. IRR and ROI in percentage, Payback in years, SAE in kg O₂/kWh, OTRT in kg O₂/hr, Total HP in horsepower, HP/Ha as HP per hectare.</caption>
 <thead>
 <tr>
 <th class="narrow-col">Aerator</th>
@@ -468,7 +468,7 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 <th class="narrow-col">Payback Yrs</th>
 <th class="narrow-col">Prof. Index</th>
 <th class="narrow-col">SAE</th>
-<th class="narrow-col">OTR_T</th>
+<th class="narrow-col">OTRT</th>
 <th class="narrow-col">Total HP</th>
 <th class="narrow-col">HP/Ha</th>
 </tr>
