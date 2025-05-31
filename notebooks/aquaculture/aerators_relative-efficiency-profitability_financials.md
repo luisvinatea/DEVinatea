@@ -385,8 +385,6 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 
 **Farm Parameters:** 1,000 hectares, $TOD$: 5,470 $\text{kg O}_2/hr$, Annual Revenue: $16.6M, Analysis Period: 10 years
 
-**Table 4: Farm-Scale Investment and Operating Cost Analysis**
-
 <div class="table-responsive">
 <table class="compact-table">
 <caption><strong>Table 4.</strong> Farm-scale investment and operating cost analysis. Investment and costs in millions USD ($M), Revenue % as percentage of total revenue ($16.6M), NPV Opportunity Cost in millions USD.</caption>
@@ -418,13 +416,9 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 
 ### 3.3 Financial Metrics Analysis
 
-**Advanced Financial Indicators:** IRR, ROI, Payback Period, Profitability Index, and Equilibrium Price
-
-**Table 5: Comprehensive Financial Performance Metrics**
-
 <div class="table-responsive">
 <table class="compact-table">
-<caption><strong>Table 5.</strong> Comprehensive financial performance metrics. IRR and ROI in percentage, Payback in years, SAE in kg O₂/kWh, OTR_T in kg O₂/hr, Total HP in horsepower, HP/Ha as HP per hectare.</caption>
+<caption><strong>Table 5.</strong> Financial performance metrics. IRR and ROI in percentage, Payback in years, SAE in kg O₂/kWh, OTR_T in kg O₂/hr, Total HP in horsepower, HP/Ha as HP per hectare.</caption>
 <thead>
 <tr>
 <th class="narrow-col">Aerator</th>
@@ -454,8 +448,6 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 
 **Market Equilibrium:** Theoretical prices based on Walras's General Equilibrium Theory (relative to Aerator 6 as winner)
 
-**Table 6: Market Equilibrium and Cost-Effectiveness Analysis**
-
 <div class="table-responsive">
 <table class="compact-table">
 <caption><strong>Table 6.</strong> Market equilibrium analysis based on Walras's General Equilibrium Theory with Aerator 6 as reference winner. Prices in USD, Durability in years, Maintenance cost in USD per unit annually.</caption>
@@ -484,8 +476,6 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 </div>
 
 ### 3.5 Marginal Analysis
-
-**Table 7: Marginal Returns and Upgrade Path Analysis**
 
 <div class="table-responsive">
 <table class="compact-table">
