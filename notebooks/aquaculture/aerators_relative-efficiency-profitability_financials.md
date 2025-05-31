@@ -70,7 +70,7 @@ cheaper, less efficient aerator incurs an opportunity cost equal to the
 net present value of savings forgone by not selecting the more efficient
 option (Boyd & Hanson, 2021; Susilowati et al., 2021).
 
-### 1.2 The Cake Recipe: Why Assuming \$HP\$ per Pound of Shrimp is Incorrect
+### 1.2 The Cake Recipe: Why Assuming $HP$ per Pound of Shrimp is Incorrect
 
 Assuming a fixed horsepower ($HP$)-per-production ratio is erroneous.
 Shrimp production depends on multiple factors (dissolved oxygen,
@@ -398,7 +398,7 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 
 <div class="table-responsive">
 <table class="compact-table">
-<caption><strong>Table 3.</strong> Aerator performance and cost efficiency metrics. SOTR in kg O₂/hr, Annual Production in kg O₂/year, Cost Efficiency in $/kg O₂, Cost per SOTR in $/unit.</caption>
+<caption><strong>Table 3.</strong> Aerator performance and cost efficiency metrics. SOTR in kg O₂/hr, Annual Production in kg O₂/year, Cost Efficiency in USD/kg O₂, Cost per SOTR in USD/unit.</caption>
 <thead>
 <tr>
 <th class="narrow-col">Aerator</th>
