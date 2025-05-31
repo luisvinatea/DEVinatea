@@ -3,7 +3,22 @@
 **Author:** Luis Paulo Vinatea Barberena  
 **Affiliation:** BarberNode  
 **Correspondence:** luisvinatea@icloud.com, +55 48 99221-9675  
-**Address:** Servidao das Caranhas, 22, Barra da Lagoa, Florianopolis, SC, Brazil, 88061635  
+\*\*Addr### 2.3.1 Standard Oxygen Transfer Rate (SOTR)
+
+The baseline oxygen transfer capacity under standard conditions (20°C, 0
+DO, 1 atm), measured in kg O₂/hr (Kumar et al., 2020).
+
+### 2.3.2 Temperature-Adjusted Oxygen Transfer Rate (OTR_T)
+
+$$\text{OTR}_T = (\text{SOTR} \times 0.5) \times \theta^{(T-20)}$$
+
+Where θ = 1.024 (temperature correction factor) (Boyd, 2015).
+
+### 2.3.3 Standard Aeration Efficiency (SAE)
+
+$$\text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} \text{ (kg O₂/kWh)}$$
+
+Where Power (kW) = Power (HP) × 0.746 (Kumar et al., 2020).as Caranhas, 22, Barra da Lagoa, Florianopolis, SC, Brazil, 88061635  
 **Date:** 2025-05-02
 
 ---
@@ -174,18 +189,29 @@ For this analysis, we compare seven different paddlewheel aerator models (Aerato
 
 **Table 2: Case Study Parameters**
 
-| Parameter             | Value          |
-| :-------------------- | :------------- |
-| Production scale      | 1,000 hectares |
-| Operating temperature | 31.5°C         |
-| Energy cost           | $0.05/kWh      |
-| Daily aeration        | 8 hours        |
-| Shrimp density        | 0.33 kg/m³     |
-| Culture period        | 120 days       |
-| Shrimp market price   | $5.00/kg       |
-| Annual discount rate  | 10%            |
-| Annual inflation rate | 3%             |
-| Analysis timeframe    | 10 years       |
+<div class="table-responsive">
+<table class="compact-table">
+<caption><strong>Table 2.</strong> Case study parameters for the financial and technical analysis.</caption>
+<thead>
+<tr>
+<th class="medium-col">Parameter</th>
+<th class="medium-col">Value</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Production scale</td><td>1,000 hectares</td></tr>
+<tr><td>Operating temperature</td><td>31.5°C</td></tr>
+<tr><td>Energy cost</td><td>$0.05/kWh</td></tr>
+<tr><td>Daily aeration</td><td>8 hours</td></tr>
+<tr><td>Shrimp density</td><td>0.33 kg/m³</td></tr>
+<tr><td>Culture period</td><td>120 days</td></tr>
+<tr><td>Shrimp market price</td><td>$5.00/kg</td></tr>
+<tr><td>Annual discount rate</td><td>10%</td></tr>
+<tr><td>Annual inflation rate</td><td>3%</td></tr>
+<tr><td>Analysis timeframe</td><td>10 years</td></tr>
+</tbody>
+</table>
+</div>
 
 ### 2.2 Aerator Investment Options
 
@@ -195,15 +221,29 @@ The economic challenge is compounded by differences in durability (ranging from 
 
 **Table 1: Aerator Specifications and Costs**
 
-| Aerator Model | $SOTR$ ($\text{kg O}_2/hr$) | Purchase Price ($) | Maintenance Cost ($/year) | Durability (years) |
-| :-----------: | :-------------------------: | :----------------: | :-----------------------: | :----------------: |
-|   Aerator 0   |             1.2             |        500         |            85             |        2.0         |
-|   Aerator 1   |             1.0             |        600         |            70             |        2.5         |
-|   Aerator 2   |             1.5             |        700         |            90             |        2.0         |
-|   Aerator 3   |             2.0             |        800         |            40             |        3.0         |
-|   Aerator 4   |             3.0             |        900         |            50             |        6.0         |
-|   Aerator 5   |             4.5             |        1200        |            20             |        3.5         |
-|   Aerator 6   |             6.0             |        1500        |            30             |        4.0         |
+<div class="table-responsive">
+<table class="compact-table">
+<caption><strong>Table 1.</strong> Aerator specifications and costs including SOTR in kg O₂/hr, purchase price in USD, annual maintenance costs, and expected durability in years.</caption>
+<thead>
+<tr>
+<th class="narrow-col">Model</th>
+<th class="narrow-col">SOTR (kg O₂/hr)</th>
+<th class="narrow-col">Purchase Price</th>
+<th class="narrow-col">Maintenance Cost/year</th>
+<th class="narrow-col">Durability (years)</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Aerator 0</td><td>1.2</td><td>$500</td><td>$85</td><td>2.0</td></tr>
+<tr><td>Aerator 1</td><td>1.0</td><td>$600</td><td>$70</td><td>2.5</td></tr>
+<tr><td>Aerator 2</td><td>1.5</td><td>$700</td><td>$90</td><td>2.0</td></tr>
+<tr><td>Aerator 3</td><td>2.0</td><td>$800</td><td>$40</td><td>3.0</td></tr>
+<tr><td>Aerator 4</td><td>3.0</td><td>$900</td><td>$50</td><td>6.0</td></tr>
+<tr><td>Aerator 5</td><td>4.5</td><td>$1,200</td><td>$20</td><td>3.5</td></tr>
+<tr><td>Aerator 6</td><td>6.0</td><td>$1,500</td><td>$30</td><td>4.0</td></tr>
+</tbody>
+</table>
+</div>
 
 ### 2.3 Parameters Used
 
@@ -371,15 +411,31 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 
 **Table 3: Aerator Performance and Cost Efficiency Metrics**
 
-|  Aerator  | $SOTR$ ($\text{kg O}_2/hr$) | Price ($) | Annual Production ($\text{kg O}_2/year$) | Cost Efficiency ($/\text{kg O}_2$) | Cost per SOTR ($/\text{SOTR}$) | SOTR per Dollar |
-| :-------: | :-------------------------: | :-------: | :--------------------------------------: | :--------------------------------: | :----------------------------: | :-------------: |
-| Aerator 0 |             1.2             |   $500    |                  2,301                   |               $0.142               |              $417              |     0.0024      |
-| Aerator 1 |             1.0             |   $600    |                  1,918                   |               $0.170               |              $600              |     0.0017      |
-| Aerator 2 |             1.5             |   $700    |                  2,877                   |               $0.114               |              $467              |     0.0021      |
-| Aerator 3 |             2.0             |   $800    |                  3,836                   |               $0.085               |              $400              |     0.0025      |
-| Aerator 4 |             3.0             |   $900    |                  5,753                   |               $0.057               |              $300              |     0.0033      |
-| Aerator 5 |             4.5             |  $1,200   |                  8,630                   |               $0.038               |              $267              |     0.0037      |
-| Aerator 6 |             6.0             |  $1,500   |                  11,507                  |               $0.028               |              $250              |     0.0040      |
+<div class="table-responsive">
+<table class="compact-table">
+<caption><strong>Table 3.</strong> Aerator performance and cost efficiency metrics. SOTR in kg O₂/hr, Annual Production in kg O₂/year, Cost Efficiency in $/kg O₂, Cost per SOTR in $/unit.</caption>
+<thead>
+<tr>
+<th class="narrow-col">Aerator</th>
+<th class="narrow-col">SOTR</th>
+<th class="narrow-col">Price</th>
+<th class="medium-col">Annual Production</th>
+<th class="narrow-col">Cost Efficiency</th>
+<th class="narrow-col">Cost per SOTR</th>
+<th class="narrow-col">SOTR per Dollar</th>
+</tr>
+</thead>
+<tbody>
+<tr><td>Aerator 0</td><td>1.2</td><td>$500</td><td>2,301</td><td>$0.142</td><td>$417</td><td>0.0024</td></tr>
+<tr><td>Aerator 1</td><td>1.0</td><td>$600</td><td>1,918</td><td>$0.170</td><td>$600</td><td>0.0017</td></tr>
+<tr><td>Aerator 2</td><td>1.5</td><td>$700</td><td>2,877</td><td>$0.114</td><td>$467</td><td>0.0021</td></tr>
+<tr><td>Aerator 3</td><td>2.0</td><td>$800</td><td>3,836</td><td>$0.085</td><td>$400</td><td>0.0025</td></tr>
+<tr><td>Aerator 4</td><td>3.0</td><td>$900</td><td>5,753</td><td>$0.057</td><td>$300</td><td>0.0033</td></tr>
+<tr><td>Aerator 5</td><td>4.5</td><td>$1,200</td><td>8,630</td><td>$0.038</td><td>$267</td><td>0.0037</td></tr>
+<tr><td>Aerator 6</td><td>6.0</td><td>$1,500</td><td>11,507</td><td>$0.028</td><td>$250</td><td>0.0040</td></tr>
+</tbody>
+</table>
+</div>
 
 ### 3.2 Farm-Scale Financial Analysis
 

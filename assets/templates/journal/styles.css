@@ -524,7 +524,8 @@ figure img,
 /* MATHEMATICAL EQUATIONS - DOCX Optimized */
 .math,
 .MathJax,
-.math-display {
+.math-display,
+math {
   font-size: 11pt;
   line-height: 1.3;
   margin: 6pt 0;
@@ -532,15 +533,21 @@ figure img,
   overflow-wrap: break-word;
   word-wrap: break-word;
   hyphens: none;
+  font-style: italic;
+  color: black;
+  page-break-inside: avoid;
 }
 
-.math-block {
+.math-block,
+math[display="block"] {
   margin: 12pt 0;
   padding: 6pt;
   text-align: center;
   page-break-inside: avoid;
   overflow-wrap: break-word;
   word-wrap: break-word;
+  display: block;
+  font-size: 11pt;
 }
 
 /* Compact table styling for large tables */
@@ -572,4 +579,29 @@ figure img,
 .wide-col {
   width: 20%;
   max-width: 120pt;
+}
+
+/* Equation styling enhancements */
+sub,
+.sub {
+  font-size: 8pt;
+  vertical-align: sub;
+  line-height: 0;
+  position: relative;
+  bottom: -0.3em;
+}
+
+sup,
+.sup {
+  font-size: 8pt;
+  vertical-align: super;
+  line-height: 0;
+  position: relative;
+  top: -0.3em;
+}
+
+/* Inline math styles */
+.inline-math {
+  font-style: italic;
+  font-family: "Times New Roman", Times, serif;
 }
