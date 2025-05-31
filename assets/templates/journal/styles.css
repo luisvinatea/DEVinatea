@@ -333,7 +333,10 @@ figcaption {
   width: 100%; /* Make images take full width */
   height: auto;
   display: block;
-  margin: 0 auto;
+  margin: 0 auto; /* Center horizontally */
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
   page-break-inside: avoid;
   object-fit: contain; /* Preserve aspect ratio */
 }
@@ -836,9 +839,13 @@ body {
   border: 1px solid #ddd;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
-/* Ensure all figures and images take full width */
+/* Ensure all figures and images take full width and are centered */
 figure img,
 .figure-container-xlarge img,
 .figure-container-large img,
@@ -847,6 +854,21 @@ figure img,
   max-width: 100%;
   box-sizing: border-box;
   object-fit: contain;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+/* Add universal center alignment for all image types in figures */
+figure img,
+.figure img,
+[class*="figure-container"] img,
+.img-fluid {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
 }
 
 /* TABLE IMPROVEMENTS FOR COMPLEX DATA */
