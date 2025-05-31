@@ -389,19 +389,19 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 
 <div class="table-responsive">
 <table class="compact-table">
-<caption><strong>Table 4.</strong> Farm-scale investment and operating cost analysis showing quantity requirements and financial metrics for each aerator model.</caption>
+<caption><strong>Table 4.</strong> Farm-scale investment and operating cost analysis. Investment and costs in millions USD ($M), Revenue % as percentage of total revenue ($16.6M), NPV Opportunity Cost in millions USD.</caption>
 <thead>
 <tr>
 <th class="narrow-col">Aerator</th>
 <th class="narrow-col">Quantity</th>
 <th class="narrow-col">Units/Ha</th>
-<th class="narrow-col">Investment ($M)</th>
-<th class="narrow-col">Energy ($M/yr)</th>
-<th class="narrow-col">Maintenance ($M/yr)</th>
-<th class="narrow-col">Replace. ($M/yr)</th>
-<th class="narrow-col">Total ($M/yr)</th>
-<th class="narrow-col">% Revenue</th>
-<th class="narrow-col">NPV Opp. Cost ($M)</th>
+<th class="narrow-col">Investment</th>
+<th class="narrow-col">Energy</th>
+<th class="narrow-col">Maintenance</th>
+<th class="narrow-col">Replace.</th>
+<th class="narrow-col">Total</th>
+<th class="narrow-col">Revenue %</th>
+<th class="narrow-col">NPV Opp. Cost</th>
 </tr>
 </thead>
 <tbody>
@@ -424,16 +424,16 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 
 <div class="table-responsive">
 <table class="compact-table">
-<caption><strong>Table 5.</strong> Comprehensive financial performance metrics including IRR, ROI, payback period, and technical specifications.</caption>
+<caption><strong>Table 5.</strong> Comprehensive financial performance metrics. IRR and ROI in percentage, Payback in years, SAE in kg O₂/kWh, OTR_T in kg O₂/hr, Total HP in horsepower, HP/Ha as HP per hectare.</caption>
 <thead>
 <tr>
 <th class="narrow-col">Aerator</th>
-<th class="narrow-col">IRR (%)</th>
-<th class="narrow-col">ROI (%)</th>
-<th class="narrow-col">Payback (Years)</th>
-<th class="narrow-col">Prof. Index ($k$)</th>
-<th class="narrow-col">SAE (kg O₂/kWh)</th>
-<th class="narrow-col">OTR_T (kg O₂/hr)</th>
+<th class="narrow-col">IRR %</th>
+<th class="narrow-col">ROI %</th>
+<th class="narrow-col">Payback Yrs</th>
+<th class="narrow-col">Prof. Index</th>
+<th class="narrow-col">SAE</th>
+<th class="narrow-col">OTR_T</th>
 <th class="narrow-col">Total HP</th>
 <th class="narrow-col">HP/Ha</th>
 </tr>
@@ -458,16 +458,16 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 
 <div class="table-responsive">
 <table class="compact-table">
-<caption><strong>Table 6.</strong> Market equilibrium analysis based on Walras's General Equilibrium Theory with Aerator 6 as reference winner.</caption>
+<caption><strong>Table 6.</strong> Market equilibrium analysis based on Walras's General Equilibrium Theory with Aerator 6 as reference winner. Prices in USD, Durability in years, Maintenance cost in USD per unit annually.</caption>
 <thead>
 <tr>
 <th class="narrow-col">Aerator</th>
-<th class="narrow-col">Actual Price ($)</th>
-<th class="narrow-col">Equilibrium Price ($)</th>
-<th class="narrow-col">Price Diff. ($)</th>
+<th class="narrow-col">Actual Price</th>
+<th class="narrow-col">Equilibrium Price</th>
+<th class="narrow-col">Price Diff.</th>
 <th class="medium-col">Market Status</th>
-<th class="narrow-col">Durability (Years)</th>
-<th class="narrow-col">Maintenance ($/unit)</th>
+<th class="narrow-col">Durability Yrs</th>
+<th class="narrow-col">Maintenance</th>
 <th class="medium-col">Rating</th>
 </tr>
 </thead>
@@ -489,18 +489,18 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 
 <div class="table-responsive">
 <table class="compact-table">
-<caption><strong>Table 7.</strong> Marginal returns and upgrade path analysis showing incremental benefits of upgrading between aerator models.</caption>
+<caption><strong>Table 7.</strong> Marginal returns and upgrade path analysis. Investment in USD, SOTR Gain in kg O₂/hr, Production Gain in kg O₂/year, SOTR per Dollar dimensionless, Production per Dollar in kg O₂/year/USD, Cumulative in kg O₂.</caption>
 <thead>
 <tr>
 <th class="medium-col">Upgrade Path</th>
-<th class="narrow-col">Add. Investment ($)</th>
-<th class="narrow-col">SOTR Gain (kg O₂/hr)</th>
-<th class="narrow-col">Production Gain (kg O₂/yr)</th>
+<th class="narrow-col">Add. Investment</th>
+<th class="narrow-col">SOTR Gain</th>
+<th class="narrow-col">Production Gain</th>
 <th class="narrow-col">Count Change</th>
-<th class="narrow-col">SOTR per $</th>
-<th class="narrow-col">Prod. per $ (kg O₂/yr/$)</th>
+<th class="narrow-col">SOTR per Dollar</th>
+<th class="narrow-col">Prod. per Dollar</th>
 <th class="narrow-col">Slope</th>
-<th class="narrow-col">Cumulative (kg O₂)</th>
+<th class="narrow-col">Cumulative</th>
 </tr>
 </thead>
 <tbody>
