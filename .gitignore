@@ -63,6 +63,7 @@ Thumbs.db
 *.h5
 
 # Custom data
+*.docx
 # Uncomment lines below if you want to track these files
 # !data/raw/*.csv  # Track specific CSV files
 # !data/processed/final_results.csv  # Track specific processed files
