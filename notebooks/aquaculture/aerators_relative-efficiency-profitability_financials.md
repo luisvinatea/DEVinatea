@@ -3,22 +3,7 @@
 **Author:** Luis Paulo Vinatea Barberena  
 **Affiliation:** BarberNode  
 **Correspondence:** luisvinatea@icloud.com, +55 48 99221-9675  
-\*\*Addr### 2.3.1 Standard Oxygen Transfer Rate (SOTR)
-
-The baseline oxygen transfer capacity under standard conditions (20°C, 0
-DO, 1 atm), measured in kg O₂/hr (Kumar et al., 2020).
-
-### 2.3.2 Temperature-Adjusted Oxygen Transfer Rate (OTR_T)
-
-$$\text{OTR}_T = (\text{SOTR} \times 0.5) \times \theta^{(T-20)}$$
-
-Where θ = 1.024 (temperature correction factor) (Boyd, 2015).
-
-### 2.3.3 Standard Aeration Efficiency (SAE)
-
-$$\text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} \text{ (kg O₂/kWh)}$$
-
-Where Power (kW) = Power (HP) × 0.746 (Kumar et al., 2020).as Caranhas, 22, Barra da Lagoa, Florianopolis, SC, Brazil, 88061635  
+**Address:** Servidao das Caranhas, 22, Barra da Lagoa, Florianopolis, SC, Brazil, 88061635  
 **Date:** 2025-05-02
 
 ---
