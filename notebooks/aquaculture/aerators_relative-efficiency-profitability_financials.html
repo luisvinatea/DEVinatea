@@ -5,6 +5,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>aerators_relative-efficiency-profitability_financials</title>
     <link rel="stylesheet" href="../../assets/templates/journal/styles.css" />
+
+    <!-- Simple MathJax configuration that works -->
     <script>
       window.MathJax = {
         tex: {
@@ -18,12 +20,6 @@
           ],
           processEscapes: true,
           processEnvironments: true,
-          tags: "ams",
-          tagSide: "right",
-          tagIndent: "0.8em",
-          packages: {
-            "[+]": ["ams", "newcommand", "configmacros", "action", "require"],
-          },
           macros: {
             "\\text": ["\\mathrm{#1}", 1],
             "\\kg": "\\text{kg}",
@@ -42,277 +38,62 @@
             "\\PI": "\\text{PI}",
           },
         },
-        svg: {
-          fontCache: "global",
-          displayAlign: "center",
-          displayIndent: "0em",
-          scale: 1.0,
-          minScale: 0.5,
-          mtextInheritFont: true,
-          merrorInheritFont: true,
-          mathmlSpacing: false,
-          skipAttributes: {},
-          exFactor: 0.5,
-          displayOverflow: "linebreak",
-          linebreaks: {
-            automatic: true,
-            width: "90%",
-          },
-        },
-        chtml: {
-          scale: 1.0,
-          minScale: 0.5,
-          mtextInheritFont: true,
-          merrorInheritFont: true,
-          mathmlSpacing: false,
-          displayAlign: "center",
-          displayIndent: "0em",
-        },
         options: {
-          ignoreHtmlClass: "no-mathjax",
           processHtmlClass: "arithmatex|math-block|math-inline|equation-block",
-          skipHtmlTags: [
-            "script",
-            "noscript",
-            "style",
-            "textarea",
-            "pre",
-            "code",
-          ],
-          includeHtmlTags: {
-            br: "\n",
-            wbr: "",
-            "#comment": "",
-          },
-        },
-        startup: {
-          ready: function () {
-            MathJax.startup.defaultReady();
-            console.log(
-              "MathJax is loaded and ready for PDF/DOCX conversion."
-            );
-
-            // Ensure equations are properly formatted for print media
-            if (window.matchMedia && window.matchMedia("print").matches) {
-              // Apply print-specific styling
-              document.body.classList.add("print-mode");
-            }
-          },
-          pageReady: function () {
-            // Additional setup for conversion tools
-            MathJax.startup.document.clear();
-            MathJax.startup.document.updateDocument();
-            console.log("MathJax page ready for conversion.");
-          },
-        },
-        loader: {
-          load: ["[tex]/ams", "[tex]/newcommand", "[tex]/configmacros"],
         },
       };
     </script>
     <script
       id="MathJax-script"
       src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"
-      onerror="console.error('Primary MathJax CDN failed, trying fallback...'); this.onerror=null; this.src='https://unpkg.com/mathjax@3/es5/tex-mml-chtml.js';"
-      onload="console.log('MathJax script loaded successfully for conversion');"
     ></script>
 
-    <!-- Conversion-optimized script -->
-    <script>
-      // Enhanced MathJax processing for PDF/DOCX conversion
-      document.addEventListener("DOMContentLoaded", function () {
-        console.log("DOM loaded, initializing MathJax for conversion...");
-
-        // Wait for MathJax to be available
-        function waitForMathJax() {
-          if (window.MathJax && window.MathJax.typesetPromise) {
-            return Promise.resolve();
-          }
-          return new Promise((resolve) => {
-            setTimeout(() => waitForMathJax().then(resolve), 100);
-          });
-        }
-
-        waitForMathJax()
-          .then(() => {
-            console.log("MathJax available, starting typesetting...");
-            // Force processing of all math elements, including equation-block divs
-            return window.MathJax.typesetPromise(
-              document.querySelectorAll(
-                ".equation-block, .math-block, .arithmatex"
-              )
-            );
-          })
-          .then(() => {
-            console.log("MathJax typesetting completed for conversion");
-
-            // Add conversion-ready class to body
-            document.body.classList.add("mathjax-ready");
-
-            // Ensure all equations are properly rendered
-            const mathElements = document.querySelectorAll(
-              ".MathJax, .MathJax_Display, mjx-container"
-            );
-            console.log(`Found ${mathElements.length} rendered math elements`);
-            mathElements.forEach((el) => {
-              el.style.visibility = "visible";
-              el.style.display =
-                el.classList.contains("MathJax_Display") ||
-                el.hasAttribute("display")
-                  ? "block"
-                  : "inline-block";
-            });
-
-            // Signal to conversion tools that content is ready
-            window.mathJaxReady = true;
-            document.dispatchEvent(new Event("mathJaxReady"));
-          })
-          .catch((err) => {
-            console.error("MathJax typesetting failed:", err);
-            // Fallback for conversion tools
-            document.body.classList.add("mathjax-fallback");
-          });
-      });
-
-      // Print media query handler for better PDF conversion
-      if (window.matchMedia) {
-        const printMediaQuery = window.matchMedia("print");
-        printMediaQuery.addListener(function (mq) {
-          if (mq.matches) {
-            // Optimize for print/PDF
-            document.body.classList.add("print-conversion");
-
-            // Ensure equations are visible in print
-            const mathElements = document.querySelectorAll(
-              "mjx-container, .MathJax"
-            );
-            mathElements.forEach((el) => {
-              el.style.pageBreakInside = "avoid";
-              el.style.breakInside = "avoid";
-            });
-          }
-        });
-      }
-
-      // Additional helper for conversion tools that may need synchronous access
-      window.ensureMathJaxReady = function () {
-        return new Promise((resolve) => {
-          if (window.mathJaxReady) {
-            resolve();
-          } else {
-            document.addEventListener("mathJaxReady", resolve, { once: true });
-          }
-        });
-      };
-
-      // Manual MathJax retrigger function for debugging
-      window.retriggerMathJax = function () {
-        if (window.MathJax && window.MathJax.typesetPromise) {
-          console.log("Manually retriggering MathJax processing...");
-          return window.MathJax.typesetPromise(
-            document.querySelectorAll(".equation-block, .math-block")
-          ).then(() => {
-            console.log("Manual MathJax processing completed");
-            const mathElements = document.querySelectorAll(
-              "mjx-container, .MathJax"
-            );
-            console.log(
-              `After manual processing: ${mathElements.length} math elements found`
-            );
-          });
-        } else {
-          console.error("MathJax not available for manual retriggering");
-        }
-      };
-
-      // Fallback processing after page load
-      window.addEventListener("load", function () {
-        setTimeout(() => {
-          if (!window.mathJaxReady && window.MathJax) {
-            console.log("Fallback: retriggering MathJax after page load...");
-            window.retriggerMathJax();
-          }
-        }, 2000);
-      });
-    </script>
-
-    <!-- Style optimizations for conversion -->
+    <!-- Simple styling for equations -->
     <style>
-      /* Print and conversion optimizations */
-      @media print, (prefers-reduced-motion: reduce) {
-        mjx-container[display="true"] {
-          display: block !important;
-          text-align: center !important;
-          margin: 1em 0 !important;
-          page-break-inside: avoid !important;
-        }
-
-        mjx-container:not([display="true"]) {
-          display: inline !important;
-        }
-
-        .MathJax_Display {
-          display: block !important;
-          text-align: center !important;
-          margin: 1em 0 !important;
-          page-break-inside: avoid !important;
-        }
-
-        .math-block {
-          display: block !important;
-          text-align: center !important;
-          margin: 1.5em 0 !important;
-          page-break-inside: avoid !important;
-        }
-
-        .math-inline {
-          display: inline !important;
-          margin: 0 2px !important;
-        }
-      }
-
-      /* Ensure equations are visible during conversion */
-      .mathjax-ready mjx-container,
-      .mathjax-ready .MathJax {
-        opacity: 1 !important;
-        visibility: visible !important;
-      }
-
-      /* Fallback styles for conversion tools */
-      .mathjax-fallback .arithmatex {
-        font-family: "Courier New", monospace;
-        background-color: #f5f5f5;
-        padding: 2px 4px;
-        border-radius: 3px;
-      }
-
-      /* Ensure equation blocks are always visible */
       .equation-block,
       .math-block {
-        display: block !important;
-        text-align: center !important;
-        margin: 1em 0 !important;
-        visibility: visible !important;
-        font-size: 1.1em;
-      }
-
-      /* Force MathJax containers to be visible */
-      mjx-container,
-      .MathJax,
-      .MathJax_Display {
-        visibility: visible !important;
-        opacity: 1 !important;
-        display: block !important;
-      }
-
-      mjx-container[display="true"],
-      .MathJax_Display {
-        text-align: center !important;
-        margin: 1em auto !important;
+        display: block;
+        text-align: center;
+        margin: 1em 0;
+        padding: 0.5em 0;
       }
     </style>
   </head>
   <body>
+    <div
+      style="
+        position: fixed;
+        top: 10px;
+        right: 10px;
+        z-index: 1000;
+        background: #f0f0f0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        display: none;
+      "
+    >
+      <button
+        onclick="window.retriggerMathJax()"
+        style="padding: 5px 10px; margin-right: 5px"
+      >
+        Retrigger MathJax
+      </button>
+      <button
+        onclick="console.log('Math elements:', document.querySelectorAll('mjx-container, .MathJax').length)"
+        style="padding: 5px 10px"
+      >
+        Count Math
+      </button>
+      <button style="padding: 5px 10px">Hide</button>
+    </div>
+    <script>
+      // Show debug panel on Ctrl+Shift+D
+      document.addEventListener("keydown", function (e) {
+        if (e.ctrlKey && e.shiftKey && e.key === "D") {
+        }
+      });
+    </script>
     <div class="title-page">
       <div class="paper-title">
         <h1>
@@ -701,13 +482,11 @@
           Figure 3: Aerator Performance Metrics
         </figcaption>
       </figure>
-
       <h5>2.3.4 Aerator Quantity Calculation</h5>
       <div class="equation-block math-block">
         $$\text{Number of Aerators} = \left\lceil
         \frac{\text{TOD}}{\text{OTR}_T} \right\rceil$$
       </div>
-
       <figure>
         <img
           alt="Aerator Quantity Calculation"
@@ -882,7 +661,6 @@
         Hanson, 2021; Susilowati et al., 2021).
       </p>
       <h2>3. Results</h2>
-
       <h2>AERATOR PERFORMANCE SUMMARY</h2>
       <table class="performance-table">
         <thead>
@@ -1346,4 +1124,5 @@
       </table>
     </div>
   </body>
+  \n
 </html>
