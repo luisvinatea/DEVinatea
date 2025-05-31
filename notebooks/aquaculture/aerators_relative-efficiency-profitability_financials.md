@@ -125,12 +125,7 @@ region.
 After performing data manipulation techniques, we can observe the
 following patterns:
 
-<figure>
-<img src="../plots/aerator_imports_2021_2024.png" class="img-xlarge"
-alt="Aerator Market in Ecuador" />
-<figcaption>Figure 1: Aerator Imports in Ecuador
-(2021-2024)</figcaption>
-</figure>
+![png](../plots/aerator_imports_2021_2024.png)
 
 The dashboard on aerator imports (2021-2024) reveals some insights
 across multiple dimensions. China dominates as the top country of origin
@@ -147,12 +142,7 @@ their logistical prominence. Consignee directions peak with La Puntilla
 category tops brokered models at 154K units, reflecting market
 preferences for cost savings.
 
-<figure>
-<img src="../plots/aerator_fob_price.png" class="img-fluid"
-alt="Aerator Unitary Prices in Ecuador" />
-<figcaption>Figure 2: Aerator Unitary Prices in Ecuador
-(2021-2024)</figcaption>
-</figure>
+![png](../plots/aerator_fob_price.png)
 
 The aerator prices chart (2021-2024) shows a highly skewed distribution
 of FOB unit prices, with a mean of $812.96, indicating that most
@@ -247,23 +237,13 @@ $$\text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} (\text{kg } \text{O}_2/\tex
 Where $\text{Power (kW)} = \text{Power (HP)} \times 0.746$ (Kumar
 et al., 2020).
 
-<figure>
-<img
-src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_4_0.png"
-class="img-fluid" alt="Aerator Performance Metrics" />
-<figcaption>Figure 3: Aerator Performance Metrics</figcaption>
-</figure>
+![png](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_4_0.png)
 
 ##### 2.3.4 Aerator Quantity Calculation
 
 $$\text{Number of Aerators} = \left\lceil \frac{\text{TOD}}{\text{OTR}_T} \right\rceil$$
 
-<figure>
-<img
-src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_6_0.png"
-class="img-fluid" alt="Aerator Quantity Calculation" />
-<figcaption>Figure 4: Aerator Quantity Calculation</figcaption>
-</figure>
+![png](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_6_0.png)
 
 ### 2.3.5 Annual Revenue
 
@@ -282,12 +262,7 @@ $$\text{Total Initial Cost} = \text{Number of Aerators} \times \text{Cost per Ae
 2.  **Maintenance Cost:** $\text{Maintenance Cost per Unit per Year} \times \text{Number of Aerators}$
 3.  **Replacement Cost (Annualized):** $(\text{Number of Aerators} \times \text{Cost per Aerator}) / \text{Durability (years)}$
 
-<figure>
-<img
-src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_8_0.png"
-class="img-fluid" alt="Aerator Performance Metrics" />
-<figcaption>Figure 5: Aerator Performance Metrics</figcaption>
-</figure>
+![png](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_8_0.png)
 
 ### 2.4 Financial Indicators
 
@@ -308,12 +283,7 @@ If $\Delta I \leq 0$, standard IRR is undefined; adapted IRR anchors
 against baseline cost, scaled by SOTR ratio, capped at 100% (Kumar et
 al., 2020).
 
-<figure>
-<img
-src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_10_0.png"
-class="img-fluid" alt="Aerator Performance Metrics" />
-<figcaption>Figure 6: Adapted IRR Calculation</figcaption>
-</figure>
+![png](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_10_0.png)
 
 ### 2.4.2.1 Payback Period
 
@@ -357,12 +327,7 @@ $$
 Where $k_{base} = \frac{NPV_{sav}}{C_{base}} \times R_{SOTR}$,
 $F_{cost, eq} = \frac{|\Delta I|}{C_{base}}$, $F_{cost} = \frac{C_{base}}{C_{base} + \Delta I}$ (Engle, 2010).
 
-<figure>
-<img
-src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_12_0.png"
-class="img-fluid" alt="Aerator Performance Metrics" />
-<figcaption>Figure 7: Profitability Index (k) Calculation</figcaption>
-</figure>
+![png](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_12_0.png)
 
 ### 2.4.2.4 Equilibrium Price ($P_{eq}$)
 
@@ -376,12 +341,7 @@ $$
 
 Where $P_{base} = \frac{(C_{\text{annual, non-winner}} - (C_{E, \text{winner}} + C_{M, \text{winner}})) \times D_{\text{winner}}}{N_{\text{winner}}}$, $F_{cost, eq} = \frac{P_{base}}{C_{base}}$ (Asche et al., 2021).
 
-<figure>
-<img
-src="aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_14_0.png"
-class="img-fluid" alt="Aerator Performance Metrics" />
-<figcaption>Figure 8: Equilibrium Price Calculation</figcaption>
-</figure>
+![png](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_14_0.png)
 
 ### 2.4.2.5 Opportunity Cost
 
@@ -456,4 +416,3 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 | Aerator 3 → to → Aerator 4 | $100                      | 1.0                            | 1,918                                  | -1,388               | 0.0100          | 19.2                                          | 0.0100             | 180                               |
 | Aerator 4 → to → Aerator 5 | $300                      | 1.5                            | 2,877                                  | -926                 | 0.0050          | 9.6                                           | 0.0050             | 945                               |
 | Aerator 5 → to → Aerator 6 | $300                      | 1.5                            | 2,877                                  | -462                 | 0.0050          | 9.6                                           | 0.0050             | 2160                              |
-

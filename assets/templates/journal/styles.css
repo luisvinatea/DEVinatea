@@ -1,24 +1,22 @@
 /* 
- * CSS Template for Academic Papers
+ * CSS Template for Academic Papers - Optimized for Pandoc DOCX Export
  * Following APA 7th Edition guidelines and academic journal requirements
  */
 
-/* GENERAL PAGE LAYOUT */
+/* GENERAL PAGE LAYOUT - Pandoc DOCX Optimized */
 body {
   font-family: "Times New Roman", Times, serif;
   font-size: 12pt;
-  line-height: 2; /* Double-spaced per APA */
+  line-height: 1.5; /* Adjusted for better DOCX compatibility */
   color: #000000;
-  margin: 2.54cm; /* 1-inch margins (APA standard) */
+  margin: 1in; /* Standard margins for DOCX */
   background-color: white;
-  max-width: 21cm; /* A4 width */
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 8.5in; /* US Letter width for DOCX */
   text-align: left;
-  overflow-x: hidden; /* Prevent horizontal overflow */
+  page-break-inside: auto;
 }
 
-/* HEADINGS - APA 7th Edition Levels */
+/* HEADINGS - APA 7th Edition Levels - DOCX Optimized */
 h1,
 h2,
 h3,
@@ -27,18 +25,21 @@ h5,
 h6 {
   font-family: "Times New Roman", Times, serif;
   color: #000000;
-  margin-top: 0;
-  margin-bottom: 0;
-  line-height: 2;
+  margin-top: 12pt;
+  margin-bottom: 6pt;
+  line-height: 1.5;
+  page-break-after: avoid;
+  page-break-inside: avoid;
 }
 
 /* Level 1 Heading - Centered, Bold, Title Case */
 h1 {
-  font-size: 12pt;
+  font-size: 14pt;
   font-weight: bold;
   text-align: center;
-  margin-top: 2em;
-  margin-bottom: 1em;
+  margin-top: 24pt;
+  margin-bottom: 12pt;
+  page-break-before: auto;
 }
 
 /* Level 2 Heading - Flush Left, Bold, Title Case */
@@ -46,8 +47,8 @@ h2 {
   font-size: 12pt;
   font-weight: bold;
   text-align: left;
-  margin-top: 2em;
-  margin-bottom: 1em;
+  margin-top: 18pt;
+  margin-bottom: 6pt;
 }
 
 /* Level 3 Heading - Flush Left, Bold Italic, Title Case */
@@ -56,38 +57,30 @@ h3 {
   font-weight: bold;
   font-style: italic;
   text-align: left;
-  margin-top: 1.5em;
-  margin-bottom: 0.5em;
+  margin-top: 12pt;
+  margin-bottom: 6pt;
 }
 
-/* Level 4 Heading - Indented, Bold, Title Case, Ending with Period */
+/* Level 4 Heading - Indented, Bold, Title Case */
 h4 {
   font-size: 12pt;
   font-weight: bold;
   font-style: normal;
-  text-indent: 1.27cm;
-  margin-top: 1em;
-  margin-bottom: 0;
-  display: inline;
+  text-indent: 0.5in;
+  margin-top: 12pt;
+  margin-bottom: 0pt;
+  display: block;
 }
 
-h4::after {
-  content: ".";
-}
-
-/* Level 5 Heading - Indented, Bold Italic, Title Case, Ending with Period */
+/* Level 5 Heading - Indented, Bold Italic, Title Case */
 h5 {
   font-size: 12pt;
   font-weight: bold;
   font-style: italic;
-  text-indent: 1.27cm;
-  margin-top: 1em;
-  margin-bottom: 0;
-  display: inline;
-}
-
-h5::after {
-  content: ".";
+  text-indent: 0.5in;
+  margin-top: 12pt;
+  margin-bottom: 0pt;
+  display: block;
 }
 
 /* TITLE PAGE - APA Format */
@@ -142,15 +135,16 @@ h5::after {
   font-size: 12pt;
 }
 
-/* PARAGRAPHS - APA Format */
+/* PARAGRAPHS - APA Format - DOCX Optimized */
 p {
-  text-indent: 1.27cm; /* 0.5 inch first-line indent */
-  margin-top: 0;
-  margin-bottom: 0;
+  text-indent: 0.5in; /* First-line indent for DOCX */
+  margin-top: 0pt;
+  margin-bottom: 6pt;
   text-align: left;
-  -webkit-hyphens: none;
-  hyphens: none; /* APA discourages hyphenation */
-  page-break-inside: avoid; /* Prevent breaking paragraphs across pages */
+  line-height: 1.5;
+  page-break-inside: avoid;
+  orphans: 2;
+  widows: 2;
 }
 
 /* First paragraph after heading should not be indented */
@@ -161,6 +155,7 @@ h4 + p,
 h5 + p,
 h6 + p {
   text-indent: 0;
+  margin-top: 6pt;
 }
 
 /* ABSTRACT */
@@ -220,27 +215,30 @@ h6 + p {
   line-height: 2;
 }
 
-/* TABLES - APA Format */
+/* TABLES - APA Format - DOCX Optimized */
 table {
   border-collapse: collapse;
   width: 100%;
-  margin: 2em auto;
+  margin: 12pt auto;
   font-size: 10pt;
-  line-height: 1.5;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
+  line-height: 1.2;
+  border-top: 2pt solid #000;
+  border-bottom: 2pt solid #000;
+  page-break-inside: auto;
+  table-layout: auto;
 }
 
 th {
-  border-bottom: 1px solid #000;
-  padding: 0.5em;
+  border-bottom: 1pt solid #000;
+  padding: 6pt;
   text-align: left;
   font-weight: bold;
   vertical-align: top;
+  background-color: transparent;
 }
 
 td {
-  padding: 0.5em;
+  padding: 6pt;
   text-align: left;
   vertical-align: top;
   border: none;
@@ -250,48 +248,51 @@ td {
   font-weight: bold;
   font-style: italic;
   text-align: left;
-  margin-bottom: 0.5em;
-  margin-top: 2em;
+  margin-bottom: 6pt;
+  margin-top: 12pt;
 }
 
 .table-note {
-  font-size: 10pt;
+  font-size: 9pt;
   font-style: italic;
-  margin-top: 0.5em;
+  margin-top: 6pt;
   text-align: left;
 }
 
-/* ENHANCED TABLE STYLING */
+/* ENHANCED TABLE STYLING - DOCX Compatible */
 .table-responsive {
   width: 100%;
-  overflow-x: auto;
-  margin: 2em 0;
+  overflow: visible;
+  margin: 12pt 0;
 }
 
 .performance-table {
   border-collapse: collapse;
   width: 100%;
-  margin: 2em auto;
-  font-size: 10pt;
-  line-height: 1.5;
-  border-top: 2px solid #000;
-  border-bottom: 2px solid #000;
+  margin: 12pt auto;
+  font-size: 9pt;
+  line-height: 1.2;
+  border-top: 2pt solid #000;
+  border-bottom: 2pt solid #000;
+  page-break-inside: auto;
 }
 
 .performance-table th {
-  border-bottom: 1px solid #000;
-  padding: 12px;
+  border-bottom: 1pt solid #000;
+  padding: 6pt;
   text-align: center;
   font-weight: bold;
   vertical-align: top;
-  background-color: #f8f8f8;
+  background-color: transparent;
+  word-wrap: break-word;
 }
 
 .performance-table td {
-  padding: 12px;
+  padding: 6pt;
   text-align: center;
   vertical-align: top;
   border: none;
+  word-wrap: break-word;
 }
 
 .performance-table .row-header {
@@ -299,13 +300,15 @@ td {
   text-align: left;
 }
 
-/* FIGURES - APA Format */
+/* FIGURES - APA Format - DOCX Optimized */
 figure {
   text-align: center;
   page-break-inside: avoid;
-  margin-bottom: 0;
-  margin-top: 0;
-  width: 100%; /* Ensure figures take full width of container */
+  margin-top: 12pt;
+  margin-bottom: 12pt;
+  margin-left: 0;
+  margin-right: 0;
+  width: 100%;
   box-sizing: border-box;
 }
 
@@ -313,197 +316,200 @@ figure {
   font-weight: bold;
   font-style: italic;
   text-align: left;
-  margin-top: 1em;
-  margin-bottom: 0.5em;
+  margin-top: 6pt;
+  margin-bottom: 3pt;
   width: 100%;
+  font-size: 10pt;
 }
 
 figcaption {
-  font-size: 10pt;
-  line-height: 1.5;
+  font-size: 9pt;
+  line-height: 1.2;
   text-align: left;
-  margin-top: 0;
-  margin-bottom: 0;
+  margin-top: 3pt;
+  margin-bottom: 0pt;
   width: 100%;
 }
 
-/* IMAGES - Responsive and Academic Format */
+/* IMAGES - Responsive and Academic Format - DOCX Optimized */
 .img-fluid {
   max-width: 100%;
-  width: 100%; /* Make images take full width */
+  width: 100%;
   height: auto;
   display: block;
-  margin: 0 auto; /* Center horizontally */
-  text-align: center;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 6pt auto;
   page-break-inside: avoid;
-  object-fit: contain; /* Preserve aspect ratio */
+  object-fit: contain;
 }
 
-/* IMPROVED IMAGE SIZING AND LAYOUT */
+/* IMPROVED IMAGE SIZING FOR DOCX EXPORT */
 
-/* Extra large dashboard images for maximum impact */
+/* Extra large dashboard images */
 .img-xlarge {
   max-width: 100%;
-  width: 100%; /* Full width for maximum visibility */
+  width: 100%;
   height: auto;
-  min-height: 700px;
-  max-height: 1200px;
-  object-fit: contain; /* Maintains aspect ratio */
-  display: block;
-  margin: 1.5em auto;
-  border: 1px solid #ddd;
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
-  page-break-inside: avoid;
-}
-
-/* Large dashboard images for data visualization */
-.img-large {
-  max-width: 100%;
-  width: 100%; /* Full width for better visibility */
-  height: auto;
-  min-height: 650px;
-  max-height: 1000px;
-  object-fit: contain; /* Maintains aspect ratio */
-  display: block;
-  margin: 1.25em auto;
-  border: 1px solid #ddd;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-  page-break-inside: avoid;
-}
-
-/* Medium-sized images for charts and graphs */
-.img-medium {
-  max-width: 100%;
-  width: 100%; /* Full width for better visibility */
-  height: auto;
-  min-height: 450px;
-  max-height: 700px;
+  max-height: 8in; /* DOCX compatible height */
   object-fit: contain;
   display: block;
-  margin: 1em auto;
-  border: 1px solid #ddd;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.12);
+  margin: 12pt auto;
+  page-break-inside: avoid;
+}
+
+/* Large dashboard images */
+.img-large {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  max-height: 6in; /* DOCX compatible height */
+  object-fit: contain;
+  display: block;
+  margin: 12pt auto;
+  page-break-inside: avoid;
+}
+
+/* Medium-sized images for charts */
+.img-medium {
+  max-width: 100%;
+  width: 100%;
+  height: auto;
+  max-height: 4.5in; /* DOCX compatible height */
+  object-fit: contain;
+  display: block;
+  margin: 12pt auto;
   page-break-inside: avoid;
 }
 
 /* Standard academic figures */
 .img-standard {
   max-width: 100%;
-  width: 100%; /* Full width for better visibility */
+  width: 100%;
   height: auto;
-  min-height: 350px;
-  max-height: 600px;
+  max-height: 3.5in; /* DOCX compatible height */
   object-fit: contain;
   display: block;
-  margin: 1em auto;
-  border: 1px solid #ddd;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin: 12pt auto;
   page-break-inside: avoid;
 }
 
-/* Enhanced figure containers */
-.figure-container-xlarge {
-  text-align: center;
-  margin: 2em 0;
-  page-break-inside: avoid;
-  width: 100%;
-  overflow: hidden; /* Prevents any overflow issues */
-  box-sizing: border-box;
-}
-
-.figure-container-large {
-  text-align: center;
-  margin: 2em 0;
-  page-break-inside: avoid;
-  width: 100%;
-  overflow: hidden; /* Prevents any overflow issues */
-  box-sizing: border-box;
-}
-
-.figure-container-medium {
-  text-align: center;
-  margin: 2em 0;
-  page-break-inside: avoid;
-  width: 100%; /* Changed from 98% to 100% */
-  margin-left: auto;
-  margin-right: auto;
-  box-sizing: border-box;
-}
-
-/* ENHANCED OVERFLOW PROTECTION AND LAYOUT */
-
-/* Ensure body never allows horizontal overflow */
-body {
-  overflow-x: hidden;
-}
-
-/* Better container management for large images */
+/* Enhanced figure containers for DOCX */
 .figure-container-xlarge,
 .figure-container-large,
 .figure-container-medium {
-  max-width: 100%;
+  text-align: center;
+  margin: 12pt 0;
+  page-break-inside: avoid;
+  width: 100%;
   box-sizing: border-box;
 }
 
-/* Ensure all images respect container boundaries */
-.img-xlarge,
-.img-large,
-.img-medium,
-.img-standard,
-.img-fluid {
-  box-sizing: border-box;
+/* DOCX EXPORT OPTIMIZATIONS */
+
+/* Ensure all images are properly sized for Word */
+img {
   max-width: 100%;
   height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  page-break-inside: avoid;
 }
 
-/* Progressive enhancement for very large screens */
-@media screen and (min-width: 1400px) {
-  .img-xlarge {
-    width: 100%;
-    max-height: 1200px;
-  }
-
-  .img-large {
-    width: 100%;
-    max-height: 1000px;
-  }
+/* Better table handling for DOCX */
+.data-table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 12pt 0;
+  font-size: 9pt;
+  border: 1pt solid #000;
+  page-break-inside: auto;
 }
 
-/* Improved spacing for better visual hierarchy */
-.figure-container-xlarge {
-  margin: 2em auto;
-  padding: 0 1em;
+.data-table th,
+.data-table td {
+  border: 1pt solid #666;
+  padding: 6pt;
+  text-align: center;
+  vertical-align: middle;
+  word-wrap: break-word;
 }
 
-.figure-container-large {
-  margin: 2em auto;
-  padding: 0 0.8em;
+.data-table th {
+  background-color: transparent;
+  font-weight: bold;
+  text-align: center;
 }
 
-.figure-container-medium {
-  margin: 2em auto;
-  padding: 0 0.5em;
+.data-table .row-label {
+  font-weight: bold;
+  text-align: left;
+  background-color: transparent;
 }
 
-/* Enhanced shadow and border effects for larger images */
-.img-xlarge {
-  border-radius: 4px;
-  transition: box-shadow 0.3s ease;
+/* MATH EQUATIONS - DOCX Compatible */
+.equation-block {
+  margin: 12pt 0;
+  text-align: center;
+  page-break-inside: avoid;
+  padding: 6pt 0;
 }
 
-.img-xlarge:hover {
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+.equation-number {
+  float: right;
+  font-weight: normal;
+  margin-left: 12pt;
 }
 
-.img-large {
-  border-radius: 3px;
-  transition: box-shadow 0.3s ease;
+/* Mathematical expressions */
+.math-inline {
+  font-style: italic;
+  margin: 0 1pt;
 }
 
-.img-large:hover {
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+.math-block {
+  margin: 12pt 0;
+  text-align: center;
+  display: block;
+}
+
+/* CURRENCY AND NUMERICAL DATA */
+.currency {
+  font-weight: 500;
+  color: #000000; /* Black for DOCX compatibility */
+}
+
+.percentage {
+  font-weight: 500;
+  color: #000000; /* Black for DOCX compatibility */
+}
+
+.scientific-notation {
+  font-family: "Times New Roman", serif;
+  font-size: 0.9em;
+}
+
+/* Better emphasis for DOCX */
+strong {
+  font-weight: bold;
+  color: #000000;
+}
+
+em {
+  font-style: italic;
+  color: #000000;
+}
+
+/* Page break controls for DOCX */
+.page-break-before {
+  page-break-before: always;
+}
+
+.page-break-after {
+  page-break-after: always;
+}
+
+.no-page-break {
+  page-break-inside: avoid;
 }
 
 /* RESPONSIVE ADJUSTMENTS FOR DIFFERENT SCREEN SIZES */
