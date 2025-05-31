@@ -220,28 +220,34 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin: 12pt auto;
-  font-size: 10pt;
-  line-height: 1.2;
+  font-size: 9pt; /* Smaller font for better fit */
+  line-height: 1.1;
   border-top: 2pt solid #000;
   border-bottom: 2pt solid #000;
   page-break-inside: auto;
-  table-layout: auto;
+  table-layout: fixed; /* Fixed layout for better column control */
+  word-wrap: break-word;
 }
 
 th {
   border-bottom: 1pt solid #000;
-  padding: 6pt;
-  text-align: left;
+  padding: 4pt; /* Reduced padding */
+  text-align: center; /* Center align headers */
   font-weight: bold;
   vertical-align: top;
   background-color: transparent;
+  word-wrap: break-word;
+  hyphens: auto;
 }
 
 td {
-  padding: 6pt;
-  text-align: left;
+  padding: 4pt; /* Reduced padding */
+  text-align: center; /* Center align data */
   vertical-align: top;
   border: none;
+  word-wrap: break-word;
+  hyphens: auto;
+  overflow-wrap: break-word;
 }
 
 .table-title {
@@ -513,4 +519,57 @@ figure img,
   word-wrap: break-word;
   line-height: 1.2;
   vertical-align: top;
+}
+
+/* MATHEMATICAL EQUATIONS - DOCX Optimized */
+.math,
+.MathJax,
+.math-display {
+  font-size: 11pt;
+  line-height: 1.3;
+  margin: 6pt 0;
+  text-align: center;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: none;
+}
+
+.math-block {
+  margin: 12pt 0;
+  padding: 6pt;
+  text-align: center;
+  page-break-inside: avoid;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+/* Compact table styling for large tables */
+.compact-table {
+  font-size: 8pt;
+  line-height: 1;
+}
+
+.compact-table th,
+.compact-table td {
+  padding: 2pt;
+  font-size: 8pt;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* Narrow columns for financial data */
+.narrow-col {
+  width: 8%;
+  max-width: 60pt;
+}
+
+.medium-col {
+  width: 12%;
+  max-width: 80pt;
+}
+
+.wide-col {
+  width: 20%;
+  max-width: 120pt;
 }

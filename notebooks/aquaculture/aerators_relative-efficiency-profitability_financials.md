@@ -17,8 +17,8 @@ aerator options within the context of a specific shrimp farm,
 integrating Léon Walras\'s General Equilibrium Theory and Friedrich von
 Wieser\'s concept of Opportunity Cost. The study evaluates aerators
 based on updated technical performance metrics (including
-Temperature-Adjusted Oxygen Transfer Rate - \$OTR_T\$ and Standard
-Aeration Efficiency - \$SAE\$) derived from the farm's Total Oxygen
+Temperature-Adjusted Oxygen Transfer Rate - $OTR_T$ and Standard
+Aeration Efficiency - $SAE$) derived from the farm's Total Oxygen
 Demand ($TOD$) and detailed, adapted financial indicators (Net Present
 Value - $NPV$, Internal Rate of Return - $IRR$, Payback Period,
 Return on Investment - $ROI$, Profitability Index - $k$, Opportunity
@@ -291,23 +291,28 @@ $$
 \end{cases}
 $$
 
-Where $R_{SOTR} = \frac{S_{yr1}}{C_{base}} \times R_{SOTR}$, and
-$C_{base}$ is the baseline cost (Engle, 2010).
+Where:
+
+- $R_{SOTR} = \frac{S_{yr1}}{C_{base}} \times R_{SOTR}$
+- $C_{base}$ is the baseline cost (Engle, 2010)
 
 ### 2.4.2.2 Relative Return on Investment (ROI)
 
 $$
 \text{ROI}_{\text{relative}} = \begin{cases}
-\min\left( \left( \frac{S_{\text{yr1}}}{C_{\text{base}}} \times R_{\text{SOTR}} \times (1 + F_{\text{cost\_sav}}) \right) \times 100, R_{\text{SOTR}} \times 100 \right) & \text{if } \Delta I < 0 \text{ and } S_{\text{yr1}} > 0 \\
-\min\left( \left( \frac{S_{\text{yr1}}}{C_{\text{base}}} \times R_{\text{SOTR}} \right) \times 100, R_{\text{SOTR}} \times 100 \right) & \text{if } \Delta I = 0 \text{ and } S_{\text{yr1}} > 0 \\
-\min\left( \left( \frac{S_{\text{yr1}}}{\Delta I} \right) \times 100, R_{\text{SOTR}} \times 100 \right) & \text{if } \Delta I > 0 \text{ and } S_{\text{yr1}} > 0 \\
-0 & \text{if } S_{\text{yr1}} \leq 0 \text{ or } C_{\text{base}} \leq 0
+\min\left( \left( \frac{S_{\text{yr1}}}{C_{\text{base}}} \times R_{\text{SOTR}} \times (1 + F_{\text{cost\_sav}}) \right) \times 100, R_{\text{SOTR}} \times 100 \right) & \text{if } \Delta I < 0 \\
+\min\left( \left( \frac{S_{\text{yr1}}}{C_{\text{base}}} \times R_{\text{SOTR}} \right) \times 100, R_{\text{SOTR}} \times 100 \right) & \text{if } \Delta I = 0 \\
+\min\left( \left( \frac{S_{\text{yr1}}}{\Delta I} \right) \times 100, R_{\text{SOTR}} \times 100 \right) & \text{if } \Delta I > 0 \\
+0 & \text{if } S_{\text{yr1}} \leq 0
 \end{cases}
 $$
 
-Where $F_{cost\_sav} = \frac{|\Delta I|}{C_{base}}$. If
-$\Delta I \leq 0$, relative ROI is based on savings relative to
-baseline cost, scaled by SOTR ratio (Intelligon, 2022).
+**Note**: Conditions are: $S_{\text{yr1}} > 0$ and $C_{\text{base}} > 0$
+
+Where:
+
+- $F_{cost\_sav} = \frac{|\Delta I|}{C_{base}}$
+- If $\Delta I \leq 0$, relative ROI is based on savings relative to baseline cost, scaled by SOTR ratio (Intelligon, 2022)
 
 ### 2.4.2.3 Profitability Index ($k$)
 
@@ -316,12 +321,17 @@ k_{\text{relative}} = \begin{cases}
 k_{\text{base}} \times (1 + F_{\text{cost\_sav}}) & \text{if } \Delta I < 0 \\
 k_{\text{base}} & \text{if } \Delta I = 0 \\
 k_{\text{base}} \times F_{\text{cost}} & \text{if } \Delta I > 0 \\
-0 & \text{if } \text{NPV}_{\text{sav}} \leq 0 \text{ or } C_{\text{base}} \leq 0
+0 & \text{if } \text{NPV}_{\text{sav}} \leq 0
 \end{cases}
 $$
 
-Where $k_{base} = \frac{NPV_{sav}}{C_{base}} \times R_{SOTR}$,
-$F_{cost, eq} = \frac{|\Delta I|}{C_{base}}$, $F_{cost} = \frac{C_{base}}{C_{base} + \Delta I}$ (Engle, 2010).
+**Note**: Condition is $C_{\text{base}} > 0$
+
+Where:
+
+- $k_{base} = \frac{NPV_{sav}}{C_{base}} \times R_{SOTR}$
+- $F_{cost, eq} = \frac{|\Delta I|}{C_{base}}$
+- $F_{cost} = \frac{C_{base}}{C_{base} + \Delta I}$ (Engle, 2010)
 
 ![Figure 7: Profitability Index Comparison](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_12_0.png)
 
@@ -331,13 +341,18 @@ _Figure 7. Profitability Index (k) showing the relative profitability of differe
 
 $$
 P_{\text{eq}} = \begin{cases}
-\max\left(0, P_{\text{base}} \times R_{\text{SOTR}} \times \left(\frac{1}{1 + F_{\text{cost, eq}}}\right)\right) & \text{if } C_{\text{base}} > 0 \text{ and } P_{\text{base}} > 0 \\
-\max\left(0, P_{\text{base}} \times R_{\text{SOTR}}\right) & \text{if } C_{\text{base}} \leq 0 \text{ or } P_{\text{base}} \leq 0 \\
-0 & \text{if calculation prerequisites fail}
+\max\left(0, P_{\text{base}} \times R_{\text{SOTR}} \times \left(\frac{1}{1 + F_{\text{cost, eq}}}\right)\right) & \text{if } C_{\text{base}} > 0 \\
+\max\left(0, P_{\text{base}} \times R_{\text{SOTR}}\right) & \text{if } C_{\text{base}} \leq 0 \\
+0 & \text{otherwise}
 \end{cases}
 $$
 
-Where $P_{base} = \frac{(C_{\text{annual, non-winner}} - (C_{E, \text{winner}} + C_{M, \text{winner}})) \times D_{\text{winner}}}{N_{\text{winner}}}$, $F_{cost, eq} = \frac{P_{base}}{C_{base}}$ (Asche et al., 2021).
+**Note**: Condition is $P_{\text{base}} > 0$
+
+Where:
+
+- $P_{base} = \frac{(C_{\text{annual, non-winner}} - (C_{E, \text{winner}} + C_{M, \text{winner}})) \times D_{\text{winner}}}{N_{\text{winner}}}$
+- $F_{cost, eq} = \frac{P_{base}}{C_{base}}$ (Asche et al., 2021)
 
 ![Figure 8: Equilibrium Price Analysis](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_14_0.png)
 
