@@ -1,13 +1,12 @@
-# Analysis of Aerators for Shrimp Farming: Cost Optimization and the Real Cost of \"Cheap\"
+# Analysis of Aerators for Shrimp Farming: Cost Optimization and the Real Cost of "Cheap"
 
-Luis Paulo Vinatea Barberena
-BarberNode
-**Correspondence:** luisvinatea@icloud.com, +55 48 99221-9675
-
-**Address:** Servidao das Caranhas, 22, Barra da Lagoa, Florianopolis,
-SC, Brazil, 88061635
-
+**Author:** Luis Paulo Vinatea Barberena  
+**Affiliation:** BarberNode  
+**Correspondence:** luisvinatea@icloud.com, +55 48 99221-9675  
+**Address:** Servidao das Caranhas, 22, Barra da Lagoa, Florianopolis, SC, Brazil, 88061635  
 **Date:** 2025-05-02
+
+---
 
 ## Abstract
 
@@ -34,9 +33,7 @@ principles and adapted technical-financial assessments for optimizing
 operational costs and ensuring financial sustainability in shrimp
 aquaculture (Boyd & Hanson, 2021; The Fish Site, 2021).
 
-Keywords: Shrimp Farming, Aquaculture Economics,
-Aerator Efficiency, Opportunity Cost, Cost Optimization, Mathematical
-Modeling, Financial Analysis, Equipment Comparison Metrics
+**Keywords:** Shrimp Farming, Aquaculture Economics, Aerator Efficiency, Opportunity Cost, Cost Optimization, Mathematical Modeling, Financial Analysis, Equipment Comparison Metrics
 
 ## Highlights
 
@@ -125,7 +122,9 @@ region.
 After performing data manipulation techniques, we can observe the
 following patterns:
 
-![png](../plots/aerator_imports_2021_2024.png)
+![Figure 1: Aerator Imports Analysis (2021-2024)](../plots/aerator_imports_2021_2024.png)
+
+_Figure 1. Dashboard showing aerator imports (2021-2024) across multiple dimensions including countries of origin, importers, and product descriptions._
 
 The dashboard on aerator imports (2021-2024) reveals some insights
 across multiple dimensions. China dominates as the top country of origin
@@ -142,7 +141,9 @@ their logistical prominence. Consignee directions peak with La Puntilla
 category tops brokered models at 154K units, reflecting market
 preferences for cost savings.
 
-![png](../plots/aerator_fob_price.png)
+![Figure 2: Aerator Price Distribution (2021-2024)](../plots/aerator_fob_price.png)
+
+_Figure 2. Distribution of FOB unit prices for different aerator brands, showing pricing landscape from budget to premium segments._
 
 The aerator prices chart (2021-2024) shows a highly skewed distribution
 of FOB unit prices, with a mean of $812.96, indicating that most
@@ -169,53 +170,40 @@ calculated at 5.47 $\text{kg O}_2/hr/hectare$, resulting in a
 substantial total requirement of 5,470 $\text{kg O}_2/hr$ across
 the entire operation.
 
-For this analysis, we compare seven different paddlewheel aerator models
-(Aerator 0 through Aerator 6), all operating at the standard power
-rating of 3 $HP$ (2.238 $kW$). These aerators exhibit varying
-performance characteristics:
+For this analysis, we compare seven different paddlewheel aerator models (Aerator 0 through Aerator 6), all operating at the standard power rating of 3 $HP$ (2.238 $kW$). These aerators exhibit varying performance characteristics:
 
-Parameter Value
+**Table 2: Case Study Parameters**
 
----
-
-Production scale 1,000 hectares
-Operating temperature 31.5°C
-Energy cost \$0.05/kWh
-Daily aeration 8 hours
-Shrimp density 0.33 kg/m³
-Culture period 120 days
-Shrimp market price \$5.00/kg
-Annual discount rate 10%
-Annual inflation rate 3%
-Analysis timeframe 10 years
+| Parameter             | Value          |
+| :-------------------- | :------------- |
+| Production scale      | 1,000 hectares |
+| Operating temperature | 31.5°C         |
+| Energy cost           | $0.05/kWh      |
+| Daily aeration        | 8 hours        |
+| Shrimp density        | 0.33 kg/m³     |
+| Culture period        | 120 days       |
+| Shrimp market price   | $5.00/kg       |
+| Annual discount rate  | 10%            |
+| Annual inflation rate | 3%             |
+| Analysis timeframe    | 10 years       |
 
 ### 2.2 Aerator Investment Options
 
-The aerators under consideration present a classic economic dilemma:
-less expensive models with lower efficiency versus higher-priced models
-with superior oxygen transfer rates. While Aerator 0 has the lowest
-initial cost ($500), it does not offer the lowest operational cost.
-Aerator 1, despite being more expensive ($600), delivers lower
-$SOTR$ ($1.0 \text{kg O}_2/hr \text{ vs. } 1.2 \text{kg O}_2/hr$).
-The most efficient option, Aerator 6, transfers 6.0 $\text{kg O}_2/hr$ but costs $1,500 per unit.
+The aerators under consideration present a classic economic dilemma: less expensive models with lower efficiency versus higher-priced models with superior oxygen transfer rates. While Aerator 0 has the lowest initial cost ($500), it does not offer the lowest operational cost. Aerator 1, despite being more expensive ($600), delivers lower $SOTR$ ($1.0 \text{kg O}_2/hr \text{ vs. } 1.2 \text{kg O}_2/hr$). The most efficient option, Aerator 6, transfers 6.0 $\text{kg O}_2/hr$ but costs $1,500 per unit.
 
-The economic challenge is compounded by differences in durability
-(ranging from 2.0 to 6.0 years) and maintenance costs (from $20 to
-$90 per unit annually). This creates complex trade-offs between
-initial investment and long-term operational expenses. The total number
-of aerators required varies dramatically between options due to their
-different oxygen transfer capacities, directly impacting both initial
-investment and ongoing operational costs.
+The economic challenge is compounded by differences in durability (ranging from 2.0 to 6.0 years) and maintenance costs (from $20 to $90 per unit annually). This creates complex trade-offs between initial investment and long-term operational expenses. The total number of aerators required varies dramatically between options due to their different oxygen transfer capacities, directly impacting both initial investment and ongoing operational costs.
+
+**Table 1: Aerator Specifications and Costs**
 
 | Aerator Model | $SOTR$ ($\text{kg O}_2/hr$) | Purchase Price ($) | Maintenance Cost ($/year) | Durability (years) |
-| ------------- | --------------------------- | ------------------ | ------------------------- | ------------------ |
-| Aerator 0     | 1.2                         | 500                | 85                        | 2.0                |
-| Aerator 1     | 1.0                         | 600                | 70                        | 2.5                |
-| Aerator 2     | 1.5                         | 700                | 90                        | 2.0                |
-| Aerator 3     | 2.0                         | 800                | 40                        | 3.0                |
-| Aerator 4     | 3.0                         | 900                | 50                        | 6.0                |
-| Aerator 5     | 4.5                         | 1200               | 20                        | 3.5                |
-| Aerator 6     | 6.0                         | 1500               | 30                        | 4.0                |
+| :-----------: | :-------------------------: | :----------------: | :-----------------------: | :----------------: |
+|   Aerator 0   |             1.2             |        500         |            85             |        2.0         |
+|   Aerator 1   |             1.0             |        600         |            70             |        2.5         |
+|   Aerator 2   |             1.5             |        700         |            90             |        2.0         |
+|   Aerator 3   |             2.0             |        800         |            40             |        3.0         |
+|   Aerator 4   |             3.0             |        900         |            50             |        6.0         |
+|   Aerator 5   |             4.5             |        1200        |            20             |        3.5         |
+|   Aerator 6   |             6.0             |        1500        |            30             |        4.0         |
 
 ### 2.3 Parameters Used
 
@@ -237,13 +225,17 @@ $$\text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} (\text{kg } \text{O}_2/\tex
 Where $\text{Power (kW)} = \text{Power (HP)} \times 0.746$ (Kumar
 et al., 2020).
 
-![png](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_4_0.png)
+![Figure 3: Aerator Performance Metrics](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_4_0.png)
+
+_Figure 3. Comparison of aerator performance metrics including Standard Oxygen Transfer Rate (SOTR) and Standard Aeration Efficiency (SAE)._
 
 ##### 2.3.4 Aerator Quantity Calculation
 
 $$\text{Number of Aerators} = \left\lceil \frac{\text{TOD}}{\text{OTR}_T} \right\rceil$$
 
-![png](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_6_0.png)
+![Figure 4: Aerator Quantity Requirements](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_6_0.png)
+
+_Figure 4. Number of aerators required for each model to meet the farm's Total Oxygen Demand (TOD)._
 
 ### 2.3.5 Annual Revenue
 
@@ -262,7 +254,9 @@ $$\text{Total Initial Cost} = \text{Number of Aerators} \times \text{Cost per Ae
 2.  **Maintenance Cost:** $\text{Maintenance Cost per Unit per Year} \times \text{Number of Aerators}$
 3.  **Replacement Cost (Annualized):** $(\text{Number of Aerators} \times \text{Cost per Aerator}) / \text{Durability (years)}$
 
-![png](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_8_0.png)
+![Figure 5: Annual Operating Cost Analysis](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_8_0.png)
+
+_Figure 5. Breakdown of annual operating costs including energy, maintenance, and replacement costs for each aerator model._
 
 ### 2.4 Financial Indicators
 
@@ -283,7 +277,9 @@ If $\Delta I \leq 0$, standard IRR is undefined; adapted IRR anchors
 against baseline cost, scaled by SOTR ratio, capped at 100% (Kumar et
 al., 2020).
 
-![png](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_10_0.png)
+![Figure 6: Internal Rate of Return Analysis](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_10_0.png)
+
+_Figure 6. Internal Rate of Return (IRR) comparison showing financial attractiveness of each aerator option._
 
 ### 2.4.2.1 Payback Period
 
@@ -327,7 +323,9 @@ $$
 Where $k_{base} = \frac{NPV_{sav}}{C_{base}} \times R_{SOTR}$,
 $F_{cost, eq} = \frac{|\Delta I|}{C_{base}}$, $F_{cost} = \frac{C_{base}}{C_{base} + \Delta I}$ (Engle, 2010).
 
-![png](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_12_0.png)
+![Figure 7: Profitability Index Comparison](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_12_0.png)
+
+_Figure 7. Profitability Index (k) showing the relative profitability of different aerator investments._
 
 ### 2.4.2.4 Equilibrium Price ($P_{eq}$)
 
@@ -341,7 +339,9 @@ $$
 
 Where $P_{base} = \frac{(C_{\text{annual, non-winner}} - (C_{E, \text{winner}} + C_{M, \text{winner}})) \times D_{\text{winner}}}{N_{\text{winner}}}$, $F_{cost, eq} = \frac{P_{base}}{C_{base}}$ (Asche et al., 2021).
 
-![png](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_14_0.png)
+![Figure 8: Equilibrium Price Analysis](aerators_relative-efficiency-profitability_financials_files/aerators_relative-efficiency-profitability_financials_14_0.png)
+
+_Figure 8. Market equilibrium analysis showing theoretical prices based on Walras's General Equilibrium Theory._
 
 ### 2.4.2.5 Opportunity Cost
 
@@ -352,67 +352,77 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 
 ## 3. Results
 
-## AERATOR PERFORMANCE SUMMARY
+### 3.1 Aerator Performance Summary
 
-| Aerator   | $SOTR$ ($\text{kg O}_2/hr$) | Price ($) | Annual Production ($\text{kg O}_2/year$) | Cost Efficiency ($/\text{kg O}_2$) | Cost per SOTR ($/\text{SOTR}$) | SOTR per Dollar |
-| --------- | --------------------------- | --------- | ---------------------------------------- | ---------------------------------- | ------------------------------ | --------------- |
-| Aerator 0 | 1.2                         | $500      | 2,301                                    | $0.142                             | $417                           | 0.0024          |
-| Aerator 1 | 1.0                         | $600      | 1,918                                    | $0.170                             | $600                           | 0.0017          |
-| Aerator 2 | 1.5                         | $700      | 2,877                                    | $0.114                             | $467                           | 0.0021          |
-| Aerator 3 | 2.0                         | $800      | 3,836                                    | $0.085                             | $400                           | 0.0025          |
-| Aerator 4 | 3.0                         | $900      | 5,753                                    | $0.057                             | $300                           | 0.0033          |
-| Aerator 5 | 4.5                         | $1,200    | 8,630                                    | $0.038                             | $267                           | 0.0037          |
-| Aerator 6 | 6.0                         | $1,500    | 11,507                                   | $0.028                             | $250                           | 0.0040          |
+**Table 3: Aerator Performance and Cost Efficiency Metrics**
 
-## FARM-SCALE FINANCIAL ANALYSIS
+|  Aerator  | $SOTR$ ($\text{kg O}_2/hr$) | Price ($) | Annual Production ($\text{kg O}_2/year$) | Cost Efficiency ($/\text{kg O}_2$) | Cost per SOTR ($/\text{SOTR}$) | SOTR per Dollar |
+| :-------: | :-------------------------: | :-------: | :--------------------------------------: | :--------------------------------: | :----------------------------: | :-------------: |
+| Aerator 0 |             1.2             |   $500    |                  2,301                   |               $0.142               |              $417              |     0.0024      |
+| Aerator 1 |             1.0             |   $600    |                  1,918                   |               $0.170               |              $600              |     0.0017      |
+| Aerator 2 |             1.5             |   $700    |                  2,877                   |               $0.114               |              $467              |     0.0021      |
+| Aerator 3 |             2.0             |   $800    |                  3,836                   |               $0.085               |              $400              |     0.0025      |
+| Aerator 4 |             3.0             |   $900    |                  5,753                   |               $0.057               |              $300              |     0.0033      |
+| Aerator 5 |             4.5             |  $1,200   |                  8,630                   |               $0.038               |              $267              |     0.0037      |
+| Aerator 6 |             6.0             |  $1,500   |                  11,507                  |               $0.028               |              $250              |     0.0040      |
+
+### 3.2 Farm-Scale Financial Analysis
 
 **Farm Parameters:** 1,000 hectares, $TOD$: 5,470 $\text{kg O}_2/hr$, Annual Revenue: $16.6M, Analysis Period: 10 years
 
-| Aerator   | Quantity Required | Units/Hectare | Initial Investment ($M) | Annual Energy Cost ($M) | Annual Maintenance ($M) | Annual Replacement ($M) | Total Annual Cost ($M) | Cost as % Revenue | NPV Opportunity Cost ($M) |
-| --------- | ----------------- | ------------- | ----------------------- | ----------------------- | ----------------------- | ----------------------- | ---------------------- | ----------------- | ------------------------- |
-| Aerator 0 | 6,941             | 6.94          | $3.47                   | $2.27                   | $0.59                   | $1.74                   | $4.59                  | 27.7%             | $28.6                     |
-| Aerator 1 | 8,329             | 8.33          | $5.00                   | $2.72                   | $0.58                   | $2.00                   | $5.30                  | 32.0%             | $34.3                     |
-| Aerator 2 | 5,553             | 5.55          | $3.89                   | $1.81                   | $0.50                   | $1.94                   | $4.26                  | 25.7%             | $25.9                     |
-| Aerator 3 | 4,165             | 4.17          | $3.33                   | $1.36                   | $0.17                   | $1.11                   | $2.64                  | 15.9%             | $13.0                     |
-| Aerator 4 | 2,777             | 2.78          | $2.50                   | $0.91                   | $0.14                   | $0.42                   | $1.46                  | 8.8%              | $3.6                      |
-| Aerator 5 | 1,851             | 1.85          | $2.22                   | $0.60                   | $0.04                   | $0.63                   | $1.28                  | 7.7%              | $2.1                      |
-| Aerator 6 | 1,389             | 1.39          | $2.08                   | $0.45                   | $0.04                   | $0.52                   | $1.02                  | 6.1%              | $0.0                      |
+**Table 4: Farm-Scale Investment and Operating Cost Analysis**
 
-## FINANCIAL METRICS ANALYSIS
+|  Aerator  | Quantity Required | Units/Hectare | Initial Investment ($M) | Annual Energy Cost ($M) | Annual Maintenance ($M) | Annual Replacement ($M) | Total Annual Cost ($M) | Cost as % Revenue | NPV Opportunity Cost ($M) |
+| :-------: | :---------------: | :-----------: | :---------------------: | :---------------------: | :---------------------: | :---------------------: | :--------------------: | :---------------: | :-----------------------: |
+| Aerator 0 |       6,941       |     6.94      |          $3.47          |          $2.27          |          $0.59          |          $1.74          |         $4.59          |       27.7%       |           $28.6           |
+| Aerator 1 |       8,329       |     8.33      |          $5.00          |          $2.72          |          $0.58          |          $2.00          |         $5.30          |       32.0%       |           $34.3           |
+| Aerator 2 |       5,553       |     5.55      |          $3.89          |          $1.81          |          $0.50          |          $1.94          |         $4.26          |       25.7%       |           $25.9           |
+| Aerator 3 |       4,165       |     4.17      |          $3.33          |          $1.36          |          $0.17          |          $1.11          |         $2.64          |       15.9%       |           $13.0           |
+| Aerator 4 |       2,777       |     2.78      |          $2.50          |          $0.91          |          $0.14          |          $0.42          |         $1.46          |       8.8%        |           $3.6            |
+| Aerator 5 |       1,851       |     1.85      |          $2.22          |          $0.60          |          $0.04          |          $0.63          |         $1.28          |       7.7%        |           $2.1            |
+| Aerator 6 |       1,389       |     1.39      |          $2.08          |          $0.45          |          $0.04          |          $0.52          |         $1.02          |       6.1%        |           $0.0            |
+
+### 3.3 Financial Metrics Analysis
 
 **Advanced Financial Indicators:** IRR, ROI, Payback Period, Profitability Index, and Equilibrium Price
 
-| Aerator   | Internal Rate of Return (%) | Return on Investment (%) | Payback Period (Years) | Profitability Index ($k$) | Standard Aeration Efficiency ($\text{kg O}_2/kWh$) | Temperature-Adjusted $OTR_T$ ($\text{kg O}_2/hr$) | Total Power Required ($HP$) | HP per Hectare |
-| --------- | --------------------------- | ------------------------ | ---------------------- | ------------------------- | -------------------------------------------------- | ------------------------------------------------- | --------------------------- | -------------- |
-| Aerator 0 | 51.58%                      | 20.00%                   | 1.94                   | 2.38                      | 0.72                                               | 0.79                                              | 20,823                      | 20.82          |
-| Aerator 1 | 24.52%                      | 16.67%                   | 4.08                   | 1.45                      | 0.60                                               | 0.66                                              | 24,987                      | 24.99          |
-| Aerator 2 | 44.93%                      | 25.00%                   | 2.23                   | 2.30                      | 0.90                                               | 0.99                                              | 16,659                      | 16.66          |
-| Aerator 3 | 43.29%                      | 33.33%                   | 2.31                   | 1.91                      | 1.20                                               | 1.31                                              | 12,495                      | 12.49          |
-| Aerator 4 | 53.64%                      | 21.96%                   | 1.86                   | 1.25                      | 1.80                                               | 1.97                                              | 8,331                       | 8.33           |
-| Aerator 5 | 141.64%                     | 19.19%                   | 0.71                   | 1.35                      | 2.70                                               | 2.96                                              | 5,553                       | 5.55           |
-| Aerator 6 | 205.76%                     | 100.00%                  | 0.49                   | 8.23                      | 3.59                                               | 3.94                                              | 4,167                       | 4.17           |
+**Table 5: Comprehensive Financial Performance Metrics**
 
-## EQUILIBRIUM PRICE ANALYSIS
+|  Aerator  | Internal Rate of Return (%) | Return on Investment (%) | Payback Period (Years) | Profitability Index ($k$) | Standard Aeration Efficiency ($\text{kg O}_2/kWh$) | Temperature-Adjusted $OTR_T$ ($\text{kg O}_2/hr$) | Total Power Required ($HP$) | HP per Hectare |
+| :-------: | :-------------------------: | :----------------------: | :--------------------: | :-----------------------: | :------------------------------------------------: | :-----------------------------------------------: | :-------------------------: | :------------: |
+| Aerator 0 |           51.58%            |          20.00%          |          1.94          |           2.38            |                        0.72                        |                       0.79                        |           20,823            |     20.82      |
+| Aerator 1 |           24.52%            |          16.67%          |          4.08          |           1.45            |                        0.60                        |                       0.66                        |           24,987            |     24.99      |
+| Aerator 2 |           44.93%            |          25.00%          |          2.23          |           2.30            |                        0.90                        |                       0.99                        |           16,659            |     16.66      |
+| Aerator 3 |           43.29%            |          33.33%          |          2.31          |           1.91            |                        1.20                        |                       1.31                        |           12,495            |     12.49      |
+| Aerator 4 |           53.64%            |          21.96%          |          1.86          |           1.25            |                        1.80                        |                       1.97                        |            8,331            |      8.33      |
+| Aerator 5 |           141.64%           |          19.19%          |          0.71          |           1.35            |                        2.70                        |                       2.96                        |            5,553            |      5.55      |
+| Aerator 6 |           205.76%           |         100.00%          |          0.49          |           8.23            |                        3.59                        |                       3.94                        |            4,167            |      4.17      |
+
+### 3.4 Equilibrium Price Analysis
 
 **Market Equilibrium:** Theoretical prices based on Walras's General Equilibrium Theory (relative to Aerator 6 as winner)
 
-| Aerator   | Actual Price ($) | Equilibrium Price ($) | Price Difference ($) | Market Status      | Durability (Years) | Annual Maintenance ($/unit) | Cost-Effectiveness Rating |
-| --------- | ---------------- | --------------------- | -------------------- | ------------------ | ------------------ | --------------------------- | ------------------------- |
-| Aerator 0 | $500             | $2346.78              | $1846.78             | Underpriced        | 2.0                | $85                         | Fair                      |
-| Aerator 1 | $600             | $2292.40              | $1692.40             | Underpriced        | 2.5                | $70                         | Poor                      |
-| Aerator 2 | $700             | $2694.58              | $1994.58             | Underpriced        | 2.0                | $90                         | Fair                      |
-| Aerator 3 | $800             | $2050.71              | $1250.71             | Underpriced        | 3.0                | $40                         | Good                      |
-| Aerator 4 | $900             | $1390.88              | $490.88              | Underpriced        | 6.0                | $50                         | Excellent                 |
-| Aerator 5 | $1,200           | $1684.87              | $484.87              | Underpriced        | 3.5                | $20                         | Excellent                 |
-| Aerator 6 | $1,500           | $1500.00              | $0.00                | Winner (Reference) | 4.0                | $30                         | Excellent                 |
+**Table 6: Market Equilibrium and Cost-Effectiveness Analysis**
 
-## MARGINAL ANALYSIS
+|  Aerator  | Actual Price ($) | Equilibrium Price ($) | Price Difference ($) |   Market Status    | Durability (Years) | Annual Maintenance ($/unit) | Cost-Effectiveness Rating |
+| :-------: | :--------------: | :-------------------: | :------------------: | :----------------: | :----------------: | :-------------------------: | :-----------------------: |
+| Aerator 0 |       $500       |       $2346.78        |       $1846.78       |    Underpriced     |        2.0         |             $85             |           Fair            |
+| Aerator 1 |       $600       |       $2292.40        |       $1692.40       |    Underpriced     |        2.5         |             $70             |           Poor            |
+| Aerator 2 |       $700       |       $2694.58        |       $1994.58       |    Underpriced     |        2.0         |             $90             |           Fair            |
+| Aerator 3 |       $800       |       $2050.71        |       $1250.71       |    Underpriced     |        3.0         |             $40             |           Good            |
+| Aerator 4 |       $900       |       $1390.88        |       $490.88        |    Underpriced     |        6.0         |             $50             |         Excellent         |
+| Aerator 5 |      $1,200      |       $1684.87        |       $484.87        |    Underpriced     |        3.5         |             $20             |         Excellent         |
+| Aerator 6 |      $1,500      |       $1500.00        |        $0.00         | Winner (Reference) |        4.0         |             $30             |         Excellent         |
 
-| Upgrade Path               | Additional Investment ($) | SOTR Gain ($\text{kg O}_2/hr$) | Production Gain ($\text{kg O}_2/year$) | Aerator Count Change | SOTR per Dollar | Production per Dollar ($\text{kg O}_2/year/$) | Derivative (Slope) | Cumulative Gain ($\text{kg O}_2$) |
-| -------------------------- | ------------------------- | ------------------------------ | -------------------------------------- | -------------------- | --------------- | --------------------------------------------- | ------------------ | --------------------------------- |
-| Aerator 0 → to → Aerator 1 | $100                      | -0.2                           | -384                                   | 1,388                | -0.0020         | -3.8                                          | -0.0020            | -10                               |
-| Aerator 1 → to → Aerator 2 | $100                      | 0.5                            | 959                                    | -2,776               | 0.0050          | 9.6                                           | 0.0050             | -5                                |
-| Aerator 2 → to → Aerator 3 | $100                      | 0.5                            | 959                                    | -1,388               | 0.0050          | 9.6                                           | 0.0050             | 50                                |
-| Aerator 3 → to → Aerator 4 | $100                      | 1.0                            | 1,918                                  | -1,388               | 0.0100          | 19.2                                          | 0.0100             | 180                               |
-| Aerator 4 → to → Aerator 5 | $300                      | 1.5                            | 2,877                                  | -926                 | 0.0050          | 9.6                                           | 0.0050             | 945                               |
-| Aerator 5 → to → Aerator 6 | $300                      | 1.5                            | 2,877                                  | -462                 | 0.0050          | 9.6                                           | 0.0050             | 2160                              |
+### 3.5 Marginal Analysis
+
+**Table 7: Marginal Returns and Upgrade Path Analysis**
+
+|        Upgrade Path        | Additional Investment ($) | SOTR Gain ($\text{kg O}_2/hr$) | Production Gain ($\text{kg O}_2/year$) | Aerator Count Change | SOTR per Dollar | Production per Dollar ($\text{kg O}_2/year/$) | Derivative (Slope) | Cumulative Gain ($\text{kg O}_2$) |
+| :------------------------: | :-----------------------: | :----------------------------: | :------------------------------------: | :------------------: | :-------------: | :-------------------------------------------: | :----------------: | :-------------------------------: |
+| Aerator 0 → to → Aerator 1 |           $100            |              -0.2              |                  -384                  |        1,388         |     -0.0020     |                     -3.8                      |      -0.0020       |                -10                |
+| Aerator 1 → to → Aerator 2 |           $100            |              0.5               |                  959                   |        -2,776        |     0.0050      |                      9.6                      |       0.0050       |                -5                 |
+| Aerator 2 → to → Aerator 3 |           $100            |              0.5               |                  959                   |        -1,388        |     0.0050      |                      9.6                      |       0.0050       |                50                 |
+| Aerator 3 → to → Aerator 4 |           $100            |              1.0               |                 1,918                  |        -1,388        |     0.0100      |                     19.2                      |       0.0100       |                180                |
+| Aerator 4 → to → Aerator 5 |           $300            |              1.5               |                 2,877                  |         -926         |     0.0050      |                      9.6                      |       0.0050       |                945                |
+| Aerator 5 → to → Aerator 6 |           $300            |              1.5               |                 2,877                  |         -462         |     0.0050      |                      9.6                      |       0.0050       |               2160                |
