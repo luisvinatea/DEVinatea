@@ -174,29 +174,20 @@ For this analysis, we compare seven different paddlewheel aerator models (Aerato
 
 **Table 2: Case Study Parameters**
 
-<div class="table-responsive">
-<table class="compact-table">
-<caption><strong>Table 2.</strong> Case study parameters for the financial and technical analysis.</caption>
-<thead>
-<tr>
-<th class="medium-col">Parameter</th>
-<th class="medium-col">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Production scale</td><td>1,000 hectares</td></tr>
-<tr><td>Operating temperature</td><td>31.5°C</td></tr>
-<tr><td>Energy cost</td><td>$0.05/kWh</td></tr>
-<tr><td>Daily aeration</td><td>8 hours</td></tr>
-<tr><td>Shrimp density</td><td>0.33 kg/m³</td></tr>
-<tr><td>Culture period</td><td>120 days</td></tr>
-<tr><td>Shrimp market price</td><td>$5.00/kg</td></tr>
-<tr><td>Annual discount rate</td><td>10%</td></tr>
-<tr><td>Annual inflation rate</td><td>3%</td></tr>
-<tr><td>Analysis timeframe</td><td>10 years</td></tr>
-</tbody>
-</table>
-</div>
+| Parameter             | Value          |
+| --------------------- | -------------- |
+| Production scale      | 1,000 hectares |
+| Operating temperature | 31.5°C         |
+| Energy cost           | $0.05/kWh      |
+| Daily aeration        | 8 hours        |
+| Shrimp density        | 0.33 kg/m³     |
+| Culture period        | 120 days       |
+| Shrimp market price   | $5.00/kg       |
+| Annual discount rate  | 10%            |
+| Annual inflation rate | 3%             |
+| Analysis timeframe    | 10 years       |
+
+Table 2. Case study parameters for the financial and technical analysis.
 
 ### 2.2 Aerator Investment Options
 
@@ -206,29 +197,17 @@ The economic challenge is compounded by differences in durability (ranging from 
 
 **Table 1: Aerator Specifications and Costs**
 
-<div class="table-responsive">
-<table class="compact-table">
-<caption><strong>Table 1.</strong> Aerator specifications and costs including SOTR in kg O₂/hr, purchase price in USD, annual maintenance costs, and expected durability in years.</caption>
-<thead>
-<tr>
-<th class="narrow-col">Model</th>
-<th class="narrow-col">SOTR (kg O₂/hr)</th>
-<th class="narrow-col">Purchase Price</th>
-<th class="narrow-col">Maintenance Cost/year</th>
-<th class="narrow-col">Durability (years)</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Aerator 0</td><td>1.2</td><td>$500</td><td>$85</td><td>2.0</td></tr>
-<tr><td>Aerator 1</td><td>1.0</td><td>$600</td><td>$70</td><td>2.5</td></tr>
-<tr><td>Aerator 2</td><td>1.5</td><td>$700</td><td>$90</td><td>2.0</td></tr>
-<tr><td>Aerator 3</td><td>2.0</td><td>$800</td><td>$40</td><td>3.0</td></tr>
-<tr><td>Aerator 4</td><td>3.0</td><td>$900</td><td>$50</td><td>6.0</td></tr>
-<tr><td>Aerator 5</td><td>4.5</td><td>$1,200</td><td>$20</td><td>3.5</td></tr>
-<tr><td>Aerator 6</td><td>6.0</td><td>$1,500</td><td>$30</td><td>4.0</td></tr>
-</tbody>
-</table>
-</div>
+| Model     | SOTR (kg O₂/hr) | Purchase Price | Maintenance Cost/year | Durability (years) |
+| --------- | --------------- | -------------- | --------------------- | ------------------ |
+| Aerator 0 | 1.2             | $500           | $85                   | 2.0                |
+| Aerator 1 | 1.0             | $600           | $70                   | 2.5                |
+| Aerator 2 | 1.5             | $700           | $90                   | 2.0                |
+| Aerator 3 | 2.0             | $800           | $40                   | 3.0                |
+| Aerator 4 | 3.0             | $900           | $50                   | 6.0                |
+| Aerator 5 | 4.5             | $1,200         | $20                   | 3.5                |
+| Aerator 6 | 6.0             | $1,500         | $30                   | 4.0                |
+
+Table 1. Aerator specifications and costs including SOTR in kg O₂/hr, purchase price in USD, annual maintenance costs, and expected durability in years.
 
 ### 2.3 Parameters Used
 
@@ -323,21 +302,36 @@ Where:
 
 ### 2.4.2.2 Relative Return on Investment (ROI)
 
+ROI calculation depends on investment difference ($\Delta I$) between candidate and baseline aerators:
+
+**Case 1: When $\Delta I < 0$ (cost savings)**
+
 $$
-\text{ROI}_{\text{relative}} = \begin{cases}
-\min\left( \left( \frac{S_{\text{yr1}}}{C_{\text{base}}} \times R_{\text{SOTR}} \times (1 + F_{\text{cost\_sav}}) \right) \times 100, R_{\text{SOTR}} \times 100 \right) & \text{if } \Delta I < 0 \\
-\min\left( \left( \frac{S_{\text{yr1}}}{C_{\text{base}}} \times R_{\text{SOTR}} \right) \times 100, R_{\text{SOTR}} \times 100 \right) & \text{if } \Delta I = 0 \\
-\min\left( \left( \frac{S_{\text{yr1}}}{\Delta I} \right) \times 100, R_{\text{SOTR}} \times 100 \right) & \text{if } \Delta I > 0 \\
-0 & \text{if } S_{\text{yr1}} \leq 0
-\end{cases}
+\text{ROI}_{\text{relative}} = \min\left( \left( \frac{S_{\text{yr1}}}{C_{\text{base}}} \times R_{\text{SOTR}} \times (1 + F_{\text{cost\_sav}}) \right) \times 100, R_{\text{SOTR}} \times 100 \right)
 $$
 
-**Note**: Conditions are: $S_{\text{yr1}} > 0$ and $C_{\text{base}} > 0$
+**Case 2: When $\Delta I = 0$ (equal investment)**
 
-Where:
+$$
+\text{ROI}_{\text{relative}} = \min\left( \left( \frac{S_{\text{yr1}}}{C_{\text{base}}} \times R_{\text{SOTR}} \right) \times 100, R_{\text{SOTR}} \times 100 \right)
+$$
 
-- $F_{cost\_sav} = \frac{|\Delta I|}{C_{base}}$
-- If $\Delta I \leq 0$, relative ROI is based on savings relative to baseline cost, scaled by SOTR ratio (Intelligon, 2022)
+**Case 3: When $\Delta I > 0$ (additional investment)**
+
+$$
+\text{ROI}_{\text{relative}} = \min\left( \left( \frac{S_{\text{yr1}}}{\Delta I} \right) \times 100, R_{\text{SOTR}} \times 100 \right)
+$$
+
+**Case 4: When $S_{\text{yr1}} \leq 0$ (no savings)**
+
+$$
+\text{ROI}_{\text{relative}} = 0
+$$
+
+**Where:**  
+• $F_{\text{cost\_sav}} = \frac{|\Delta I|}{C_{\text{base}}}$ (cost savings factor)  
+• $S_{\text{yr1}} > 0$ and $C_{\text{base}} > 0$ (required conditions)  
+• For $\Delta I \leq 0$: ROI based on savings relative to baseline cost, scaled by SOTR ratio  
 
 ### 2.4.2.3 Profitability Index ($k$)
 
@@ -396,151 +390,73 @@ Quantifies economic loss from less efficient equipment (Boyd & Hanson,
 
 **Table 3: Aerator Performance and Cost Efficiency Metrics**
 
-<div class="table-responsive">
-<table class="compact-table">
-<caption><strong>Table 3.</strong> Aerator performance and cost efficiency metrics. SOTR in kg O₂/hr, Annual Production in kg O₂/year, Cost Efficiency in USD/kg O₂, Cost per SOTR in USD/unit.</caption>
-<thead>
-<tr>
-<th class="narrow-col">Aerator</th>
-<th class="narrow-col">SOTR</th>
-<th class="narrow-col">Price</th>
-<th class="medium-col">Annual Production</th>
-<th class="narrow-col">Cost Efficiency</th>
-<th class="narrow-col">Cost per SOTR</th>
-<th class="narrow-col">SOTR per Dollar</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Aerator 0</td><td>1.2</td><td>$500</td><td>2,301</td><td>$0.142</td><td>$417</td><td>0.0024</td></tr>
-<tr><td>Aerator 1</td><td>1.0</td><td>$600</td><td>1,918</td><td>$0.170</td><td>$600</td><td>0.0017</td></tr>
-<tr><td>Aerator 2</td><td>1.5</td><td>$700</td><td>2,877</td><td>$0.114</td><td>$467</td><td>0.0021</td></tr>
-<tr><td>Aerator 3</td><td>2.0</td><td>$800</td><td>3,836</td><td>$0.085</td><td>$400</td><td>0.0025</td></tr>
-<tr><td>Aerator 4</td><td>3.0</td><td>$900</td><td>5,753</td><td>$0.057</td><td>$300</td><td>0.0033</td></tr>
-<tr><td>Aerator 5</td><td>4.5</td><td>$1,200</td><td>8,630</td><td>$0.038</td><td>$267</td><td>0.0037</td></tr>
-<tr><td>Aerator 6</td><td>6.0</td><td>$1,500</td><td>11,507</td><td>$0.028</td><td>$250</td><td>0.0040</td></tr>
-</tbody>
-</table>
-</div>
+| Aerator   | SOTR | Price  | Annual Production | Cost Efficiency | Cost per SOTR | SOTR per Dollar |
+| --------- | ---- | ------ | ----------------- | --------------- | ------------- | --------------- |
+| Aerator 0 | 1.2  | $500   | 2,301             | $0.142          | $417          | 0.0024          |
+| Aerator 1 | 1.0  | $600   | 1,918             | $0.170          | $600          | 0.0017          |
+| Aerator 2 | 1.5  | $700   | 2,877             | $0.114          | $467          | 0.0021          |
+| Aerator 3 | 2.0  | $800   | 3,836             | $0.085          | $400          | 0.0025          |
+| Aerator 4 | 3.0  | $900   | 5,753             | $0.057          | $300          | 0.0033          |
+| Aerator 5 | 4.5  | $1,200 | 8,630             | $0.038          | $267          | 0.0037          |
+| Aerator 6 | 6.0  | $1,500 | 11,507            | $0.028          | $250          | 0.0040          |
+
+Table 3. Aerator performance and cost efficiency metrics. SOTR in kg O₂/hr, Annual Production in kg O₂/year, Cost Efficiency in USD/kg O₂, Cost per SOTR in USD/unit.
 
 ### 3.2 Farm-Scale Financial Analysis
 
 **Farm Parameters:** 1,000 hectares, $TOD$: 5,470 $\text{kg O}_2/hr$, Annual Revenue: $16.6M, Analysis Period: 10 years
 
-<div class="table-responsive">
-<table class="compact-table">
-<caption><strong>Table 4.</strong> Farm-scale investment and operating cost analysis. Investment and costs in millions USD ($M), Revenue % as percentage of total revenue ($16.6M), NPV Opportunity Cost in millions USD.</caption>
-<thead>
-<tr>
-<th class="narrow-col">Aerator</th>
-<th class="narrow-col">Quantity</th>
-<th class="narrow-col">Units/Ha</th>
-<th class="narrow-col">Investment</th>
-<th class="narrow-col">Energy</th>
-<th class="narrow-col">Maintenance</th>
-<th class="narrow-col">Replace.</th>
-<th class="narrow-col">Total</th>
-<th class="narrow-col">Revenue %</th>
-<th class="narrow-col">NPV Opp. Cost</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Aerator 0</td><td>6,941</td><td>6.94</td><td>$3.47</td><td>$2.27</td><td>$0.59</td><td>$1.74</td><td>$4.59</td><td>27.7%</td><td>$28.6</td></tr>
-<tr><td>Aerator 1</td><td>8,329</td><td>8.33</td><td>$5.00</td><td>$2.72</td><td>$0.58</td><td>$2.00</td><td>$5.30</td><td>32.0%</td><td>$34.3</td></tr>
-<tr><td>Aerator 2</td><td>5,553</td><td>5.55</td><td>$3.89</td><td>$1.81</td><td>$0.50</td><td>$1.94</td><td>$4.26</td><td>25.7%</td><td>$25.9</td></tr>
-<tr><td>Aerator 3</td><td>4,165</td><td>4.17</td><td>$3.33</td><td>$1.36</td><td>$0.17</td><td>$1.11</td><td>$2.64</td><td>15.9%</td><td>$13.0</td></tr>
-<tr><td>Aerator 4</td><td>2,777</td><td>2.78</td><td>$2.50</td><td>$0.91</td><td>$0.14</td><td>$0.42</td><td>$1.46</td><td>8.8%</td><td>$3.6</td></tr>
-<tr><td>Aerator 5</td><td>1,851</td><td>1.85</td><td>$2.22</td><td>$0.60</td><td>$0.04</td><td>$0.63</td><td>$1.28</td><td>7.7%</td><td>$2.1</td></tr>
-<tr><td>Aerator 6</td><td>1,389</td><td>1.39</td><td>$2.08</td><td>$0.45</td><td>$0.04</td><td>$0.52</td><td>$1.02</td><td>6.1%</td><td>$0.0</td></tr>
-</tbody>
-</table>
-</div>
+| Aerator   | Quantity | Units/Ha | Investment | Energy | Maintenance | Replace. | Total | Revenue % | NPV Opp. Cost |
+| --------- | -------- | -------- | ---------- | ------ | ----------- | -------- | ----- | --------- | ------------- |
+| Aerator 0 | 6,941    | 6.94     | $3.47      | $2.27  | $0.59       | $1.74    | $4.59 | 27.7%     | $28.6         |
+| Aerator 1 | 8,329    | 8.33     | $5.00      | $2.72  | $0.58       | $2.00    | $5.30 | 32.0%     | $34.3         |
+| Aerator 2 | 5,553    | 5.55     | $3.89      | $1.81  | $0.50       | $1.94    | $4.26 | 25.7%     | $25.9         |
+| Aerator 3 | 4,165    | 4.17     | $3.33      | $1.36  | $0.17       | $1.11    | $2.64 | 15.9%     | $13.0         |
+| Aerator 4 | 2,777    | 2.78     | $2.50      | $0.91  | $0.14       | $0.42    | $1.46 | 8.8%      | $3.6          |
+| Aerator 5 | 1,851    | 1.85     | $2.22      | $0.60  | $0.04       | $0.63    | $1.28 | 7.7%      | $2.1          |
+| Aerator 6 | 1,389    | 1.39     | $2.08      | $0.45  | $0.04       | $0.52    | $1.02 | 6.1%      | $0.0          |
+
+Table 4. Farm-scale investment and operating cost analysis. Investment and costs in millions USD ($M), Revenue % as percentage of total revenue ($16.6M), NPV Opportunity Cost in millions USD.
 
 ### 3.3 Financial Metrics Analysis
 
-<div class="table-responsive">
-<table class="compact-table">
-<caption><strong>Table 5.</strong> Financial performance metrics. IRR and ROI in percentage, Payback in years, SAE in kg O₂/kWh, OTRT in kg O₂/hr, Total HP in horsepower, HP/Ha as HP per hectare.</caption>
-<thead>
-<tr>
-<th class="narrow-col">Aerator</th>
-<th class="narrow-col">IRR %</th>
-<th class="narrow-col">ROI %</th>
-<th class="narrow-col">Payback Yrs</th>
-<th class="narrow-col">Prof. Index</th>
-<th class="narrow-col">SAE</th>
-<th class="narrow-col">OTRT</th>
-<th class="narrow-col">Total HP</th>
-<th class="narrow-col">HP/Ha</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Aerator 0</td><td>51.58</td><td>20.00</td><td>1.94</td><td>2.38</td><td>0.72</td><td>0.79</td><td>20,823</td><td>20.82</td></tr>
-<tr><td>Aerator 1</td><td>24.52</td><td>16.67</td><td>4.08</td><td>1.45</td><td>0.60</td><td>0.66</td><td>24,987</td><td>24.99</td></tr>
-<tr><td>Aerator 2</td><td>44.93</td><td>25.00</td><td>2.23</td><td>2.30</td><td>0.90</td><td>0.99</td><td>16,659</td><td>16.66</td></tr>
-<tr><td>Aerator 3</td><td>43.29</td><td>33.33</td><td>2.31</td><td>1.91</td><td>1.20</td><td>1.31</td><td>12,495</td><td>12.49</td></tr>
-<tr><td>Aerator 4</td><td>53.64</td><td>21.96</td><td>1.86</td><td>1.25</td><td>1.80</td><td>1.97</td><td>8,331</td><td>8.33</td></tr>
-<tr><td>Aerator 5</td><td>141.64</td><td>19.19</td><td>0.71</td><td>1.35</td><td>2.70</td><td>2.96</td><td>5,553</td><td>5.55</td></tr>
-<tr><td>Aerator 6</td><td>205.76</td><td>100.00</td><td>0.49</td><td>8.23</td><td>3.59</td><td>3.94</td><td>4,167</td><td>4.17</td></tr>
-</tbody>
-</table>
-</div>
+| Aerator   | IRR %  | ROI %  | Payback Yrs | Prof. Index | SAE  | OTRT | Total HP | HP/Ha |
+| --------- | ------ | ------ | ----------- | ----------- | ---- | ---- | -------- | ----- |
+| Aerator 0 | 51.58  | 20.00  | 1.94        | 2.38        | 0.72 | 0.79 | 20,823   | 20.82 |
+| Aerator 1 | 24.52  | 16.67  | 4.08        | 1.45        | 0.60 | 0.66 | 24,987   | 24.99 |
+| Aerator 2 | 44.93  | 25.00  | 2.23        | 2.30        | 0.90 | 0.99 | 16,659   | 16.66 |
+| Aerator 3 | 43.29  | 33.33  | 2.31        | 1.91        | 1.20 | 1.31 | 12,495   | 12.49 |
+| Aerator 4 | 53.64  | 21.96  | 1.86        | 1.25        | 1.80 | 1.97 | 8,331    | 8.33  |
+| Aerator 5 | 141.64 | 19.19  | 0.71        | 1.35        | 2.70 | 2.96 | 5,553    | 5.55  |
+| Aerator 6 | 205.76 | 100.00 | 0.49        | 8.23        | 3.59 | 3.94 | 4,167    | 4.17  |
+
+Table 5. Financial performance metrics. IRR and ROI in percentage, Payback in years, SAE in kg O₂/kWh, OTRT in kg O₂/hr, Total HP in horsepower, HP/Ha as HP per hectare.
 
 ### 3.4 Equilibrium Price Analysis
 
 **Market Equilibrium:** Theoretical prices based on Walras's General Equilibrium Theory (relative to Aerator 6 as winner)
 
-<div class="table-responsive">
-<table class="compact-table">
-<caption><strong>Table 6.</strong> Market equilibrium analysis based on Walras's General Equilibrium Theory with Aerator 6 as reference winner. Prices in USD, Durability in years, Maintenance cost in USD per unit annually.</caption>
-<thead>
-<tr>
-<th class="narrow-col">Aerator</th>
-<th class="narrow-col">Actual Price</th>
-<th class="narrow-col">Equilibrium Price</th>
-<th class="narrow-col">Price Diff.</th>
-<th class="medium-col">Market Status</th>
-<th class="narrow-col">Durability Yrs</th>
-<th class="narrow-col">Maintenance</th>
-<th class="medium-col">Rating</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Aerator 0</td><td>$500</td><td>$2,347</td><td>$1,847</td><td>Underpriced</td><td>2.0</td><td>$85</td><td>Fair</td></tr>
-<tr><td>Aerator 1</td><td>$600</td><td>$2,292</td><td>$1,692</td><td>Underpriced</td><td>2.5</td><td>$70</td><td>Poor</td></tr>
-<tr><td>Aerator 2</td><td>$700</td><td>$2,695</td><td>$1,995</td><td>Underpriced</td><td>2.0</td><td>$90</td><td>Fair</td></tr>
-<tr><td>Aerator 3</td><td>$800</td><td>$2,051</td><td>$1,251</td><td>Underpriced</td><td>3.0</td><td>$40</td><td>Good</td></tr>
-<tr><td>Aerator 4</td><td>$900</td><td>$1,391</td><td>$491</td><td>Underpriced</td><td>6.0</td><td>$50</td><td>Excellent</td></tr>
-<tr><td>Aerator 5</td><td>$1,200</td><td>$1,685</td><td>$485</td><td>Underpriced</td><td>3.5</td><td>$20</td><td>Excellent</td></tr>
-<tr><td>Aerator 6</td><td>$1,500</td><td>$1,500</td><td>$0</td><td>Winner (Ref.)</td><td>4.0</td><td>$30</td><td>Excellent</td></tr>
-</tbody>
-</table>
-</div>
+| Aerator   | Actual Price | Equilibrium Price | Price Diff. | Market Status | Durability Yrs | Maintenance | Rating    |
+| --------- | ------------ | ----------------- | ----------- | ------------- | -------------- | ----------- | --------- |
+| Aerator 0 | $500         | $2,347            | $1,847      | Underpriced   | 2.0            | $85         | Fair      |
+| Aerator 1 | $600         | $2,292            | $1,692      | Underpriced   | 2.5            | $70         | Poor      |
+| Aerator 2 | $700         | $2,695            | $1,995      | Underpriced   | 2.0            | $90         | Fair      |
+| Aerator 3 | $800         | $2,051            | $1,251      | Underpriced   | 3.0            | $40         | Good      |
+| Aerator 4 | $900         | $1,391            | $491        | Underpriced   | 6.0            | $50         | Excellent |
+| Aerator 5 | $1,200       | $1,685            | $485        | Underpriced   | 3.5            | $20         | Excellent |
+| Aerator 6 | $1,500       | $1,500            | $0          | Winner (Ref.) | 4.0            | $30         | Excellent |
+
+Table 6. Market equilibrium analysis based on Walras's General Equilibrium Theory with Aerator 6 as reference winner. Prices in USD, Durability in years, Maintenance cost in USD per unit annually.
 
 ### 3.5 Marginal Analysis
 
-<div class="table-responsive">
-<table class="compact-table">
-<caption><strong>Table 7.</strong> Marginal returns and upgrade path analysis. Investment in USD, SOTR Gain in kg O₂/hr, Production Gain in kg O₂/year, SOTR per Dollar dimensionless, Production per Dollar in kg O₂/year/USD, Cumulative in kg O₂.</caption>
-<thead>
-<tr>
-<th class="medium-col">Upgrade Path</th>
-<th class="narrow-col">Add. Investment</th>
-<th class="narrow-col">SOTR Gain</th>
-<th class="narrow-col">Production Gain</th>
-<th class="narrow-col">Count Change</th>
-<th class="narrow-col">SOTR per Dollar</th>
-<th class="narrow-col">Prod. per Dollar</th>
-<th class="narrow-col">Slope</th>
-<th class="narrow-col">Cumulative</th>
-</tr>
-</thead>
-<tbody>
-<tr><td>Aerator 0 → 1</td><td>$100</td><td>-0.2</td><td>-384</td><td>1,388</td><td>-0.0020</td><td>-3.8</td><td>-0.0020</td><td>-10</td></tr>
-<tr><td>Aerator 1 → 2</td><td>$100</td><td>0.5</td><td>959</td><td>-2,776</td><td>0.0050</td><td>9.6</td><td>0.0050</td><td>-5</td></tr>
-<tr><td>Aerator 2 → 3</td><td>$100</td><td>0.5</td><td>959</td><td>-1,388</td><td>0.0050</td><td>9.6</td><td>0.0050</td><td>50</td></tr>
-<tr><td>Aerator 3 → 4</td><td>$100</td><td>1.0</td><td>1,918</td><td>-1,388</td><td>0.0100</td><td>19.2</td><td>0.0100</td><td>180</td></tr>
-<tr><td>Aerator 4 → 5</td><td>$300</td><td>1.5</td><td>2,877</td><td>-926</td><td>0.0050</td><td>9.6</td><td>0.0050</td><td>945</td></tr>
-<tr><td>Aerator 5 → 6</td><td>$300</td><td>1.5</td><td>2,877</td><td>-462</td><td>0.0050</td><td>9.6</td><td>0.0050</td><td>2,160</td></tr>
-</tbody>
-</table>
-</div>
+| Upgrade Path  | Add. Investment | SOTR Gain | Production Gain | Count Change | SOTR per Dollar | Prod. per Dollar | Slope   | Cumulative |
+| ------------- | --------------- | --------- | --------------- | ------------ | --------------- | ---------------- | ------- | ---------- |
+| Aerator 0 → 1 | $100            | -0.2      | -384            | 1,388        | -0.0020         | -3.8             | -0.0020 | -10        |
+| Aerator 1 → 2 | $100            | 0.5       | 959             | -2,776       | 0.0050          | 9.6              | 0.0050  | -5         |
+| Aerator 2 → 3 | $100            | 0.5       | 959             | -1,388       | 0.0050          | 9.6              | 0.0050  | 50         |
+| Aerator 3 → 4 | $100            | 1.0       | 1,918           | -1,388       | 0.0100          | 19.2             | 0.0100  | 180        |
+| Aerator 4 → 5 | $300            | 1.5       | 2,877           | -926         | 0.0050          | 9.6              | 0.0050  | 945        |
+| Aerator 5 → 6 | $300            | 1.5       | 2,877           | -462         | 0.0050          | 9.6              | 0.0050  | 2,160      |
+
+Table 7. Marginal returns and upgrade path analysis. Investment in USD, SOTR Gain in kg O₂/hr, Production Gain in kg O₂/year, SOTR per Dollar dimensionless, Production per Dollar in kg O₂/year/USD, Cumulative in kg O₂.
