@@ -275,7 +275,7 @@ $$\text{Total Initial Cost} = \text{Number of Aerators} \times \text{Cost per Ae
 
 ### 2.3.7 Annual Operating Costs
 
-1.  **Energy Cost:** $\text{Power (kW)} \times \text{Energy Cost (\$/kWh)} \times \text{Operating Hours per Year} \times \text{Number of Aerators}$
+1.  **Energy Cost:** $\text{Power (kW)} \times \text{Energy Cost USD/kWh} \times \text{Operating Hours per Year} \times \text{Number of Aerators}$
 2.  **Maintenance Cost:** $\text{Maintenance Cost per Unit per Year} \times \text{Number of Aerators}$
 3.  **Replacement Cost (Annualized):** $(\text{Number of Aerators} \times \text{Cost per Aerator}) / \text{Durability (years)}$
 
