@@ -1075,9 +1075,8 @@ def plot_irr_analysis():
             if irr_val is None:
                 irr_values.append(0.0)
             else:
-                irr_values.append(
-                    min(irr_val * 100, 100.0)
-                )  # Convert to percentage, cap at 100%
+                # Use actual IRR values, no artificial cap
+                irr_values.append(irr_val * 100)  # Convert to percentage
 
     # Create ranking system: best performers get highest rank, least efficient gets lowest
     # We'll rank by cost efficiency (annual savings), with least efficient = 0
@@ -1158,7 +1157,11 @@ def plot_irr_analysis():
         else:
             savings = cost_differences[i]
             if irr_values[i] > 0:
-                performance_text = f"IRR: {irr_values[i]:.1f}%"
+                # Format IRR values nicely - show as whole numbers if very high
+                if irr_values[i] >= 100:
+                    performance_text = f"IRR: {irr_values[i]:.0f}%"
+                else:
+                    performance_text = f"IRR: {irr_values[i]:.1f}%"
             else:
                 performance_text = "No IRR"
             savings_text = (
