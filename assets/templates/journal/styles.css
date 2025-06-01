@@ -605,3 +605,194 @@ sup,
   font-style: italic;
   font-family: "Times New Roman", Times, serif;
 }
+
+/* SUMMARY AND ANALYSIS CONTAINERS */
+.summary-box {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.summary-box h3 {
+  color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.summary-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+.summary-table tr.header {
+  background-color: #e9ecef;
+}
+
+.summary-table th {
+  padding: 12px;
+  text-align: left;
+  border: 1px solid #dee2e6;
+}
+
+.summary-table td {
+  padding: 10px;
+  border: 1px solid #dee2e6;
+}
+
+.summary-table tr.alt-row {
+  background-color: #f8f9fa;
+}
+
+.summary-table td.best-choice {
+  font-weight: bold;
+  color: #28a745;
+}
+
+.summary-table td.highlight {
+  background-color: #fff3cd;
+  color: #856404;
+  font-weight: bold;
+}
+
+/* BUSINESS INSIGHTS CONTAINER */
+.insights-box {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.insights-box h3 {
+  color: #2c3e50;
+  margin-bottom: 15px;
+}
+
+.insights-list {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.insights-list li {
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 4px;
+  border-left: 4px solid;
+}
+
+.insight-info {
+  background-color: #e7f3ff;
+  border-left-color: #007bff;
+}
+
+.insight-success {
+  background-color: #e8f5e8;
+  border-left-color: #28a745;
+}
+
+.insight-warning {
+  background-color: #fff3cd;
+  border-left-color: #ffc107;
+}
+
+.insight-danger {
+  background-color: #f8d7da;
+  border-left-color: #dc3545;
+}
+
+.insight-secondary {
+  background-color: #d1ecf1;
+  border-left-color: #0c5460;
+}
+
+/* OPPORTUNITY COST ANALYSIS CONTAINER */
+.opportunity-cost-container {
+  margin-top: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 10px;
+}
+
+.opportunity-cost-container h2 {
+  color: #2c3e50;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.opportunity-cost-container p {
+  color: #6c757d;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.opportunity-cost-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.opportunity-cost-table thead {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.opportunity-cost-table th {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 2px solid #dee2e6;
+}
+
+.opportunity-cost-table th.center {
+  text-align: center;
+}
+
+.opportunity-cost-table tbody tr {
+  background-color: rgb(22, 237, 229);
+}
+
+.opportunity-cost-table td {
+  padding: 12px;
+  border-bottom: 1px solid #dee2e6;
+  font-weight: bold;
+}
+
+.opportunity-cost-table td.center {
+  text-align: center;
+}
+
+.opportunity-cost-table .decision-moderate {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+.opportunity-cost-table .decision-optimal {
+  color: #28a745;
+  font-weight: bold;
+}
+
+.opportunity-cost-table .decision-consider {
+  color: #17a2b8;
+  font-weight: bold;
+}
+
+.economic-interpretation {
+  margin-top: 20px;
+  padding: 15px;
+  background-color: #e7f3ff;
+  border-left: 4px solid #007bff;
+  border-radius: 4px;
+}
+
+.economic-interpretation h4 {
+  color: #0056b3;
+  margin-bottom: 10px;
+}
+
+.economic-interpretation ul {
+  margin: 0;
+  padding-left: 20px;
+  color: #495057;
+}

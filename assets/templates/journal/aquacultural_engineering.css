@@ -1,0 +1,425 @@
+/* General Body and Page Styles */
+body {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 10pt;
+  line-height: 1.5;
+  color: #000000;
+  background-color: #ffffff;
+  margin: 2cm;
+  text-align: justify;
+}
+
+/* Two-Column Layout */
+.two-column-container {
+  column-count: 2;
+  column-gap: 1.5cm;
+  column-width: 8cm;
+  max-width: 17cm; /* Approximate A4 width minus margins */
+  margin: 0 auto;
+}
+
+/* Page Headers */
+.page-header {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  color: #333333;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 1em;
+  border-bottom: 1px solid #cccccc;
+  padding-bottom: 0.5em;
+  column-span: all; /* Span across columns */
+}
+
+.page-header .left {
+  float: left;
+}
+
+.page-header .right {
+  float: right;
+  text-align: right;
+}
+
+/* Journal Meta - Top of First Page */
+.journal-meta-top {
+  margin-bottom: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+  column-span: all;
+}
+
+.journal-meta-top .publisher {
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 11pt;
+  margin-bottom: 0.2em;
+}
+
+.journal-meta-top .journal-name-main {
+  font-weight: bold;
+  font-size: 13pt;
+  margin-bottom: 0.1em;
+}
+
+.journal-meta-top .journal-volume-info {
+  font-size: 9pt;
+  margin-bottom: 0.3em;
+}
+
+.journal-meta-top .links a {
+  font-size: 9pt;
+  color: #000000;
+  text-decoration: none;
+}
+
+/* Article Title */
+h1.article-title {
+  font-size: 18pt;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  color: #000000;
+  column-span: all;
+}
+
+/* Authors and Affiliations */
+.authors {
+  font-size: 11pt;
+  font-weight: bold;
+  margin-bottom: 0.3em;
+  column-span: all;
+}
+
+.authors sup {
+  font-size: 8pt;
+  vertical-align: super;
+  margin-left: 1px;
+}
+
+.affiliations {
+  font-size: 9pt;
+  font-style: italic;
+  margin-bottom: 1.5em;
+  column-span: all;
+}
+
+.affiliations p {
+  margin-bottom: 0.2em;
+  text-indent: 0;
+}
+
+/* Article Info Section & Abstract Heading */
+.article-info-block-heading {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 10pt;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  padding-top: 0.5em;
+  border-top: 1px solid #999999;
+  column-span: all;
+}
+
+.keywords-section .keywords-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  font-size: 9pt;
+  display: block;
+  margin-bottom: 0.2em;
+}
+
+.keywords-section .keywords-text {
+  font-size: 9pt;
+  margin-bottom: 1em;
+}
+
+/* Abstract Text */
+.abstract-content p {
+  font-size: 9pt;
+  line-height: 1.4;
+  text-align: justify;
+  margin-bottom: 0.5em;
+  text-indent: 0;
+}
+
+/* Main Content Headings */
+h2.section-heading {
+  font-size: 13pt;
+  font-weight: bold;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  color: #000000;
+}
+
+h3.subsection-heading {
+  font-size: 11.5pt;
+  font-weight: bold;
+  margin-top: 1.5em;
+  margin-bottom: 0.8em;
+  color: #000000;
+}
+
+h4.subsubsection-heading {
+  font-size: 10pt;
+  font-weight: bold;
+  font-style: italic;
+  margin-top: 1.2em;
+  margin-bottom: 0.6em;
+  color: #000000;
+}
+
+/* Paragraphs */
+p {
+  margin-bottom: 0.8em;
+  text-indent: 1.5em;
+}
+
+/* Remove indent for paragraphs immediately following a heading or list */
+h2.section-heading + p,
+h3.subsection-heading + p,
+h4.subsubsection-heading + p,
+ul + p,
+ol + p,
+figure + p,
+table + p,
+.equation-block + p {
+  text-indent: 0;
+}
+
+/* Lists */
+ul,
+ol {
+  margin-left: 2em;
+  margin-bottom: 1em;
+  padding-left: 1em;
+}
+
+li {
+  margin-bottom: 0.3em;
+  text-align: justify;
+}
+
+/* Figures and Captions */
+figure {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  text-align: center;
+  column-span: all; /* Figures often span columns */
+}
+
+figure img {
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #eeeeee;
+}
+
+figcaption {
+  font-size: 9pt;
+  margin-top: 0.5em;
+  text-align: left;
+  line-height: 1.3;
+}
+
+figcaption strong {
+  font-weight: bold;
+}
+
+/* Tables and Captions */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+  font-size: 9pt;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+  column-span: all; /* Tables often span columns */
+}
+
+table caption {
+  font-weight: bold;
+  font-size: 10pt;
+  text-align: left;
+  margin-bottom: 0.5em;
+  padding-top: 0.5em;
+}
+
+th,
+td {
+  padding: 6px 8px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px dotted #cccccc;
+}
+
+th {
+  font-weight: bold;
+  border-top: 1px solid #000000;
+  border-bottom: 1px solid #000000;
+}
+
+table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Mathematical Equations */
+.equation-block {
+  text-align: center;
+  margin: 1em 0;
+  column-span: all;
+}
+
+.equation-block img {
+  max-width: 100%;
+}
+
+.equation-block .equation-content {
+  font-family: "Cambria Math", "Latin Modern Math", serif;
+}
+
+.equation-number {
+  float: right;
+  font-size: 9pt;
+  padding-right: 1em;
+}
+
+/* Corresponding Author / Footnotes on First Page */
+.corresponding-author,
+.article-submission-dates {
+  font-size: 8.5pt;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  text-indent: 0;
+  column-span: all;
+}
+
+.corresponding-author strong {
+  font-weight: bold;
+}
+
+/* License Text (Footer of First Page) */
+.license-footer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 8pt;
+  margin-top: 2em;
+  padding-top: 1em;
+  border-top: 1px solid #cccccc;
+  text-align: left;
+  column-span: all;
+}
+
+/* Page Numbers (Mimicking Footer) */
+.page-footer {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  text-align: center;
+  margin-top: 2em;
+  padding-top: 0.5em;
+  border-top: 1px solid #cccccc;
+  column-span: all;
+}
+
+/* References Section */
+.references-section h2.section-heading {
+  margin-bottom: 1em;
+  column-span: all;
+}
+
+.reference-list {
+  list-style-type: none;
+  padding-left: 0;
+  font-size: 9pt;
+}
+
+.reference-item {
+  margin-bottom: 0.6em;
+  padding-left: 2em;
+  text-indent: -2em;
+  line-height: 1.4;
+  text-align: left;
+}
+
+.reference-item .authors {
+  font-weight: normal;
+  font-size: 10pt;
+}
+
+.reference-item .year {
+  font-weight: bold;
+}
+
+.reference-item .journal-name,
+.reference-item .book-title {
+  font-style: italic;
+}
+
+.reference-item .volume {
+  font-weight: bold;
+}
+
+.reference-item .doi a,
+.reference-item .url a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.reference-item .doi a:hover,
+.reference-item .url a:hover {
+  text-decoration: underline;
+}
+
+/* Inline Elements */
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+strong,
+b {
+  font-weight: bold;
+}
+
+em,
+i {
+  font-style: italic;
+}
+
+sup {
+  vertical-align: super;
+  font-size: 7.5pt;
+  line-height: 0;
+}
+
+sub {
+  vertical-align: sub;
+  font-size: 7.5pt;
+  line-height: 0;
+}
+
+/* Specific Post-Conclusion Sections (Funding, CRediT, etc.) */
+.post-content-section {
+  margin-top: 1.5em;
+  column-span: all;
+}
+
+.post-content-section h3 {
+  font-size: 10pt;
+  font-weight: bold;
+  font-style: normal;
+  margin-bottom: 0.5em;
+}
+
+.post-content-section p {
+  text-indent: 0;
+  font-size: 9pt;
+}
+
+/* Utility class for no indent */
+.no-indent {
+  text-indent: 0 !important;
+}

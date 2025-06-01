@@ -1,80 +1,65 @@
 <style>
-@import url("../../assets/templates/journal/styles.css");
+@import url("../../assets/templates/journal/aquacultural_engineering.css");
 </style>
 
-<div class="title-page">
-    <div class="paper-title">
-        <h1>Analysis of Aerators for Shrimp Farming: Cost Optimization and the Real Cost of "Cheap"</h1>
-    </div>   
-<div class="author-info">
+<h1 class="article-title">Analysis of Aerators for Shrimp Farming: Cost Optimization and the Real Cost of "Cheap"</h1>
+
+<div class="authors">
     Luis Paulo Vinatea Barberena
 </div>
 
-<div class="affiliation">
-    BarberNode
+<div class="affiliations">
+    <p>BarberNode</p>
 </div>
 
-<div class="author-note">
+<div class="corresponding-author">
     <p><strong>Correspondence:</strong> luisvinatea@icloud.com, +55 48 99221-9675</p>
-    <p><strong>Address:</strong> Servidao das Caranhas, 22, Barra da Lagoa, Florianopolis, SC, Brazil, 88061635</p>
     <p><strong>Date:</strong> 2025-05-02</p>
 </div>
-</div>
-<div class="abstract">
-    <h2>Abstract</h2>
-    <p>Aerator selection is a critical economic decision in shrimp farming, often complicated by the trade-off between initial cost and long-term operational efficiency. This paper presents an analysis comparing two aerator options within the context of a specific shrimp farm, integrating Léon Walras's General Equilibrium Theory and Friedrich von Wieser's concept of Opportunity Cost. The study evaluates aerators based on updated technical performance metrics (including Temperature-Adjusted Oxygen Transfer Rate - OTRT and Standard Aeration Efficiency - SAE) derived from the farm's Total Oxygen Demand (TOD) and detailed, adapted financial indicators (Net Present Value - NPV, Internal Rate of Return - IRR, Payback Period, Return on Investment - ROI, Profitability Index - k, Opportunity Cost, and Equilibrium Price) tailored for equipment comparison. Results from the specific case study demonstrate that prioritizing higher efficiency (Aerator 2) over lower initial unitary cost (Aerator 1) leads to substantial long-term savings, a significantly positive NPV, high interpreted ROI and IRR, rapid payback, and a considerable opportunity cost associated with choosing the less efficient option. The analysis underscores the importance of applying robust economic principles and adapted technical-financial assessments for optimizing operational costs and ensuring financial sustainability in shrimp aquaculture (Boyd & Hanson, 2021; The Fish Site, 2021).</p>
-
-<div class="keywords">
-    <span class="keywords-title">Keywords:</span> Shrimp Farming, Aquaculture Economics, Aerator Efficiency, Opportunity Cost, Cost Optimization, Mathematical Modeling, Financial Analysis, Equipment Comparison Metrics
+<div class="article-info-block-heading">Abstract</div>
+<div class="abstract-content">
+<p>Aerator selection is a critical economic decision in shrimp farming, often complicated by the trade-off between initial cost and long-term operational efficiency. This paper presents an analysis comparing two aerator options within the context of a specific shrimp farm, integrating Léon Walras's General Equilibrium Theory and Friedrich von Wieser's concept of Opportunity Cost. The study evaluates aerators based on updated technical performance metrics (including Temperature-Adjusted Oxygen Transfer Rate - OTRT and Standard Aeration Efficiency - SAE) derived from the farm's Total Oxygen Demand (TOD) and detailed, adapted financial indicators (Net Present Value - NPV, Internal Rate of Return - IRR, Payback Period, Return on Investment - ROI, Profitability Index - k, Opportunity Cost, and Equilibrium Price) tailored for equipment comparison. Results from the specific case study demonstrate that prioritizing higher efficiency (Aerator 2) over lower initial unitary cost (Aerator 1) leads to substantial long-term savings, a significantly positive NPV, high interpreted ROI and IRR, rapid payback, and a considerable opportunity cost associated with choosing the less efficient option. The analysis underscores the importance of applying robust economic principles and adapted technical-financial assessments for optimizing operational costs and ensuring financial sustainability in shrimp aquaculture (Boyd & Hanson, 2021; The Fish Site, 2021).</p>
 </div>
 
+<div class="keywords-section">
+    <span class="keywords-label">Keywords:</span>
+    <span class="keywords-text">Shrimp Farming, Aquaculture Economics, Aerator Efficiency, Opportunity Cost, Cost Optimization, Mathematical Modeling, Financial Analysis, Equipment Comparison Metrics</span>
 </div>
-<br>
-<div class="supplementary-material">
-    <h2>Highlights</h2>
-    <ul>
-        <li>Higher efficiency aerators reduce long-term costs in shrimp farming.</li>
-        <li>Adapted financial metrics reveal flaws in traditional equations.</li>
-        <li>Opportunity cost of low-efficiency aerators exceeds $14M in NPV.</li>
-        <li>In-loco data confirms poor performance of low-durability aerators.</li>
-    </ul>
-</div>
-
-<h2>1. Introduction</h2>
+<h2 class="section-heading">1. Introduction</h2>
 <p>The economic analysis of optimal aerator choice in shrimp farming benefits from the General Equilibrium Theorem developed by Léon Walras in the 19th century, complemented by Friedrich von Wieser's concept of opportunity cost, introduced in 1914. Walras proposed a framework to understand how interconnected markets reach simultaneous equilibrium, where supply equals demand through relative prices (Walras, 1874). This approach is useful for analyzing complex systems like shrimp farms, where multiple "markets" (oxygen, energy, shrimp, operating costs) interact to maximize profitability (Asche et al., 2021). Opportunity cost measures the value of the best alternative forgone, evaluating aerator options (Boyd & Hanson, 2021).</p>
 
-<h3>1.1 Analogy with the Oxygen Market and Opportunity Cost</h3>
+<h3 class="subsection-heading">1.1 Analogy with the Oxygen Market and Opportunity Cost</h3>
 <p>In shrimp farming, dissolved oxygen is a critical input. An "internal oxygen market" can be conceptualized where demand (Total Oxygen Demand, TOD) is driven by shrimp and microbial needs, and supply depends on aerators' Temperature-Adjusted Oxygen Transfer Rate (OTRT). Aerators interact with energy, maintenance, and replacement markets, connecting to the external shrimp market. Walras's Theorem suggests equilibrium when these markets adjust simultaneously. Choosing a cheaper, less efficient aerator incurs an opportunity cost equal to the net present value of savings forgone by not selecting the more efficient option (Boyd & Hanson, 2021; Susilowati et al., 2021).</p>
 
-<h3>1.2 The Cake Recipe: Why Assuming HP per Pound of Shrimp is Incorrect</h3>
+<h3 class="subsection-heading">1.2 The Cake Recipe: Why Assuming HP per Pound of Shrimp is Incorrect</h3>
 <p>Assuming a fixed horsepower (HP)-per-production ratio is erroneous. Shrimp production depends on multiple factors (dissolved oxygen, temperature, salinity, density). Aerator HP does not directly equate to oxygen supply; OTR_T is critical. Fixed HP ratios ignore interdependencies, leading to inefficient investments in low-OTR_T aerators and significant opportunity costs (Boyd, 2015; Responsible Seafood Advocate, 2022).</p>
 
-<h3>1.3 Original Equation of Léon Walras's General Equilibrium</h3>
+<h3 class="subsection-heading">1.3 Original Equation of Léon Walras's General Equilibrium</h3>
 <p>Walras formalized general equilibrium with supply/demand equations, subject to Walras's Law (excess demands sum to zero). Equilibrium prices are found via "tâtonnement" (Walras, 1874). In shrimp farming, equilibrium involves optimizing aerator costs, meeting TOD, maximizing profits, and accounting for opportunity cost (Asche et al., 2021; Valderrama et al., 2023).</p>
 
-<h3>1.3 Context Overview</h3>
+<h3 class="subsection-heading">1.4 Context Overview</h3>
 <p>This paper analyzes several aerators in a specific shrimp farm context, integrating updated technical performance metrics and adapted financial indicators. The study evaluates aerators based on Standard Oxygen Transfer Rate (SOTR), to fulfill a 1000 hectares Shrimp Farm for a given Total Oxygen Demand (TOD), and derives financial indicators tailored for equipment comparison. Results demonstrate that prioritizing higher efficiency leads to substantial long-term savings, a significantly positive NPV, high interpreted ROI and IRR, rapid payback, and a considerable opportunity cost associated with choosing the less efficient option.</p>
 
-<h3>1.4 Aerator Market in Ecuador</h3>
+<h3 class="subsection-heading">1.5 Aerator Market in Ecuador</h3>
 <p>The Ecuadorian aerator market is characterized by a wide range of options, from low-cost, low-efficiency models to high-performance, high-cost alternatives. The choice of aerator significantly impacts operational costs and shrimp yield. The market is influenced by factors such as energy prices, shrimp prices, and technological advancements in aeration systems. Understanding the trade-offs between initial investment and long-term operational efficiency is crucial for shrimp farmers aiming to optimize their production systems (Boyd & Hanson, 2021; The Fish Site, 2021).</p>
 <p>By analysing aerator imports from Ecuador's customs database, in the period of 2021 to 2024, we can gain insights on market trends, pricing strategies, and the competitive landscape of aerator suppliers in the region.</p>
 <p>After performing data manipulation techniques, we can observe the following patterns:</p>
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="plots/aerator_imports_2021_2024.png" alt="Aerator Imports in Ecuador (2021-2024)" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-</div>
+<figure>
+    <img src="plots/aerator_imports_2021_2024.png" alt="Aerator Imports in Ecuador (2021-2024)">
+</figure>
 
 <p>The dashboard on aerator imports (2021-2024) reveals some insights across multiple dimensions. China dominates as the top country of origin with 15.5M USD (FOB), followed by Taiwan at 4.1M USD, while generic brands lead at 17.9M USD (CIF), far ahead of Wangfa at 3.2M USD. In terms of importers, Area Andina S.A. handles the highest volume at 647K units, with Crustáceos y Peces de Sudamérica as the second-largest at 137K units. Product descriptions show aerators of 12-16 pallet units leading at 548K kg (net weight), indicating a focus on bulk shipments. Ningbo is the top embarkation city with 398K units (ad valorem), and Agencia Maritima Global moves 708K units (freight value), highlighting their logistical prominence. Consignee directions peak with La Puntilla (Satellite) at 211K units (insured value), and the generic model category tops brokered models at 154K units, reflecting market preferences for cost savings.</p>
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="plots/aerator_fob_price.png" alt="Aerator Unitary Prices in Ecuador (2021-2024)" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-</div>
+<figure>
+    <img src="plots/aerator_fob_price.png" alt="Aerator Unitary Prices in Ecuador (2021-2024)">
+</figure>
 
 <p>The aerator prices chart (2021-2024) shows a highly skewed distribution of FOB unit prices, with a mean of 812.96 USD, indicating that most brands have prices below this value, but a long tail extends to 1200 USD+. Acquaeco has the highest average unit price at 1258.27 USD, followed by Walker at 1108.55 USD, suggesting they cater to a premium segment. In contrast, Zuma offers the lowest average at 500.80 USD, followed by WangFa at 546.36 USD, positioning them as budget options. Other brands like Hongteng (673.33 USD), and Aerex (802.14 USD) cluster closer to the mean, while Wenling (961.32 USD) and Annex (1021.79 USD) sit between the mid-range and high-end, reflecting a diverse pricing landscape in the aerator market.</p>
 
-<h2>2. Case Study: Comparing Different Aerator Options for an Ecuadorian Shrimp Farm</h2>
+<h2 class="section-heading">2. Case Study: Comparing Different Aerator Options for an Ecuadorian Shrimp Farm</h2>
 
-<h3>2.1 Case Study Overview and Parameters</h3>
+<h3 class="subsection-heading">2.1 Case Study Overview and Parameters</h3>
 
 <p>This case study examines an intensive shrimp farm in Ecuador with 1,000 hectares of production area. The farm operates at a tropical water temperature of 31.5°C, which significantly affects oxygen transfer efficiency through the established temperature correction factor (θ = 1.024). The farm's Total Oxygen Demand (TOD) is calculated at 5.47 kg O₂/hr/hectare, resulting in a substantial total requirement of 5,470 kg O₂/hr across the entire operation.</p>
 
@@ -95,7 +80,7 @@
 <tr><td>Annual inflation rate</td><td>3%</td></tr>
 </table>
 
-<h3>2.2 Aerator Investment Options</h3>
+<h3 class="subsection-heading">2.2 Aerator Investment Options</h3>
 
 <p>The aerators under consideration present a classic economic dilemma: less expensive models with lower efficiency versus higher-priced models with superior oxygen transfer rates. While Aerator 0 has the lowest initial cost (500 USD), it does not offer the lowest operational cost. Aerator 1, despite being more expensive (600 USD), delivers lower SOTR (1.0 kg O₂/hr vs. 1.2 kg O₂/hr). The most efficient option, Aerator 6, transfers 6.0 kg O₂/hr but costs 1,500 USD per unit.</p>
 
@@ -110,41 +95,47 @@
 <tr><td>Aerator 5</td><td>4</td><td>3.0</td><td>1200</td><td>160</td><td>5.0</td></tr>
 </table>
 
-<h5>2.3. Standard Oxygen Transfer Rate (SOTR)</h3>
+<h4 class="subsubsection-heading">2.3. Standard Oxygen Transfer Rate (SOTR)</h4>
 <p>The baseline oxygen transfer capacity under standard conditions (20°C, 0 DO, 1 atm), measured in kg O₂/hr (Kumar et al., 2020).</p>
 </div>
 
-<h5>2.3.1.2 Temperature-Adjusted Oxygen Transfer Rate (OTRT)</h5>
+<h4 class="subsubsection-heading">2.3.1.2 Temperature-Adjusted Oxygen Transfer Rate (OTRT)</h4>
 
+<div class="equation-block">
 $$
 OTR_T = (\text{SOTR} \times 0.5) \times \theta^{(T-20)}
 $$
+</div>
 
 Where $\theta = 1.024$ (temperature correction factor) (Boyd, 2015).
 
-<h5>2.3.1.3 Standard Aeration Efficiency (SAE)</h5>
+<h4 class="subsubsection-heading">2.3.1.3 Standard Aeration Efficiency (SAE)</h4>
 
+<div class="equation-block">
 $$
 \text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} \quad ( kg \ O_2 / \text{kWh})
 $$
+</div>
 
 Where $\text{Power (kW)} = \text{Power (HP)} \times 0.746$ (Kumar et al., 2020).
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="plots/sotr_vs_price.png" alt="SOTR vs Price" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-</div>
+<figure>
+    <img src="plots/sotr_vs_price.png" alt="SOTR vs Price">
+</figure>
 
-<h5>2.3.1.4 Aerator Quantity Calculation</h5>
+<h4 class="subsubsection-heading">2.3.1.4 Aerator Quantity Calculation</h4>
 
+<div class="equation-block">
 $$
 \text{Number of Aerators} = \left\lceil \frac{TOD}{OTR_T} \right\rceil
 $$
-
-<div style="text-align: center; margin: 20px 0;">
-    <img src="plots/aerator_quantity.png" alt="Aerator Quantity" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
 </div>
 
-<h5>2.3.2 Annual Revenue</h5>
+<figure>
+    <img src="plots/aerator_quantity.png" alt="Aerator Quantity">
+</figure>
+
+<h4 class="subsubsection-heading">2.3.2 Annual Revenue</h4>
 
 $$
 \text{Annual Revenue} = \text{Total Annual Production (kg)} \times \text{Shrimp Price (\$/kg)}
@@ -152,23 +143,23 @@ $$
 
 Production depends on density, depth, area, and culture cycles (Engle, 2010).
 
-<h5>2.3.3 Initial Investment</h5>
+<h4 class="subsubsection-heading">2.3.3 Initial Investment</h4>
 
 $$
 \text{Total Initial Cost} = \text{Number of Aerators} \times \text{Cost per Aerator}
 $$
 
-<h5>2.3.4 Annual Operating Costs</h5>
+<h4 class="subsubsection-heading">2.3.4 Annual Operating Costs</h4>
 
 1. **Energy Cost:** $\text{Power (kW)} \times \text{Energy Cost (\$/kWh)} \times \text{Operating Hours per Year} \times \text{Number of Aerators}$
 2. **Maintenance Cost:** $\text{Maintenance Cost per Unit per Year} \times \text{Number of Aerators}$
 3. **Replacement Cost (Annualized):** $(\text{Number of Aerators} \times \text{Cost per Aerator}) / \text{Durability (years)}$
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="plots/annual_cost_breakdown.png" alt="Annual Cost Breakdown" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-</div>
+<figure>
+    <img src="plots/annual_cost_breakdown.png" alt="Annual Cost Breakdown">
+</figure>
 
-<h5>2.3.6 Net Present Value (NPV) of Savings</h5>
+<h4 class="subsubsection-heading">2.3.6 Net Present Value (NPV) of Savings</h4>
 
 $$
 \text{NPV}_{\text{Savings}} = \sum_{i=1}^{n} \frac{\text{Annual Saving}_{\text{Year 1}} \times (1 + r_{\text{inflation}})^{i-1}}{(1 + r_{real})^i}
@@ -176,11 +167,11 @@ $$
 
 Where $r_{real} = \frac{1 + r_{nominal}}{1 + r_{inflation}} - 1$ (Intelligon, 2022; Susilowati et al., 2021).
 
-<h5>2.3.7 Adapted Financial Metrics</h5>
+<h4 class="subsubsection-heading">2.3.7 Adapted Financial Metrics</h4>
 
 Standard metrics (IRR, Payback, ROI, k) were adapted due to violations of positive incremental investment assumptions in aquaculture equipment comparison (Engle, 2010; Kumar et al., 2020).
 
-<h5>2.3.7.1 Internal Rate of Return (IRR) - Enhanced Calculation</h5>
+<h4 class="subsubsection-heading">2.3.7.1 Internal Rate of Return (IRR) - Enhanced Calculation</h4>
 
 The IRR calculation has been enhanced to properly handle different investment scenarios, particularly when comparing aerators with negative investment differences (lower cost + better performance):
 
@@ -228,11 +219,11 @@ $$
 
 This enhanced approach ensures accurate IRR calculations for all investment scenarios while maintaining financial validity.
 
-<div style="text-align: center; margin: 20px 0;">
-    <img src="plots/irr_aerators.png" alt="Aerator IRR" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
-</div>
+<figure>
+    <img src="plots/irr_aerators.png" alt="Aerator IRR">
+</figure>
 
-### 2.4.2.1 Payback Period
+<h4 class="subsubsection-heading">2.4.2.1 Payback Period</h4>
 
 Payback period calculation depends on investment difference ($\Delta I$) and annual savings:
 
@@ -258,7 +249,7 @@ $$
 • $R_{\text{SOTR}} = \frac{S_{\text{yr1}}}{C_{\text{base}}} \times R_{\text{SOTR}}$ (SOTR ratio factor)
 • $C_{\text{base}}$ is the baseline cost (Engle, 2010)
 
-### 2.4.2.2 Relative Return on Investment (ROI)
+<h4 class="subsubsection-heading">2.4.2.2 Relative Return on Investment (ROI)</h4>
 
 ROI calculation depends on investment difference ($\Delta I$) between candidate and baseline aerators:
 
@@ -291,7 +282,7 @@ $$
 • $S_{\text{yr1}} > 0$ and $C_{\text{base}} > 0$ (required conditions)  
 • For $\Delta I \leq 0$: ROI based on savings relative to baseline cost, scaled by SOTR ratio
 
-### 2.4.2.3 Profitability Index ($k$)
+<h4 class="subsubsection-heading">2.4.2.3 Profitability Index ($k$)</h4>
 
 Profitability Index calculation depends on investment difference ($\Delta I$) and NPV of savings:
 
@@ -325,7 +316,7 @@ $$
 • $F_{\text{cost}} = \frac{C_{\text{base}}}{C_{\text{base}} + \Delta I}$ (cost adjustment factor)  
 • Condition: $C_{\text{base}} > 0$ (Engle, 2010)
 
-### 2.4.2.4 Equilibrium Price ($P_{eq}$)
+<h4 class="subsubsection-heading">2.4.2.4 Equilibrium Price ($P_{eq}$)</h4>
 
 Equilibrium price calculation based on market conditions and cost structure:
 
@@ -352,7 +343,7 @@ $$
 • $F_{\text{cost, eq}} = \frac{P_{\text{base}}}{C_{\text{base}}}$ (cost equilibrium factor)  
 • Condition: $P_{\text{base}} > 0$ (Asche et al., 2021)
 
-### 2.4.3 Opportunity Cost Analysis
+<h3 class="subsection-heading">2.4.3 Opportunity Cost Analysis</h3>
 
 Opportunity cost represents the financial penalty of not choosing the most efficient aerator option. It quantifies the present value of additional costs incurred by selecting a suboptimal aerator.
 
@@ -387,7 +378,7 @@ $$
 
 This metric enables direct comparison of long-term financial impact across aerator options.
 
-## 2.4.4 Results Summary
+<h2 class="section-heading">2.4.4 Results Summary</h2>
 
 <table border="1" class="dataframe" id="summary_table">
   <thead>
@@ -502,7 +493,7 @@ This metric enables direct comparison of long-term financial impact across aerat
 
 <table border="1" class="dataframe" id="financial_table">
   <thead>
-    <tr style="text-align: right;">
+    <tr>
       <th></th>
       <th>Aerator 1</th>
       <th>Aerator 2</th>
@@ -587,124 +578,124 @@ This metric enables direct comparison of long-term financial impact across aerat
   </tbody>
 </table>
 
-<div style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 20px;">
-    <h3 style="color: #2c3e50; margin-bottom: 20px;">Best Options Summary</h3>
-    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
-        <tr style="background-color: #e9ecef;">
-            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Criteria</th>
-            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Best Option</th>
+<div class="summary-box">
+    <h3>Best Options Summary</h3>
+    <table class="summary-table">
+        <tr class="header">
+            <th>Criteria</th>
+            <th>Best Option</th>
         </tr>
         <tr>
-            <td style="padding: 10px; border: 1px solid #dee2e6;">Best Initial Cost</td>
-            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold;">Aerator 3</td>
+            <td>Best Initial Cost</td>
+            <td><strong>Aerator 3</strong></td>
         </tr>
-        <tr style="background-color: #f8f9fa;">
-            <td style="padding: 10px; border: 1px solid #dee2e6;">Best Operating Cost</td>
-            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #28a745;">Aerator 2</td>
-        </tr>
-        <tr>
-            <td style="padding: 10px; border: 1px solid #dee2e6;">Best NPV</td>
-            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #28a745;">Aerator 2</td>
-        </tr>
-        <tr style="background-color: #f8f9fa;">
-            <td style="padding: 10px; border: 1px solid #dee2e6;">Best IRR</td>
-            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #28a745;">Aerator 4</td>
+        <tr class="alt-row">
+            <td>Best Operating Cost</td>
+            <td class="best-choice">Aerator 2</td>
         </tr>
         <tr>
-            <td style="padding: 10px; border: 1px solid #dee2e6;">Best Profitability Index</td>
-            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #28a745;">Aerator 2</td>
+            <td>Best NPV</td>
+            <td class="best-choice">Aerator 2</td>
         </tr>
-        <tr style="background-color: #f8f9fa;">
-            <td style="padding: 10px; border: 1px solid #dee2e6;">Best ROI</td>
-            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #28a745;">Aerator 3</td>
+        <tr class="alt-row">
+            <td>Best IRR</td>
+            <td class="best-choice">Aerator 4</td>
         </tr>
         <tr>
-            <td style="padding: 10px; border: 1px solid #dee2e6;">Best Payback Period</td>
-            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #28a745;">Aerator 1</td>
+            <td>Best Profitability Index</td>
+            <td class="best-choice">Aerator 2</td>
         </tr>
-        <tr style="background-color: #fff3cd;">
-            <td style="padding: 10px; border: 1px solid #dee2e6;">Most Efficient</td>
-            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #856404;">Aerator 2</td>
+        <tr class="alt-row">
+            <td>Best ROI</td>
+            <td class="best-choice">Aerator 3</td>
+        </tr>
+        <tr>
+            <td>Best Payback Period</td>
+            <td class="best-choice">Aerator 1</td>
+        </tr>
+        <tr class="highlight">
+            <td>Most Efficient</td>
+            <td class="highlight">Aerator 2</td>
         </tr>
     </table>
 
-<div style="margin-top: 30px; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
-    <h3 style="color: #2c3e50; margin-bottom: 15px;">Business Insights</h3>
-    <ul style="list-style-type: none; padding-left: 0;">
-        <li style="margin-bottom: 10px; padding: 8px; background-color: #e7f3ff; border-left: 4px solid #007bff; border-radius: 4px;">
+<div class="insights-box">
+    <h3>Business Insights</h3>
+    <ul class="insights-list">
+        <li class="insight-info">
              <strong>Total Oxygen Demand:</strong> 5,470.0 kg/day
         </li>
-        <li style="margin-bottom: 10px; padding: 8px; background-color: #e8f5e8; border-left: 4px solid #28a745; border-radius: 4px;">
+        <li class="insight-success">
              <strong>Annual Shrimp Production:</strong> 18,250,000 kg
         </li>
-        <li style="margin-bottom: 10px; padding: 8px; background-color: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px;">
+        <li class="insight-warning">
              <strong>Operation Schedule:</strong> 8 hours/day, 365 days/year
         </li>
-        <li style="margin-bottom: 10px; padding: 8px; background-color: #f8d7da; border-left: 4px solid #dc3545; border-radius: 4px;">
-             <strong>Finding:</strong> Aerator 2 provides the best overall value proposition, while choosing Aerator 1 results in significant opportunity costs over the analysis period.
+        <li class="insight-danger">
+             <strong>Key Finding:</strong> Aerator 2 provides the best overall value proposition, while choosing Aerator 1 results in significant opportunity costs over the analysis period.
         </li>
-        <li style="margin-bottom: 10px; padding: 8px; background-color: #d1ecf1; border-left: 4px solid #0c5460; border-radius: 4px;">
+        <li class="insight-secondary">
              <strong>Financial Impact:</strong> The opportunity cost of choosing the least efficient option can exceed $559,025 annually.
         </li>
     </ul>
 </div>
 
-<div style="margin-top: 30px; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
-    <h2 style="color: #2c3e50; text-align: center; margin-bottom: 20px;">Opportunity Cost Analysis</h2>
-    <p style="color: #6c757d; text-align: center; margin-bottom: 25px;">
+<div class="opportunity-cost-container">
+    <h2>Opportunity Cost Analysis</h2>
+    <p>
         Cost of choosing each aerator instead of the most efficient option (Aerator 2)
     </p>
-    <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        <thead style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+    <table class="opportunity-cost-table">
+        <thead>
             <tr>
-                <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6;">Aerator</th>
-                <th style="padding: 15px; text-align: center; border-bottom: 2px solid #dee2e6;">Annual Opportunity Cost</th>
-                <th style="padding: 15px; text-align: center; border-bottom: 2px solid #dee2e6;">10-Year NPV Opportunity Cost</th>
-                <th style="padding: 15px; text-align: center; border-bottom: 2px solid #dee2e6;">Efficiency Ratio</th>
-                <th style="padding: 15px; text-align: center; border-bottom: 2px solid #dee2e6;">Investment Decision</th>
+                <th>Aerator</th>
+                <th class="center">Annual Opportunity Cost</th>
+                <th class="center">10-Year NPV Opportunity Cost</th>
+                <th class="center">Efficiency Ratio</th>
+                <th class="center">Investment Decision</th>
             </tr>
         </thead>
         <tbody>
-        <tr style="background-color:rgb(22, 237, 229);">
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; font-weight: bold;">Aerator 1</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$559,025</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$3,963,629</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">1.00x</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center; color: #ffc107; font-weight: bold;">Moderate</td>
+        <tr>
+            <td>Aerator 1</td>
+            <td class="center">$559,025</td>
+            <td class="center">$3,963,629</td>
+            <td class="center">1.00x</td>
+            <td class="center decision-moderate">Moderate</td>
         </tr>    
-        <tr style="background-color:rgb(22, 237, 229);">
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; font-weight: bold;">Aerator 2</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$0</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$0</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">1.93x</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center; color: #28a745; font-weight: bold;">OPTIMAL</td>
+        <tr>
+            <td>Aerator 2</td>
+            <td class="center">$0</td>
+            <td class="center">$0</td>
+            <td class="center">1.93x</td>
+            <td class="center decision-optimal">OPTIMAL</td>
         </tr>
-        <tr style="background-color: rgb(22, 237, 229);">
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; font-weight: bold;">Aerator 3</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$83,130</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$589,411</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">2.53x</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center; color: #17a2b8; font-weight: bold;">CONSIDER</td>
+        <tr>
+            <td>Aerator 3</td>
+            <td class="center">$83,130</td>
+            <td class="center">$589,411</td>
+            <td class="center">2.53x</td>
+            <td class="center decision-consider">CONSIDER</td>
         </tr>  
-        <tr style="background-color: rgb(22, 237, 229);">
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; font-weight: bold;">Aerator 4</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$122,026</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$865,196</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">2.00x</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center; color: #17a2b8; font-weight: bold;">CONSIDER</td>
+        <tr>
+            <td>Aerator 4</td>
+            <td class="center">$122,026</td>
+            <td class="center">$865,196</td>
+            <td class="center">2.00x</td>
+            <td class="center decision-consider">CONSIDER</td>
         </tr>   
-        <tr style="background-color: rgb(22, 237, 229);">
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; font-weight: bold;">Aerator 5</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$317,601</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$2,251,871</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">2.00x</td>
-            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center; color: #17a2b8; font-weight: bold;">CONSIDER</td>
+        <tr>
+            <td>Aerator 5</td>
+            <td class="center">$317,601</td>
+            <td class="center">$2,251,871</td>
+            <td class="center">2.00x</td>
+            <td class="center decision-consider">CONSIDER</td>
         </tr>    
         </tbody>
     </table>
-    <div style="margin-top: 20px; padding: 15px; background-color: #e7f3ff; border-left: 4px solid #007bff; border-radius: 4px;">
-        <h4 style="color: #0056b3; margin-bottom: 10px;">Economic Interpretation</h4>
-        <ul style="margin: 0; padding-left: 20px; color: #495057;">
+    <div class="economic-interpretation">
+        <h4>Economic Interpretation</h4>
+        <ul>
             <li>Opportunity cost represents the financial penalty of not choosing the most efficient option</li>
             <li>Higher efficiency ratios indicate better oxygen transfer performance relative to baseline</li>
             <li>NPV opportunity cost shows the present value of losses over 10 years</li>
