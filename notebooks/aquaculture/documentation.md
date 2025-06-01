@@ -61,17 +61,14 @@
 <p>After performing data manipulation techniques, we can observe the following patterns:</p>
 
 <div style="text-align: center; margin: 20px 0;">
-    <img src="aerator_imports_2021_2024.png" alt="Aerator Imports in Ecuador (2021-2024)" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <img src="plots/aerator_imports_2021_2024.png" alt="Aerator Imports in Ecuador (2021-2024)" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
 </div>
-
 
 <p>The dashboard on aerator imports (2021-2024) reveals some insights across multiple dimensions. China dominates as the top country of origin with 15.5M USD (FOB), followed by Taiwan at 4.1M USD, while generic brands lead at 17.9M USD (CIF), far ahead of Wangfa at 3.2M USD. In terms of importers, Area Andina S.A. handles the highest volume at 647K units, with Crustáceos y Peces de Sudamérica as the second-largest at 137K units. Product descriptions show aerators of 12-16 pallet units leading at 548K kg (net weight), indicating a focus on bulk shipments. Ningbo is the top embarkation city with 398K units (ad valorem), and Agencia Maritima Global moves 708K units (freight value), highlighting their logistical prominence. Consignee directions peak with La Puntilla (Satellite) at 211K units (insured value), and the generic model category tops brokered models at 154K units, reflecting market preferences for cost savings.</p>
 
-
 <div style="text-align: center; margin: 20px 0;">
-    <img src="aerator_fob_price.png" alt="Aerator Unitary Prices in Ecuador (2021-2024)" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+    <img src="plots/aerator_fob_price.png" alt="Aerator Unitary Prices in Ecuador (2021-2024)" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
 </div>
-
 
 <p>The aerator prices chart (2021-2024) shows a highly skewed distribution of FOB unit prices, with a mean of 812.96 USD, indicating that most brands have prices below this value, but a long tail extends to 1200 USD+. Acquaeco has the highest average unit price at 1258.27 USD, followed by Walker at 1108.55 USD, suggesting they cater to a premium segment. In contrast, Zuma offers the lowest average at 500.80 USD, followed by WangFa at 546.36 USD, positioning them as budget options. Other brands like Hongteng (673.33 USD), and Aerex (802.14 USD) cluster closer to the mean, while Wenling (961.32 USD) and Annex (1021.79 USD) sit between the mid-range and high-end, reflecting a diverse pricing landscape in the aerator market.</p>
 
@@ -113,11 +110,9 @@
 <tr><td>Aerator 5</td><td>4</td><td>3.0</td><td>1200</td><td>160</td><td>5.0</td></tr>
 </table>
 
-
 <h5>2.3. Standard Oxygen Transfer Rate (SOTR)</h3>
 <p>The baseline oxygen transfer capacity under standard conditions (20°C, 0 DO, 1 atm), measured in kg O₂/hr (Kumar et al., 2020).</p>
 </div>
-
 
 <h5>2.3.1.2 Temperature-Adjusted Oxygen Transfer Rate (OTRT)</h5>
 
@@ -127,7 +122,6 @@ $$
 
 Where $\theta = 1.024$ (temperature correction factor) (Boyd, 2015).
 
-
 <h5>2.3.1.3 Standard Aeration Efficiency (SAE)</h5>
 
 $$
@@ -136,12 +130,19 @@ $$
 
 Where $\text{Power (kW)} = \text{Power (HP)} \times 0.746$ (Kumar et al., 2020).
 
+<div style="text-align: center; margin: 20px 0;">
+    <img src="plots/sotr_vs_price.png" alt="SOTR vs Price" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+</div>
 
 <h5>2.3.1.4 Aerator Quantity Calculation</h5>
 
 $$
 \text{Number of Aerators} = \left\lceil \frac{TOD}{OTR_T} \right\rceil
 $$
+
+<div style="text-align: center; margin: 20px 0;">
+    <img src="plots/aerator_quantity.png" alt="Aerator Quantity" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+</div>
 
 <h5>2.3.2 Annual Revenue</h5>
 
@@ -163,6 +164,10 @@ $$
 2. **Maintenance Cost:** $\text{Maintenance Cost per Unit per Year} \times \text{Number of Aerators}$
 3. **Replacement Cost (Annualized):** $(\text{Number of Aerators} \times \text{Cost per Aerator}) / \text{Durability (years)}$
 
+<div style="text-align: center; margin: 20px 0;">
+    <img src="plots/annual_cost_breakdown.png" alt="Annual Cost Breakdown" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+</div>
+
 <h5>2.3.6 Net Present Value (NPV) of Savings</h5>
 
 $$
@@ -175,13 +180,57 @@ Where $r_{real} = \frac{1 + r_{nominal}}{1 + r_{inflation}} - 1$ (Intelligon, 20
 
 Standard metrics (IRR, Payback, ROI, k) were adapted due to violations of positive incremental investment assumptions in aquaculture equipment comparison (Engle, 2010; Kumar et al., 2020).
 
-<h5>2.3.7.1 Internal Rate of Return (IRR)</h5>
+<h5>2.3.7.1 Internal Rate of Return (IRR) - Enhanced Calculation</h5>
+
+The IRR calculation has been enhanced to properly handle different investment scenarios, particularly when comparing aerators with negative investment differences (lower cost + better performance):
+
+**Case 1: Baseline Aerator (Least Efficient)**
 
 $$
-0 = - \Delta I + \sum_{i=1}^{n} \frac{S_{yr1} \times (1 + r_{\text{inflation}})^{i-1}}{(1 + \text{IRR})^i}
+\text{IRR}_{\text{baseline}} = 0\%
 $$
 
-If $\Delta I \leq 0$, standard IRR is undefined; adapted IRR anchors against baseline cost, scaled by SOTR ratio, capped at 100% (Kumar et al., 2020).
+**Case 2: Negative Investment Difference ($\Delta I \leq 0$) with Annual Savings ($S_{\text{yr1}} > 0$)**
+
+When an aerator costs less than baseline AND provides better performance:
+
+$$
+0 = |\Delta I| - \sum_{i=1}^{n} \frac{S_{\text{yr1}} \times (1 + r_{\text{inflation}})^{i-1}}{(1 + \text{IRR})^i}
+$$
+
+If numerical calculation fails or gives negative result:
+
+$$
+\text{IRR}_{\text{approx}} = \min\left(999\%, \frac{S_{\text{yr1}}}{|\Delta I|} - 1\right)
+$$
+
+**Case 3: Small Positive Investment Difference ($0 < \Delta I \leq 1000$)**
+
+For very small investment differences that could cause mathematical instability:
+
+$$
+\text{IRR}_{\text{conservative}} = \min\left(30\%, \frac{S_{\text{yr1}}}{500,000}\right)
+$$
+
+**Case 4: Significant Positive Investment Difference ($\Delta I > 1000$)**
+
+Standard IRR calculation:
+
+$$
+0 = -\Delta I + \sum_{i=1}^{n} \frac{S_{\text{yr1}} \times (1 + r_{\text{inflation}})^{i-1}}{(1 + \text{IRR})^i}
+$$
+
+**Mathematical Safeguards:**
+
+- IRR values capped at 999% for display purposes
+- Negative investment differences use absolute value in calculation
+- Conservative scaling prevents unrealistic values from tiny denominators
+
+This enhanced approach ensures accurate IRR calculations for all investment scenarios while maintaining financial validity.
+
+<div style="text-align: center; margin: 20px 0;">
+    <img src="plots/irr_aerators.png" alt="Aerator IRR" style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+</div>
 
 ### 2.4.2.1 Payback Period
 
@@ -208,7 +257,6 @@ $$
 **Where:**
 • $R_{\text{SOTR}} = \frac{S_{\text{yr1}}}{C_{\text{base}}} \times R_{\text{SOTR}}$ (SOTR ratio factor)
 • $C_{\text{base}}$ is the baseline cost (Engle, 2010)
-
 
 ### 2.4.2.2 Relative Return on Investment (ROI)
 
@@ -242,7 +290,6 @@ $$
 • $F_{\text{cost\_sav}} = \frac{|\Delta I|}{C_{\text{base}}}$ (cost savings factor)  
 • $S_{\text{yr1}} > 0$ and $C_{\text{base}} > 0$ (required conditions)  
 • For $\Delta I \leq 0$: ROI based on savings relative to baseline cost, scaled by SOTR ratio
-
 
 ### 2.4.2.3 Profitability Index ($k$)
 
@@ -304,3 +351,364 @@ $$
 • $P_{\text{base}} = \frac{(C_{\text{annual, non-winner}} - (C_{E, \text{winner}} + C_{M, \text{winner}})) \times D_{\text{winner}}}{N_{\text{winner}}}$ (baseline price)  
 • $F_{\text{cost, eq}} = \frac{P_{\text{base}}}{C_{\text{base}}}$ (cost equilibrium factor)  
 • Condition: $P_{\text{base}} > 0$ (Asche et al., 2021)
+
+### 2.4.3 Opportunity Cost Analysis
+
+Opportunity cost represents the financial penalty of not choosing the most efficient aerator option. It quantifies the present value of additional costs incurred by selecting a suboptimal aerator.
+
+**Opportunity Cost Calculation:**
+
+**Case 1: Baseline Aerator (Least Efficient)**
+
+$$
+\text{Opportunity Cost}_{\text{baseline}} = 0
+$$
+
+**Case 2: Non-Winner Aerators**
+
+For aerators that cost more to operate than the winner:
+
+$$
+\text{Opportunity Cost} = \text{NPV}\left(\sum_{i=1}^{n} \frac{(C_{\text{annual, aerator}} - C_{\text{annual, winner}}) \times (1 + r_{\text{inflation}})^{i-1}}{(1 + r_{\text{real}})^i}\right)
+$$
+
+**Case 3: Winner Aerator or Equal Performance**
+
+$$
+\text{Opportunity Cost}_{\text{winner}} = 0
+$$
+
+**Where:**
+
+- $C_{\text{annual, aerator}}$ = Total annual cost of the evaluated aerator
+- $C_{\text{annual, winner}}$ = Total annual cost of the most efficient aerator
+- Positive opportunity cost indicates financial penalty vs optimal choice
+- Zero opportunity cost indicates optimal or equivalent choice
+
+This metric enables direct comparison of long-term financial impact across aerator options.
+
+## 2.4.4 Results Summary
+
+<table border="1" class="dataframe" id="summary_table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Aerator 1</th>
+      <th>Aerator 2</th>
+      <th>Aerator 3</th>
+      <th>Aerator 4</th>
+      <th>Aerator 5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Unit Price</th>
+      <td>$600</td>
+      <td>$800</td>
+      <td>$900</td>
+      <td>$1,000</td>
+      <td>$1,200</td>
+    </tr>
+    <tr>
+      <th>Power Rating</th>
+      <td>2 HP</td>
+      <td>2 HP</td>
+      <td>3 HP</td>
+      <td>3 HP</td>
+      <td>4 HP</td>
+    </tr>
+    <tr>
+      <th>SOTR (kg O2/hr)</th>
+      <td>1.5</td>
+      <td>2.9</td>
+      <td>3.8</td>
+      <td>3.0</td>
+      <td>3.0</td>
+    </tr>
+    <tr>
+      <th>OTRT (kg O2/hr)</th>
+      <td>1.97</td>
+      <td>3.81</td>
+      <td>4.99</td>
+      <td>3.94</td>
+      <td>3.94</td>
+    </tr>
+    <tr>
+      <th>Units Needed</th>
+      <td>2777</td>
+      <td>1436</td>
+      <td>1096</td>
+      <td>1389</td>
+      <td>1389</td>
+    </tr>
+    <tr>
+      <th>Initial Investment</th>
+      <td>$1,160,231.82</td>
+      <td>$799,948.58</td>
+      <td>$686,863.92</td>
+      <td>$967,208.02</td>
+      <td>$1,160,649.62</td>
+    </tr>
+    <tr>
+      <th>Annual Energy Cost</th>
+      <td>$421,057</td>
+      <td>$217,730</td>
+      <td>$249,268</td>
+      <td>$315,906</td>
+      <td>$421,208</td>
+    </tr>
+    <tr>
+      <th>Annual Maintenance</th>
+      <td>$164,366</td>
+      <td>$94,994</td>
+      <td>$95,398</td>
+      <td>$135,409</td>
+      <td>$154,753</td>
+    </tr>
+    <tr>
+      <th>Total Annual Cost</th>
+      <td>$1,049,515</td>
+      <td>$490,491</td>
+      <td>$573,620</td>
+      <td>$612,517</td>
+      <td>$808,091</td>
+    </tr>
+    <tr>
+      <th>Cost per kg O2</th>
+      <td>$0.066</td>
+      <td>$0.031</td>
+      <td>$0.036</td>
+      <td>$0.038</td>
+      <td>$0.051</td>
+    </tr>
+    <tr>
+      <th>Energy per kg O2</th>
+      <td>0.76</td>
+      <td>0.39</td>
+      <td>0.45</td>
+      <td>0.57</td>
+      <td>0.76</td>
+    </tr>
+    <tr>
+      <th>Annual Savings vs Least Efficient</th>
+      <td>$0</td>
+      <td>$559,025</td>
+      <td>$475,895</td>
+      <td>$436,999</td>
+      <td>$241,424</td>
+    </tr>
+  </tbody>
+</table>
+
+<table border="1" class="dataframe" id="financial_table">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Aerator 1</th>
+      <th>Aerator 2</th>
+      <th>Aerator 3</th>
+      <th>Aerator 4</th>
+      <th>Aerator 5</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Initial Investment</th>
+      <td>$1,160,231.82</td>
+      <td>$799,948.58</td>
+      <td>$686,863.92</td>
+      <td>$967,208.02</td>
+      <td>$1,160,649.62</td>
+    </tr>
+    <tr>
+      <th>Annual Savings vs Least Efficient</th>
+      <td>$0</td>
+      <td>$559,025</td>
+      <td>$475,895</td>
+      <td>$436,999</td>
+      <td>$241,424</td>
+    </tr>
+    <tr>
+      <th>Net Present Value</th>
+      <td>$0</td>
+      <td>$4,323,913</td>
+      <td>$3,847,586</td>
+      <td>$3,291,458</td>
+      <td>$1,711,341</td>
+    </tr>
+    <tr>
+      <th>Internal Rate of Return</th>
+      <td>0.0% (Least Efficient)</td>
+      <td>155.1%</td>
+      <td>100.4%</td>
+      <td>226.4%</td>
+      <td>30.0%</td>
+    </tr>
+    <tr>
+      <th>Payback Period</th>
+      <td>0.0 years</td>
+      <td>0.6 years</td>
+      <td>1.0 years</td>
+      <td>0.4 years</td>
+      <td>0.0 years</td>
+    </tr>
+    <tr>
+      <th>SOTR Performance Ratio</th>
+      <td>1.00x</td>
+      <td>1.93x</td>
+      <td>2.53x</td>
+      <td>2.00x</td>
+      <td>2.00x</td>
+    </tr>
+    <tr>
+      <th>Profitability Index</th>
+      <td>1.00</td>
+      <td>2.56</td>
+      <td>2.48</td>
+      <td>2.44</td>
+      <td>1.12</td>
+    </tr>
+    <tr>
+      <th>Return on Investment</th>
+      <td>0.0%</td>
+      <td>193.3%</td>
+      <td>253.3%</td>
+      <td>200.0%</td>
+      <td>50.0%</td>
+    </tr>
+    <tr>
+      <th>Opportunity Cost (NPV)</th>
+      <td>$0</td>
+      <td>Best Choice</td>
+      <td>$589,411</td>
+      <td>$865,196</td>
+      <td>$2,251,871</td>
+    </tr>
+  </tbody>
+</table>
+
+<div style="background-color: #f8f9fa; padding: 20px; border-radius: 10px; margin-top: 20px;">
+    <h3 style="color: #2c3e50; margin-bottom: 20px;">Best Options Summary</h3>
+    <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px;">
+        <tr style="background-color: #e9ecef;">
+            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Criteria</th>
+            <th style="padding: 12px; text-align: left; border: 1px solid #dee2e6;">Best Option</th>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #dee2e6;">Best Initial Cost</td>
+            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold;">Aerator 3</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #dee2e6;">Best Operating Cost</td>
+            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #28a745;">Aerator 2</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #dee2e6;">Best NPV</td>
+            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #28a745;">Aerator 2</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #dee2e6;">Best IRR</td>
+            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #28a745;">Aerator 4</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #dee2e6;">Best Profitability Index</td>
+            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #28a745;">Aerator 2</td>
+        </tr>
+        <tr style="background-color: #f8f9fa;">
+            <td style="padding: 10px; border: 1px solid #dee2e6;">Best ROI</td>
+            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #28a745;">Aerator 3</td>
+        </tr>
+        <tr>
+            <td style="padding: 10px; border: 1px solid #dee2e6;">Best Payback Period</td>
+            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #28a745;">Aerator 1</td>
+        </tr>
+        <tr style="background-color: #fff3cd;">
+            <td style="padding: 10px; border: 1px solid #dee2e6;">Most Efficient</td>
+            <td style="padding: 10px; border: 1px solid #dee2e6; font-weight: bold; color: #856404;">Aerator 2</td>
+        </tr>
+    </table>
+
+<div style="margin-top: 30px; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
+    <h3 style="color: #2c3e50; margin-bottom: 15px;">Business Insights</h3>
+    <ul style="list-style-type: none; padding-left: 0;">
+        <li style="margin-bottom: 10px; padding: 8px; background-color: #e7f3ff; border-left: 4px solid #007bff; border-radius: 4px;">
+             <strong>Total Oxygen Demand:</strong> 5,470.0 kg/day
+        </li>
+        <li style="margin-bottom: 10px; padding: 8px; background-color: #e8f5e8; border-left: 4px solid #28a745; border-radius: 4px;">
+             <strong>Annual Shrimp Production:</strong> 18,250,000 kg
+        </li>
+        <li style="margin-bottom: 10px; padding: 8px; background-color: #fff3cd; border-left: 4px solid #ffc107; border-radius: 4px;">
+             <strong>Operation Schedule:</strong> 8 hours/day, 365 days/year
+        </li>
+        <li style="margin-bottom: 10px; padding: 8px; background-color: #f8d7da; border-left: 4px solid #dc3545; border-radius: 4px;">
+             <strong>Finding:</strong> Aerator 2 provides the best overall value proposition, while choosing Aerator 1 results in significant opportunity costs over the analysis period.
+        </li>
+        <li style="margin-bottom: 10px; padding: 8px; background-color: #d1ecf1; border-left: 4px solid #0c5460; border-radius: 4px;">
+             <strong>Financial Impact:</strong> The opportunity cost of choosing the least efficient option can exceed $559,025 annually.
+        </li>
+    </ul>
+</div>
+
+<div style="margin-top: 30px; padding: 20px; background-color: #f8f9fa; border-radius: 10px;">
+    <h2 style="color: #2c3e50; text-align: center; margin-bottom: 20px;">Opportunity Cost Analysis</h2>
+    <p style="color: #6c757d; text-align: center; margin-bottom: 25px;">
+        Cost of choosing each aerator instead of the most efficient option (Aerator 2)
+    </p>
+    <table style="width: 100%; border-collapse: collapse; background-color: white; border-radius: 8px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <thead style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+            <tr>
+                <th style="padding: 15px; text-align: left; border-bottom: 2px solid #dee2e6;">Aerator</th>
+                <th style="padding: 15px; text-align: center; border-bottom: 2px solid #dee2e6;">Annual Opportunity Cost</th>
+                <th style="padding: 15px; text-align: center; border-bottom: 2px solid #dee2e6;">10-Year NPV Opportunity Cost</th>
+                <th style="padding: 15px; text-align: center; border-bottom: 2px solid #dee2e6;">Efficiency Ratio</th>
+                <th style="padding: 15px; text-align: center; border-bottom: 2px solid #dee2e6;">Investment Decision</th>
+            </tr>
+        </thead>
+        <tbody>
+        <tr style="background-color:rgb(22, 237, 229);">
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; font-weight: bold;">Aerator 1</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$559,025</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$3,963,629</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">1.00x</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center; color: #ffc107; font-weight: bold;">Moderate</td>
+        </tr>    
+        <tr style="background-color:rgb(22, 237, 229);">
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; font-weight: bold;">Aerator 2</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$0</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$0</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">1.93x</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center; color: #28a745; font-weight: bold;">OPTIMAL</td>
+        </tr>
+        <tr style="background-color: rgb(22, 237, 229);">
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; font-weight: bold;">Aerator 3</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$83,130</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$589,411</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">2.53x</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center; color: #17a2b8; font-weight: bold;">CONSIDER</td>
+        </tr>  
+        <tr style="background-color: rgb(22, 237, 229);">
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; font-weight: bold;">Aerator 4</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$122,026</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$865,196</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">2.00x</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center; color: #17a2b8; font-weight: bold;">CONSIDER</td>
+        </tr>   
+        <tr style="background-color: rgb(22, 237, 229);">
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; font-weight: bold;">Aerator 5</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$317,601</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">$2,251,871</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center;">2.00x</td>
+            <td style="padding: 12px; border-bottom: 1px solid #dee2e6; text-align: center; color: #17a2b8; font-weight: bold;">CONSIDER</td>
+        </tr>    
+        </tbody>
+    </table>
+    <div style="margin-top: 20px; padding: 15px; background-color: #e7f3ff; border-left: 4px solid #007bff; border-radius: 4px;">
+        <h4 style="color: #0056b3; margin-bottom: 10px;">Economic Interpretation</h4>
+        <ul style="margin: 0; padding-left: 20px; color: #495057;">
+            <li>Opportunity cost represents the financial penalty of not choosing the most efficient option</li>
+            <li>Higher efficiency ratios indicate better oxygen transfer performance relative to baseline</li>
+            <li>NPV opportunity cost shows the present value of losses over 10 years</li>
+            <li>Investment decisions balance efficiency gains against opportunity costs</li>
+        </ul>
+    </div>
+</div>
