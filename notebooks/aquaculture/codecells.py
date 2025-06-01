@@ -621,6 +621,31 @@ for name in aerator_names:
         }
     )
 
+    # Calculate opportunity cost - if this aerator costs more to operate than the winner
+    if name == least_efficient_name:
+        # Baseline has no opportunity cost by definition
+        financial_metrics[name]["opportunity_cost"] = 0.0
+    else:
+        # Calculate opportunity cost as NPV of additional costs vs the winner
+        annual_cost_diff = (
+            financial_metrics[name]["total_annual_cost"]
+            - financial_metrics[winner_name]["total_annual_cost"]
+            if winner_name in financial_metrics
+            else 0.0
+        )
+        if annual_cost_diff > 0:
+            # This aerator costs more to operate than the winner
+            opportunity_cost = calculate_npv(
+                0,  # No initial investment difference for opportunity cost
+                annual_cost_diff,  # Annual cost penalty
+                analysis_years,
+                real_discount_rate,
+            )
+        else:
+            # This aerator costs less than or equal to winner
+            opportunity_cost = 0.0
+        financial_metrics[name]["opportunity_cost"] = opportunity_cost
+
 # Debug: Print key metrics for verification
 print("\n=== AERATOR COMPARISON DEBUG ===")
 print(f"Least Efficient Aerator: {least_efficient_name}")
@@ -1306,9 +1331,11 @@ for name in aerator_names:
         f"{fin['sotr_ratio']:.2f}x",
         profitability_index_display,
         roi_display,
-        f"${fin['opportunity_cost']:,.0f}"
-        if fin["opportunity_cost"] != 0
-        else "$0",
+        (
+            f"${fin['opportunity_cost']:,.0f}"
+            if fin.get("opportunity_cost", 0) > 0
+            else ("$0" if name == least_efficient_name else "Best Choice")
+        ),
     ]
 
 df_financial.index = [
@@ -1445,6 +1472,30 @@ display(HTML(business_insights_html))
 # ======================================================================================
 # OPPORTUNITY COST ANALYSIS TABLE
 # ======================================================================================
+
+# Calculate opportunity costs before creating tables
+for name in aerator_names:
+    if name == least_efficient_name:
+        # Baseline has no opportunity cost by definition
+        financial_metrics[name]["opportunity_cost"] = 0.0
+    else:
+        # Calculate opportunity cost as NPV of additional costs vs the winner
+        annual_cost_diff = (
+            financial_metrics[name]["total_annual_cost"]
+            - financial_metrics[winner_name]["total_annual_cost"]
+        )
+        if annual_cost_diff > 0:
+            # This aerator costs more to operate than the winner
+            opportunity_cost = calculate_npv(
+                0,  # No initial investment difference for opportunity cost
+                annual_cost_diff,  # Annual cost penalty
+                analysis_years,
+                real_discount_rate,
+            )
+        else:
+            # This aerator costs less than or equal to winner
+            opportunity_cost = 0.0
+        financial_metrics[name]["opportunity_cost"] = opportunity_cost
 
 # Create opportunity cost analysis table
 opportunity_cost_html = f"""
