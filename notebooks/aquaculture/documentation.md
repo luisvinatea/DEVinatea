@@ -18,7 +18,7 @@
 </div>
 <div class="article-info-block-heading">Abstract</div>
 <div class="abstract-content">
-<p>Aerator selection is a critical economic decision in shrimp farming, often complicated by the trade-off between initial cost and long-term operational efficiency. This paper presents an analysis comparing two aerator options within the context of a specific shrimp farm, integrating Léon Walras's General Equilibrium Theory and Friedrich von Wieser's concept of Opportunity Cost. The study evaluates aerators based on updated technical performance metrics (including Temperature-Adjusted Oxygen Transfer Rate - OTRT and Standard Aeration Efficiency - SAE) derived from the farm's Total Oxygen Demand (TOD) and detailed, adapted financial indicators (Net Present Value - NPV, Internal Rate of Return - IRR, Payback Period, Return on Investment - ROI, Profitability Index - k, Opportunity Cost, and Equilibrium Price) tailored for equipment comparison. Results from the specific case study demonstrate that prioritizing higher efficiency (Aerator 2) over lower initial unitary cost (Aerator 1) leads to substantial long-term savings, a significantly positive NPV, high interpreted ROI and IRR, rapid payback, and a considerable opportunity cost associated with choosing the less efficient option. The analysis underscores the importance of applying robust economic principles and adapted technical-financial assessments for optimizing operational costs and ensuring financial sustainability in shrimp aquaculture (Boyd & Hanson, 2021; The Fish Site, 2021).</p>
+<p>Aerator selection is a critical economic decision in shrimp farming, often complicated by the trade-off between initial cost and long-term operational efficiency. This paper presents an analysis comparing two aerator options within the context of a specific shrimp farm, integrating Léon Walras's General Equilibrium Theory and Friedrich von Wieser's concept of Opportunity Cost. The study evaluates aerators based on updated technical performance metrics (including Temperature-Adjusted Oxygen Transfer Rate - OTRT and Standard Aeration Efficiency - SAE) derived from the farm's Total Oxygen Demand (TOD) and detailed, adapted financial indicators (Net Present Value - NPV, Internal Rate of Return - IRR, Payback Period, Return on Investment - ROI, Profitability Index - k, Opportunity Cost, and Equilibrium Price) tailored for equipment comparison. Results from the specific case study demonstrate that prioritizing higher efficiency (Aerator 2) over lower initial unitary cost (Aerator 1) leads to substantial long-term savings, a significantly positive NPV, high interpreted ROI and IRR, rapid payback, and a considerable opportunity cost associated with choosing the less efficient option. (Boyd & Hanson, 2021; The Fish Site, 2021).</p>
 </div>
 
 <div class="keywords-section">
@@ -32,7 +32,7 @@
 <p>In shrimp farming, dissolved oxygen is a critical input. An "internal oxygen market" can be conceptualized where demand (Total Oxygen Demand, TOD) is driven by shrimp and microbial needs, and supply depends on aerators' Temperature-Adjusted Oxygen Transfer Rate (OTRT). Aerators interact with energy, maintenance, and replacement markets, connecting to the external shrimp market. Walras's Theorem suggests equilibrium when these markets adjust simultaneously. Choosing a cheaper, less efficient aerator incurs an opportunity cost equal to the net present value of savings forgone by not selecting the more efficient option (Boyd & Hanson, 2021; Susilowati et al., 2021).</p>
 
 <h3 class="subsection-heading">1.2 The Cake Recipe: Why Assuming HP per Pound of Shrimp is Incorrect</h3>
-<p>Assuming a fixed horsepower (HP)-per-production ratio is erroneous. Shrimp production depends on multiple factors (dissolved oxygen, temperature, salinity, density). Aerator HP does not directly equate to oxygen supply; OTR_T is critical. Fixed HP ratios ignore interdependencies, leading to inefficient investments in low-OTR_T aerators and significant opportunity costs (Boyd, 2015; Responsible Seafood Advocate, 2022).</p>
+<p>Assuming a fixed horsepower (HP)-per-production ratio is erroneous. Shrimp production depends on multiple factors (dissolved oxygen, temperature, salinity, density). Aerator HP does not directly equate to oxygen supply; OTRT is critical. Fixed HP ratios ignore interdependencies, leading to inefficient investments in low-OTRT aerators and significant opportunity costs (Boyd, 2015; Responsible Seafood Advocate, 2022).</p>
 
 <h3 class="subsection-heading">1.3 Original Equation of Léon Walras's General Equilibrium</h3>
 <p>Walras formalized general equilibrium with supply/demand equations, subject to Walras's Law (excess demands sum to zero). Equilibrium prices are found via "tâtonnement" (Walras, 1874). In shrimp farming, equilibrium involves optimizing aerator costs, meeting TOD, maximizing profits, and accounting for opportunity cost (Asche et al., 2021; Valderrama et al., 2023).</p>
@@ -45,15 +45,11 @@
 <p>By analysing aerator imports from Ecuador's customs database, in the period of 2021 to 2024, we can gain insights on market trends, pricing strategies, and the competitive landscape of aerator suppliers in the region.</p>
 <p>After performing data manipulation techniques, we can observe the following patterns:</p>
 
-<figure>
-    <img src="plots/aerator_imports_2021_2024.png" alt="Aerator Imports in Ecuador (2021-2024)">
-</figure>
+![Aerator Imports in Ecuador (2021-2024)](plots/aerator_imports_2021_2024.png)
 
 <p>The dashboard on aerator imports (2021-2024) reveals some insights across multiple dimensions. China dominates as the top country of origin with 15.5M USD (FOB), followed by Taiwan at 4.1M USD, while generic brands lead at 17.9M USD (CIF), far ahead of Wangfa at 3.2M USD. In terms of importers, Area Andina S.A. handles the highest volume at 647K units, with Crustáceos y Peces de Sudamérica as the second-largest at 137K units. Product descriptions show aerators of 12-16 pallet units leading at 548K kg (net weight), indicating a focus on bulk shipments. Ningbo is the top embarkation city with 398K units (ad valorem), and Agencia Maritima Global moves 708K units (freight value), highlighting their logistical prominence. Consignee directions peak with La Puntilla (Satellite) at 211K units (insured value), and the generic model category tops brokered models at 154K units, reflecting market preferences for cost savings.</p>
 
-<figure>
-    <img src="plots/aerator_fob_price.png" alt="Aerator Unitary Prices in Ecuador (2021-2024)">
-</figure>
+![Aerator Unitary Prices in Ecuador (2021-2024)](plots/aerator_fob_price.png)
 
 <p>The aerator prices chart (2021-2024) shows a highly skewed distribution of FOB unit prices, with a mean of 812.96 USD, indicating that most brands have prices below this value, but a long tail extends to 1200 USD+. Acquaeco has the highest average unit price at 1258.27 USD, followed by Walker at 1108.55 USD, suggesting they cater to a premium segment. In contrast, Zuma offers the lowest average at 500.80 USD, followed by WangFa at 546.36 USD, positioning them as budget options. Other brands like Hongteng (673.33 USD), and Aerex (802.14 USD) cluster closer to the mean, while Wenling (961.32 USD) and Annex (1021.79 USD) sit between the mid-range and high-end, reflecting a diverse pricing landscape in the aerator market.</p>
 
@@ -63,37 +59,35 @@
 
 <p>This case study examines an intensive shrimp farm in Ecuador with 1,000 hectares of production area. The farm operates at a tropical water temperature of 31.5°C, which significantly affects oxygen transfer efficiency through the established temperature correction factor (θ = 1.024). The farm's Total Oxygen Demand (TOD) is calculated at 5.47 kg O₂/hr/hectare, resulting in a substantial total requirement of 5,470 kg O₂/hr across the entire operation.</p>
 
-<p>For this analysis, we compare seven different paddlewheel aerator models (Aerator 0 through Aerator 6), all operating at the standard power rating of 3 HP (2.238 kW). These aerators exhibit varying performance characteristics:</p>
+<p>For this analysis, we compare five different paddlewheel aerator models (Aerator 1 through Aerator 5), all operating under a fixed cost of energy of 0.05 USD/Kwh. These aerators exhibit varying performance characteristics:</p>
 
 ### Farm Parameters
 
-<table>
-<tr><th>Parameter</th><th>Value</th></tr>
-<tr><td>Farm area</td><td>1000 hectares</td></tr>
-<tr><td>Operating temperature</td><td>31.5°C</td></tr>
-<tr><td>Energy cost</td><td>$0.05/kWh</td></tr>
-<tr><td>Daily aeration</td><td>8 hours</td></tr>
-<tr><td>Total Oxygen Demand (TOD)</td><td>5,470 kg O₂/day</td></tr>
-<tr><td>Annual shrimp production</td><td>18,250,000 kg</td></tr>
-<tr><td>Analysis period</td><td>10 years</td></tr>
-<tr><td>Discount rate</td><td>10%</td></tr>
-<tr><td>Annual inflation rate</td><td>3%</td></tr>
-</table>
+| Parameter                 | Value           |
+| ------------------------- | --------------- |
+| Farm area                 | 1000 hectares   |
+| Operating temperature     | 31.5°C          |
+| Energy cost               | $0.05/kWh       |
+| Daily aeration            | 8 hours         |
+| Total Oxygen Demand (TOD) | 5,470 kg O₂/day |
+| Annual shrimp production  | 18,250,000 kg   |
+| Analysis period           | 10 years        |
+| Discount rate             | 10%             |
+| Annual inflation rate     | 3%              |
 
 <h3 class="subsection-heading">2.2 Aerator Investment Options</h3>
 
-<p>The aerators under consideration present a classic economic dilemma: less expensive models with lower efficiency versus higher-priced models with superior oxygen transfer rates. While Aerator 0 has the lowest initial cost (500 USD), it does not offer the lowest operational cost. Aerator 1, despite being more expensive (600 USD), delivers lower SOTR (1.0 kg O₂/hr vs. 1.2 kg O₂/hr). The most efficient option, Aerator 6, transfers 6.0 kg O₂/hr but costs 1,500 USD per unit.</p>
+<p>The aerators under consideration present a classic economic dilemma: less expensive models with lower efficiency versus higher-priced models with superior oxygen transfer rates. While Aerator 1 has the lowest initial cost (600 USD), it does not offer the lowest operational cost, nor the highest efficiency.</p>
 
-<p>The economic challenge is compounded by differences in durability (ranging from 2.0 to 6.0 years) and maintenance costs (from 20 USD to 90 USD per unit annually). This creates complex trade-offs between initial investment and long-term operational expenses. The total number of aerators required varies dramatically between options due to their different oxygen transfer capacities, directly impacting both initial investment and ongoing operational costs.</p>
+<p>The economic challenge is compounded by differences in durability (ranging from 2.0 to 6.0 years) and maintenance costs (from 85 USD to 160 USD per unit annually). This creates complex trade-offs between initial investment and long-term operational expenses. Another complexity factor is the varying power capacity of each model, where some require more energy to deliver the same SOTR as others. The total number of aerators required varies dramatically between options due to their different oxygen transfer capacities, directly impacting both initial investment and ongoing operational costs.</p>
 
-<table>
-<tr><th>Aerator Model</th><th>Power (HP)</th><th>SOTR (kg O₂/hr)</th><th>Purchase Price (USD)</th><th>Maintenance Cost (USD/year)</th><th>Durability (years)</th></tr>
-<tr><td>Aerator 1</td><td>2</td><td>1.5</td><td>600</td><td>85</td><td>2.5</td></tr>
-<tr><td>Aerator 2</td><td>2</td><td>2.9</td><td>800</td><td>95</td><td>4.5</td></tr>
-<tr><td>Aerator 3</td><td>3</td><td>3.8</td><td>900</td><td>125</td><td>3.0</td></tr>
-<tr><td>Aerator 4</td><td>3</td><td>3.0</td><td>1000</td><td>140</td><td>6.0</td></tr>
-<tr><td>Aerator 5</td><td>4</td><td>3.0</td><td>1200</td><td>160</td><td>5.0</td></tr>
-</table>
+| Aerator Model | Power (HP) | SOTR (kg O₂/hr) | Purchase Price (USD) | Maintenance Cost (USD/year) | Durability (years) |
+| ------------- | ---------- | --------------- | -------------------- | --------------------------- | ------------------ |
+| Aerator 1     | 2          | 1.5             | 600                  | 85                          | 2.5                |
+| Aerator 2     | 2          | 2.9             | 800                  | 95                          | 4.5                |
+| Aerator 3     | 3          | 3.8             | 900                  | 125                         | 3.0                |
+| Aerator 4     | 3          | 3.0             | 1000                 | 140                         | 6.0                |
+| Aerator 5     | 4          | 3.0             | 1200                 | 160                         | 5.0                |
 
 <h4 class="subsubsection-heading">2.3. Standard Oxygen Transfer Rate (SOTR)</h4>
 <p>The baseline oxygen transfer capacity under standard conditions (20°C, 0 DO, 1 atm), measured in kg O₂/hr (Kumar et al., 2020).</p>
@@ -101,39 +95,29 @@
 
 <h4 class="subsubsection-heading">2.3.1.2 Temperature-Adjusted Oxygen Transfer Rate (OTRT)</h4>
 
-<div class="equation-block">
 $$
-OTR_T = (\text{SOTR} \times 0.5) \times \theta^{(T-20)}
+OTR_T = \text{SOTR} \times 0.5 \times \theta^{(T-20)}
 $$
-</div>
 
 Where $\theta = 1.024$ (temperature correction factor) (Boyd, 2015).
 
 <h4 class="subsubsection-heading">2.3.1.3 Standard Aeration Efficiency (SAE)</h4>
 
-<div class="equation-block">
 $$
 \text{SAE} = \frac{\text{SOTR}}{\text{Power (kW)}} \quad ( kg \ O_2 / \text{kWh})
 $$
-</div>
 
 Where $\text{Power (kW)} = \text{Power (HP)} \times 0.746$ (Kumar et al., 2020).
 
-<figure>
-    <img src="plots/sotr_vs_price.png" alt="SOTR vs Price">
-</figure>
+![SOTR vs Price](plots/sotr_vs_price.png)
 
 <h4 class="subsubsection-heading">2.3.1.4 Aerator Quantity Calculation</h4>
 
-<div class="equation-block">
 $$
 \text{Number of Aerators} = \left\lceil \frac{TOD}{OTR_T} \right\rceil
 $$
-</div>
 
-<figure>
-    <img src="plots/aerator_quantity.png" alt="Aerator Quantity">
-</figure>
+![Aerator Quantity](plots/aerator_quantity.png)
 
 <h4 class="subsubsection-heading">2.3.2 Annual Revenue</h4>
 
@@ -155,9 +139,7 @@ $$
 2. **Maintenance Cost:** $\text{Maintenance Cost per Unit per Year} \times \text{Number of Aerators}$
 3. **Replacement Cost (Annualized):** $(\text{Number of Aerators} \times \text{Cost per Aerator}) / \text{Durability (years)}$
 
-<figure>
-    <img src="plots/annual_cost_breakdown.png" alt="Annual Cost Breakdown">
-</figure>
+![Annual Cost Breakdown](plots/annual_cost_breakdown.png)
 
 <h4 class="subsubsection-heading">2.3.6 Net Present Value (NPV) of Savings</h4>
 
@@ -219,9 +201,7 @@ $$
 
 This enhanced approach ensures accurate IRR calculations for all investment scenarios while maintaining financial validity.
 
-<figure>
-    <img src="plots/irr_aerators.png" alt="Aerator IRR">
-</figure>
+![Aerator IRR](plots/irr_aerators.png)
 
 <h4 class="subsubsection-heading">2.4.2.1 Payback Period</h4>
 
@@ -245,8 +225,8 @@ $$
 \text{Payback Period} = \infty
 $$
 
-**Where:**
-• $R_{\text{SOTR}} = \frac{S_{\text{yr1}}}{C_{\text{base}}} \times R_{\text{SOTR}}$ (SOTR ratio factor)
+**Where:**  
+• $R_{\text{SOTR}} = \frac{S_{\text{yr1}}}{C_{\text{base}}} \times R_{\text{SOTR}}$ (SOTR ratio factor)  
 • $C_{\text{base}}$ is the baseline cost (Engle, 2010)
 
 <h4 class="subsubsection-heading">2.4.2.2 Relative Return on Investment (ROI)</h4>
@@ -378,328 +358,75 @@ $$
 
 This metric enables direct comparison of long-term financial impact across aerator options.
 
-<h2 class="section-heading">2.4.4 Results Summary</h2>
+**Results Summary**
 
-<table border="1" class="dataframe" id="summary_table">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Aerator 1</th>
-      <th>Aerator 2</th>
-      <th>Aerator 3</th>
-      <th>Aerator 4</th>
-      <th>Aerator 5</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Unit Price</th>
-      <td>$600</td>
-      <td>$800</td>
-      <td>$900</td>
-      <td>$1,000</td>
-      <td>$1,200</td>
-    </tr>
-    <tr>
-      <th>Power Rating</th>
-      <td>2 HP</td>
-      <td>2 HP</td>
-      <td>3 HP</td>
-      <td>3 HP</td>
-      <td>4 HP</td>
-    </tr>
-    <tr>
-      <th>SOTR (kg O2/hr)</th>
-      <td>1.5</td>
-      <td>2.9</td>
-      <td>3.8</td>
-      <td>3.0</td>
-      <td>3.0</td>
-    </tr>
-    <tr>
-      <th>OTRT (kg O2/hr)</th>
-      <td>1.97</td>
-      <td>3.81</td>
-      <td>4.99</td>
-      <td>3.94</td>
-      <td>3.94</td>
-    </tr>
-    <tr>
-      <th>Units Needed</th>
-      <td>2777</td>
-      <td>1436</td>
-      <td>1096</td>
-      <td>1389</td>
-      <td>1389</td>
-    </tr>
-    <tr>
-      <th>Initial Investment</th>
-      <td>$1,160,231.82</td>
-      <td>$799,948.58</td>
-      <td>$686,863.92</td>
-      <td>$967,208.02</td>
-      <td>$1,160,649.62</td>
-    </tr>
-    <tr>
-      <th>Annual Energy Cost</th>
-      <td>$421,057</td>
-      <td>$217,730</td>
-      <td>$249,268</td>
-      <td>$315,906</td>
-      <td>$421,208</td>
-    </tr>
-    <tr>
-      <th>Annual Maintenance</th>
-      <td>$164,366</td>
-      <td>$94,994</td>
-      <td>$95,398</td>
-      <td>$135,409</td>
-      <td>$154,753</td>
-    </tr>
-    <tr>
-      <th>Total Annual Cost</th>
-      <td>$1,049,515</td>
-      <td>$490,491</td>
-      <td>$573,620</td>
-      <td>$612,517</td>
-      <td>$808,091</td>
-    </tr>
-    <tr>
-      <th>Cost per kg O2</th>
-      <td>$0.066</td>
-      <td>$0.031</td>
-      <td>$0.036</td>
-      <td>$0.038</td>
-      <td>$0.051</td>
-    </tr>
-    <tr>
-      <th>Energy per kg O2</th>
-      <td>0.76</td>
-      <td>0.39</td>
-      <td>0.45</td>
-      <td>0.57</td>
-      <td>0.76</td>
-    </tr>
-    <tr>
-      <th>Annual Savings vs Least Efficient</th>
-      <td>$0</td>
-      <td>$559,025</td>
-      <td>$475,895</td>
-      <td>$436,999</td>
-      <td>$241,424</td>
-    </tr>
-  </tbody>
-</table>
+| Metric                            | Aerator 1     | Aerator 2   | Aerator 3   | Aerator 4   | Aerator 5     |
+| --------------------------------- | ------------- | ----------- | ----------- | ----------- | ------------- |
+| Unit Price                        | $600          | $800        | $900        | $1,000      | $1,200        |
+| Power Rating                      | 2 HP          | 2 HP        | 3 HP        | 3 HP        | 4 HP          |
+| SOTR (kg O2/hr)                   | 1.5           | 2.9         | 3.8         | 3.0         | 3.0           |
+| OTRT (kg O2/hr)                   | 1.97          | 3.81        | 4.99        | 3.94        | 3.94          |
+| Units Needed                      | 2777          | 1436        | 1096        | 1389        | 1389          |
+| Initial Investment                | $1,160,231.82 | $799,948.58 | $686,863.92 | $967,208.02 | $1,160,649.62 |
+| Annual Energy Cost                | $421,057      | $217,730    | $249,268    | $315,906    | $421,208      |
+| Annual Maintenance                | $164,366      | $94,994     | $95,398     | $135,409    | $154,753      |
+| Total Annual Cost                 | $1,049,515    | $490,491    | $573,620    | $612,517    | $808,091      |
+| Cost per kg O2                    | $0.066        | $0.031      | $0.036      | $0.038      | $0.051        |
+| Energy per kg O2                  | 0.76          | 0.39        | 0.45        | 0.57        | 0.76          |
+| Annual Savings vs Least Efficient | $0            | $559,025    | $475,895    | $436,999    | $241,424      |
 
-<table border="1" class="dataframe" id="financial_table">
-  <thead>
-    <tr>
-      <th></th>
-      <th>Aerator 1</th>
-      <th>Aerator 2</th>
-      <th>Aerator 3</th>
-      <th>Aerator 4</th>
-      <th>Aerator 5</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>Initial Investment</th>
-      <td>$1,160,231.82</td>
-      <td>$799,948.58</td>
-      <td>$686,863.92</td>
-      <td>$967,208.02</td>
-      <td>$1,160,649.62</td>
-    </tr>
-    <tr>
-      <th>Annual Savings vs Least Efficient</th>
-      <td>$0</td>
-      <td>$559,025</td>
-      <td>$475,895</td>
-      <td>$436,999</td>
-      <td>$241,424</td>
-    </tr>
-    <tr>
-      <th>Net Present Value</th>
-      <td>$0</td>
-      <td>$4,323,913</td>
-      <td>$3,847,586</td>
-      <td>$3,291,458</td>
-      <td>$1,711,341</td>
-    </tr>
-    <tr>
-      <th>Internal Rate of Return</th>
-      <td>0.0% (Least Efficient)</td>
-      <td>155.1%</td>
-      <td>100.4%</td>
-      <td>226.4%</td>
-      <td>30.0%</td>
-    </tr>
-    <tr>
-      <th>Payback Period</th>
-      <td>0.0 years</td>
-      <td>0.6 years</td>
-      <td>1.0 years</td>
-      <td>0.4 years</td>
-      <td>0.0 years</td>
-    </tr>
-    <tr>
-      <th>SOTR Performance Ratio</th>
-      <td>1.00x</td>
-      <td>1.93x</td>
-      <td>2.53x</td>
-      <td>2.00x</td>
-      <td>2.00x</td>
-    </tr>
-    <tr>
-      <th>Profitability Index</th>
-      <td>1.00</td>
-      <td>2.56</td>
-      <td>2.48</td>
-      <td>2.44</td>
-      <td>1.12</td>
-    </tr>
-    <tr>
-      <th>Return on Investment</th>
-      <td>0.0%</td>
-      <td>193.3%</td>
-      <td>253.3%</td>
-      <td>200.0%</td>
-      <td>50.0%</td>
-    </tr>
-    <tr>
-      <th>Opportunity Cost (NPV)</th>
-      <td>$0</td>
-      <td>Best Choice</td>
-      <td>$589,411</td>
-      <td>$865,196</td>
-      <td>$2,251,871</td>
-    </tr>
-  </tbody>
-</table>
+**Financial Analysis Summary**
 
-<div class="summary-box">
-    <h3>Best Options Summary</h3>
-    <table class="summary-table">
-        <tr class="header">
-            <th>Criteria</th>
-            <th>Best Option</th>
-        </tr>
-        <tr>
-            <td>Best Initial Cost</td>
-            <td><strong>Aerator 3</strong></td>
-        </tr>
-        <tr class="alt-row">
-            <td>Best Operating Cost</td>
-            <td class="best-choice">Aerator 2</td>
-        </tr>
-        <tr>
-            <td>Best NPV</td>
-            <td class="best-choice">Aerator 2</td>
-        </tr>
-        <tr class="alt-row">
-            <td>Best IRR</td>
-            <td class="best-choice">Aerator 4</td>
-        </tr>
-        <tr>
-            <td>Best Profitability Index</td>
-            <td class="best-choice">Aerator 2</td>
-        </tr>
-        <tr class="alt-row">
-            <td>Best ROI</td>
-            <td class="best-choice">Aerator 3</td>
-        </tr>
-        <tr>
-            <td>Best Payback Period</td>
-            <td class="best-choice">Aerator 1</td>
-        </tr>
-        <tr class="highlight">
-            <td>Most Efficient</td>
-            <td class="highlight">Aerator 2</td>
-        </tr>
-    </table>
+| Financial Metric                  | Aerator 1              | Aerator 2   | Aerator 3   | Aerator 4   | Aerator 5     |
+| --------------------------------- | ---------------------- | ----------- | ----------- | ----------- | ------------- |
+| Initial Investment                | $1,160,231.82          | $799,948.58 | $686,863.92 | $967,208.02 | $1,160,649.62 |
+| Annual Savings vs Least Efficient | $0                     | $559,025    | $475,895    | $436,999    | $241,424      |
+| Net Present Value                 | $0                     | $4,323,913  | $3,847,586  | $3,291,458  | $1,711,341    |
+| Internal Rate of Return           | 0.0% (Least Efficient) | 155.1%      | 100.4%      | 226.4%      | 30.0%         |
+| Payback Period                    | 0.0 years              | 0.6 years   | 1.0 years   | 0.4 years   | 0.0 years     |
+| SOTR Performance Ratio            | 1.00x                  | 1.93x       | 2.53x       | 2.00x       | 2.00x         |
+| Profitability Index               | 1.00                   | 2.56        | 2.48        | 2.44        | 1.12          |
+| Return on Investment              | 0.0%                   | 193.3%      | 253.3%      | 200.0%      | 50.0%         |
+| Opportunity Cost (NPV)            | $0                     | Best Choice | $589,411    | $865,196    | $2,251,871    |
 
-<div class="insights-box">
-    <h3>Business Insights</h3>
-    <ul class="insights-list">
-        <li class="insight-info">
-             <strong>Total Oxygen Demand:</strong> 5,470.0 kg/day
-        </li>
-        <li class="insight-success">
-             <strong>Annual Shrimp Production:</strong> 18,250,000 kg
-        </li>
-        <li class="insight-warning">
-             <strong>Operation Schedule:</strong> 8 hours/day, 365 days/year
-        </li>
-        <li class="insight-danger">
-             <strong>Key Finding:</strong> Aerator 2 provides the best overall value proposition, while choosing Aerator 1 results in significant opportunity costs over the analysis period.
-        </li>
-        <li class="insight-secondary">
-             <strong>Financial Impact:</strong> The opportunity cost of choosing the least efficient option can exceed $559,025 annually.
-        </li>
-    </ul>
-</div>
+**Best Options Summary**
 
-<div class="opportunity-cost-container">
-    <h2>Opportunity Cost Analysis</h2>
-    <p>
-        Cost of choosing each aerator instead of the most efficient option (Aerator 2)
-    </p>
-    <table class="opportunity-cost-table">
-        <thead>
-            <tr>
-                <th>Aerator</th>
-                <th class="center">Annual Opportunity Cost</th>
-                <th class="center">10-Year NPV Opportunity Cost</th>
-                <th class="center">Efficiency Ratio</th>
-                <th class="center">Investment Decision</th>
-            </tr>
-        </thead>
-        <tbody>
-        <tr>
-            <td>Aerator 1</td>
-            <td class="center">$559,025</td>
-            <td class="center">$3,963,629</td>
-            <td class="center">1.00x</td>
-            <td class="center decision-moderate">Moderate</td>
-        </tr>    
-        <tr>
-            <td>Aerator 2</td>
-            <td class="center">$0</td>
-            <td class="center">$0</td>
-            <td class="center">1.93x</td>
-            <td class="center decision-optimal">OPTIMAL</td>
-        </tr>
-        <tr>
-            <td>Aerator 3</td>
-            <td class="center">$83,130</td>
-            <td class="center">$589,411</td>
-            <td class="center">2.53x</td>
-            <td class="center decision-consider">CONSIDER</td>
-        </tr>  
-        <tr>
-            <td>Aerator 4</td>
-            <td class="center">$122,026</td>
-            <td class="center">$865,196</td>
-            <td class="center">2.00x</td>
-            <td class="center decision-consider">CONSIDER</td>
-        </tr>   
-        <tr>
-            <td>Aerator 5</td>
-            <td class="center">$317,601</td>
-            <td class="center">$2,251,871</td>
-            <td class="center">2.00x</td>
-            <td class="center decision-consider">CONSIDER</td>
-        </tr>    
-        </tbody>
-    </table>
-    <div class="economic-interpretation">
-        <h4>Economic Interpretation</h4>
-        <ul>
-            <li>Opportunity cost represents the financial penalty of not choosing the most efficient option</li>
-            <li>Higher efficiency ratios indicate better oxygen transfer performance relative to baseline</li>
-            <li>NPV opportunity cost shows the present value of losses over 10 years</li>
-            <li>Investment decisions balance efficiency gains against opportunity costs</li>
-        </ul>
-    </div>
-</div>
+| Criteria                 | Best Option   |
+| ------------------------ | ------------- |
+| Best Initial Cost        | **Aerator 3** |
+| Best Operating Cost      | **Aerator 2** |
+| Best NPV                 | **Aerator 2** |
+| Best IRR                 | **Aerator 4** |
+| Best Profitability Index | **Aerator 2** |
+| Best ROI                 | **Aerator 3** |
+| Best Payback Period      | **Aerator 1** |
+| **Most Efficient**       | **Aerator 2** |
+
+**Farm Overview**
+
+| Parameter Type               | Metric            | Value                                                                                                                                             |
+| ---------------------------- | ----------------- | ------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **Total Oxygen Demand**      | Daily requirement | 5,470.0 kg/day                                                                                                                                    |
+| **Annual Shrimp Production** | Total output      | 18,250,000 kg                                                                                                                                     |
+| **Operation Schedule**       | Daily/Annual      | 8 hours/day, 365 days/year                                                                                                                        |
+| **Finding**                  | Best value option | Aerator 2 provides the best overall value proposition, while choosing Aerator 1 results in significant opportunity costs over the analysis period |
+| **Financial Impact**         | Opportunity cost  | The opportunity cost of choosing the least efficient option can exceed $559,025 annually                                                          |
+
+**Opportunity Cost Analysis**
+
+Cost of choosing each aerator instead of the most efficient option (Aerator 2):
+
+| Aerator   | Annual Opportunity Cost | 10-Year NPV Opportunity Cost | Efficiency Ratio | Investment Decision |
+| --------- | ----------------------- | ---------------------------- | ---------------- | ------------------- |
+| Aerator 1 | $559,025                | $3,963,629                   | 1.00x            | MODERATE            |
+| Aerator 2 | $0                      | $0                           | 1.93x            | **OPTIMAL**         |
+| Aerator 3 | $83,130                 | $589,411                     | 2.53x            | CONSIDER            |
+| Aerator 4 | $122,026                | $865,196                     | 2.00x            | CONSIDER            |
+| Aerator 5 | $317,601                | $2,251,871                   | 2.00x            | CONSIDER            |
+
+**Economic Interpretation**
+
+- Opportunity cost represents the financial penalty of not choosing the most efficient option
+- Higher efficiency ratios indicate better oxygen transfer performance relative to baseline
+- NPV opportunity cost shows the present value of losses over 10 years
+- Investment decisions balance efficiency gains against opportunity costs
