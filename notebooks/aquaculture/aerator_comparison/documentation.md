@@ -1,5 +1,5 @@
 <style>
-@import url("../../assets/templates/journal/aquacultural_engineering.css");
+@import url("../../../assets/templates/journal/aquacultural_engineering.css");
 </style>
 
 <h1 class="article-title">Analysis of Aerators for Shrimp Farming: Cost Optimization and the Real Cost of "Cheap"</h1>
@@ -45,11 +45,11 @@
 <p>By analysing aerator imports from Ecuador's customs database, in the period of 2021 to 2024, we can gain insights on market trends, pricing strategies, and the competitive landscape of aerator suppliers in the region.</p>
 <p>After performing data manipulation techniques, we can observe the following patterns:</p>
 
-![Aerator Imports in Ecuador (2021-2024)](plots/aerator_imports_2021_2024.png)
+![Aerator Imports in Ecuador (2021-2024)](../plots/aerator_imports_2021_2024.png)
 
 <p>The dashboard on aerator imports (2021-2024) reveals some insights across multiple dimensions. China dominates as the top country of origin with 15.5M USD (FOB), followed by Taiwan at 4.1M USD, while generic brands lead at 17.9M USD (CIF), far ahead of Wangfa at 3.2M USD. In terms of importers, Area Andina S.A. handles the highest volume at 647K units, with Crustáceos y Peces de Sudamérica as the second-largest at 137K units. Product descriptions show aerators of 12-16 pallet units leading at 548K kg (net weight), indicating a focus on bulk shipments. Ningbo is the top embarkation city with 398K units (ad valorem), and Agencia Maritima Global moves 708K units (freight value), highlighting their logistical prominence. Consignee directions peak with La Puntilla (Satellite) at 211K units (insured value), and the generic model category tops brokered models at 154K units, reflecting market preferences for cost savings.</p>
 
-![Aerator Unitary Prices in Ecuador (2021-2024)](plots/aerator_fob_price.png)
+![Aerator Unitary Prices in Ecuador (2021-2024)](../plots/aerator_fob_price.png)
 
 <p>The aerator prices chart (2021-2024) shows a highly skewed distribution of FOB unit prices, with a mean of 812.96 USD, indicating that most brands have prices below this value, but a long tail extends to 1200 USD+. Acquaeco has the highest average unit price at 1258.27 USD, followed by Walker at 1108.55 USD, suggesting they cater to a premium segment. In contrast, Zuma offers the lowest average at 500.80 USD, followed by WangFa at 546.36 USD, positioning them as budget options. Other brands like Hongteng (673.33 USD), and Aerex (802.14 USD) cluster closer to the mean, while Wenling (961.32 USD) and Annex (1021.79 USD) sit between the mid-range and high-end, reflecting a diverse pricing landscape in the aerator market.</p>
 
@@ -109,7 +109,7 @@ $$
 
 Where $\text{Power (kW)} = \text{Power (HP)} \times 0.746$ (Kumar et al., 2020).
 
-![SOTR vs Price](plots/sotr_vs_price.png)
+![SOTR vs Price](../plots/sotr_vs_price.png)
 
 <h4 class="subsubsection-heading">2.3.1.4 Aerator Quantity Calculation</h4>
 
@@ -117,7 +117,7 @@ $$
 \text{Number of Aerators} = \left\lceil \frac{TOD}{OTR_T} \right\rceil
 $$
 
-![Aerator Quantity](plots/aerator_quantity.png)
+![Aerator Quantity](../plots/aerator_quantity.png)
 
 <h4 class="subsubsection-heading">2.3.2 Annual Revenue</h4>
 
@@ -139,7 +139,7 @@ $$
 2. **Maintenance Cost:** $\text{Maintenance Cost per Unit per Year} \times \text{Number of Aerators}$
 3. **Replacement Cost (Annualized):** $(\text{Number of Aerators} \times \text{Cost per Aerator}) / \text{Durability (years)}$
 
-![Annual Cost Breakdown](plots/annual_cost_breakdown.png)
+![Annual Cost Breakdown](../plots/annual_cost_breakdown.png)
 
 <h4 class="subsubsection-heading">2.3.6 Net Present Value (NPV) of Savings</h4>
 
@@ -201,7 +201,7 @@ $$
 
 This enhanced approach ensures accurate IRR calculations for all investment scenarios while maintaining financial validity.
 
-![Aerator IRR](plots/irr_aerators.png)
+![Aerator IRR](../plots/irr_aerators.png)
 
 <h4 class="subsubsection-heading">2.4.2.1 Payback Period</h4>
 
