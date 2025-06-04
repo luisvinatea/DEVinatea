@@ -65,10 +65,6 @@ pip install -r requirements.txt
 
 ## 🔍 Featured Analyses
 
-- **Aerators Efficiency Analysis**: Relative efficiency and profitability assessment for aerators in aquaculture systems.
-<img src="notebooks/aquaculture/plots/investment_vs_quantity.png" alt="Aerator Analysis" width="1000">
-<img src="notebooks/aquaculture/plots/investment_vs_sotr.png" alt="Aerator Efficiency" width="1000">
-
 - **Aerator Imports Analysis**: Analysis of aerator imports in Ecuador, including trends and insights.
 <img src="notebooks/aquaculture/plots/aerator_imports_2021_2024.png" alt="Aerator Analysis" width="1000">
 <img src="notebooks/aquaculture/plots/aerator_fob_price.png" alt="Aerator Efficiency" width="1000">
